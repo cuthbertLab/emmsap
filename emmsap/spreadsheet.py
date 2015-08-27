@@ -13,7 +13,7 @@ except NameError:
     unicode = str
     basestring = str
 
-spreadsheetFp = files.emmsapBase + os.sep + 'transcription_pieces.xls'
+spreadsheetFp = os.path.join(files.emmsapBase,  'excelMetadata', 'transcription_pieces.xls')
 
 class Workbook(object):
     '''

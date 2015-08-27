@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 #-------------------------------------------------------------------------------
 from __future__ import print_function
-import os
+import os, sys
 import music21
 environLocal = music21.environment.Environment()
 
-emmsapBase = '/Users/Cuthbert/Dropbox/EMMSAP'
-emmsapDir = emmsapBase + os.sep + 'MusicXML In'
+emmsapBase =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+emmsapDir = os.path.join(emmsapBase, 'xmldata')
 
 try:
     unicode # @UndefinedVariable
