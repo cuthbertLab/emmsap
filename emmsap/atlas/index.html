@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/smarty/css/screen.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/smarty/scripts/nivo-slider/default/default.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/smarty/scripts/nivo-slider/default/nivo-slider.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/smarty/css/style.css" type="text/css" media="screen">
+    <script data-main="atlasMain" src="http://web.mit.edu/music21/music21j/ext/require/require.js"></script>
+    <script src="atlasMain.js"></script>
+	<title>
+	Atlas: Mapping Supplemental Polyphony in Late-Medieval Europe (built on EMMSAP)
+	</title>
+</head>
+<body>
+<header class="clearfix">
+  <div class="container">
+    <div id="logo" class="span-2"><img src="css/atlas_logo.png" alt=""></div>
+    <h1 class="span-10">Atlas<span>Mapping Supplemental Polyphony in Late-Medieval Europe<br>(based on EMMSAP)</span></h1>
+    <nav class="span-12 last">
+      <ul class="right">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Works</a></li>
+        <li><a href="#">Reworking</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- 
+<section id="slider_wrapper" class="slider-wrapper theme-default container">
+  <div id="slider" class="nivoSlider" style="box-shadow:none;"> 
+    <img src="images/img1.jpg" data-thumb="images/img1.jpg" alt=""> 
+    <img src="images/img1.jpg" data-thumb="images/img1.jpg" alt=""> 
+    <img src="images/img1.jpg" data-thumb="images/img1.jpg" alt=""> 
+  </div>
+</section>
+ -->
+ 
+<div id="calltoaction" class="container clearfix">
+  <div class="span-17">
+    <p>Search EMMSAP/Atlas for a particular piece<span>See the 
+        <a href="#" id='tinyNotationReference'>TinyNotation Reference</a> for details</span>
+    </p>
+    <div class="span-14 footerLike"><input type="text" name="email" class="span-12" id='mainSearch' value="d4 c8 d f e"/></div>
+    <div class="span-14" id='mainSearchCanvasContainer'><canvas></canvas></div>
+    <div class='span-14' id='mainSearchResultsContainer' style='font-size: 13px'></div>
+  </div>
+  <div class="btn span-6 last right ">
+    <a id='searchButton' href="#">Search</a>
+    <input type='checkbox' id='octaveEquivalent' name='octaveEquivalent' /><label style='font-size: 18px'>Ignore Octave</label><br/>
+    <input type='checkbox' id='modalTransposition' name='modalTransposition' /><label style='font-size: 18px'>Modal Transp.</label>    
+  </div>
+</div>
+<div class="separator"></div>
+<!-- 
+<section id="four_columns">
+  <div class="container"> <a href="#">
+    <div class="span-6">
+      <div class="icon"></div>
+      <h2>Header number one</h2>
+      <p>set del amet puido cerar una puerta set del amet puido cerar una puerta vset del amet puido cerar</p>
+    </div>
+    </a> <a href="#">
+    <div class=" span-6">
+      <div class="icon"></div>
+      <h2>Header number one</h2>
+      <p>set del amet puido cerar una puerta set del amet puido cerar una puerta vset del amet puido cerar</p>
+    </div>
+    </a> <a href="#">
+    <div class=" span-6">
+      <div class="icon"></div>
+      <h2>Header number one</h2>
+      <p>set del amet puido cerar una puerta set del amet puido cerar una puerta vset del amet puido cerar</p>
+    </div>
+    </a> <a href="#">
+    <div class=" span-6 last">
+      <div class="icon"></div>
+      <h2>Header number one</h2>
+      <p>set del amet puido cerar una puerta set del amet puido cerar una puerta vset del amet puido cerar</p>
+    </div>
+    </a> </div>
+</section>
+ -->
+<div class="separator"></div>
+<section id="recentworks" class="container clearfix">
+  <h2><span>Working with EMMSAP/Atlas</span></h2>
+  <div class="span-6">
+    <div class="image_wrapper"> <img src="css/smarty/images/smarty.jpg" alt=""></div>
+    <p>Atlas of Supplemental Polyphony from 1300-1420: Database</p>
+    <a href="#" class="button">Consult</a> </div>
+  <div class="span-6">
+    <div class="span-6">
+      <div class="image_wrapper"> <img src="css/smarty/images/smarty.jpg" alt=""></div>
+      <p>Reduction searches, through EMMSAP</p>
+      <a href="#" class="button">Read More</a> </div>
+  </div>
+  <div class="span-6">
+    <div class="span-6">
+      <div class="image_wrapper"> <img src="css/smarty/images/smarty.jpg" alt=""></div>
+      <p>cerar una puerta set del amet puido cerar una puerta vset del amet </p>
+      <a href="#" class="button">Read More</a> </div>
+  </div>
+  <div class="span-6 last">
+    <div class="span-6">
+      <div class="image_wrapper"> <img src="css/smarty/images/smarty.jpg" alt=""></div>
+      <p>cerar una puerta set del amet puido cerar una puerta vset del amet </p>
+      <a href="#" class="button">Read More</a> </div>
+  </div>
+</section>
+<footer class="clearfix">
+  <div class="container">
+    <div class="about span-8 append-1">
+      <h3>About EMMSAP</h3>
+      <p>The Electronic Medieval Music Score Archive Project (EMMSAP) is a project developed by
+      <a href="http://www.trecento.com/">Michael Scott Cuthbert</a> with Anna Grau and others to
+      encode all polyphonic European music composed between 1300 and 1430 and, using tools from
+      <a href="http://web.mit.edu/music21/">music21</a> and music21j, to make this repertory
+      searchable and able to be manipulated.
+      </p>
+      <p class="social_icons">Follow us on :<a href="#"><img src="css/smarty/images/tweeter.png" alt=""></a> <a href="#"><img src="css/smarty/images/facebook.png" alt=""></a> <a href="#"><img src="css/smarty/images/gplus.png" alt=""></a> </p>
+    </div>
+    <div class="about span-6 append-1">
+      <h3>About Atlas</h3>
+      <p>"Atlas: Mapping Supplemental Polyphony in Late-Medieval Europe" is a collaborative project
+      between Pedro Memelsdorff and Michael Scott Cuthbert to identify, describe, and work with
+      all forms of polyphonic changes that result in substantial changes in harmony during the
+      period covered by EMMSAP.
+      </p>        
+    </div>
+    <div id="tweets" class="span-6 append-1">
+      <h3>Latest news</h3>
+      <div class="one_tweet">
+        <p>Atlas is announced at the Basel Reworkings conference.</p>
+        <a href="http://www.scb-basel.ch/am_download.php?assetId=124830">Conference Program</a>
+        <div class="date">22 November 2014</div>
+      </div>
+    </div>
+    <hr>
+    Copyright 2014 by <b>Michael Scott Cuthbert</b>, all rights reserved <span class="right last">Design uses elements from <a href="http://www.ws-templates.com">ws-templates</a></span></div>
+</footer>
+<div id='tnRef' style='display: none'>
+<ol style='text-align: left'>
+<li>Note names are: a,b,c,d,e,f,g and r for rest
+<li>Flats, sharps, and naturals are notated as #,- (not b), and (if needed) n.  
+<li>Note octaves are specified as follows::
+<ul>
+<li>     CC to BB = from C below bass clef to second-line B in bass clef
+<li>     C to B = from bass clef C to B below middle C.
+<li>     c  to b = from middle C to the middle of treble clef
+<li>     c' to b' = from C in treble clef to B above treble clef
+</ul>
+<li> After the note name, a number may be placed indicating the note 
+   length: 1 = whole note, 2 = half, 4 = quarter, 8 = eighth, 16 = sixteenth.  
+   etc.  If the number is omitted then it is assumed to be the same 
+   as the previous note.  I.e., c8 B c d  is a string of eighth notes.
+<li> After the number, a ~ can be placed to show a tie to the next note.  
+   A "." indicates a dotted note.
+<li> For triplets use this notation: "trip{c4 d8}" indicating that these 
+   two notes both have "3s" over them.  For 4 in the place of 3, 
+   use "quad{c16 d e8}".  No other tuplets are supported.
+</ol>
+</div>
+</body>
+</html>

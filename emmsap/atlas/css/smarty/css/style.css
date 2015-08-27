@@ -1,0 +1,342 @@
+@font-face {
+	font-family: 'andlso';
+	src: url('font/COM4F_RG.TTF') format('truetype');
+
+}
+
+a:link{
+	text-decoration: none;
+
+}
+body{
+	font-family: "Georgia";
+}
+body a{
+	color: #ef3f03;
+}
+
+
+h1, h2, h3 ,h4, h5, h6,nav{
+		font-family: "COM4t Fine Regular",andlso, "Georgia", Verdana, sans-serif;
+}
+/*##########################################################*/
+#logo {
+	position: relative;
+	left: -120px;
+}
+
+header h1 span
+{
+	font-family: Georgia;
+	font-size: 14px;
+	color: #989898;
+	display: block;
+}
+header h1
+{
+	font-size: 26px;
+	color: #e2e2e2;
+}
+header
+{
+	height: 70px;
+	padding-top: 23px;
+	background-color: #383838;
+
+	background: -webkit-linear-gradient(bottom, #373737, #3c3c3c);
+	background: -moz-linear-gradient(bottom, #373737, #3c3c3c);
+	background: -o-linear-gradient(bottom, #373737, #3c3c3c);
+	background: linear-gradient(to top, #373737, #3c3c3c);
+	box-shadow: 0 1px #4d4d4d, inset 0 -1px rgba(28,28,28,.75);
+	margin-bottom: 1px;
+}
+
+/*##########################################################*/
+
+nav ul li
+{
+	font-size: 18px;
+	display: inline;
+	margin-right: 20px;
+}nav ul{
+	padding-top: 7px;
+	}
+	
+nav ul li a{
+	color: #9b9b9b;
+}
+nav ul li a:hover
+{
+	color: #e1e1e1;
+}
+nav ul li.active a
+{
+	color: #ef3f03;
+}
+/*##########################################################*/
+.nivo-controlNav{
+	display: none;
+}
+#slider_wrapper {
+	width: 100%;
+	background-color: #2e2e2e; 
+	padding: 20px 0;
+	margin-bottom: 40px;
+	
+}
+
+/*##########################################################*/
+#calltoaction .btn a
+{
+	font-family: "Georgia";
+	font-size: 14px;
+	color: #e3e3e3;
+	display: block;
+	width: 100%;
+	height: 33px;
+	text-align: center;
+	padding-top: 10px;
+}
+#calltoaction .btn a:hover{
+	background-color: #ef3f03;
+}
+#calltoaction .btn
+{
+	margin-top: 20px;
+	width: 149px;
+	height: 43px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #edf0f7;
+	-webkit-box-shadow: inset 0 0 3px rgba(255,255,190,.44);
+	-moz-box-shadow: inset 0 0 3px rgba(255,255,190,.44);
+	box-shadow: inset 0 0 3px rgba(255,255,190,.44);
+	background-image: -webkit-linear-gradient(bottom, #373737, #3c3c3c);
+	background-image: -moz-linear-gradient(bottom, #373737, #3c3c3c);
+	background-image: -o-linear-gradient(bottom, #373737, #3c3c3c);
+	background-image: linear-gradient(to top, #373737, #3c3c3c);
+}
+#calltoaction
+{
+	font-family: "COM4t Fine Regular";
+	font-size: 28px;
+	color: #2e2e2e;
+	padding: 25px 0;
+	
+}
+#calltoaction span
+{
+	font-size: 20px;
+	color: #979797;
+	display: block;
+}
+/*##########################################################*/
+.separator
+{
+	height: 18px;
+	background-color: #fafafa;
+	-webkit-box-shadow: 0 9px 15px #efefef, inset 0 -1px #efefef;
+	-moz-box-shadow: 0 9px 15px #efefef, inset 0 -1px #efefef;
+	box-shadow: 0 9px 15px #efefef, inset 0 -1px #efefef;
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.03), rgba(255,255,255,.03));
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.03), rgba(255,255,255,.03));
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,.03), rgba(255,255,255,.03));
+	background-image: linear-gradient(to top, rgba(0,0,0,.03), rgba(255,255,255,.03));
+}
+
+/*##########################################################*/
+#four_columns p
+{
+	font-family: "Georgia";
+	font-size: 14px;
+	color: #9a9a9a;
+	padding: 5px 10px 0;
+}
+#four_columns h2
+{
+	font-size: 20px;
+	color: #2e2e2e;
+	margin: 20px 0;
+}
+#four_columns .span-6
+{
+	background-color: #fafafa;
+	box-shadow: inset 0 0 1px  #eaeaea;
+	text-align: center;
+	padding: 20px 0;
+	position: relative;	
+}
+#four_columns .span-6:hover
+{
+	background-color: #f4f4f4;
+	box-shadow: inset 0 0 1px 1px #eaeaea;
+	cursor: pointer;
+}
+
+#four_columns,#recentworks
+{
+	padding: 30px 0;
+}
+
+#four_columns .icon
+{
+	width: 70px;
+	height: 70px;
+	margin: auto;
+	
+
+}
+#four_columns a:nth-child(1) .icon
+{
+	background: url("images/icons/icons_01.png") no-repeat top left;
+}
+#four_columns a:nth-child(2) .icon
+{
+
+	background: url("images/icons/icons_02.png") no-repeat top left;
+}
+#four_columns a:nth-child(3) .icon
+{
+
+	background: url("images/icons/icons_03.png") no-repeat top left;
+}
+#four_columns a:nth-child(4) .icon
+{
+	background: url("images/icons/icons_04.png") no-repeat top left;
+}
+
+#four_columns .span-6:hover > .icon
+{
+	background-color:  #ef3f03;
+}
+
+/*##########################################################*/
+#recentworks{
+	padding:50px 0;
+}
+#recentworks h2{
+	background: white url("images/pattern.jpg") repeat-x left center;
+	font-size: 18px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+#recentsworks h2 span
+{
+	background-color: #ffffff;
+	padding-right: 20px;
+}
+#recentworks p
+{
+	font-size: 14px;
+	color: #9a9a9a;
+	text-align: center;
+	margin: 15px 0px;
+}
+
+#recentworks a.button
+{
+	font-size: 14px;
+	color: #e3e3e3;
+	padding:8px 22px;
+	-webkit-border-radius: 4px/3px;
+	-moz-border-radius: 4px/3px;
+	border-radius: 4px/3px;
+	background-color: #edf0f7;
+	-webkit-box-shadow: inset 0 0 3px rgba(255,255,190,.44);
+	-moz-box-shadow: inset 0 0 3px rgba(255,255,190,.44);
+	box-shadow: inset 0 0 3px rgba(255,255,190,.44);
+	background-image: -webkit-linear-gradient(bottom, #373737, #3c3c3c);
+	background-image: -moz-linear-gradient(bottom, #373737, #3c3c3c);
+	background-image: -o-linear-gradient(bottom, #373737, #3c3c3c);
+	background-image: linear-gradient(to top, #373737, #3c3c3c);
+}
+#recentworks a.button:hover
+{
+	font-size: 14px;
+	color: #e3e3e3;
+	padding:8px 22px;
+	-webkit-border-radius: 4px/3px;
+	-moz-border-radius: 4px/3px;
+	border-radius: 4px/3px;
+	background-color: #edf0f7;
+	-webkit-box-shadow: 0 0 #4d4d4d;
+	-moz-box-shadow: 0 0 #4d4d4d;
+	box-shadow: 0 0 #4d4d4d;
+	background-image: -webkit-linear-gradient(top, #333, #666);
+	background-image: -moz-linear-gradient(top, #333, #666);
+	background-image: -o-linear-gradient(top, #333, #666);
+	background-image: linear-gradient(to bottom, #333, #666);
+}
+
+/*##########################################################*/
+
+footer{
+	background: #000 url("images/footer_texture.jpg") repeat top left;
+	padding: 30px 0;
+	font-size: 14px;
+	color: #c0c0c0;
+}
+footer h3, .footerLike h3{
+	color: #bd4a0a;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+footer a, .footerLike a{
+	color: #bd4a0a;
+}
+footer input,footer textarea,.footerLike input, .footerLike textarea{
+	border: none;
+	border-radius: 4px;
+	margin-bottom: 5px;
+}
+
+.footerLike input {
+   border:1px solid #97B5D2;	
+   outline: 0 none;
+   font-family:Georgia,Times,"Georgia",serif;
+   font-size:28px; /* This probably makes it "fat" as you want */
+}
+.footerLike input:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 12px #9ecaed;
+}
+
+footer input, .footerLike input{
+	height: 35px;
+}
+footer form label, .footerLike label{
+	padding-bottom: 5px;
+}
+footer .one_tweet *{
+	padding: 0;
+	margin: 0;
+}
+footer form input[type="submit"], .footerLike form input[type="submit"]{
+	padding: 10px 20px;
+	background-color: #bd4a0a;
+	color: #ffffff;
+	font-size: 12px;
+	border:1px solid #eeeeee;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.75),inset 0 0 10px rgba(0,0,0,0.35);
+	display: block;
+	cursor: pointer;
+}
+footer .one_tweet .date{
+	margin-bottom: 15px;
+	font-size: 12px;
+}
+footer hr, .footerLike hr{
+	background-color: #000000;
+	box-shadow: 0 1px rgb(74,74,74);
+	margin: 30px 0;
+}
+footer p.social_icons img{
+	padding: 0px 5px 0 3px;
+}
+footer p.social_icons a img:hover{
+	background-color: #ef3f03;
+}
+/*##########################################################*/
