@@ -44,7 +44,7 @@ class Country(models.Model):
 
 
 class Composer(models.Model):
-    iscanonical = models.BooleanField(db_column='isCanonical', blank=True, null=True)  # Field name made lowercase.
+    iscanonical = models.NullBooleanField(db_column='isCanonical', blank=True, null=True)  # Field name made lowercase.
     canonicallink = models.IntegerField(db_column='canonicalLink', blank=True, null=True)  # Field name made lowercase.
     name = models.CharField(max_length=64, blank=True, null=True)
     sortyear = models.IntegerField(db_column='sortYear', blank=True, null=True)  # Field name made lowercase.
@@ -72,7 +72,7 @@ class Intervals(models.Model):
     class Meta:
         managed = False
         db_table = 'intervals'
-        unique_together = (('fn', 'partId'),)
+        unique_together = (('fn', 'partid'),)
 
 
 class Piecetwopart3Grammapping(models.Model):
@@ -88,7 +88,7 @@ class Piecetwopart3Grammapping(models.Model):
 class Piece(models.Model):
     filename = models.CharField(unique=True, max_length=255, blank=True, null=True)
     piecename = models.CharField(max_length=255, blank=True, null=True)
-    composer_id = models.IntegerField(blank=True, null=True)
+    composer = models.ForeignKey(Composer, blank=True, null=True)
 
     def __str__(self):
         return self.filename
@@ -131,7 +131,6 @@ class Piece(models.Model):
 
 
     class Meta:
-        managed = False
         db_table = 'pieces'
 
 
@@ -145,8 +144,8 @@ class Ratiosdiarhy2(models.Model):
         db_table = 'ratiosDiaRhy2'
 
 
-class Segments(models.Model):
-    pieceid = models.IntegerField(db_column='pieceId', blank=True, null=True)  # Field name made lowercase.
+class Segment(models.Model):
+    piece = models.ForeignKey(Piece) 
     partid = models.IntegerField(db_column='partId', blank=True, null=True)  # Field name made lowercase.
     segmentid = models.IntegerField(db_column='segmentId', blank=True, null=True)  # Field name made lowercase.
     measurestart = models.IntegerField(db_column='measureStart', blank=True, null=True)  # Field name made lowercase.
@@ -156,7 +155,7 @@ class Segments(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'segments'
+        db_table = 'segment'
 
 
 class Texts(models.Model):
@@ -181,7 +180,7 @@ class Tinynotation(models.Model):
     class Meta:
         managed = False
         db_table = 'tinyNotation'
-        unique_together = (('fn', 'partId'),)
+        unique_together = (('fn', 'partid'),)
 
 
 class Twopart3Grams(models.Model):

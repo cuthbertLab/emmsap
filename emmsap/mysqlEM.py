@@ -298,7 +298,10 @@ class Piece(EMMSAPMysqlObject):
 
     def partsFromSegmentPair(self, segment1id, segment2id, ratio=0):
         '''
-        returns two labeled parts given the segmentIds that 
+        returns two labeled parts given the segmentIds that come
+        from two different pieces, showing only the parts that
+        are in the segments.  The ratio is optional and only to
+        give a better label to the score. 
         '''
         if hasattr(segment1id, 'ratios'):
             segment1 = segment1id
@@ -584,7 +587,7 @@ class Segment(EMMSAPMysqlObject):
     'PMFC_24_32-Chi_nel_servir_antico.xml'
     '''
     table = 'segments'
-    rowMapping = ['id', 'pieceId', 'partId', 'segmentId', 'measureStart', 'measureEnd', 'encodingType', 'segmentData']
+    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 'measureStart', 'measureEnd', 'encodingType', 'segmentData']
     
     def __init__(self, rowInfo=None, dbObj=None):
         super(Segment, self).__init__(rowInfo, dbObj)
