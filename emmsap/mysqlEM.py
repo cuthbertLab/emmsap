@@ -244,7 +244,7 @@ class Piece(EMMSAPMysqlObject):
         >>> ratiosZero[0]
         (114665, 7826)
         '''
-        self.dbObj.cursor.execute('''SELECT id FROM segments WHERE pieceId = %s ORDER BY id''', [self.id])
+        self.dbObj.cursor.execute('''SELECT id FROM segment WHERE pieceId = %s ORDER BY id''', [self.id])
         segmentRows = self.dbObj.cursor.fetchall()
         segmentObjs = []
         for s in segmentRows:
@@ -279,7 +279,7 @@ class Piece(EMMSAPMysqlObject):
         #print "HIII"
         self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios'''+segmentType+'''  
                                     WHERE EXISTS
-                                       (SELECT 1 FROM segments WHERE pieceId = %s
+                                       (SELECT 1 FROM segment WHERE pieceId = %s
                                         AND segments.id = segment1id) 
                                     AND ratio >= %s ORDER BY ratio DESC''',
                                     [thisPieceId, threshold])
@@ -542,7 +542,7 @@ class Piece(EMMSAPMysqlObject):
 
         #self.dbObj.cursor.executemany(deleteRatiosQuery2, segment1TupleList)
         print("deleting segments...")
-        deleteSegmentsQuery = '''DELETE FROM segments WHERE id = %s'''
+        deleteSegmentsQuery = '''DELETE FROM segment WHERE id = %s'''
         for thisTuple in segment1TupleList:
             print("...deleting %s" % thisTuple[0])
             delQuerySub = deleteSegmentsQuery % thisTuple[0]
@@ -583,8 +583,8 @@ class Segment(EMMSAPMysqlObject):
     >>> s.piece().filename
     'PMFC_24_32-Chi_nel_servir_antico.xml'
     '''
-    table = 'segments'
-    rowMapping = ['id', 'pieceId', 'partId', 'segmentId', 'measureStart', 'measureEnd', 'encodingType', 'segmentData']
+    table = 'segment'
+    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 'measureStart', 'measureEnd', 'encodingType', 'segmentData']
     
     def __init__(self, rowInfo=None, dbObj=None):
         super(Segment, self).__init__(rowInfo, dbObj)
@@ -593,7 +593,7 @@ class Segment(EMMSAPMysqlObject):
         '''
         return the pieceObject for the piece with this id
         '''
-        p = Piece(self.pieceId, self.dbObj)
+        p = Piece(self.piece_id, self.dbObj)
         return p
     
     def ratios(self):

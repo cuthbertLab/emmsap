@@ -12,7 +12,7 @@ def findPieceIdsWithNoSegments(encodingType='diaSlower1'):
     em.cursor.execute('SELECT id FROM pieces')
     allstuff = em.cursor.fetchall()
     allPieceIds = [x[0] for x in allstuff]
-    query = 'SELECT * FROM segments WHERE pieceId = %s AND encodingType = %s LIMIT 1'
+    query = 'SELECT * FROM segment WHERE piece_id = %s AND encodingType = %s LIMIT 1'
     missingPieceIds = []
     for thisPieceId in allPieceIds:
         em.cursor.execute(query, [thisPieceId, encodingType])
@@ -55,8 +55,8 @@ def indexSegmentsAndStore(allFilesWithPath = None, encodingType='diaSlower1'):
     # partInfo is a dict of measureList, segmentList
     # each of those is a list of information
     em = mysqlEM.EMMSAPMysql()
-    query = '''INSERT INTO segments 
-        (pieceId, partId, segmentId, measureStart, encodingType, segmentData) 
+    query = '''INSERT INTO segment 
+        (piece_id, partId, segmentId, measureStart, encodingType, segmentData) 
         VALUES (%s, %s, %s, %s, %s, %s)'''
     for filename in indexedSegments:
         pieceObj = em.pieceByFilename(filename)
@@ -83,13 +83,13 @@ def addMeasureEndToSegments(pieceId = None, encodingType = 'DiaRhy2'):
     '''
     em = mysqlEM.EMMSAPMysql()
     query = '''
-        SELECT measureStart FROM segments WHERE pieceId = %s AND partId = %s AND segmentId = %s AND encodingType = "%s"
+        SELECT measureStart FROM segment WHERE piece_id = %s AND partId = %s AND segmentId = %s AND encodingType = "%s"
     '''
-    update = '''UPDATE segments SET measureEnd = %s WHERE id = %s'''
+    update = '''UPDATE segment SET measureEnd = %s WHERE id = %s'''
     if pieceId is None:
-        em.cursor.execute('SELECT id, pieceId, partId, segmentId, measureStart FROM segments WHERE encodingType = "%s"' % encodingType)
+        em.cursor.execute('SELECT id, piece_id, partId, segmentId, measureStart FROM segment WHERE encodingType = "%s"' % encodingType)
     else:
-        em.cursor.execute('SELECT id, pieceId, partId, segmentId, measureStart FROM segments WHERE pieceId = %s AND encodingType = "%s"' % (pieceId, encodingType))
+        em.cursor.execute('SELECT id, piece_id, partId, segmentId, measureStart FROM segment WHERE piece_id = %s AND encodingType = "%s"' % (pieceId, encodingType))
     
     segmentData = em.cursor.fetchall()
     for row in segmentData:

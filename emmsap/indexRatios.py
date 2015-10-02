@@ -22,7 +22,7 @@ def updateRatioTable(encodingType="DiaRhy2"):
     dbObj = mysqlEM.EMMSAPMysql()
     for i in range(numMissingSegments):
         segmentId = missingSegments[i]
-        if i % 10 == 0:
+        if i % 1 == 0:
             print("Done %d segments (of %d)" % (i, numMissingSegments))
         commitRatioForOneSegment(segmentId, dbObj)            
 
@@ -40,7 +40,7 @@ def findSegmentsWithNoRatios(encodingType='DiaRhy2'):
     em.cursor.execute(query)
     allSegmentIdsWithRatios = [x[0] for x in em.cursor.fetchall()]
     print("Got " + str(len(allSegmentIdsWithRatios)) + " segment ids with ratios")
-    query = 'SELECT id FROM segments WHERE LENGTH(segmentData) > %d AND encodingType = "%s"' % (minSegmentLength, encodingType)
+    query = 'SELECT id FROM segment WHERE LENGTH(segmentData) > %d AND encodingType = "%s"' % (minSegmentLength, encodingType)
     em.cursor.execute(query)
     allSegmentIdsThatShouldHaveRatios = [x[0] for x in em.cursor.fetchall()]
     #print (113433 in allSegmentIdsThatShouldHaveRatios)
@@ -123,11 +123,11 @@ def getRatiosForSegment(idOrSegment=1, dbObj = None, searchDirection = 'up', enc
     thisSegmentData = segmentObj.segmentData
     #dl = segment.getDifflibOrPyLev(segmentObj.segmentData)
     if searchDirection == 'up':
-        dbObj.cursor.execute('SELECT id, segmentData FROM segments WHERE encodingType = "%s" AND id > %s' % (encodingType, idOrSegment))
+        dbObj.cursor.execute('SELECT id, segmentData FROM segment WHERE encodingType = "%s" AND id > %s' % (encodingType, idOrSegment))
     elif searchDirection == 'down':
-        dbObj.cursor.execute('SELECT id, segmentData FROM segments WHERE encodingType = "%s" AND id < %s' % (encodingType, idOrSegment))        
+        dbObj.cursor.execute('SELECT id, segmentData FROM segment WHERE encodingType = "%s" AND id < %s' % (encodingType, idOrSegment))        
     else:
-        dbObj.cursor.execute('SELECT id, segmentData FROM segments WHERE encodingType = "%s"' % (encodingType))        
+        dbObj.cursor.execute('SELECT id, segmentData FROM segment WHERE encodingType = "%s"' % (encodingType))        
     storedRatios = []
     for otherId, otherSegmentData in dbObj.cursor:
         if len(otherSegmentData) < minSegmentLength:
@@ -145,7 +145,7 @@ def getRatiosForSegment(idOrSegment=1, dbObj = None, searchDirection = 'up', enc
     #pprint.pprint(storedRatios)
     return storedRatios
 
-def commitRatioForOneSegment(idOrSegment=1, dbObj = None, searchDirection = 'both', encodingType='DiaRhy2'):
+def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both', encodingType='DiaRhy2'):
     '''
     commit all the ratios from getRatiosForSegment into the database.
     '''
@@ -173,7 +173,7 @@ def commitRatiosForAllSegments(encodingType = 'DiaRhy2'):
     builds the database of ratios from segments.  Takes about 5-15 hours!
     '''
     dbObj = mysqlEM.EMMSAPMysql()
-    dbObj.cursor.execute('SELECT id FROM segments WHERE encodingType = "%s" ORDER BY id' % encodingType)
+    dbObj.cursor.execute('SELECT id FROM segment WHERE encodingType = "%s" ORDER BY id' % encodingType)
     i = 0
     allRows = dbObj.cursor.fetchall()
     totalRows = len(allRows)
