@@ -105,7 +105,7 @@ def addMeasureEndToSegments(pieceId = None, encodingType = 'DiaRhy2'):
         endMeasure = None
         nextStartMeasure = None
         gotEm = em.cursor.fetchall()
-        if len(gotEm) > 0:
+        if gotEm:
             gotOne = gotEm[0]
             if gotOne is not None:
                 nextStartMeasure = gotOne[0]

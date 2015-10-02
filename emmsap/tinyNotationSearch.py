@@ -208,7 +208,7 @@ for pieceNum, row in enumerate(em.cursor):
                     for measureSearch in range(mn - 2, mn):
                         thisMeasure = part.measure(measureSearch)
                         if thisMeasure is not None:
-                            if len(thisMeasure.flat.getElementsByClass('Rest')) > 0:
+                            if thisMeasure.recurse().getElementsByClass('Rest'):
                                 foundRest = True
                     if hasRest is True:
                         if foundRest is False:

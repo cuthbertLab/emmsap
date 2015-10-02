@@ -37,7 +37,7 @@ def main():
         for i, p in enumerate(go.parts):
             ls = lyrics.LyricSearcher(p)
             matches = ls.search(searchRE)
-            if len(matches) > 0:
+            if matches:
                 m = matches[0]
                 ts = m.els[0].getContextByClass('TimeSignature')
 
@@ -66,7 +66,7 @@ def main():
                     if i == 0:
                         s.numberOfPieces += 1
                         pCopy.getElementsByClass('Measure')[0].insert(0, expressions.TextExpression(gShort))
-                    if len(pCopy.flat.notes) > 0:
+                    if pCopy.recurse().notes:
                         s.insert(0, pCopy)
                 if len(s.parts) > 16:
                     s.show()

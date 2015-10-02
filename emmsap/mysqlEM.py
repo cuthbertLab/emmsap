@@ -339,10 +339,10 @@ class Piece(EMMSAPMysqlObject):
         
         renumberMeasureOffset = thisMeasureEnd + 1
         
-        excerpt2Measures = excerpt2.getElementsByClass('Measure')
+        excerpt2Measures = excerpt2.iter.getElementsByClass('Measure')
         for i, thisM in enumerate(excerpt2Measures):
             thisM.number = renumberMeasureOffset + i
-        if len(excerpt2Measures) > 0:
+        if excerpt2Measures:
             firstMeasure2 = excerpt2Measures[0]
         else:
             firstMeasure2 = excerpt2
@@ -371,8 +371,8 @@ class Piece(EMMSAPMysqlObject):
         exp1.size = 12
         exp2.size = 12
         exp2.priority = 5
-        pNewMeasures = excerpt1.getElementsByClass('Measure')
-        if len(pNewMeasures) > 0:
+        pNewMeasures = excerpt1.iter.getElementsByClass('Measure')
+        if pNewMeasures:
             firstMeasure = pNewMeasures[0]
         else:
             firstMeasure = excerpt1

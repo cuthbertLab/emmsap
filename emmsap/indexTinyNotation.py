@@ -22,10 +22,7 @@ def exists(fn, table='tinyNotation'):
         queryExists += " AND tnStrip IS NOT NULL"
     em.cursor.execute(queryExists, [fn])
     rows = em.cursor.fetchall()
-    if len(rows) > 0:
-        return True
-    else:
-        return False
+    return bool(rows)
 
 
 def onePiece(fn):
