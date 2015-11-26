@@ -85,7 +85,7 @@ class EMMSAPMysql(object):
         an id.
         
         >>> em = EMMSAPMysql()
-        >>> row = em.getTableRowById('countries', 1)
+        >>> row = em.getTableRowById('country', 1)
         >>> row
         (1, 'Unknown')
         '''
@@ -145,17 +145,17 @@ class EMMSAPMysql(object):
         >>> c.sortYear
         1390
         '''
-        row = self.getTableRowById('composers', composerId)
+        row = self.getTableRowById('composer', composerId)
         composerObj = Composer(row, dbObj=self)
         return composerObj
         
     def segmentById(self, segmentId=1):
-        row = self.getTableRowById('segments', segmentId)
+        row = self.getTableRowById('segment', segmentId)
         segmentObj = Segment(row, dbObj=self)
         return segmentObj
         
 class EMMSAPMysqlObject(object):
-    table = 'countries'
+    table = 'country'
     rowMapping = ['column1', 'column2']
     def __init__(self, rowInfo=None, dbObj=None):    
         if dbObj is None:
@@ -244,7 +244,7 @@ class Piece(EMMSAPMysqlObject):
         >>> ratiosZero[0]
         (114665, 7826)
         '''
-        self.dbObj.cursor.execute('''SELECT id FROM segment WHERE pieceId = %s ORDER BY id''', [self.id])
+        self.dbObj.cursor.execute('''SELECT id FROM segment WHERE piece_id = %s ORDER BY id''', [self.id])
         segmentRows = self.dbObj.cursor.fetchall()
         segmentObjs = []
         for s in segmentRows:
@@ -279,8 +279,8 @@ class Piece(EMMSAPMysqlObject):
         #print "HIII"
         self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios'''+segmentType+'''  
                                     WHERE EXISTS
-                                       (SELECT 1 FROM segment WHERE pieceId = %s
-                                        AND segments.id = segment1id) 
+                                       (SELECT 1 FROM segment WHERE piece_id = %s
+                                        AND segment.id = segment1id) 
                                     AND ratio >= %s ORDER BY ratio DESC''',
                                     [thisPieceId, threshold])
         #print "BYEEE!"
@@ -291,7 +291,7 @@ class Piece(EMMSAPMysqlObject):
             matchingSegments2 = []
             for thisRow in matchingSegments:
                 otherSegObj = Segment(thisRow.otherSegmentId, self.dbObj)
-                if otherSegObj.pieceId != thisPieceId:
+                if otherSegObj.piece_id != thisPieceId:
                     matchingSegments2.append(thisRow)
             matchingSegments = matchingSegments2
         return matchingSegments
@@ -562,8 +562,9 @@ class Piece(EMMSAPMysqlObject):
         
 
 class Composer(EMMSAPMysqlObject):
-    table = 'composers'
-    rowMapping = ['id', 'isCanonical', 'canonicalLink', 'name', 'sortYear', 'earliestYear', 'latestYear', 'countryId']
+    table = 'composer'
+    rowMapping = ['id', 'isCanonical', 'canonicalLink', 'name', 'sortYear', 'earliestYear', 
+                  'latestYear', 'country_id']
     def __init__(self, rowInfo=None,  dbObj=None):
         super(Composer, self).__init__(rowInfo, dbObj)
         if self.isCanonical == 0:
@@ -584,7 +585,8 @@ class Segment(EMMSAPMysqlObject):
     'PMFC_24_32-Chi_nel_servir_antico.xml'
     '''
     table = 'segment'
-    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 'measureStart', 'measureEnd', 'encodingType', 'segmentData']
+    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 'measureStart', 
+                  'measureEnd', 'encodingType', 'segmentData']
     
     def __init__(self, rowInfo=None, dbObj=None):
         super(Segment, self).__init__(rowInfo, dbObj)
@@ -612,7 +614,7 @@ class Segment(EMMSAPMysqlObject):
         (123938, 5294)
         >>> s2 = Segment(ratios[1][0], dbObj=s.dbObj)
         >>> s2.piece().filename, s2.measureStart, s2.measureEnd
-        ('PMFC_23_37-Gloria_Et_verus_homo_deus.mxl', 19, None)
+        ('PMFC_23_37-Gloria_Et_verus_homo_deus.mxl', 19, 53)
         '''
         segmentType = 'DiaRhy2'
         self.dbObj.cursor.execute('''SELECT segment2id, ratio FROM ratios''' + segmentType + '''

@@ -6,6 +6,7 @@ try:
     difflib = None
 except ImportError:
     lvRatio = None
+    print("No Levenshtein C program found -- will be much slower")
     import difflib # @UnusedImport
 
 minSegmentLength = 15

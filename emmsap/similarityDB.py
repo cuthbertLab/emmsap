@@ -7,16 +7,29 @@ from emmsap import mysqlEM
 
 skipPieces = [             
                # new discoveries!
-               (1964, 1227, 1229, 334), # Machaut Motet 4 Puis que la douce + PMFC5.17 Fortune Mere a Dolor 
-                   # (+ not found b/c transposed Amer amours/Durement PMFC 5.19 ) / close similarity to PMFC 23.64 Patrem ab eterno tenor, but not close enough
-               (1961, 1097), # Quant en moy/Amour et biaute (Machaut M1) m80 + Colla/Bona Condit (Vitry?) m1 (and many other matches)
+               (338, 2087), # Ciconia Credo 11 = Prague 9 O sinne!!!
+               (1964, 1227, 1229, 334), 
+                   # Machaut Motet 4 Puis que la douce + PMFC5.17 Fortune Mere a Dolor 
+                   # (+ not found b/c transposed Amer amours/Durement PMFC 5.19 ) / 
+                   # close similarity to PMFC 23.64 Patrem ab eterno tenor, but not close enough
+               (1961, 1097), # Quant en moy/Amour et biaute (Machaut M1) m80 +
+                   # Colla/Bona Condit (Vitry?) m1 (and many other matches)
                (28, 1845), # Esperance +  Santa maria maggiore fragments
                (1596, 481, 482), # Onques ne fu ; Vendome contratenor.
                (285, 1959), # Nuremberg9a gloria fermatas: Gloria Clementiae Pax
                (808, 1899), # Houghton 122 Patrem and Salinis Patrem                              
-               (1585, 664), # Fist on dame -- Paris Lat 12409 -- too short so ratio is only 7352, but found in tinynotation search
+               (1585, 664), # Fist on dame -- Paris Lat 12409 -- too short so ratio is only 7352, 
+                    # but found in tinynotation search
+               (1999, 325), # Feragut Patrem #2 and Credo Tapissier -- same tenors, 
+                    # same # of breves but only at Deum vero + Genitum
                
+               
+               (2064, 1912), # Nicolaus de Radom Gloria 1 + Credo 1 paired; see esp. Adoramus te
+                            # + Genitum non Factum.
                # end new discoveries.
+               
+               # two transcriptions of the same
+
                
                # same piece..different versions.
               (1774, 1775), # two versions Sedendo al onbra
@@ -113,12 +126,14 @@ skipPieces = [
               (1164, 406), # Madrid CT/T, Siena Ravi 3 3vv version -- found Nyikos, pre PMFC
               (1260, 969), # Inter_Denasas_Deserti_Meditans
               (1598, 1599, 172, 174), # two versions of Or sus + a keyboard piece
-              (1589, 1590, 21), # two versions Je voy le bon tens + false match with gloria in Cividale
+              (1589, 1590, 21), # two versions Je voy le bon tens + false match 
+                #    with gloria in Cividale
               (1888, 1889), # Tres douls amis, two versions
               (1886, 1241), # Souviengne vous d estriner, Quand amor -- Fetis, identical
               
               (1923, 1924), # two Wolkenstein versions of Des himels trone
-              (1943, 1944, 1449), # two versions Wolkenstein Wol auf wol an and low match for Levandome l maytino
+              (1943, 1944, 1449), # two versions Wolkenstein Wol auf wol an and low
+                # match for Levandome l maytino
               (1931, 1932), # two versions Herz mut leib sel, Wolkenstein
               
               
@@ -126,9 +141,12 @@ skipPieces = [
               
               ######
               # known similarities
-              (1977, 1678), # Ma dame m'a congie doune quotes from Machaut B15 Se je me pleing (Low match: only 6875 but completely there!)
+              (2050, 2018), # Machaut motets 21 and 8 -- Earp p. 367
+              (1977, 1678), # Ma dame m'a congie doune quotes from Machaut B15 
+                # Se je me pleing (Low match: only 6875 but completely there!)
               (1558, 1720), # S'espoir n estoit + Machaut Se vous n'estes -- in Earp book
-              (1687, 1525, 602), # Machaut De fortune, Dame qui fust -- known; De fortune well known in Italy! Dame qui fust, Reina only
+              (1687, 1525, 602), # Machaut De fortune, Dame qui fust -- known;
+                # De fortune well known in Italy! Dame qui fust, Reina only
               (290, 1288), # rosetta + gloria
               (1601, 889), # pmfc 21.5 contrafacted as 23.92
               (320, 1216), # Gloria Loys, Flos Ortus Inter Lilia (Known)
@@ -145,33 +163,45 @@ skipPieces = [
               (351, 352), # per quella strada 74-80, una pantera 13-15
               (215, 351), # imperial sedendo, per quella strada
               
-              (856, 868, 1184), # Sanctustus Sanans Fragilia PMFC 23.68 w/ Agnus Dei PMFC 23 74
-              (1150, 1184, 1185, 1156), # Sorbonne Mass internal consistencies and w/ Kyrie Sol Iusticie
-              (1184, 856), # PMFC 23.4 (Sorbonne Sanctus), PMFC 23.68 (Sanctus Sanans Fragilia -- similarities known
+              (856, 868, 1184), # Sanctus Sanans Fragilia PMFC 23.68 w/ Agnus Dei PMFC 23 74
+                # PMFC 23.4 (Sorbonne Sanctus),
+              (1150, 1184, 1185, 1156), # Sorbonne Mass internal consistencies 
+                # and w/ Kyrie Sol Iusticie
               (1180, 1171, 1161), # PMFC 23 13, PMFC 23.12, PMFC 23.11 -- known;
-              (1092, 908), # Tournai Ite Missa, Ave Regina Mater Innocencie also on same Ite Missa tenor
+              (1092, 908), # Tournai Ite Missa, Ave Regina Mater Innocencie 
+                # also on same Ite Missa tenor
               (1227, 1229), # PMFC 05 # 17 and 19 -- same tenor.
               
+              
+              
+              
+              
               # unknown similarities worth mentioning...
-              (1999, 325), # Feragut Patrem #2 and Credo Tapissier -- same tenors, same # of breves but only at Deum vero + Genitum
-              (373, 993), # Ciconia & Francesco!  Sus une fontayne and Che pena quest al cor -- very similar cadential strategies.
-              (140, 144), # Lorenzo -- Credo che i donna (T 125, 131), Come in sul Fonte (63, 69) -- D to G descent
+              (2025, 1961), # Machaut Motet 15 (m. 59-102) and Machaut Motet 1 (m. 122-end) 
+                # same melodic formula
+              (373, 993), # Ciconia & Francesco!  Sus une fontayne and Che pena quest al cor -- 
+                # very similar cadential strategies.
+              (140, 144), # Lorenzo -- Credo che i donna (T 125, 131), Come in sul Fonte 
+                # from (63, 69) -- D to G descent
               (204, 207), # Giovanni Appress un fium 33, Donna gia fu 16
               (104, 106), # Donatus -- Un cane un oca 76-77; Sovran ucell 23-24
               (119, 211), # GdF Si Forte 41-47; Piero All onbra 46-52
               
               (1573, 1142), # PMFC 21.22, 10.23 -- similar cadences, but not a quote.
-              (1495, 259),  # Nicolo Virtu loco non + Sanctus PMFC 12.16 -- anon RVat 1419 -- not a quote but may be an attribution.
+              (1495, 259),  # Nicolo Virtu loco non + Sanctus PMFC 12.16 -- anon RVat 1419 -- 
+                # not a quote but may be an attribution.
               
               (1481, 1236), # Nicolo and Bonaiuto
               (1494, 1487, 1463), # two Nicolo w/ similar ornamentation. + a francesco w/ similar
               
               # low threshold false matches
-              (1963, 388, 807, 169, 1488), # Machaut M3 and Ravenna Kyrie, + instrumental Faenza  + Nicolo melisma
+              (1963, 388, 807, 169, 1488), # Machaut M3 and Ravenna Kyrie, + instrumental Faenza  
+                # + Nicolo melisma
               (1962, 1474), # machaut M2 + PMFC 8-34 Pyance. No.
               (1967, 1236, 1641, 32, 815, 755, 1641), # Empris domoyres w/ much noodling.
               (1965, 370, 687, 1641, 386), # Machaut M6
-              (1961, 1306, 1095, 397), # Machaut Tenor M1 Amour et biaute + Nicolo de come ben mi sta, Garison selon Nature, Barcelona Kyrie
+              (1961, 1306, 1095, 397), # Machaut Tenor M1 Amour et biaute + Nicolo de come
+                # ben mi sta, Garison selon Nature, Barcelona Kyrie
               (99, 1338, 1303), # DfF L aspido Sordo + Una smaniosa PMFC 8
               (119, 1170), # madrigal patterns
               (140, 1768), # madrigal patterns
@@ -186,7 +216,8 @@ skipPieces = [
               (1567, 761), # two paolo pieces...
               (1655, 187), # 22.47b, 04.04.
               (1118, 939), # PMFC 06 Jacopo Vestisse, PMFC 07 GdF 2 -- Cacciand -- filigree
-              (1141, 37), # PMFC 10 22 Perche veder non posso; Francesco Poy che Partir -- very similar cadence
+              (1141, 37), # PMFC 10 22 Perche veder non posso; Francesco Poy che Partir -- 
+                           # very similar cadence
               (1183, 465), # Credo Sorbonne, Lorques Arthus -- filigree
               (211, 149), # Piero All ombra, VdR Gia Era
               (255, 386), # bartholus Credo w/ Deduto Sey intabulation
@@ -243,7 +274,10 @@ skipPieces = [
             (1096, 1095), # Hugo Hugo, Garison
             (1095, 907), # Hugo Hugo, Dulcis Jesu
             (32, 159), # Flos Filius tenor, Marchetto Ave Regina
-            (170, 172, 175, 169, 173, 386, 170, 383, 382, 386, 32, 258, 152, 100, 919), # intabulations...and matches
+            
+            (170, 172, 175, 169, 173, 386, 170, 383, 382, 386, 32, 258, 152, 100, 919), 
+                # intabulations...and matches
+            
             (903, 406), # Ortorum Virentium, Gloria Ravi 3 tenors not close
             (276, 334, 330, 331), # close range tenors not close
             (907, 904), # close range tenors not close
@@ -284,6 +318,7 @@ skipPieces = [
             (320, 1230),
             (306, 936),
             (338, 1227),
+            (338, 1229),
             (207, 927),
             (165, 1320),
             (149, 1314),
@@ -326,7 +361,6 @@ skipPieces = [
             (1655, 1408),
             (306, 1271),
             (27, 1230),
-            (338, 1229),
             (1641, 1488, 330, 215, 32, 1451, 168, 386, 172, 328), #keyboard
             
             (1983, 1984), # Turin masses OMR w/ cropped sections redone.
@@ -334,10 +368,14 @@ skipPieces = [
             (2008, 1096), # PMFC16 sanctus 2; low w/ Vitry Hugo Tenor
             (2009, 1965), # PMFC16 #3 Agnus; PMFC 2 SAmours tous amas joir. 
             (2015, 100), # kyrie PMFC 16 9 + melisma
-              ]
+            
+            (2022, 1280), # machaut tenor + melismatic piece
+            (2025, 1961), # two machaut tenors
+              ] 
 
 class SimilaritySearcher(object):
-    def __init__(self, startPiece=2017, endPiece=2999, minThreshold=7000, maxToShow=0):
+    # 2029 start
+    def __init__(self, startPiece=2092, endPiece=2100, minThreshold=6000, maxToShow=0):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
@@ -359,7 +397,8 @@ class SimilaritySearcher(object):
         to 0 - 1 (by dividing by 10000) to find similarity.
         
         Because of their rhythmic similarity, tenors match far too often, so a crude metric is used
-        to identify tenors and raise the minThreshold for those matches: basically, parts 2+ (=3rd part
+        to identify tenors and raise the minThreshold for those matches: basically, 
+        parts 2+ (=3rd part
         and beyond) are considered tenors. Not very good, but the best so far. 
         '''    
         if startPiece is None:
@@ -376,7 +415,9 @@ class SimilaritySearcher(object):
         if p.id is None:
             return
         print("Running piece %d (%s)" % (pNum, p.filename))
-        ratioMatches = p.ratiosAboveThreshold(self.minThreshold, ignoreInternal=True, segmentType=self.segmentType)
+        ratioMatches = p.ratiosAboveThreshold(self.minThreshold, 
+                                              ignoreInternal=True, 
+                                              segmentType=self.segmentType)
         totalShown = 0
         for ratioMatch in ratioMatches:
             returnCode = self.checkOneMatch(p, ratioMatch, totalShown, skippedPieces)
@@ -387,10 +428,14 @@ class SimilaritySearcher(object):
         p = mysqlEM.Piece(pNum, dbObj=self.dbObj)
         if p.id is None:
             return
-        ratioMatches = p.ratiosAboveThreshold(self.minThreshold, ignoreInternal=True, segmentType=self.segmentType)
+        ratioMatches = p.ratiosAboveThreshold(self.minThreshold, 
+                                              ignoreInternal=True, 
+                                              segmentType=self.segmentType)
         return ratioMatches
 
-    def checkForShow(self, p, ratioMatch, skippedPieces=[]):
+    def checkForShow(self, p, ratioMatch, skippedPieces=None):
+        if skippedPieces is None:
+            skippedPieces = []
         myId = p.id
         if ratioMatch.thisRatio >= self.maxThreshold:
             return (False, "MaxThreshold")
@@ -410,11 +455,13 @@ class SimilaritySearcher(object):
         if foundSkip is True:
             if otherPieceId not in skippedPieces:
                 if self.printOutput:
-                    print("   skipping all matches for (%d) %s: ratio %d" % (otherPiece.id, otherPiece.filename, ratioMatch.thisRatio))
+                    print("   skipping all matches for (%d) %s: ratio %d" % 
+                          (otherPiece.id, otherPiece.filename, ratioMatch.thisRatio))
                 skippedPieces.append(otherPieceId)
             return (False, "SkipPiece")
         thisSegment = mysqlEM.Segment(ratioMatch.thisSegmentId, dbObj=self.dbObj)
-        if thisSegment.partId >= self.tenorPartNumber and otherSegment.partId >= self.tenorOtherPartNumber:
+        if (thisSegment.partId >= self.tenorPartNumber or 
+                otherSegment.partId >= self.tenorOtherPartNumber):
             # tenor
             if ratioMatch.thisRatio - self.tenorThresholdAdd < self.minThreshold:
                 return(False, "TenorBelowThreshold")
@@ -435,7 +482,8 @@ class SimilaritySearcher(object):
     
         
         if totalShown > self.maxToShow:
-            if otherPiece.id is not None: # if segment matches but piece deleted... need to clean up orphen segments...
+            if otherPiece.id is not None: 
+                # if segment matches but piece deleted... need to clean up orphen segments...
                 print("   Not showing (too many matches): " + showInfo)
                 return totalShown
         try:

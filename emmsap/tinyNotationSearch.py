@@ -82,19 +82,28 @@ searches = {
     'sl72r': ('first end with C3', 'intervals like "%22-2-2-2-2-2%" and intervals like "%-222-21-2-2-2-23%"'),
     'sl75r': ('secunda pars; might be wrong intervals; virelai','intervals like "%3-44-33%"'),
     'sl78v': ('beginning of contratenor; none match', 'partId >= 1 and intervals like "%-2-22-322-22-32%"'),
-    'sl79v': ('I fu gia usignolo -- main piece', 'intervals like "%5-222-3-222-22%"'),
+    'sl79v': ('I fu gia usignolo -- main piece; at least it works', 'intervals like "%5-222-3-222-22%"'),
+    'sl82r': ('Middle lines, all ligatures; 3/4?', 'intervals like "%-322-32%" and intervals like "%3-2-2-22-2%" and partId >= 1 and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%"'),
     'sl83v': ('might be the end of the Mazzuoli piece; no match', 'intervals like "%22-2-2-22-32-2-2-2-2%"'),
     'sl94r': ('', 'intervals like "%-2-2-2-23-232-222%"'),
     'sl99bisv': ('none match', 'partId >= 1 and fn not like "%gloria%" and fn not like "%credo%" and intervals like "%3-21-2222-2-22%"'),
-    'sl109bisr': ('Rosetta second section', 'intervals like "%2-414-2-22%"'),
-    #'sl109bisv':
-    'sl139v': ('Paolo! Marticius qui fu de Rome', 'partId > 0 and fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-222322-2-2-42-2-2%"'),
+    'sl99ter': ('below Mazzuoli', ''),
+    'sl109bisr': ('MSC: Rosetta second section', 'intervals like "%2-414-2-22%"'),
+    'sl111r': ("end", 'intervals like "%4-2-2-22-2"'),
+    'sl137r': ('below amor de dimmi', {'lastNameWithOctave': 'G3'}, 'intervals like "%-2-2-2-2-2" and fn not like "%gloria%" and fn not like "%credo%"'),
+    'sl137br': ('below amor de dimmi', {'hasRest': True, 'lastNameWithOctave': 'A3'}, 'intervals like "%-25-2-2-21%" and partId >= 1 and fn not like "%gloria%" and fn not like "%credo%"'),
+    'sl139v': ('MSC: Paolo! Marticius qui fu de Rome', 'partId > 0 and fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-222322-2-2-42-2-2%"'),
     'sl141v': ('', 'fn not like "%gloria%" and fn not like "%credo%" and fn not like "%sanctus%" and intervals like "%22-21-22-3-21%"'),
-    'sl147r': ('second piece, tenor', 'partId > 0 and fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-2-2-25-2-22-3%"'),
+    'sl147r': ('second piece, tenor start', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "-2-2-25222%"'),
+    'sl147br': ('second piece, tenor near 2nd pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-2-2-272-42%"'),
+    'sl147cr': ('first piece, cttenor 3a pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%311-2-2-232%"'),
+    
     'sl155r': ('great tenor', 'intervals like "%-225-2-21-3%"'),
     'sl156r': ('end of cantus?','partId = 0 and intervals like "%-2-22-223-2%" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
     'sl159r': ('qui fault boyt tenor start','partId > 0 and intervals like "%-2-2-2-24-3%" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
-
+    'sl159rb': ('qui fault boyt tenor end', {'lastNameWithOctave': 'D3'} ,'intervals like "%-2-44-2-2-2" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
+    'sl160v': ('unknown', {'hasRest': True, 'lastNameWithOctave': 'E4'}, 'intervals like "%2-32122-2%"'),
+    'sl177r': ('end of line', 'intervals like "%22-21-23"'),
 
     'utrecht1': ('','(fn regexp "credo" or fn regexp "patrem") and intervals like "%72-4%"'),
     'utrecht2': ('','(fn regexp "credo" or fn regexp "patrem") and intervals like "%22-3121%"'),
@@ -102,44 +111,84 @@ searches = {
     'utrecht4': ('','intervals like "%-2-23141-2-2-2-2%"'),
     'utrecht5': ('no % at end is not a mistake', 'intervals like "%-2-3-2-2-2-2"'),
     
-    'nur9aDv': ('palimpsest', 'intervals like "%-222-321%" and fn like "%credo%"'),
+    'nur9aDv': ('palimpsest', 'intervals like "%-222-321%"'),
+    'nur9a2': ('palimpsest', 'intervalsNoUnisons like "%-225-2-2-2-2-222-2%"'),
+    'nur9a3': ('palimpsest', 'intervalsNoUnisons like "%-2-225-2-2-22-2%"'),
+    'nur9a4': ('palimpsest', 'intervals like "%51-2-21-22%"'),
+    
+    'ox56_81r': ('Oxford 56', 'intervals like "%-2-2-2-22222-422%"'),
+    'ox56_80r': ('Ox56', 'intervals like "%2-2-222221%" AND (fn regexp "gloria" or fn regexp "terra")'),
+    'ox56_80rb': ('Ox56', 'intervals like "%2-2-2-2-2223%" AND (fn regexp "gloria" or fn regexp "terra")'),
+    'ox56_80rc': ('Ox56 tenor', 'intervals like "%4-42-25%" AND (fn regexp "gloria" or fn regexp "terra")'),
+    'ox56_80rd': ('Ox56 tenor', 'intervals like "%522-2-2-22%" AND (fn regexp "gloria" or fn regexp "terra")'),
+    'kobl1': ('Kobl other side', 'intervals like "%1-2-3-222%"'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
+    'kobl2': ('Kobl other side', 'intervals like "%11-34%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
+    'kobl3': ('Kobl other side', 'intervals like "%1-34-3%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
+    'kobl4': ('Kobl other side', 'intervals like "%2-321-4%" and intervals like "%-2-3-222%"'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
+    'kobl5': ('Kobl other side', {'hasRest': True}, 'intervals like "%2-321-4%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
+    'kobl6': ('Kobl other side', {'hasRest': True}, 'intervals like "%-2221%" and intervals regexp "-22211+-34-3"'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
+    'koblB1': ('Kobl other side right', 'intervals like "%2-211-4%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
+    'koblB2': ('Kobl other side right', 'intervals like "%1-4-21%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
+
 }
+
+
+searchIndex = 'kobl1'
+show = True
+
+##############
+print("Running: " + str(searchIndex))
+
 from music21 import converter
 from emmsap import files, mysqlEM
 import os
 import re
-findLike = re.compile('like\s"\%([0-9\-]+)\%"')
+
+intervalsLike = re.compile(r'intervals like\s"\%?([0-9\-]+)\%?"')
+intervalsNoUnisonLike = re.compile(r'intervalsNoUnison like\s"\%?([0-9\-]+)\%?"')
+
 
 em = mysqlEM.EMMSAPMysql()
 
-searchIndex = 'nur9aDv'
-timeSigSearch = None
-syllableSearch = None # "sur" # "lo"
-pieceFracStart = None #None #3.0 # first one third; for "mus te" etc.
-pieceFracEnd = None
-hasRest = None #
-partNum = None
-lastNameWithOctave = None # "A3" # "E4" # "A3" # pitch of last note
+searchTuple = searches[searchIndex]
+if len(searchTuple) == 2:
+    comment, searchQuery = searchTuple
+    options = {}
+elif len(searchTuple) == 3:
+    comment, options, searchQuery = searchTuple 
+else:
+    raise("Incorrect tuple %s" % searchTuple)
 
-show = True
+timeSigSearch = options.get('timeSignature')
+syllableSearch = options.get('syllable') # "sur" # "lo"
+pieceFracStart = options.get('pieceFracStart') #3.0 # first one third; for "mus te" etc.
+pieceFracEnd = options.get('pieceFracEnd')
+hasRest = options.get('hasRest') #
+partNum = options.get('partNum')
+lastNameWithOctave = options.get('lastNameWithOctave') # "A3" # "E4" # "A3" # pitch of last note
 
-##############
 
+intervalList = []
+intervalNoUnisonList = []
+ 
+for i, iLike in enumerate([intervalsLike, intervalsNoUnisonLike]):    
+    foundInterval = iLike.search(searchQuery)
+    intervalMatch = "9999999"
+    if foundInterval:
+        intervalMatch = foundInterval.group(1)
+    intervalListRaw = re.split(r'(\-?\d)', intervalMatch)
+    tempList = [int(r) for r in intervalListRaw if r != ""]
+    if i == 0:
+        intervalList = tempList
+    else:
+        intervalNoUnisonList = tempList
 
-comment, like = searches[searchIndex]
-foundInterval = findLike.search(like)
-intervalMatch = "9999999"
-if foundInterval:
-    intervalMatch = foundInterval.group(1)
-intervalListRaw = re.split('(\-?\d)', intervalMatch)
-intervalList = [int(r) for r in intervalListRaw if r != ""]
 
 ## capital 17 has a -_ wildcard
 ## intervalList = [2, 4, -2, -2, 2]
-illen = len(intervalList)
 print(intervalList)
 
-q = "SELECT fn, partId FROM intervals WHERE " + like
+q = "SELECT fn, partId FROM intervals WHERE " + searchQuery
 em.cursor.execute(q)
 print(em.cursor.rowcount, "Rows total")
 for pieceNum, row in enumerate(em.cursor):
@@ -164,6 +213,8 @@ for pieceNum, row in enumerate(em.cursor):
     lastSyllableMatch = None
     
     goodCount = -1
+    illen = len(intervalList)
+
     for i,n in enumerate(pn):
         if not hasattr(n, 'pitch'):
             continue # chord
@@ -181,7 +232,9 @@ for pieceNum, row in enumerate(em.cursor):
             #    intv = 9
             intervalListPiece.append(intv)
         last = dnn
-        if n.lyric is not None and syllableSearch is not None and n.lyric.lower() == syllableSearch:
+        if (n.lyric is not None and 
+                syllableSearch is not None and 
+                n.lyric.lower() == syllableSearch.lower()):
             lastSyllableMatch = goodCount
         if goodCount >= illen:
             intervalListSlice = intervalListPiece[goodCount - illen:]
@@ -193,7 +246,8 @@ for pieceNum, row in enumerate(em.cursor):
                 if mn is None: # after a strip tie
                     mn = n.next().measureNumber
                 pn[0].lyric += "_" + str(mn)
-                if syllableSearch is not None and (lastSyllableMatch is None or lastSyllableMatch < (i - illen - 2)):
+                if (syllableSearch is not None and 
+                        (lastSyllableMatch is None or lastSyllableMatch < (i - illen - 2))):
                     print("--not syllable")
                     continue
                 if pieceFracStart is not None and mn > numMeasures / pieceFracStart:
