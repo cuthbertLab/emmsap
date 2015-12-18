@@ -14,8 +14,8 @@ searches = {
     # q15 initial numbers
     2: ("rare. but no match", 'fn like "%kyrie%" AND intervals like "%4-22-4%"'),
     3: ("23 - no matches", 'intervals like "%-2222-24-2%"'),
-    4: ("MB Zachara", 'intervals like "%-224-2-2-2%"'),
-    5: ("MB Salinis", '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-34%"'),
+    4: ("MB Found Piece: Zachara", 'intervals like "%-224-2-2-2%"'),
+    5: ("MB Found Piece: Salinis", '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-34%"'),
     9: ("MSC: Also Zachara! 35 total / latin / natum ante", 'intervals like "%2-422-3-2%"'),
     14: ("0 for glorias 65 for total", 'intervals like "%22-5322%"'),
     16: ("0 -- only match Ay si is not it", 'intervals like "%-2-4233-2-2%"'),
@@ -88,7 +88,7 @@ searches = {
     'sl94r': ('', 'intervals like "%-2-2-2-23-232-222%"'),
     'sl99bisv': ('none match', 'partId >= 1 and fn not like "%gloria%" and fn not like "%credo%" and intervals like "%3-21-2222-2-22%"'),
     'sl99ter': ('below Mazzuoli', ''),
-    'sl109bisr': ('MSC: Rosetta second section', 'intervals like "%2-414-2-22%"'),
+    'sl109bisr': ('MSC: FOUND! Rosetta second section', 'intervals like "%2-414-2-22%"'),
     'sl111r': ("end", 'intervals like "%4-2-2-22-2"'),
     'sl137r': ('below amor de dimmi', {'lastNameWithOctave': 'G3'}, 'intervals like "%-2-2-2-2-2" and fn not like "%gloria%" and fn not like "%credo%"'),
     'sl137br': ('below amor de dimmi', {'hasRest': True, 'lastNameWithOctave': 'A3'}, 'intervals like "%-25-2-2-21%" and partId >= 1 and fn not like "%gloria%" and fn not like "%credo%"'),
@@ -115,6 +115,7 @@ searches = {
     'nur9a2': ('palimpsest', 'intervalsNoUnisons like "%-225-2-2-2-2-222-2%"'),
     'nur9a3': ('palimpsest', 'intervalsNoUnisons like "%-2-225-2-2-22-2%"'),
     'nur9a4': ('palimpsest', 'intervals like "%51-2-21-22%"'),
+    'nur9a5': ('palimpsest', {'skip': ['PMFC_04_07-D_amor']}, 'intervalsNoUnisons like "%-2-222-252-2-2-22%"'),
     
     'ox56_81r': ('Oxford 56', 'intervals like "%-2-2-2-22222-422%"'),
     'ox56_80r': ('Ox56', 'intervals like "%2-2-222221%" AND (fn regexp "gloria" or fn regexp "terra")'),
@@ -127,161 +128,190 @@ searches = {
     'kobl4': ('Kobl other side', 'intervals like "%2-321-4%" and intervals like "%-2-3-222%"'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
     'kobl5': ('Kobl other side', {'hasRest': True}, 'intervals like "%2-321-4%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
     'kobl6': ('Kobl other side', {'hasRest': True}, 'intervals like "%-2221%" and intervals regexp "-22211+-34-3"'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
-    'koblB1': ('Kobl other side right', 'intervals like "%2-211-4%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
-    'koblB2': ('Kobl other side right', 'intervals like "%1-4-21%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
+    'koblB1': ('Kobl other side right', 
+               'intervals like "%2-211-4%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
+    'koblB2': ('Kobl other side right', 
+               'intervals like "%1-4-21%" and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), # and (fn regexp "PMFC_01" or fn regexp "PMFC_02" or fn regexp "PMFC_03" or fn regexp "PMFC_05")'), 
+
+    'cambraiI7v': ('Cambrai I--07v motet', {'skip': ['PMFC_23_a1-Credo']},
+                   'intervals like "%-222212-2-2-23%"'),
+    'cambraiI7vb': ('Cambrai I--07v motet try 2', {'hasRest': True, 'skip': ['PMFC_23_a1-Credo']},
+                   'intervals like "%-22221-3-22%"'),
+    'cambraiI7vtenor': ('Cambrai I--07v motet tenor', {'hasRest': True, 'skip': ['Deus_Tuorum_Militum']},
+                   'intervals like "%-24231-2-23%"'),
+    'cambraiI14vFlos': ('Cambrai I-13v Fors perversa rotam tenor (no matches w/o unisons either)', 
+                        'intervals like "%2-22-21-2-35-222-2-2%"'),            
+    'cambII1vtenor': ('Cambrai Vo douls regards, tenor', 'intervals like "%-2-224-2-48-32-32%"'),
+    'cambII1vtenb': ('Cambrai Tristour et merancolie', 'intervals like "%2-2-2-2-29-2%"'),
 
 }
-
-
-searchIndex = 'kobl1'
-show = True
-
-##############
-print("Running: " + str(searchIndex))
-
 from music21 import converter
 from emmsap import files, mysqlEM
 import os
 import re
 
-intervalsLike = re.compile(r'intervals like\s"\%?([0-9\-]+)\%?"')
-intervalsNoUnisonLike = re.compile(r'intervalsNoUnison like\s"\%?([0-9\-]+)\%?"')
+def runSearch():
+    runOne('cambII1vtenb', True)
+    #runAll()
 
-
-em = mysqlEM.EMMSAPMysql()
-
-searchTuple = searches[searchIndex]
-if len(searchTuple) == 2:
-    comment, searchQuery = searchTuple
-    options = {}
-elif len(searchTuple) == 3:
-    comment, options, searchQuery = searchTuple 
-else:
-    raise("Incorrect tuple %s" % searchTuple)
-
-timeSigSearch = options.get('timeSignature')
-syllableSearch = options.get('syllable') # "sur" # "lo"
-pieceFracStart = options.get('pieceFracStart') #3.0 # first one third; for "mus te" etc.
-pieceFracEnd = options.get('pieceFracEnd')
-hasRest = options.get('hasRest') #
-partNum = options.get('partNum')
-lastNameWithOctave = options.get('lastNameWithOctave') # "A3" # "E4" # "A3" # pitch of last note
-
-
-intervalList = []
-intervalNoUnisonList = []
- 
-for i, iLike in enumerate([intervalsLike, intervalsNoUnisonLike]):    
-    foundInterval = iLike.search(searchQuery)
-    intervalMatch = "9999999"
-    if foundInterval:
-        intervalMatch = foundInterval.group(1)
-    intervalListRaw = re.split(r'(\-?\d)', intervalMatch)
-    tempList = [int(r) for r in intervalListRaw if r != ""]
-    if i == 0:
-        intervalList = tempList
+def runAll():
+    for k in searches:
+        print("******************")
+        print(searches[k][0])
+        runOne(k)
+    
+def runOne(searchIndex, show=False):
+    ##############
+    print("Running: " + str(searchIndex))
+    
+    
+    intervalsLike = re.compile(r'intervals like\s"\%?([0-9\-]+)\%?"')
+    intervalsNoUnisonLike = re.compile(r'intervalsNoUnisons like\s"\%?([0-9\-]+)\%?"')
+    
+    
+    em = mysqlEM.EMMSAPMysql()
+    
+    searchTuple = searches[searchIndex]
+    if len(searchTuple) == 2:
+        comment, searchQuery = searchTuple
+        options = {}
+    elif len(searchTuple) == 3:
+        comment, options, searchQuery = searchTuple 
     else:
-        intervalNoUnisonList = tempList
-
-
-## capital 17 has a -_ wildcard
-## intervalList = [2, 4, -2, -2, 2]
-print(intervalList)
-
-q = "SELECT fn, partId FROM intervals WHERE " + searchQuery
-em.cursor.execute(q)
-print(em.cursor.rowcount, "Rows total")
-for pieceNum, row in enumerate(em.cursor):
-    found = False
-    fn = row[0]
-    partId = row[1]
-    print(pieceNum, fn, partId)
-    #if pieceNum < 9:
-    #    continue
-    if partNum is not None and partNum != partId:
-        print("wrong part..." + str(partId))
-        continue
-    fullFn = files.emmsapDir + os.sep + fn
-    s = converter.parse(fullFn)
-    part = s.parts[partId]
-    numMeasures = len(part.getElementsByClass('Measure'))
+        raise("Incorrect tuple %s" % searchTuple)
     
-    pn = part.flat.notes 
-    pn[0].lyric = "***"
-    intervalListPiece = []
-    last = None
-    lastSyllableMatch = None
+    timeSigSearch = options.get('timeSignature')
+    syllableSearch = options.get('syllable') # "sur" # "lo"
+    pieceFracStart = options.get('pieceFracStart') #3.0 # first one third; for "mus te" etc.
+    pieceFracEnd = options.get('pieceFracEnd')
+    hasRest = options.get('hasRest') #
+    partNum = options.get('partNum')
+    lastNameWithOctave = options.get('lastNameWithOctave') # "A3" # "E4" # "A3" # pitch of last note
+    skip = options.get('skip', [])
     
-    goodCount = -1
-    illen = len(intervalList)
-
-    for i,n in enumerate(pn):
-        if not hasattr(n, 'pitch'):
-            continue # chord
-        if n.tie is not None and n.tie.type != 'start':
+    intervalList = []
+    intervalNoUnisonList = []
+     
+    for i, iLike in enumerate([intervalsLike, intervalsNoUnisonLike]):    
+        foundInterval = iLike.search(searchQuery)
+        intervalMatch = "9999999"
+        if foundInterval:
+            intervalMatch = foundInterval.group(1)
+        intervalListRaw = re.split(r'(\-?\d)', intervalMatch)
+        tempList = [int(r) for r in intervalListRaw if r != ""]
+        if i == 0:
+            intervalList = tempList
+        else:
+            intervalNoUnisonList = tempList
+    
+    ## capital 17 has a -_ wildcard
+    ## intervalList = [2, 4, -2, -2, 2]
+    print(intervalList)
+    
+    q = "SELECT fn, partId FROM intervals WHERE " + searchQuery
+    em.cursor.execute(q)
+    print(em.cursor.rowcount, "Rows total")
+    for pieceNum, row in enumerate(em.cursor):
+        found = False
+        fn = row[0]
+        partId = row[1]
+        skipIt = False
+        for s in skip:
+            if s in fn:
+                skipIt = True
+        if skipIt:
             continue
-        goodCount += 1
-        dnn = n.pitch.diatonicNoteNum
-        if last is not None:
-            intv = dnn - last
-            if (intv >= 0):
-                intv += 1
-            else:
-                intv += -1
-            #if n.duration.quarterLength != 0.5: # all eighth notes
-            #    intv = 9
-            intervalListPiece.append(intv)
-        last = dnn
-        if (n.lyric is not None and 
-                syllableSearch is not None and 
-                n.lyric.lower() == syllableSearch.lower()):
-            lastSyllableMatch = goodCount
-        if goodCount >= illen:
-            intervalListSlice = intervalListPiece[goodCount - illen:]
-            #print(intervalListSlice)
-            if intervalListSlice == intervalList:
-                oldLyric = n.lyric or ""
-                n.lyric = oldLyric + "*!*!*"
-                mn = n.measureNumber
-                if mn is None: # after a strip tie
-                    mn = n.next().measureNumber
-                pn[0].lyric += "_" + str(mn)
-                if (syllableSearch is not None and 
-                        (lastSyllableMatch is None or lastSyllableMatch < (i - illen - 2))):
-                    print("--not syllable")
-                    continue
-                if pieceFracStart is not None and mn > numMeasures / pieceFracStart:
-                    print("--not pieceFracStart")
-                    continue # must be in first 1/3 of piece
-                if pieceFracEnd is not None and mn < numMeasures - (numMeasures / pieceFracEnd):
-                    print("--not pieceFracEnd")
-                    continue # must be in last 1/10th of piece if pieceFracEnd is 10.0
-                
-                if hasRest is not None:
-                    foundRest = False
-                    for measureSearch in range(mn - 2, mn):
-                        thisMeasure = part.measure(measureSearch)
-                        if thisMeasure is not None:
-                            if len(thisMeasure.flat.getElementsByClass('Rest')) > 0:
-                                foundRest = True
-                    if hasRest is True:
-                        if foundRest is False:
-                            print("--not foundRest")
-                            continue
-                if lastNameWithOctave is not None:
-                    if n.pitch.nameWithOctave != lastNameWithOctave:
-                        print("--not right step")
-                        continue
-                
-                if timeSigSearch is not None:
-                    ts = n.getContextByClass('TimeSignature')
-                    if ts is not None and ts.ratioString != timeSigSearch:
-                        print("--not timeSig")
-                        continue
-                print("Part", partId, "Measure", mn)
-                found = True
+        print(pieceNum, fn, partId)
+        #if pieceNum < 9:
+        #    continue
+        if partNum is not None and partNum != partId:
+            print("wrong part..." + str(partId))
+            continue
+        fullFn = files.emmsapDir + os.sep + fn
+        s = converter.parse(fullFn)
+        part = s.parts[partId]
+        numMeasures = len(part.getElementsByClass('Measure'))
         
-    if show is True and found is True: # may be false because "23-4" matches "-23-4"
-        s.show()
-    elif found is False:
-        print("Probably not found due to beginning with descending instead of ascending intervals")
+        pn = part.flat.notes 
+        pn[0].lyric = "***"
+        intervalListPiece = []
+        last = None
+        lastSyllableMatch = None
+        
+        goodCount = -1
+        illen = len(intervalList)
+    
+        for i,n in enumerate(pn):
+            if not hasattr(n, 'pitch'):
+                continue # chord
+            if n.tie is not None and n.tie.type != 'start':
+                continue
+            goodCount += 1
+            dnn = n.pitch.diatonicNoteNum
+            if last is not None:
+                intv = dnn - last
+                if (intv >= 0):
+                    intv += 1
+                else:
+                    intv += -1
+                #if n.duration.quarterLength != 0.5: # all eighth notes
+                #    intv = 9
+                intervalListPiece.append(intv)
+            last = dnn
+            if (n.lyric is not None and 
+                    syllableSearch is not None and 
+                    n.lyric.lower() == syllableSearch.lower()):
+                lastSyllableMatch = goodCount
+            if goodCount >= illen:
+                intervalListSlice = intervalListPiece[goodCount - illen:]
+                #print(intervalListSlice)
+                if intervalListSlice == intervalList or intervalList == [9, 9, 9, 9, 9, 9, 9]:
+                    if intervalList !=  [9, 9, 9, 9, 9, 9, 9]:
+                        oldLyric = n.lyric or ""
+                        n.lyric = oldLyric + "*!*!*"
+                        mn = n.measureNumber
+                        if mn is None: # after a strip tie
+                            mn = n.next().measureNumber
+                        pn[0].lyric += "_" + str(mn)
+                        if (syllableSearch is not None and 
+                                (lastSyllableMatch is None or lastSyllableMatch < (i - illen - 2))):
+                            print("--not syllable")
+                            continue
+                        if pieceFracStart is not None and mn > numMeasures / pieceFracStart:
+                            print("--not pieceFracStart")
+                            continue # must be in first 1/3 of piece
+                        if pieceFracEnd is not None and mn < numMeasures - (numMeasures / pieceFracEnd):
+                            print("--not pieceFracEnd")
+                            continue # must be in last 1/10th of piece if pieceFracEnd is 10.0
+                        
+                        if hasRest is not None:
+                            foundRest = False
+                            for measureSearch in range(mn - 2, mn):
+                                thisMeasure = part.measure(measureSearch)
+                                if thisMeasure is not None:
+                                    if len(thisMeasure.flat.getElementsByClass('Rest')) > 0:
+                                        foundRest = True
+                            if hasRest is True:
+                                if foundRest is False:
+                                    print("--not foundRest")
+                                    continue
+                        if lastNameWithOctave is not None:
+                            if n.pitch.nameWithOctave != lastNameWithOctave:
+                                print("--not right step")
+                                continue
+                        
+                        if timeSigSearch is not None:
+                            ts = n.getContextByClass('TimeSignature')
+                            if ts is not None and ts.ratioString != timeSigSearch:
+                                print("--not timeSig")
+                                continue
+                        print("Part", partId, "Measure", mn)
+                    found = True
+            
+        if show is True and found is True: # may be false because "23-4" matches "-23-4"
+            s.show()
+        elif found is False:
+            print("Probably not found due to beginning with descending instead of ascending intervals")
+        
+if __name__ == '__main__':
+    runSearch()

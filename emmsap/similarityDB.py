@@ -8,6 +8,8 @@ from emmsap import mysqlEM
 skipPieces = [             
                # new discoveries!
                (338, 2087), # Ciconia Credo 11 = Prague 9 O sinne!!!
+               (2107, 2080), # Prague_9_35_Scheiden_wie and Je en vos (Jeo_hay) ed. Fallows
+               
                (1964, 1227, 1229, 334), 
                    # Machaut Motet 4 Puis que la douce + PMFC5.17 Fortune Mere a Dolor 
                    # (+ not found b/c transposed Amer amours/Durement PMFC 5.19 ) / 
@@ -29,9 +31,14 @@ skipPieces = [
                # end new discoveries.
                
                # two transcriptions of the same
-
-               
                # same piece..different versions.
+               (2194, 2195), # FallowsMB_89 + 89a
+               (2167, 2168), # So ye emp. Fallows 64 + 64a
+               (2198, 2199), # FallowsMB_092_N_aray_je_jamais.mxl
+               (2169, 2170, 2171), # 15th c. O Rosa Bella Complex
+               (2164, 2165, 747), # FallowsMB_062_Gentil_madonna.mxl 
+                        # FallowsMB_062a_Fortune_alas.mxl, Boverio nachtrag version
+               (2161, 2162), # FallowsMB_060_Mon_seul_plaisir.mxl FallowsMB_060a_Mi_verry.mxl
               (1774, 1775), # two versions Sedendo al onbra
               (1771, 1772), # two versions Piu non mi curo
               (1767, 1768), # two versions O tu chara scientia
@@ -141,6 +148,8 @@ skipPieces = [
               
               ######
               # known similarities
+              (2125, 888), # FallowsMB_028_Min_herze_wil and PMFC 23.91 O_Quam_Pulchra_Puella ctrft
+              (2093, 291), # Zachara, Fior Gentil and Gloria
               (2050, 2018), # Machaut motets 21 and 8 -- Earp p. 367
               (1977, 1678), # Ma dame m'a congie doune quotes from Machaut B15 
                 # Se je me pleing (Low match: only 6875 but completely there!)
@@ -148,7 +157,7 @@ skipPieces = [
               (1687, 1525, 602), # Machaut De fortune, Dame qui fust -- known;
                 # De fortune well known in Italy! Dame qui fust, Reina only
               (290, 1288), # rosetta + gloria
-              (1601, 889), # pmfc 21.5 contrafacted as 23.92
+              (1601, 889, 2123), # pmfc 21.5 contrafacted as 23.92, included also in Fallows
               (320, 1216), # Gloria Loys, Flos Ortus Inter Lilia (Known)
               
               (32, 266, 270, 271, 272, 389, 390, 398, 480),  # flos filius benes
@@ -194,12 +203,20 @@ skipPieces = [
               (1481, 1236), # Nicolo and Bonaiuto
               (1494, 1487, 1463), # two Nicolo w/ similar ornamentation. + a francesco w/ similar
               
+              
+              
+              
+              
+              
+              
+              
               # low threshold false matches
               (1963, 388, 807, 169, 1488), # Machaut M3 and Ravenna Kyrie, + instrumental Faenza  
                 # + Nicolo melisma
               (1962, 1474), # machaut M2 + PMFC 8-34 Pyance. No.
               (1967, 1236, 1641, 32, 815, 755, 1641), # Empris domoyres w/ much noodling.
               (1965, 370, 687, 1641, 386), # Machaut M6
+              (687, 981), # 04_35-Il_suo_bel_viso, PMFC_04_111-Amore_in_te_spera (7000)
               (1961, 1306, 1095, 397), # Machaut Tenor M1 Amour et biaute + Nicolo de come
                 # ben mi sta, Garison selon Nature, Barcelona Kyrie
               (99, 1338, 1303), # DfF L aspido Sordo + Una smaniosa PMFC 8
@@ -212,6 +229,7 @@ skipPieces = [
               (1905, 1451), # Arras 941 Patrem, nel prato pien di fiori
               (1509, 260),
               (1493, 202),
+              (2182, 401), # Addio...
               (1509, 602),
               (1567, 761), # two paolo pieces...
               (1655, 187), # 22.47b, 04.04.
@@ -227,6 +245,7 @@ skipPieces = [
               (860, 68),
               (858, 146),
               (858, 351),
+              (351, 2009), # low match, Per quella Strada. PMFC 16-03 Agnus Dei
               (141, 665),
               (807, 1314),
               (101, 769),
@@ -253,11 +272,13 @@ skipPieces = [
               (1869, 330),
               (1869, 1095), 
               (1879, 306),
+              (691, 1040), # PMFC_04_39-Nella_partita PMFC_04_76_Abbonda_di_virtu (7000)
               
               (1579, 974), # E dieus commant + Giunta vaga bilta
               (1677, 1481), # Machaut Je ne cuit + Nicolo Non si conosce
 
             # IGNORE Tenors only...
+            (2094, 166), # Autun 152 Deo Gratias + PMFC 12_44 Ave Verum Corpus -- not close enough
             (1982, 1163), # Turin 2b Patrem, PMFC 23.112 Gloria
             (1964, 32), # flos filius matches everything...
             (1080, 1097), # Barcelona Credo, Vitry Bona Condit
@@ -267,8 +288,10 @@ skipPieces = [
  
             (1911, 1217, 331, 334), # Per grama tenor... w/ some credos.
             (397, 1227, 1229),
-            (388, 1314), # Ravenna Kyrie + ???
+            (388, 1314), # Ravenna Kyrie + PMFC_08_Nicolo_18-It_a_veder_ciascun.xml
+            (388, 1770), # Ravenna Kyrie + Per ridd andando
             (386, 739, 769), # keyboard deduto sey.
+            (386, 1772), # keyboard deduto + Piu non mi churo
             (1445, 1184, 306),
             (1097, 328), # PMFC 1, 9 Bona Condit and Credo 23.57
             (1096, 1095), # Hugo Hugo, Garison
@@ -296,6 +319,8 @@ skipPieces = [
 
             (2012, 398), # PMFC 16.06 Kyrie Kyria Christifera w/ Seville 25 B.D. frag (nope)
         
+            (140, 215, 1772), # PMFC_07_LdF_2_Come_in_Sul_Fonte; 
+                # PMFC_09_Bartolino_10-Inperial_sedendo PMFC_06_16b-Piu_non_mi_churo
             (165, 270), 
             (485, 149), 
             (374, 147), # quod jactatur
@@ -326,9 +351,13 @@ skipPieces = [
             (397, 1227),
             (99, 1338),
             (260, 1357),
-            (276, 1264),
+            (276, 1264), # Gaudeamus_Omnes + Musicalis_Sciencia 
+            (276, 1337), # Gaudeamus_Omnes +  PMFC_08_Nicolo_24
+            (276, 1357), # Gaudeamus_Omnes + PMFC_10_Caserta_7-Piu_chiar_che_l_sol
             (1494, 688), # renamed...
             (1469, 1270),
+            (2119, 326), #FallowsMB_021_Mon_cuer.mxl Credo_Tailhandier.mxl nope.
+            (2122, 398), # FallowsMB_024_Felix_namque.mxl Seville_25_Benedicamus_Domino nope.
             (63, 1280),
             (1451, 1277),
             (149, 1314),
@@ -350,7 +379,7 @@ skipPieces = [
             (1487, 107, 1243),
             (1487, 935, 1034),
             (1488, 696),
-            (1030, 172),
+            (1030, 172, 1277), # PMFC_12_A5-Kyrie_PMFC12_A5
             (904, 30),
             (919, 174),
             (908, 32),
@@ -360,6 +389,7 @@ skipPieces = [
             (1655, 1656, 1657), # pmfc 22.47 many versions
             (1655, 1408),
             (306, 1271),
+            (305, 306, 7272), # Kyrie + PMFC 11.32
             (27, 1230),
             (1641, 1488, 330, 215, 32, 1451, 168, 386, 172, 328), #keyboard
             
@@ -371,11 +401,11 @@ skipPieces = [
             
             (2022, 1280), # machaut tenor + melismatic piece
             (2025, 1961), # two machaut tenors
+            (2136, 1267), # FallowsMB_039_Quene_note.mxl PMFC8 Du_ancoliti
               ] 
 
 class SimilaritySearcher(object):
-    # 2029 start
-    def __init__(self, startPiece=2092, endPiece=2100, minThreshold=6000, maxToShow=0):
+    def __init__(self, startPiece=20, endPiece=2500, minThreshold=7500, maxToShow=1):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
