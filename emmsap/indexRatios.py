@@ -1,3 +1,5 @@
+from __future__ import print_function, division
+
 #from music21.search import segment
 from emmsap import mysqlEM
 
@@ -11,6 +13,29 @@ except ImportError:
 
 minSegmentLength = 15
 segmentType = 'DiaRhy2' #'diaSlower1'
+
+def updateRatioTableParallel(encodingType="DiaRhy2"):
+    '''
+    updates the ratio table in Parallel, 
+    computing ratios for all segments (against all lower numbered segments)
+    that do not have ratios computed
+    '''
+    import multiprocessing
+    from joblib import Parallel, delayed
+
+    missingSegments = findSegmentsWithNoRatios(encodingType)
+    numMissingSegments = len(missingSegments)
+    print(str(numMissingSegments) + " waiting to be indexed")
+    #dbObj = mysqlEM.EMMSAPMysql()
+    
+    totalRun = 0
+    with Parallel(n_jobs=multiprocessing.cpu_count() - 1) as para:# @UndefinedVariable
+        while totalRun < numMissingSegments - 1:
+            endRange = min(totalRun + 10, numMissingSegments)
+            delayRatio = delayed(commitRatioForOneSegment)
+            _r = para(delayRatio(missingSegments[i]) for i in range(totalRun, endRange))  
+            totalRun = endRange
+            print("Done %d segments (of %d)" % (totalRun, numMissingSegments))
 
 def updateRatioTable(encodingType="DiaRhy2"):
     '''
@@ -33,7 +58,8 @@ def findSegmentsWithNoRatios(encodingType='DiaRhy2'):
     '''
     returns a list of segmentIds which have no ratios in the ratio list 
     
-    BUG: if updateRatioTable() was stopped in the middle then there may be segments that have partial ratios.  yuk...
+    BUG: if updateRatioTable() was stopped in the middle then there may be segments 
+    that have partial ratios.  yuk...
     Call deleteSparseSegmentRatios() to clean up.
     '''
     em = mysqlEM.EMMSAPMysql()
@@ -51,7 +77,7 @@ def findSegmentsWithNoRatios(encodingType='DiaRhy2'):
     #print(missingSegmentIds)
     #print(getRatiosForSegment(missingSegmentIds[0]))
 
-def deleteSparseSegmentRatios(maxSegments=30, minSegments=1, encodingType = 'DiaRhy2', runDelete=True):
+def deleteSparseSegmentRatios(maxSegments=30, minSegments=1, encodingType='DiaRhy2', runDelete=True):
     '''
     Clean up the ratios table after a failed commit.  Finds all pieces with number of ratios
     between minSegments (keep as 1) and maxSegments (30 is a conservative minimum that will
@@ -96,7 +122,7 @@ def ratiosFromSegmentData(segment1Data, segment2Data):
         sm = difflib.SequenceMatcher(None, segment1Data, segment2Data)
         return int(10000 * sm.ratio())
 
-def getRatiosForSegment(idOrSegment=1, dbObj = None, searchDirection = 'up', encodingType='DiaRhy2'):
+def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='both', encodingType='DiaRhy2'):
     '''
     returns a list of tuples for a segment object (or segment id)
     which contain the id, otherId, and ratio * 10000 for every other segment
@@ -109,6 +135,9 @@ def getRatiosForSegment(idOrSegment=1, dbObj = None, searchDirection = 'up', enc
     
     The full database looked like it was going to take 20GB, so now we're only storing
     those above 50% matches.
+    
+    TODO: We should grab the entire segment database once and keep it in memory
+    and then not need to do a query each time.
     '''
     minimumToStore = 5000
     
@@ -146,7 +175,8 @@ def getRatiosForSegment(idOrSegment=1, dbObj = None, searchDirection = 'up', enc
     #pprint.pprint(storedRatios)
     return storedRatios
 
-def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both', encodingType='DiaRhy2'):
+def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both', 
+                             encodingType='DiaRhy2'):
     '''
     commit all the ratios from getRatiosForSegment into the database.
     '''
@@ -159,17 +189,10 @@ def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both', 
     if longQuery == "":
         return 0
     commitQuery = '''INSERT INTO ratios%s (segment1id, segment2id, ratio) VALUES %s''' % (encodingType, longQuery)
-    #print(commitQuery)
-    #return 0
-    
-    
-    
     dbObj.cursor.execute(commitQuery)
-    
-    #dbObj.cnx.commit()
     return len(storedRatios)
 
-def commitRatiosForAllSegments(encodingType = 'DiaRhy2'):
+def commitRatiosForAllSegments(encodingType='DiaRhy2'):
     '''
     builds the database of ratios from segments.  Takes about 5-15 hours!
     '''
@@ -188,12 +211,12 @@ def commitRatiosForAllSegments(encodingType = 'DiaRhy2'):
 
 if __name__ == '__main__':
     pass
-    #deleteSparseSegmentRatios(30, runDelete=False)
-    updateRatioTable()
+    #deleteSparseSegmentRatios(5, runDelete=True)
+    updateRatioTableParallel()
     #findSegmentsWithNoRatios()
     #commitRatioForOneSegment(100, searchDirection='down')
     #commitRatiosForAllSegments()
     #commitRatioForOneSegment(1)
-    #rs = getRatiosForSegment(114664, searchDirection = 'down', encodingType="DiaRhy2")
+    #rs = getRatiosForSegment(114664, searchDirection='down', encodingType="DiaRhy2")
     #for x in rs:
-    #    if x[2] > 5000: print x 
+    #    if x[2] > 5000: print(x) 

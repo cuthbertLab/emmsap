@@ -44,7 +44,7 @@ def updateSegmentTable(encodingType='diaSlower1'):
         allMissingFilepaths.append(thisFp)
     indexSegmentsAndStore(allMissingFilepaths, encodingType)
 
-def indexSegmentsAndStore(allFilesWithPath = None, encodingType='diaSlower1'):
+def indexSegmentsAndStore(allFilesWithPath=None, encodingType='diaSlower1'):
     '''
     Indexes the file paths given (or all files if none are given).
     '''
@@ -72,7 +72,7 @@ def indexSegmentsAndStore(allFilesWithPath = None, encodingType='diaSlower1'):
         addMeasureEndToSegments(pieceId)
     return indexedSegments
 
-def addMeasureEndToSegments(pieceId = None, encodingType = 'DiaRhy2'):
+def addMeasureEndToSegments(pieceId = None, encodingType='DiaRhy2'):
     '''
     adds the value of the ending measure for each segment, assuming it's 50% more than the
     distance between the current start and the next start.  E.g., if segment 10 begins at m. 10
@@ -119,8 +119,8 @@ def indexSegments(allFilesPath, algorithm=searchBase.translateDiatonicStreamToSt
     '''
     indexes the segments given a filepath and an algorithm.
     '''
-    indexedSegments = segment.indexScoreFilePaths(allFilesPath, segmentLengths = 40, 
-                                                  overlap = 30, giveUpdates = True, 
+    indexedSegments = segment.indexScoreFilePaths(allFilesPath, segmentLengths=40, 
+                                                  overlap = 30, giveUpdates=True, 
                                                   algorithm=algorithm,
                                                   failFast=True) # @UndefinedVariable
     print("done indexing")

@@ -10,7 +10,7 @@ def updateDatabase():
     '''
     indexFiles.populatePiecesSafe()
     indexSegments.updateSegmentTable('DiaRhy2')
-    indexRatios.updateRatioTable('DiaRhy2')
+    indexRatios.updateRatioTableParallel('DiaRhy2')
     indexTexts.runAll()
     indexTinyNotation.runAll()
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #-------------------------------------------------------------------------------
-from __future__ import print_function
+from __future__ import print_function, division
 from emmsap import mysqlEM
 #from music21.search import segment
 
@@ -203,8 +203,8 @@ skipPieces = [
               (1481, 1236), # Nicolo and Bonaiuto
               (1494, 1487, 1463), # two Nicolo w/ similar ornamentation. + a francesco w/ similar
               
-              
-              
+              (768, 939), # ends of PMFC_09_Paolo_30-Una_fera_gentil + PMFC_07_GdF_2-Cacciand_Un_Giorno
+                          # a little generic sounding, but rather similar...
               
               
               
@@ -276,8 +276,12 @@ skipPieces = [
               
               (1579, 974), # E dieus commant + Giunta vaga bilta
               (1677, 1481), # Machaut Je ne cuit + Nicolo Non si conosce
+              (211, 1271), # Piero All onbra + Paolo Girand un bel falcon.
+              (939, 1271), # Cacciand Un Giorno + Paolo Girand
+              (935, 1768), # DdF 7 + O tu chara scientia,
 
             # IGNORE Tenors only...
+            (276, 1338), # Gaudeamus Omnes + PMFC 08 Nicolo 24
             (2094, 166), # Autun 152 Deo Gratias + PMFC 12_44 Ave Verum Corpus -- not close enough
             (1982, 1163), # Turin 2b Patrem, PMFC 23.112 Gloria
             (1964, 32), # flos filius matches everything...
@@ -405,7 +409,7 @@ skipPieces = [
               ] 
 
 class SimilaritySearcher(object):
-    def __init__(self, startPiece=20, endPiece=2500, minThreshold=7500, maxToShow=1):
+    def __init__(self, startPiece=1322, endPiece=2500, minThreshold=7400, maxToShow=1):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
