@@ -408,17 +408,18 @@ skipPieces = [
             (2136, 1267), # FallowsMB_039_Quene_note.mxl PMFC8 Du_ancoliti
               ] 
 
-class SimilaritySearcher(object):
-    def __init__(self, startPiece=1322, endPiece=2500, minThreshold=7400, maxToShow=1):
+class SimilaritySearcher(object): # 1322
+    def __init__(self, startPiece=1, endPiece=2500, minThreshold=9500, maxToShow=1):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
         self.minThreshold = minThreshold
         self.maxThreshold = 10001
-        self.segmentType = 'DiaRhy2'
+        #self.segmentType = 'DiaRhy2'
+        self.segmentType = 'IntRhy'
         self.skipGroups = skipPieces
         self.maxToShow = maxToShow
-        self.tenorThresholdAdd = 500
+        self.tenorThresholdAdd = 0 # 500
         self.tenorPartNumber = 2
         self.tenorOtherPartNumber = 2
         self.printOutput = True

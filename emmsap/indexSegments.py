@@ -1,8 +1,16 @@
 from emmsap import files
+
+from music21 import common
 from music21 import search as searchBase
 from music21.search import segment
 from emmsap import mysqlEM
 import os
+
+encodingsToAlgorithms = {
+                      'diaSlower1': searchBase.translateStreamToString,
+                      'DiaRhy2': searchBase.translateDiatonicStreamToString,
+                      'IntRhy': searchBase.translateIntervalsAndSpeed,
+                      }
 
 def findPieceIdsWithNoSegments(encodingType='diaSlower1'):
     '''
@@ -50,7 +58,7 @@ def indexSegmentsAndStore(allFilesWithPath=None, encodingType='diaSlower1'):
     '''
     if allFilesWithPath is None:
         allFilesWithPath = files.allFilesWithPath()[50:]
-    indexedSegments = indexSegments(allFilesWithPath)
+    indexedSegments = indexSegments(allFilesWithPath, encodingType)
     # indexedSegments is a dict of tuples (partNum, partInfo) where the key is the filename
     # partInfo is a dict of measureList, segmentList
     # each of those is a list of information
@@ -69,10 +77,10 @@ def indexSegmentsAndStore(allFilesWithPath=None, encodingType='diaSlower1'):
                 em.cursor.execute(query, [pieceId, partNum, segmentId, measureStart, encodingType, segmentData])
                 #print(pieceId, filename, partNum, segmentId, measureStart, segmentData)
         em.cnx.commit()
-        addMeasureEndToSegments(pieceId)
+        addMeasureEndToSegments(pieceId, encodingType=encodingType)
     return indexedSegments
 
-def addMeasureEndToSegments(pieceId = None, encodingType='DiaRhy2'):
+def addMeasureEndToSegments(pieceId=None, encodingType='DiaRhy2'):
     '''
     adds the value of the ending measure for each segment, assuming it's 50% more than the
     distance between the current start and the next start.  E.g., if segment 10 begins at m. 10
@@ -115,14 +123,42 @@ def addMeasureEndToSegments(pieceId = None, encodingType='DiaRhy2'):
                 em.cursor.execute(update, [endMeasure, thisId])
                 em.cnx.commit()
 
-def indexSegments(allFilesPath, algorithm=searchBase.translateDiatonicStreamToString):
+
+def _parseThenDump(fp):
+    '''
+    dummy parse function just for storing
+    '''
+    from music21 import converter
+    try:
+        converter.parse(fp)
+    except Exception:
+        pass
+
+def preParseFiles(allFilesPath):
+    from music21.ext.joblib import Parallel, delayed  # @UnresolvedImport
+    
+    # parse all files first in parallel to make next part faster...
+    
+    pathLength = len(allFilesPath)
+    totalRun = 0
+    with Parallel(n_jobs=common.cpus()) as para:# @UndefinedVariable
+        while totalRun < pathLength - 1:
+            endRange = min(totalRun + common.cpus()*3, pathLength)
+            delayParse= delayed(_parseThenDump)
+            _r = para(delayParse(allFilesPath[i]) for i in range(totalRun, endRange))  
+            totalRun = endRange
+            print("Pre-parsing %d files (of %d)" % (totalRun, pathLength))
+    
+def indexSegments(allFilesPath, encodingType='DiaRhy2'):
     '''
     indexes the segments given a filepath and an algorithm.
     '''
+    algorithm = encodingsToAlgorithms[encodingType]
+    #preParseFiles(allFilesPath)
     indexedSegments = segment.indexScoreFilePaths(allFilesPath, segmentLengths=40, 
-                                                  overlap = 30, giveUpdates=True, 
+                                                  overlap=30, giveUpdates=True, 
                                                   algorithm=algorithm,
-                                                  failFast=True) # @UndefinedVariable
+                                                  failFast=False) # @UndefinedVariable
     print("done indexing")
     #fp = segment.saveScoreDict(indexedSegments)
     #print(indexedSegments)
@@ -131,7 +167,14 @@ def indexSegments(allFilesPath, algorithm=searchBase.translateDiatonicStreamToSt
 if __name__ == '__main__':
     pass
     #indexSegmentsAndStore(allFilesWithPath = None, encodingType='DiaRhy2')
-    updateSegmentTable('DiaRhy2')
+    #updateSegmentTable('DiaRhy2')
+#     for i in range(2500):
+#         try:
+#             addMeasureEndToSegments(pieceId=i, encodingType='IntRhy')
+#         except Exception as e:
+#             print(e)
+    updateSegmentTable('IntRhy')
+    
     #findFilenamesWithNoSegments()
     #findPieceIdsWithNoSegments()
     #addMeasureEndToSegments()

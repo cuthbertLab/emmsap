@@ -11,6 +11,8 @@ def updateDatabase():
     indexFiles.populatePiecesSafe()
     indexSegments.updateSegmentTable('DiaRhy2')
     indexRatios.updateRatioTableParallel('DiaRhy2')
+    indexSegments.updateSegmentTable('IntRhy')
+    indexRatios.updateRatioTableParallel('IntRhy')
     indexTexts.runAll()
     indexTinyNotation.runAll()
 

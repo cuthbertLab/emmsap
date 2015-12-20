@@ -55,7 +55,7 @@ def onePart(partNum, p, fn):
         ts = allTS[0]
     else:
         ts = meter.TimeSignature('4/4')
-    pf = p.flat.notesAndRests
+    pf = p.flat.notesAndRests.stream()
     tn = toTinyNotation.convert(pf)
     pfs = pf.stripTies()
     tnst = toTinyNotation.convert(pfs)
