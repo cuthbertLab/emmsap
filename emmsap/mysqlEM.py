@@ -179,10 +179,16 @@ class EMMSAPMysqlObject(object):
 
 class Piece(EMMSAPMysqlObject):
     table = 'pieces'
-    rowMapping = ['id', 'filename', 'piecename', 'composerId']
+    rowMapping = ['id', 'filename', 'piecename', 'composerId', 'frag']
 
     def __init__(self, rowInfo=None, dbObj=None):
         super(Piece, self).__init__(rowInfo, dbObj)
+        if self.frag == 1:
+            self.frag = True
+        elif self.frag == 0:
+            self.frag = False
+        else:
+            self.frag = None
         self._stream = None
     
     def stream(self):
@@ -252,7 +258,8 @@ class Piece(EMMSAPMysqlObject):
             segmentObjs.append(Segment(sId, self.dbObj))
         return segmentObjs
 
-    def ratiosAboveThreshold(self, threshold = 5000, ignoreInternal = True, segmentType='DiaRhy2'):
+    def ratiosAboveThreshold(self, threshold=5000, ignoreInternal=True, 
+                             segmentType='DiaRhy2', maxThreshold=None):
         '''
         find all segments with a ratio at or above a certain threshold (where 5000 = 0.5 similarity),
         optionally ignoring segments that are from the same piece (default True) or 
@@ -261,10 +268,13 @@ class Piece(EMMSAPMysqlObject):
         Returns a list of 3-tuples in the form thisPieceSegmentId, otherPieceSegmentId, ratio
         
         >>> p = Piece(2)
-        >>> highMatch = p.ratiosAboveThreshold(6000)
+        >>> highMatch = p.ratiosAboveThreshold(5000)
         >>> highMatch[0]
-        RatioMatch(thisSegmentId=116456, otherSegmentId=108265, thisRatio=6315)
+        RatioMatch(thisSegmentId=116456, otherSegmentId=108265, thisRatio=5755)
         '''
+        if maxThreshold is None:
+            maxThreshold = 100001
+            
         if threshold > 0 and threshold < 1:
             # sanity check: I used to use between 0 and 1:
             threshold = int(threshold * 10000)
@@ -277,12 +287,14 @@ class Piece(EMMSAPMysqlObject):
 #                                    AND ratio >= %s ORDER BY segment1id''',
 #                                    [thisPieceId, threshold])
         #print "HIII"
-        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios'''+segmentType+'''  
-                                    WHERE EXISTS
+        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratioAdjust FROM ratios'''+segmentType+'''  
+                                    WHERE 
+                                    ratioAdjust >= %s AND ratioAdjust < %s 
+                                    AND EXISTS
                                        (SELECT 1 FROM segment WHERE piece_id = %s
                                         AND segment.id = segment1id) 
-                                    AND ratio >= %s ORDER BY ratio DESC''',
-                                    [thisPieceId, threshold])
+                                    ORDER BY ratioAdjust DESC''',
+                                    [threshold, maxThreshold, thisPieceId])
         #print "BYEEE!"
         for otherSeg in self.dbObj.cursor:
             otherSegNamedTuple = RatioMatch(*otherSeg)
@@ -367,6 +379,9 @@ class Piece(EMMSAPMysqlObject):
                                           )
         exp1.size = 12
         exp2.size = 12
+        exp1.positionVertical = 40
+        exp2.positionVertical = 40
+        
         exp2.priority = 5
         pNewMeasures = excerpt1.getElementsByClass('Measure')
         if len(pNewMeasures) > 0:

@@ -10,6 +10,8 @@ encodingsToAlgorithms = {
                       'diaSlower1': searchBase.translateStreamToString,
                       'DiaRhy2': searchBase.translateDiatonicStreamToString,
                       'IntRhy': searchBase.translateIntervalsAndSpeed,
+                      'IntRhyJitter': searchBase.translateIntervalsAndSpeed,
+                      'IntRhySmall': searchBase.translateIntervalsAndSpeed,
                       }
 
 def findPieceIdsWithNoSegments(encodingType='diaSlower1'):
@@ -64,20 +66,22 @@ def indexSegmentsAndStore(allFilesWithPath=None, encodingType='diaSlower1'):
     # each of those is a list of information
     em = mysqlEM.EMMSAPMysql()
     query = '''INSERT INTO segment 
-        (piece_id, partId, segmentId, measureStart, encodingType, segmentData) 
-        VALUES (%s, %s, %s, %s, %s, %s)'''
+        (piece_id, partId, segmentId, measureStart, measureEnd, encodingType, segmentData) 
+        VALUES (%s, %s, %s, %s, %s, %s, %s)'''
     for filename in indexedSegments:
         pieceObj = em.pieceByFilename(filename)
         pieceId = pieceObj.id
         for partNum, partInfo in enumerate(indexedSegments[filename]):
             numSegments = len(partInfo['measureList'])
             for segmentId in range(numSegments):
-                measureStart = partInfo['measureList'][segmentId]
+                measureStart = partInfo['measureList'][segmentId][0]
+                measureEnd = partInfo['measureList'][segmentId][1]
                 segmentData = partInfo['segmentList'][segmentId]
-                em.cursor.execute(query, [pieceId, partNum, segmentId, measureStart, encodingType, segmentData])
+                em.cursor.execute(query, [pieceId, partNum, segmentId, measureStart, measureEnd, 
+                                          encodingType, segmentData])
                 #print(pieceId, filename, partNum, segmentId, measureStart, segmentData)
         em.cnx.commit()
-        addMeasureEndToSegments(pieceId, encodingType=encodingType)
+        #addMeasureEndToSegments(pieceId, encodingType=encodingType)
     return indexedSegments
 
 def addMeasureEndToSegments(pieceId=None, encodingType='DiaRhy2'):
@@ -88,6 +92,8 @@ def addMeasureEndToSegments(pieceId=None, encodingType='DiaRhy2'):
     takes into account overlap.
 
     if run without arguments, does it for all.  If run with a pieceId, just does that piece.
+
+    SHOULD NOT BE NEEDED ANYMORE...
     '''
     em = mysqlEM.EMMSAPMysql()
     query = '''
@@ -135,19 +141,7 @@ def _parseThenDump(fp):
         pass
 
 def preParseFiles(allFilesPath):
-    from music21.ext.joblib import Parallel, delayed  # @UnresolvedImport
-    
-    # parse all files first in parallel to make next part faster...
-    
-    pathLength = len(allFilesPath)
-    totalRun = 0
-    with Parallel(n_jobs=common.cpus()) as para:# @UndefinedVariable
-        while totalRun < pathLength - 1:
-            endRange = min(totalRun + common.cpus()*3, pathLength)
-            delayParse= delayed(_parseThenDump)
-            _r = para(delayParse(allFilesPath[i]) for i in range(totalRun, endRange))  
-            totalRun = endRange
-            print("Pre-parsing %d files (of %d)" % (totalRun, pathLength))
+    common.runParallel(allFilesPath, _parseThenDump)
     
 def indexSegments(allFilesPath, encodingType='DiaRhy2'):
     '''
@@ -155,9 +149,10 @@ def indexSegments(allFilesPath, encodingType='DiaRhy2'):
     '''
     algorithm = encodingsToAlgorithms[encodingType]
     #preParseFiles(allFilesPath)
-    indexedSegments = segment.indexScoreFilePaths(allFilesPath, segmentLengths=40, 
-                                                  overlap=30, giveUpdates=True, 
+    indexedSegments = segment.indexScoreFilePaths(allFilesPath, segmentLengths=22, 
+                                                  overlap=18, giveUpdates=True, 
                                                   algorithm=algorithm,
+                                                  jitter=0,
                                                   failFast=False) # @UndefinedVariable
     print("done indexing")
     #fp = segment.saveScoreDict(indexedSegments)
@@ -173,7 +168,7 @@ if __name__ == '__main__':
 #             addMeasureEndToSegments(pieceId=i, encodingType='IntRhy')
 #         except Exception as e:
 #             print(e)
-    updateSegmentTable('IntRhy')
+    updateSegmentTable('IntRhySmall')
     
     #findFilenamesWithNoSegments()
     #findPieceIdsWithNoSegments()

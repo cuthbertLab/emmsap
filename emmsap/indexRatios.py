@@ -2,6 +2,7 @@ from __future__ import print_function, division
 
 #from music21.search import segment
 from emmsap import mysqlEM
+from functools import partial
 from music21 import common
 
 try:
@@ -15,27 +16,44 @@ except ImportError:
 minSegmentLength = 15
 segmentType = 'DiaRhy2' #'diaSlower1'
 
+def adjustRatiosByFrequency(encodingType='IntRhy'):
+    '''
+    adjusts all ratios in the ratio table of encodingType according to how often the
+    segment has a match, so that really common segments do not appear over and over and not great
+    but extremely obscure matches are still found.
+    
+    See code for the formula.
+    '''
+    query = "SELECT segment1id, count(segment1id) as cs FROM ratios" + encodingType + \
+        " GROUP BY segment1id"
+    em = mysqlEM.EMMSAPMysql()
+    em.cursor.execute(query)
+    allSegments = [(x[0], x[1]) for x in em.cursor.fetchall()]
+    numDone = 0
+    for segId, segCount in allSegments:
+        commitQuery = '''UPDATE ratios{encodingType} 
+                         SET ratioAdjust = ratio - ((10000 - ratio)/10000 * 30*{segCount})
+                         WHERE segment1id = {segId}'''.format(encodingType=encodingType, 
+                                                         segCount=segCount,
+                                                         segId=segId)
+        #print(commitQuery)
+        em.cursor.execute(commitQuery)
+        if numDone % 1000 == 0:
+            print('Done {numDone} of {total}'.format(numDone=numDone, total=len(allSegments)))
+        numDone += 1
+        
 def updateRatioTableParallel(encodingType="DiaRhy2"):
     '''
     updates the ratio table in Parallel, 
     computing ratios for all segments (against all lower numbered segments)
     that do not have ratios computed
     '''
-    from music21.ext.joblib import Parallel, delayed  # @UnresolvedImport
-
     missingSegments = findSegmentsWithNoRatios(encodingType)
     numMissingSegments = len(missingSegments)
     print(str(numMissingSegments) + " waiting to be indexed")
     #dbObj = mysqlEM.EMMSAPMysql()
-    
-    totalRun = 0
-    with Parallel(n_jobs=common.cpus()) as para:# @UndefinedVariable
-        while totalRun < numMissingSegments - 1:
-            endRange = min(totalRun + 10, numMissingSegments)
-            delayRatio = delayed(commitRatioForOneSegment)
-            _r = para(delayRatio(missingSegments[i], encodingType=encodingType) for i in range(totalRun, endRange))  
-            totalRun = endRange
-            print("Done %d segments (of %d)" % (totalRun, numMissingSegments))
+    partialCommit = partial(commitRatioForOneSegment, encodingType=encodingType, searchDirection='down')
+    common.runParallel(missingSegments, partialCommit, updateMultiply=3, updateFunction=True)
 
 def updateRatioTable(encodingType="DiaRhy2"):
     '''
@@ -147,7 +165,7 @@ def storeAllSegmentData(encodingType):
     return _allSegmentData[encodingType]
 
 
-def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='both', encodingType='DiaRhy2'):
+def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='down', encodingType='DiaRhy2'):
     '''
     returns a list of tuples for a segment object (or segment id)
     which contain the id, otherId, and ratio * 10000 for every other segment
@@ -160,13 +178,11 @@ def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='both', encod
     
     The full database looked like it was going to take 20GB, so now we're only storing
     those above 50% matches.
-    
-    TODO: We should grab the entire segment database once and keep it in memory
-    and then not need to do a query each time.
+
     '''
     minimumToStore = 5000
-    if encodingType == 'IntRhy':
-        minimumToStore = 7000
+    if encodingType == 'IntRhySmall':
+        minimumToStore = 6200
     
     if dbObj is None:
         dbObj = mysqlEM.EMMSAPMysql()
@@ -179,19 +195,16 @@ def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='both', encod
     thisId = segmentObj.id
     thisSegmentData = segmentObj.segmentData
     #dl = segment.getDifflibOrPyLev(segmentObj.segmentData)
-    searchObj = None
-    if searchDirection == 'up':
-        dbObj.cursor.execute('SELECT id, segmentData FROM segment WHERE encodingType = "%s" AND id > %s' % (encodingType, idOrSegment))
-        searchObj = dbObj.cursor
-    elif searchDirection == 'down':
-        dbObj.cursor.execute('SELECT id, segmentData FROM segment WHERE encodingType = "%s" AND id < %s' % (encodingType, idOrSegment))        
-        searchObj = dbObj.cursor
-    else:
-        searchObj = storeAllSegmentData(encodingType)
+
     storedRatios = []
-    for otherId, otherSegmentData in searchObj:
+    for otherId, otherSegmentData in storeAllSegmentData(encodingType):
         if len(otherSegmentData) < minSegmentLength:
             continue
+        if searchDirection == 'up' and otherId <= thisId:
+            continue
+        if searchDirection == 'down' and otherId >= thisId:
+            continue
+        
         #dl.set_seq1(otherSegmentData)
         #ratioInt = int(10000 * dl.ratio())
         ratioInt = ratiosFromSegmentData(thisSegmentData, otherSegmentData)
@@ -242,7 +255,8 @@ def commitRatiosForAllSegments(encodingType='DiaRhy2'):
 if __name__ == '__main__':
     pass
     #deleteSparseSegmentRatios(5, runDelete=True)
-    updateRatioTableParallel('IntRhy')
+    updateRatioTableParallel('IntRhySmall')
+    adjustRatiosByFrequency('IntRhySmall')
     #updateRatioTableParallel('IntRhy')
     #findSegmentsWithNoRatios()
     #commitRatioForOneSegment(100, searchDirection='down')
