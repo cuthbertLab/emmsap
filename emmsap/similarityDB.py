@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 #-------------------------------------------------------------------------------
 from __future__ import print_function, division
+
 from emmsap import mysqlEM
 #from music21.search import segment
 
 
 skipPieces = [             
                # new discoveries!
+               (2222, 2239), # Gloria 16.29 + 16.36
                (1242, 1610), # Franciscus L'adorno viso = PMFC 21.58 S'amours me het
                (338, 2087), # Ciconia Credo 11 = Prague 9 O sinne!!!
                (2107, 2080), # Prague_9_35_Scheiden_wie and Je en vos (Jeo_hay) ed. Fallows
@@ -33,6 +35,8 @@ skipPieces = [
                
                # two transcriptions of the same
                # same piece..different versions.
+               (2229, 1648), # Merci pour dieu A da Cividale E15c + PMFC22
+               (2232, 717), # Je suy las venus E15c + Marchi notation
                (2194, 2195), # FallowsMB_89 + 89a
                (2167, 2168), # So ye emp. Fallows 64 + 64a
                (2198, 2199), # FallowsMB_092_N_aray_je_jamais.mxl
@@ -159,6 +163,7 @@ skipPieces = [
               
               ######
               # known similarities
+              (281, 2240), # FOL, Grottaferrata Gloria in London Titus.
               (737, 1287), # Marchi and Di Mascia were right: 
                 # Nuda non era is the best match for Le temps ver.
               (2125, 888), # FallowsMB_028_Min_herze_wil and PMFC 23.91 O_Quam_Pulchra_Puella ctrft
@@ -225,7 +230,8 @@ skipPieces = [
               (1481, 1236), # Nicolo and Bonaiuto
               (1494, 1487, 1463), # two Nicolo w/ similar ornamentation. + a francesco w/ similar
               
-              (768, 939), # ends of PMFC_09_Paolo_30-Una_fera_gentil + PMFC_07_GdF_2-Cacciand_Un_Giorno
+              (768, 939), # ends of PMFC_09_Paolo_30-Una_fera_gentil + 
+                          # PMFC_07_GdF_2-Cacciand_Un_Giorno
                           # a little generic sounding, but rather similar...
               (1702, 2024), # Machaut Dame se vous m'estes mm. 6-10 = (identical)
                 # Motet 14 De ma dolour 62-68 (one voice only...) 15 notes.
@@ -619,6 +625,7 @@ skipPieces = [
                 # same noodle in sequence. 
             (215, 272), # Bartolino/Dactylus Inperial sedendo + Paolo Benedicamus noodles.
             
+            (2231, 32), # Antonio da Cividale Pes + Flos Filius tenor
             (1983, 1984), # Turin masses OMR w/ cropped sections redone.
             (1995, 1829), # Turin mass tenor low match with PMFC 22.46
             (2008, 1096), # PMFC16 sanctus 2; low w/ Vitry Hugo Tenor
@@ -634,14 +641,14 @@ skipPieces = [
               ] 
 
 class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=1170, endPiece=2550, minThreshold=6000, maxToShow=2):
+    def __init__(self, startPiece=2221, endPiece=2550, minThreshold=7000, maxToShow=3):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
         self.minThreshold = minThreshold
         self.maxThreshold = 10001
-        #self.segmentType = 'DiaRhy2'
-        self.segmentType = 'IntRhySmall'
+        self.segmentType = 'DiaRhy2'
+        #self.segmentType = 'IntRhySmall'
         self.skipGroups = skipPieces
         self.maxToShow = maxToShow
         self.skippedMatchPenalty = 0 # 300 # after skipping one, the odds of a good match goes down.
@@ -649,7 +656,7 @@ class SimilaritySearcher(object): # 1322
         self.tenorPartNumber = 2
         self.tenorOtherPartNumber = 2
         self.printOutput = True
-        self.fragmentsOnly = True
+        self.fragmentsOnly = False
         
     def runPieces(self, startPiece=None, endPiece=None):
         '''

@@ -287,13 +287,13 @@ class Piece(EMMSAPMysqlObject):
 #                                    AND ratio >= %s ORDER BY segment1id''',
 #                                    [thisPieceId, threshold])
         #print "HIII"
-        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratioAdjust FROM ratios'''+segmentType+'''  
+        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios'''+segmentType+'''  
                                     WHERE 
-                                    ratioAdjust >= %s AND ratioAdjust < %s 
+                                    ratio >= %s AND ratio < %s 
                                     AND EXISTS
                                        (SELECT 1 FROM segment WHERE piece_id = %s
                                         AND segment.id = segment1id) 
-                                    ORDER BY ratioAdjust DESC''',
+                                    ORDER BY ratio DESC''',
                                     [threshold, maxThreshold, thisPieceId])
         #print "BYEEE!"
         for otherSeg in self.dbObj.cursor:

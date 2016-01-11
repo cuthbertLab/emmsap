@@ -255,8 +255,8 @@ def commitRatiosForAllSegments(encodingType='DiaRhy2'):
 if __name__ == '__main__':
     pass
     #deleteSparseSegmentRatios(5, runDelete=True)
-    updateRatioTableParallel('IntRhySmall')
-    adjustRatiosByFrequency('IntRhySmall')
+    updateRatioTableParallel('DiaRhy2')
+    adjustRatiosByFrequency('DiaRhy2')
     #updateRatioTableParallel('IntRhy')
     #findSegmentsWithNoRatios()
     #commitRatioForOneSegment(100, searchDirection='down')

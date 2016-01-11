@@ -17,6 +17,6 @@ def deleteOMRDuplicates():
 if __name__ == '__main__':
     #deleteOMRDuplicates()
     #exit()
-    emp = mysqlEM.Piece(27)
+    emp = mysqlEM.Piece(1394) # 703, 705, 1379, 1386, 1393, 1394
     print(emp.filename)
     emp.deletePiece()
