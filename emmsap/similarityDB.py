@@ -90,6 +90,7 @@ skipPieces = [
               (1550, 514), # 514 low match OMR gloria
               (1553, 1554),  # Mersi ou mort -- two versions
               
+              (379, 2256), # Ciconia Gloria 8 + extract of the potential parody section...
               
               (1478, 1479),
               (48, 62),   # Jacopo O cieco mondo
@@ -340,6 +341,7 @@ skipPieces = [
             (1083, 276), # Toulouse Kyrie, Gaudeamus Omnes
             (1084, 865), # Toulouse Sanctus, Credo Pellisson
             (1088, 480), # Tournai Gloria, Benedicamus Domino
+            (2248, 1233), # Machaut Double hoquet, Degentis Vita tenor -- nope.
  
             (1911, 1217, 331, 334), # Per grama tenor... w/ some credos.
             (397, 1227, 1229),
@@ -641,7 +643,7 @@ skipPieces = [
               ] 
 
 class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=2221, endPiece=2550, minThreshold=7000, maxToShow=3):
+    def __init__(self, startPiece=2255, endPiece=2550, minThreshold=7500, maxToShow=0):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
