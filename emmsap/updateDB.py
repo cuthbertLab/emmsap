@@ -4,9 +4,10 @@ from emmsap import indexRatios
 from emmsap import indexTexts
 from emmsap import indexTinyNotation
 
+
 def updateDatabase():
     '''
-    adds any files in the EMMSAP musicxml_in dir to the database.
+    adds any files in the EMMSAP musicxml_in dir to the database. 
     '''
     indexFiles.populatePiecesSafe()
     indexSegments.updateSegmentTable('DiaRhy2')

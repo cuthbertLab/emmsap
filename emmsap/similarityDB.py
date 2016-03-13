@@ -8,6 +8,9 @@ from emmsap import mysqlEM
 
 skipPieces = [             
                # new discoveries!
+               (2322, 2094), # PMFC Sanctus 16.55 + Autun 152 Modulus, Tenor Deo Gratias
+               (2335, 1092, 908), # PMFC Ite Missa # 68 = PMFC 01 Tournai 6 - Ite Missa Est +
+                             # Marchetto
                (2222, 2239), # Gloria 16.29 + 16.36
                (1242, 1610), # Franciscus L'adorno viso = PMFC 21.58 S'amours me het
                (338, 2087), # Ciconia Credo 11 = Prague 9 O sinne!!!
@@ -55,6 +58,9 @@ skipPieces = [
               (33, 683), # de non fugir
               (35, 673), # fortuna ria
               (1454, 38), # si te so stato
+              (2274, 2275), # PMFC 16 #39, 40 -- different # of voices
+              (2278, 2280), # PMFC 16,#43, 45 -- two credos related.
+              
               
               # transpositions
               (1499, 1500), # Per un verde boschetto at two pitch levels.
@@ -331,6 +337,12 @@ skipPieces = [
               (939, 1271), # Cacciand Un Giorno + Paolo Girand
               (935, 1768), # DdF 7 + O tu chara scientia,
               (1349, 1487), # Bianchi Chi ama ending w/ Nicolo quando gli raggi...
+
+              (2314, 2316), # PMFC 16 Sanctuses 47, 49 -- c.f. in 47 I = c.f. in 49 II
+              (2315, 2322), # PMFC 16 Sanctuses 48, 55 -- same c.f.
+              (2317, 2320, 2321, 2324), # PMFC 16 Sanctuses 50, 53, 54, 57 -- same c.f.
+              (2319, 2008), # PMFC 16 Sanctuses 52, 02 -- c.f. salisbury 8.
+              (2329, 2330, 2334), # PMFC 16 Agnus 62 and 63 (variants on each other) and c.f. for 67
 
             # IGNORE Tenors only...
             (276, 1338), # Gaudeamus Omnes + PMFC 08 Nicolo 24
@@ -643,7 +655,7 @@ skipPieces = [
               ] 
 
 class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=2255, endPiece=2550, minThreshold=7500, maxToShow=0):
+    def __init__(self, startPiece=2313, endPiece=2550, minThreshold=7500, maxToShow=0):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
