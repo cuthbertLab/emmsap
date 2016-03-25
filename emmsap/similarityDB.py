@@ -290,6 +290,7 @@ skipPieces = [
               (1509, 602),
               (1567, 761), # two paolo pieces...
               (1655, 187), # 22.47b, 04.04.
+              (2338, 1655), # Jour a jour la vie -- PMFC 22.47a w/ Cristus PMFC.47b
               (1118, 939), # PMFC 06 Jacopo Vestisse, PMFC 07 GdF 2 -- Cacciand -- filigree
               (1141, 37), # PMFC 10 22 Perche veder non posso; Francesco Poy che Partir -- 
                            # very similar cadence
@@ -655,7 +656,7 @@ skipPieces = [
               ] 
 
 class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=2313, endPiece=2550, minThreshold=7500, maxToShow=0):
+    def __init__(self, startPiece=2339, endPiece=2550, minThreshold=7500, maxToShow=0):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
