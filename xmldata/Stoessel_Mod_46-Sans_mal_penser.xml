@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE score-partwise
+  PUBLIC '-//Recordare//DTD MusicXML 2.0 Partwise//EN'
+  'http://www.musicxml.org/dtds/partwise.dtd'>
+<score-partwise>
+  <work>
+    <work-title>Stoessel_Mod_46-Sans_mal_penser.xml</work-title>
+  </work>
+  <movement-title>Stoessel_Mod_46-Sans_mal_penser.xml</movement-title>
   <identification>
+    <creator type="composer">Music21</creator>
     <encoding>
-      <software>Finale 2012 for Mac</software>
-      <software>Dolet Light for Finale 2012</software>
-      <encoding-date>2013-07-15</encoding-date>
-      <supports attribute="new-system" element="print" type="yes" value="yes"/>
-      <supports attribute="new-page" element="print" type="yes" value="yes"/>
+      <encoding-date>2016-04-22</encoding-date>
+      <software>Music21</software>
+      <supports attribute="new-system" element="print" type="yes" value="yes" />
+      <supports attribute="new-page" element="print" type="yes" value="yes" />
     </encoding>
   </identification>
   <defaults>
@@ -18,7 +24,7 @@
     <page-layout>
       <page-height>1890</page-height>
       <page-width>1323</page-width>
-      <page-margins type="both">
+      <page-margins>
         <left-margin>126</left-margin>
         <right-margin>126</right-margin>
         <top-margin>80</top-margin>
@@ -36,28 +42,9 @@
     <staff-layout>
       <staff-distance>110</staff-distance>
     </staff-layout>
-    <appearance>
-      <line-width type="stem">0.7227</line-width>
-      <line-width type="beam">5.0391</line-width>
-      <line-width type="staff">0.7227</line-width>
-      <line-width type="light barline">0.7096</line-width>
-      <line-width type="heavy barline">5.0065</line-width>
-      <line-width type="leger">0.7227</line-width>
-      <line-width type="ending">0.7227</line-width>
-      <line-width type="wedge">0.7227</line-width>
-      <line-width type="enclosure">0.7682</line-width>
-      <line-width type="tuplet bracket">0.7682</line-width>
-      <note-size type="grace">50</note-size>
-      <note-size type="cue">50</note-size>
-      <distance type="hyphen">720</distance>
-      <distance type="beam">8</distance>
-    </appearance>
-    <music-font font-family="Petrucci,engraved" font-size="18"/>
-    <word-font font-family="Times" font-size="7.5"/>
-    <lyric-font font-family="Times" font-size="7.5"/>
   </defaults>
   <credit page="1">
-    <credit-words default-x="661" default-y="1786" font-size="18" justify="center" valign="top">46. Sans mal penser</credit-words>
+    <credit-words default-x="661" default-y="1786" font-size="18.0" justify="center" valign="top">46. Sans mal penser</credit-words>
   </credit>
   <credit page="1">
     <credit-words default-x="183" default-y="1719" valign="top">I-MOe5.24, f. 25v</credit-words>
@@ -66,59 +53,42 @@
     <credit-words default-x="1110" default-y="1720" font-style="italic" valign="top">Anonymous</credit-words>
   </credit>
   <credit page="2">
-    <credit-type>page number</credit-type>
-    <credit-words default-x="661" default-y="95" font-family="Helvetica" font-size="9" justify="center" valign="bottom">-2-</credit-words>
+    <credit-words default-x="661" default-y="95" font-family="Helvetica" font-size="9.0" justify="center" valign="bottom">-2-</credit-words>
   </credit>
   <credit page="3">
-    <credit-type>page number</credit-type>
-    <credit-words default-x="661" default-y="95" font-family="Helvetica" font-size="9" justify="center" valign="bottom">-3-</credit-words>
+    <credit-words default-x="661" default-y="95" font-family="Helvetica" font-size="9.0" justify="center" valign="bottom">-3-</credit-words>
   </credit>
   <part-list>
     <part-group number="1" type="start">
-      <group-symbol default-x="-10">bracket</group-symbol>
+      <group-symbol>bracket</group-symbol>
       <group-barline>Mensurstrich</group-barline>
     </part-group>
     <score-part id="P1">
       <part-name>S</part-name>
-      <score-instrument id="P1-I3">
+      <score-instrument id="I184b5220706f6c6ede93784853a822a8">
         <instrument-name>Clarinet</instrument-name>
       </score-instrument>
-      <midi-instrument id="P1-I3">
+      <midi-instrument id="I184b5220706f6c6ede93784853a822a8">
         <midi-channel>3</midi-channel>
         <midi-program>72</midi-program>
-        <volume>80</volume>
-        <pan>0</pan>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
       <part-name>T</part-name>
-      <score-instrument id="P2-I16">
+      <score-instrument id="I6f4f66906cc18925e657b9f2534c9bf1">
         <instrument-name>Violin</instrument-name>
       </score-instrument>
-      <midi-instrument id="P2-I16">
+      <midi-instrument id="I6f4f66906cc18925e657b9f2534c9bf1">
         <midi-channel>15</midi-channel>
         <midi-program>41</midi-program>
-        <volume>80</volume>
-        <pan>0</pan>
       </midi-instrument>
     </score-part>
-    <part-group number="1" type="stop"/>
+    <part-group number="1" type="stop" />
   </part-list>
-  <!--=========================================================-->
   <part id="P1">
     <measure number="1" width="323">
-      <print page-number="1">
-        <system-layout>
-          <system-margins>
-            <left-margin>60</left-margin>
-            <right-margin>0</right-margin>
-          </system-margins>
-          <top-system-distance>141</top-system-distance>
-        </system-layout>
-        <measure-numbering>system</measure-numbering>
-      </print>
       <attributes>
-        <divisions>8</divisions>
+        <divisions>10080</divisions>
         <key>
           <fifths>0</fifths>
           <mode>major</mode>
@@ -132,1691 +102,1549 @@
           <line>2</line>
         </clef>
       </attributes>
-      <sound tempo="96"/>
-      <note default-x="104">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-45">down</stem>
-        <lyric default-y="-80" number="1">
+        <beam number="1">begin</beam>
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>1.5.Sans</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>4.Et</text>
         </lyric>
       </note>
-      <note default-x="140">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-40">down</stem>
+        <beam number="1">end</beam>
       </note>
-      <note default-x="177">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-45">down</stem>
       </note>
-      <note default-x="249">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-50">down</stem>
+        <beam number="1">begin</beam>
       </note>
-      <note default-x="286">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <duration>5040</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="2" width="229">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <stem>down</stem>
+        <duration>10080</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <note default-x="83">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>2</duration>
-        <voice>1</voice>
+        <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="10">up</stem>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
       </note>
-      <note default-x="101">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>6</duration>
-        <voice>1</voice>
+        <duration>7560</duration>
         <type>eighth</type>
-        <dot/>
-        <stem default-y="5">up</stem>
+        <dot />
         <beam number="1">end</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>mal</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>pour</text>
         </lyric>
       </note>
-      <note default-x="157">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="192">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>2</duration>
-        <voice>1</voice>
+        <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="10">up</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>pen</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>ce,</text>
         </lyric>
       </note>
-      <note default-x="210">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>2</duration>
-        <voice>1</voice>
+        <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="15">up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="3" width="229">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-50">down</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>ser</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>bel</text>
         </lyric>
       </note>
-      <note default-x="46">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
         <beam number="1">end</beam>
       </note>
-      <note default-x="83">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="10">up</stem>
       </note>
-      <note default-x="156">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5">up</stem>
-      </note>
-      <note default-x="192">
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem default-y="0">up</stem>
-      </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="4" width="229">
-      <note print-object="no">
-        <cue/>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type size="full">eighth</type>
-        <stem>up</stem>
         <beam number="1">begin</beam>
       </note>
-      <note default-x="47">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
+    </measure>
+    <measure number="4" width="229">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-5">up</stem>
         <beam number="1">end</beam>
       </note>
-      <note default-x="83">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-10">up</stem>
+        <dot />
       </note>
-      <note default-x="192">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>et</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>le</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="5" width="316">
-      <print new-system="yes">
-        <system-layout>
-          <system-distance>137</system-distance>
-        </system-layout>
-      </print>
-      <note default-x="75">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>sans</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>que</text>
         </lyric>
       </note>
-      <note default-x="115">
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
         <accidental>sharp</accidental>
-        <stem default-y="0">up</stem>
       </note>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="0">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>fo</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>j'a</text>
         </lyric>
       </note>
-      <note default-x="275">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="6" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>lour,</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>our,</text>
         </lyric>
       </note>
-      <note default-x="130">
-        <rest/>
-        <duration>12</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="7" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>ma</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>pour</text>
         </lyric>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>dou</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>vous</text>
         </lyric>
       </note>
-      <note default-x="170">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-55">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>che</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>ser</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="8" width="252">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-50">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>da</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>vir</text>
         </lyric>
       </note>
-      <note default-x="50">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-45">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>me</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>sans</text>
         </lyric>
       </note>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-47.5">down</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>nul</text>
         </lyric>
       </note>
-      <note default-x="171">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-50">down</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="211">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-52.5">down</stem>
         <beam number="1">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="9" width="316">
-      <print new-system="yes"/>
-      <note default-x="75">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>va</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>de</text>
         </lyric>
       </note>
-      <note default-x="115">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-57">down</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="155">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-60">down</stem>
         <beam number="1">end</beam>
       </note>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="15">up</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>lour,</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>mour</text>
         </lyric>
       </note>
-      <note default-x="235">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="13">up</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="275">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10">up</stem>
         <beam number="1">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="10" width="251">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="12" line-end="down" line-type="solid" number="1" relative-x="-5" type="start"/>
+          <bracket line-end="down" line-type="solid" number="1" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="1">up</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="1" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-4">up</stem>
       </note>
-      <note default-x="210">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="1">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>me</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="11" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="6">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>beau</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>tray</text>
         </lyric>
       </note>
-      <note default-x="50">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="11">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>te</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>ma</text>
         </lyric>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="15" line-end="down" line-type="solid" number="1" relative-x="-13" type="start"/>
+          <bracket line-end="down" line-type="solid" number="2" type="start" />
         </direction-type>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="1">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>play</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>pay</text>
         </lyric>
       </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="12" width="252">
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="2" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="10">
+    </measure>
+    <measure number="12" width="252">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-4">up</stem>
+        <dot />
       </note>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-9">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>ne,</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>ne</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="13" width="316">
-      <print new-system="yes"/>
-      <note default-x="76">
-        <rest/>
-        <duration>12</duration>
-        <voice>1</voice>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <rest />
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
+        <dot />
       </note>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-45">down</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>sur</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="14" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-50">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>tou</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>cuer</text>
         </lyric>
       </note>
-      <note default-x="90">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>tes</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>sans</text>
         </lyric>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="20" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="3" type="start" />
         </direction-type>
-        <offset>-1</offset>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-55">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>au</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>pen</text>
         </lyric>
       </note>
-      <note default-x="210">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem default-y="10.5">up</stem>
+        <duration>5040</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="3" type="stop" />
         </direction-type>
-        <offset>-5</offset>
       </direction>
     </measure>
-    <!--=======================================================-->
     <measure number="15" width="251">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type size="full">eighth</type>
-        <stem>up</stem>
+        <duration>5040</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <note default-x="50">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>tres</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>ser</text>
         </lyric>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-9.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>sou</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>vi</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="16" width="252">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>middle</syllabic>
           <text>ve</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>la</text>
         </lyric>
       </note>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>middle</syllabic>
           <text>ray</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>ny</text>
         </lyric>
       </note>
-      <note default-x="211">
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
         <accidental>sharp</accidental>
-        <stem default-y="0.5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="17" width="258">
-      <print new-system="yes"/>
-      <note default-x="105">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <accidental parentheses="yes">sharp</accidental>
-        <stem default-y="0.5">up</stem>
+        <accidental>sharp</accidental>
       </note>
-      <note default-x="145">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-4.5">up</stem>
       </note>
-      <note default-x="173">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>ne.</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>e;</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="18" width="271">
-      <note default-x="11">
-        <rest/>
-        <duration>12</duration>
-        <voice>1</voice>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <rest />
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
+        <dot />
       </note>
-      <note default-x="140">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>le</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>Car</text>
         </lyric>
       </note>
-      <note default-x="227">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10.5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="19" width="271">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-54.5">down</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>pri</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>vos</text>
         </lyric>
       </note>
-      <note default-x="54">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-54.5">down</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="97">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-54.5">down</stem>
         <beam number="1">end</beam>
       </note>
-      <note default-x="140">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="15.5">up</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>mier</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>tre</text>
         </lyric>
       </note>
-      <note default-x="184">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10.5">up</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="227">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5.5">up</stem>
         <beam number="1">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="20" width="271">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>jour</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>a</text>
         </lyric>
       </note>
-      <note default-x="53">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-55">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>tour</text>
         </lyric>
       </note>
-      <note default-x="140">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-45">down</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>l'an</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>sou</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="21" width="316">
-      <print new-page="yes" page-number="2"/>
-      <note default-x="75">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>vous</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>vent</text>
         </lyric>
       </note>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>pre</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>me</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="22" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>middle</syllabic>
           <text>sen</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>fait</text>
         </lyric>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>te</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>muer</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="23" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="10.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>m'a</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>co</text>
         </lyric>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>mour</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>lour,</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="24" width="252">
-      <note default-x="11">
-        <rest/>
-        <duration>12</duration>
-        <voice>1</voice>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <rest />
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="15" line-end="down" line-type="solid" number="1" relative-x="-15" type="start"/>
+          <bracket line-end="down" line-type="solid" number="4" type="start" />
         </direction-type>
       </direction>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-9.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>a</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>c'est</text>
         </lyric>
       </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="25" width="316">
-      <print new-system="yes"/>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="4" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="75">
+    </measure>
+    <measure number="25" width="316">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
+        <dot />
       </note>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10.5">up</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>bo</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>cho</text>
         </lyric>
       </note>
-      <note default-x="235">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5.5">up</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="275">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="0.5">up</stem>
         <beam number="1">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="26" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>ne</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>se</text>
         </lyric>
       </note>
-      <note default-x="50">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-4.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>es</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>cer</text>
         </lyric>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-9.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>middle</syllabic>
           <text>tray</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>tay</text>
         </lyric>
       </note>
-      <note default-x="172">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="210">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-45">down</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="27" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-50">down</stem>
       </note>
-      <note default-x="90">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="10.5">up</stem>
-      </note>
-      <note default-x="171">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="210">
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-50">down</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="28" width="252">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-55">down</stem>
       </note>
-      <note default-x="90">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10.5">up</stem>
       </note>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="5.5">up</stem>
-      </note>
-      <note default-x="172">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="211">
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10.5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="29" width="398">
-      <print new-system="yes"/>
-      <note default-x="75">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="0">up</stem>
         <beam number="1">begin</beam>
       </note>
-      <note default-x="129">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5">up</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="183">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10">up</stem>
         <beam number="1">end</beam>
       </note>
-      <note default-x="237">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-5">up</stem>
       </note>
-      <note default-x="344">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="0">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="30" width="333">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-10">up</stem>
       </note>
-      <note default-x="64">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="5">up</stem>
       </note>
-      <note default-x="172">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-5">up</stem>
       </note>
-      <note default-x="225">
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
         <accidental>sharp</accidental>
-        <stem default-y="0">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="31" width="167">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>48</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <dot/>
-        <lyric default-y="-80" number="1">
+        <duration>30240</duration>
+        <tie type="start" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>ne.</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>ne.</text>
         </lyric>
@@ -1825,811 +1653,756 @@
         <bar-style>dashed</bar-style>
       </barline>
     </measure>
-    <!--=======================================================-->
     <measure number="32" width="172">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>16</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <stem>up</stem>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <barline location="right">
         <bar-style>light-light</bar-style>
       </barline>
     </measure>
-    <!--=======================================================-->
     <measure number="33" width="316">
-      <print new-system="yes"/>
-      <sound forward-repeat="yes"/>
-      <note default-x="75">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="6">up</stem>
-        <lyric default-y="-80" number="1" relative-x="8">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>2.Fai</text>
         </lyric>
-        <lyric default-y="-97" number="2" relative-x="3">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>3.de</text>
         </lyric>
       </note>
-      <note default-x="155">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="11">up</stem>
       </note>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>re</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>cour</text>
         </lyric>
       </note>
-      <note default-x="235">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="275">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
         <beam number="1">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="34" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="15">up</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>le</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>toy</text>
         </lyric>
       </note>
-      <note default-x="50">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10">up</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="90">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5">up</stem>
         <beam number="1">end</beam>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="6">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>doi,</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>si</text>
         </lyric>
       </note>
-      <note default-x="210">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="11">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>car</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>e_et</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="35" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="1">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>d'ou</text>
         </lyric>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-4">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>bon</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>nes</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="36" width="252">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-9">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>té,</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>té,</text>
         </lyric>
       </note>
-      <note default-x="131">
-        <rest/>
-        <duration>12</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="37" width="339">
-      <print new-system="yes"/>
-      <note default-x="75">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>d'o</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
       </note>
-      <note default-x="207">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-50">down</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>nour,</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>pa</text>
         </lyric>
       </note>
-      <note default-x="251">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-47">down</stem>
         <beam number="1">continue</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>is</text>
         </lyric>
       </note>
-      <note default-x="294">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-45">down</stem>
         <beam number="1">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="38" width="274">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-50">down</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>bien,</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>et</text>
         </lyric>
       </note>
-      <note default-x="54">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="97">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-60">down</stem>
         <beam number="1">end</beam>
       </note>
-      <note default-x="142">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="10.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>d'a</text>
         </lyric>
       </note>
-      <note default-x="229">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="39" width="183">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>loi</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>ma</text>
         </lyric>
       </note>
-      <note default-x="52">
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
         <accidental>sharp</accidental>
-        <stem default-y="0.5">up</stem>
       </note>
-      <note default-x="110">
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <accidental parentheses="yes">sharp</accidental>
-        <stem default-y="0.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <accidental>sharp</accidental>
+        <lyric number="1">
           <syllabic>middle</syllabic>
           <text>au</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>middle</syllabic>
           <text>ble</text>
         </lyric>
       </note>
-      <note default-x="151">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-4.5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="40" width="274">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <dot />
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>té</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>end</syllabic>
           <text>té,</text>
         </lyric>
       </note>
-      <note default-x="142">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-50">down</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>et</text>
         </lyric>
-        <lyric default-y="-97" number="2">
+        <lyric number="2">
           <syllabic>begin</syllabic>
           <text>es</text>
         </lyric>
       </note>
-      <note default-x="229">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10.5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="41" width="394">
-      <print new-page="yes" page-number="3"/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <barline location="left">
-        <ending default-y="33" end-length="24" number="1" type="start">1.</ending>
+        <bar-style>regular</bar-style>
+        <ending number="2" type="start" />
       </barline>
-      <note default-x="75">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>de</text>
         </lyric>
       </note>
-      <note default-x="181">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10.5">up</stem>
       </note>
-      <note default-x="234">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="0">up</stem>
         <beam number="1">begin</beam>
-        <lyric default-y="-80" number="1">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>dou</text>
         </lyric>
       </note>
-      <note default-x="287">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5">up</stem>
         <beam number="1">continue</beam>
       </note>
-      <note default-x="340">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="10">up</stem>
         <beam number="1">end</beam>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="42" width="329">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="0.5">up</stem>
       </note>
-      <note default-x="116">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-4.5">up</stem>
       </note>
-      <note default-x="169">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
+        <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-4.5">up</stem>
       </note>
-      <note default-x="275">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-9.5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="43" width="165">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>48</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <dot/>
+        <duration>30240</duration>
+        <tie type="start" />
+        <type>half</type>
+        <dot />
         <accidental>sharp</accidental>
-        <lyric default-y="-80" number="1" relative-x="8">
+        <notations>
+          <tied type="start" />
+        </notations>
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>chour,</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="44" width="183">
-      <note print-object="no">
-        <cue/>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>16</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <stem>up</stem>
-      </note>
-      <barline location="right">
-        <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" winged="none"/>
-      </barline>
-    </measure>
-    <!--=======================================================-->
-    <measure number="45" width="438">
-      <print new-system="yes"/>
-      <barline location="left">
-        <ending default-y="33" end-length="23" number="1" type="start">2.</ending>
-      </barline>
-      <note default-x="75">
-        <pitch>
-          <step>G</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem default-y="5.5">up</stem>
-        <lyric default-y="-97" number="2">
-          <syllabic>end</syllabic>
-          <text>tes</text>
-        </lyric>
-      </note>
-      <note default-x="196">
-        <pitch>
-          <step>A</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="10.5">up</stem>
-      </note>
-      <note default-x="256">
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="0.5">up</stem>
-        <beam number="1">begin</beam>
-        <lyric default-y="-97" number="2">
-          <syllabic>single</syllabic>
-          <text>la</text>
-        </lyric>
-      </note>
-      <note default-x="317">
-        <pitch>
-          <step>G</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="5.5">up</stem>
-        <beam number="1">continue</beam>
-      </note>
-      <note default-x="377">
-        <pitch>
-          <step>A</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="10.5">up</stem>
-        <beam number="1">end</beam>
-      </note>
-      <barline location="right">
-        <ending number="1" type="discontinue"/>
-      </barline>
-    </measure>
-    <!--=======================================================-->
-    <measure number="46" width="250">
-      <note default-x="10">
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem default-y="0.5">up</stem>
-      </note>
-      <note default-x="78">
-        <pitch>
-          <step>G</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="5.5">up</stem>
-      </note>
-      <note default-x="123">
-        <pitch>
-          <step>E</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem default-y="-4.5">up</stem>
-      </note>
-      <note default-x="182">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
-        <duration>8</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <accidental parentheses="yes">sharp</accidental>
-        <stem default-y="0.5">up</stem>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
+      <barline location="right">
+        <repeat direction="backward" />
+      </barline>
     </measure>
-    <!--=======================================================-->
-    <measure number="47" width="187">
-      <note default-x="10">
+    <measure number="45" width="438">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <barline location="left">
+        <bar-style>regular</bar-style>
+        <ending number="2" type="start" />
+      </barline>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>48</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <dot/>
-        <lyric default-y="-97" number="2" relative-x="10">
+        <duration>10080</duration>
+        <type>quarter</type>
+        <lyric number="2">
+          <syllabic>end</syllabic>
+          <text>tes</text>
+        </lyric>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        <lyric number="2">
+          <syllabic>single</syllabic>
+          <text>la</text>
+        </lyric>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+      </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <beam number="1">end</beam>
+      </note>
+      <barline location="right">
+        <bar-style>regular</bar-style>
+        <ending number="2" type="stop" />
+      </barline>
+    </measure>
+    <measure number="46" width="250">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>10080</duration>
+        <type>quarter</type>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+      </note>
+    </measure>
+    <measure number="47" width="187">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>30240</duration>
+        <tie type="start" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
+        <lyric number="2">
           <syllabic>single</syllabic>
           <text>flour.</text>
         </lyric>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="48" width="196">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>16</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <stem>up</stem>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
       </barline>
     </measure>
   </part>
-  <!--=========================================================-->
   <part id="P2">
     <measure number="1" width="323">
-      <print>
-        <measure-numbering>none</measure-numbering>
-      </print>
       <attributes>
-        <divisions>8</divisions>
+        <divisions>10080</divisions>
         <key>
           <fifths>-1</fifths>
           <mode>major</mode>
@@ -2639,1324 +2412,1333 @@
           <beat-type>8</beat-type>
         </time>
         <clef>
-          <sign>C</sign>
-          <line>3</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
-      <sound tempo="96"/>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="15" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="1" type="start" />
         </direction-type>
       </direction>
-      <note default-x="104">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="-35">down</stem>
+        <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <bracket line-end="down" line-type="solid" number="1" type="stop" />
+        </direction-type>
+      </direction>
     </measure>
-    <!--=======================================================-->
     <measure number="2" width="229">
-      <direction placement="above">
-        <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
-        </direction-type>
-        <offset>2</offset>
-      </direction>
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="0">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="3" width="229">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="15" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="2" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5">up</stem>
+        <dot />
       </note>
-      <note default-x="120">
+      <direction placement="above">
+        <direction-type>
+          <bracket line-end="down" line-type="solid" number="2" type="stop" />
+        </direction-type>
+      </direction>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="4" width="229">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="10">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="5" width="316">
-      <print new-system="yes"/>
-      <note default-x="75">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="5">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="6" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="0">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="7" width="251">
-      <direction placement="above">
-        <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
-        </direction-type>
-        <offset>2</offset>
-      </direction>
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="8" width="252">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-40">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="13" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="3" type="start" />
         </direction-type>
       </direction>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="-45">down</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="9" width="316">
-      <print new-system="yes"/>
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>down</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="-50.5">down</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="10" width="251">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>down</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="6">up</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="3" type="stop" />
         </direction-type>
-        <offset>-21</offset>
       </direction>
     </measure>
-    <!--=======================================================-->
     <measure number="11" width="251">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>up</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="18" line-end="down" line-type="solid" number="1" relative-x="-15" type="start"/>
+          <bracket line-end="down" line-type="solid" number="4" type="start" />
         </direction-type>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="11">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="12" width="252">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55.5">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="4" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="-50.5">down</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="13" width="316">
-      <print new-system="yes"/>
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>down</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <note default-x="196">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="236">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="275">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="0.5">up</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="14" width="251">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="12" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="5" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="5" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="15" width="251">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="18" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="6" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="6" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="10.5">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="16" width="252">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="20" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="1" type="start" />
         </direction-type>
       </direction>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="10.5">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="17" width="258">
-      <print new-system="yes"/>
-      <note default-x="105">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="1" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="173">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="0.5">up</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="18" width="271">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>up</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="13" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="2" type="start" />
         </direction-type>
       </direction>
-      <note default-x="140">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="19" width="271">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="2" type="stop" />
         </direction-type>
-        <offset>3</offset>
       </direction>
-      <note default-x="140">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>48</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <dot/>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="20" width="271">
-      <note print-object="no">
-        <cue/>
-        <pitch>
-          <step>A</step>
-          <octave>3</octave>
-        </pitch>
-        <duration>16</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <stem>up</stem>
-      </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="21" width="316">
-      <print new-page="yes"/>
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>up</stem>
-      </note>
-      <note default-x="195">
-        <pitch>
-          <step>C</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <tie type="start" />
         <type>half</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <dot />
+        <notations>
+          <tied type="stop" />
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
-    <measure number="22" width="251">
-      <note print-object="no">
-        <cue/>
+    <measure number="21" width="316">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>down</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
+    </measure>
+    <measure number="22" width="251">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="22" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="3" type="start" />
         </direction-type>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-45">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="23" width="251">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-40">down</stem>
+        <dot />
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="24" width="252">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>down</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <direction placement="above">
-        <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
-        </direction-type>
-        <offset>2</offset>
-      </direction>
-      <note default-x="131">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="10.5">up</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="25" width="316">
-      <print new-system="yes"/>
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>up</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="18" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="4" type="start" />
         </direction-type>
-        <offset>-1</offset>
       </direction>
-      <note default-x="195">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
+        <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <bracket line-end="down" line-type="solid" number="4" type="stop" />
+        </direction-type>
+      </direction>
     </measure>
-    <!--=======================================================-->
     <measure number="26" width="251">
-      <direction placement="above">
-        <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
-        </direction-type>
-        <offset>2</offset>
-      </direction>
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <dot />
       </note>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="27" width="251">
-      <note default-x="11">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="51">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="90">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="0.5">up</stem>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="15" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="5" type="start" />
         </direction-type>
-        <offset>-1</offset>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
+        <dot />
       </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="28" width="252">
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="5" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="10">
+    </measure>
+    <measure number="28" width="252">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="0.5">up</stem>
+        <dot />
       </note>
-      <note default-x="132">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="172">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="211">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-55">down</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="29" width="398">
-      <print new-system="yes"/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="13" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="6" type="start" />
         </direction-type>
       </direction>
-      <note default-x="75">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="6" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="237">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-55">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="30" width="333">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="22" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="1" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="10">up</stem>
+        <dot />
       </note>
-      <note default-x="172">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="31" width="167">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
+        <tie type="start" />
         <type>half</type>
-        <dot/>
-        <stem default-y="0">up</stem>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="1" type="stop" />
         </direction-type>
-        <offset>-19</offset>
       </direction>
       <barline location="right">
         <bar-style>dashed</bar-style>
       </barline>
     </measure>
-    <!--=======================================================-->
     <measure number="32" width="172">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
-          <octave>4</octave>
+          <octave>3</octave>
         </pitch>
-        <duration>16</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <stem>down</stem>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <barline location="right">
         <bar-style>light-light</bar-style>
       </barline>
     </measure>
-    <!--=======================================================-->
     <measure number="33" width="316">
-      <print new-system="yes"/>
-      <sound forward-repeat="yes"/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="15" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="2" type="start" />
         </direction-type>
       </direction>
-      <note default-x="75">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="1">up</stem>
+        <dot />
       </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="34" width="251">
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="2" type="stop" />
         </direction-type>
-        <offset>3</offset>
       </direction>
-      <note default-x="10">
+    </measure>
+    <measure number="34" width="251">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
+        <duration>30240</duration>
         <type>half</type>
-        <dot/>
-        <stem default-y="-55.5">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="35" width="251">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="15" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="3" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-50.5">down</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="3" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="130">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-45.5">down</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="36" width="252">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="27" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="4" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>48</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <dot/>
-      </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="37" width="339">
-      <print new-system="yes"/>
-      <note print-object="no">
-        <cue/>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <dot/>
-        <stem>down</stem>
-      </note>
-    </measure>
-    <!--=======================================================-->
-    <measure number="38" width="274">
-      <note default-x="10">
-        <pitch>
-          <step>C</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>16</duration>
-        <tie type="start"/>
-        <voice>1</voice>
+        <duration>30240</duration>
+        <tie type="start" />
         <type>half</type>
-        <stem default-y="-55">down</stem>
+        <dot />
         <notations>
-          <tied type="start"/>
+          <tied type="start" />
         </notations>
       </note>
-      <note default-x="186">
+    </measure>
+    <measure number="37" width="339">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+    </measure>
+    <measure number="38" width="274">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <tie type="stop"/>
-        <voice>1</voice>
+        <duration>20160</duration>
+        <tie type="start" />
+        <type>half</type>
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <stem default-y="15">up</stem>
         <beam number="1">begin</beam>
         <notations>
-          <tied type="stop"/>
+          <tied type="stop" />
         </notations>
       </note>
-      <note default-x="229">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="5">up</stem>
         <beam number="1">end</beam>
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="4" type="stop" />
         </direction-type>
-        <offset>-3</offset>
       </direction>
     </measure>
-    <!--=======================================================-->
     <measure number="39" width="183">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <direction placement="above">
         <direction-type>
-          <bracket default-y="20" line-end="down" line-type="solid" number="1" type="start"/>
+          <bracket line-end="down" line-type="solid" number="5" type="start" />
         </direction-type>
       </direction>
-      <note default-x="10">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="10.5">up</stem>
+        <dot />
       </note>
       <direction placement="above">
         <direction-type>
-          <bracket line-end="down" number="1" type="stop"/>
+          <bracket line-end="down" line-type="solid" number="5" type="stop" />
         </direction-type>
-        <offset>2</offset>
       </direction>
-      <note default-x="110">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="40" width="274">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="0.5">up</stem>
+        <dot />
       </note>
-      <note default-x="143">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="187">
-        <rest/>
-        <duration>4</duration>
-        <voice>1</voice>
+      <note>
+        <rest />
+        <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <note default-x="229">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
+        <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-40">down</stem>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="41" width="394">
-      <print new-page="yes"/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <barline location="left">
-        <ending number="1" print-object="no" type="start">1.</ending>
+        <bar-style>regular</bar-style>
+        <ending number="2" type="start" />
       </barline>
-      <note default-x="75">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-45">down</stem>
+        <dot />
       </note>
-      <note default-x="234">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="42" width="329">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>down</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <note default-x="169">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="10.5">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="43" width="165">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>48</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <dot/>
+        <duration>30240</duration>
+        <tie type="start" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="44" width="183">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>16</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <stem>up</stem>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <barline location="right">
-        <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" winged="none"/>
+        <repeat direction="backward" />
       </barline>
     </measure>
-    <!--=======================================================-->
     <measure number="45" width="438">
-      <print new-system="yes"/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
       <barline location="left">
-        <ending number="1" print-object="no" type="start">2.</ending>
+        <bar-style>regular</bar-style>
+        <ending number="2" type="start" />
       </barline>
-      <note default-x="75">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="-45">down</stem>
+        <dot />
       </note>
-      <note default-x="256">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>24</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <dot/>
-        <stem default-y="-50">down</stem>
+        <duration>15120</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
       <barline location="right">
-        <ending number="1" print-object="no" type="discontinue"/>
+        <bar-style>regular</bar-style>
+        <ending number="2" type="stop" />
       </barline>
     </measure>
-    <!--=======================================================-->
     <measure number="46" width="250">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
-        <type size="full">quarter</type>
-        <dot/>
-        <stem>down</stem>
+        <duration>15120</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
-      <note default-x="123">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
-        <duration>12</duration>
-        <voice>1</voice>
+        <duration>15120</duration>
         <type>quarter</type>
-        <dot/>
-        <stem default-y="5.5">up</stem>
+        <dot />
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="47" width="187">
-      <note default-x="10">
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>48</duration>
-        <voice>1</voice>
-        <type>whole</type>
-        <dot/>
+        <duration>30240</duration>
+        <tie type="start" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+        </notations>
       </note>
     </measure>
-    <!--=======================================================-->
     <measure number="48" width="196">
-      <note print-object="no">
-        <cue/>
+      <attributes>
+        <divisions>10080</divisions>
+      </attributes>
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
-        <duration>16</duration>
-        <voice>1</voice>
-        <type size="full">half</type>
-        <stem>up</stem>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
       </barline>
     </measure>
   </part>
-  <!--=========================================================-->
 </score-partwise>

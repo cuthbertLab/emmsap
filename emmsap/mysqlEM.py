@@ -23,7 +23,7 @@ from music21 import stream
 class EMMSAPException(Exception):
     pass
 
-def readEMMSAPPasswordFile(userdir = None):
+def readEMMSAPPasswordFile(userdir=None):
     if userdir is None:
         username = getpass.getuser()
         userdir = os.path.expanduser("~" + username)
@@ -522,11 +522,14 @@ class Piece(EMMSAPMysqlObject):
         else:
             print("File %s did not exist" % fn)
 
-    def deletePiece(self):
+    def deletePiece(self, keepPieceEntry=False):
         '''
         Deletes this piece entirely from the database, including its segments and ratios.
         
-        Does not delete any composers, etc. associated with it or the file on disk. use deletePiece for that.
+        Does not delete any composers, etc. associated with it or the file on disk. 
+        use deleteFileOnDisk for that.
+        
+        keepPieceEntry makes it possible to reindex everything under the same pieceId number
         '''
         pieceSegments = self.segments()
         segment1TupleList = []
@@ -571,8 +574,9 @@ class Piece(EMMSAPMysqlObject):
         self.dbObj.cursor.execute('''DELETE FROM tinyNotation WHERE fn = %s''', (self.filename, ))        
         print("deleting intervals")
         self.dbObj.cursor.execute('''DELETE FROM intervals WHERE fn = %s''', (self.filename, ))        
-        print("deleting piece...")
-        self.dbObj.cursor.execute('''DELETE FROM pieces WHERE id = %s''', (self.id, ))
+        if keepPieceEntry is not True:
+            print("deleting piece...")
+            self.dbObj.cursor.execute('''DELETE FROM pieces WHERE id = %s''', (self.id, ))
         self.dbObj.cnx.commit()
         
 

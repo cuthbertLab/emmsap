@@ -5,13 +5,13 @@ from __future__ import print_function
 from emmsap import files, mysqlEM
 from music21 import text, environment, converter
 import difflib
-import unicodedata
+import unicodedata # @UnresolvedImport
 import re
 import os
 
 em = mysqlEM.EMMSAPMysql()
 em.cnx.set_charset('utf8')
-print(em.cnx.charset)
+#print(em.cnx.charset)
 
 query = '''REPLACE INTO texts (fn, language, text, textReg, textNoSpace) VALUES (%s, %s, %s, %s, %s)'''
 

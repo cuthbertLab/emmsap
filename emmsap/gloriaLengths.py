@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 from __future__ import division
 
@@ -5,7 +6,7 @@ from emmsap import files
 #from music21 import common
 from music21 import expressions
 from music21 import converter
-from music21 import interval
+#from music21 import interval
 from music21 import metadata
 from music21 import stream
 from music21.search import lyrics

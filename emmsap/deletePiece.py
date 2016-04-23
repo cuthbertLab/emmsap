@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from emmsap import mysqlEM
 
 def deleteOMRDuplicates():
@@ -10,13 +12,13 @@ def deleteOMRDuplicates():
         p = mysqlEM.Piece(deleteIt, em)
         print(p.id, p.filename)
         
-        p.deleteFileOnDisk()
+        #p.deleteFileOnDisk()
         p.deletePiece()
 
 
 if __name__ == '__main__':
     #deleteOMRDuplicates()
     #exit()
-    emp = mysqlEM.Piece(2255) # 703, 705, 1379, 1386, 1393, 1394
+    emp = mysqlEM.Piece(408) # 703, 705, 1379, 1386, 1393, 1394
     print(emp.filename)
-    emp.deletePiece()
+    emp.deletePiece(keepPieceEntry=True)

@@ -47,7 +47,7 @@ def onePiece(fn):
         except Exception as e:
             print(str(fn) + " " + str(i) + " could not be converted to TN: " + str(e))
 
-    print (fullFn + " Done!")
+    print (fn + " tiny notation indexed")
 
 def onePart(partNum, p, fn):
     allTS = p.flat.getElementsByClass('TimeSignature')

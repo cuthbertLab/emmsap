@@ -165,7 +165,7 @@ skipPieces = [
                 # match for Levandome l maytino
               (1931, 1932), # two versions Herz mut leib sel, Wolkenstein
               
-              
+              (2383, 1097), # Cambrai 1328 Floret, Vitry Bona Condit -- NEUMA tenor.
               
               
               ######
@@ -209,8 +209,8 @@ skipPieces = [
               (852, 1190), # Credo village and a PMFC 23 Credo A1 -- monophonic rhythmic Credo 1.
               (1599, 1596), # IntRhySmall got that the Nightingale song of Or sus and 
                 # Onques ne fu were the same. :-)
-              
-              
+              (2351, 2352, 2353), # PMFC 16 83, 84, 85 -- three variant Iudea et Ierusalems
+              (2373, 2284), # Beatius cum humanum + Adesto sancta trinitas (AZ discovery)
               
               # unknown similarities worth mentioning...
               (362, 1297), # Ciconia Io crido amor + Zaninus Se la lagrime -- m 16-17, 13-14
@@ -653,10 +653,30 @@ skipPieces = [
             
             (727, 731, 734, 736, 860, # hidden notes encoded in Marchi's transcriptions...
              170, 64, 176, 1291, 1563), # and pieces caught by them
+              
+            (2363, 1229, 1227), # Basel Novum sidus low thresh
+            (2364, 2354), # Basel St Clara Kyrie w/ PMFC16 #86
+            (450, 451), # Chantilly 46 + 47 -- only a computer would think this...
+            (465, 1377), # Chantilly 61 + 71 -- noodles...
+            (2244, 2363), # interesting: Cesaris Chantilly 73 and opening of Basel Novum sidus,
+                # but more interesting for internal repetition in 2244: m. 21 and m. 60
+              
+            # PMFC16 cantus firmi
+            (2339, 2333, 2359, 2350, 2355, 2335), # #71
+            (2342, 2322), # #74
+            (2343, 2351, 2355, 2350), # #75
+            (2346, 2333), # #78
+            (2348, 2350), # 80
+            (2350, 2318, 2332, 2283, 165, 2277, 2336, 2009), # 82
+            (2351, 2318, 2332, 389, 1476, 1487), # 83 -- + see above for 84, 85
+            (2352, 1487), # 84 -- + see above for 83, 85
+            (2353, 1487), # 85 -- + see above for 83, 84
+            (2355, 2326)
+            
               ] 
 
 class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=2339, endPiece=2550, minThreshold=7500, maxToShow=0):
+    def __init__(self, startPiece=2384, endPiece=2550, minThreshold=7000, maxToShow=1):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
@@ -698,6 +718,8 @@ class SimilaritySearcher(object): # 1322
         p = mysqlEM.Piece(pNum, dbObj=self.dbObj)
         if p.id is None:
             return
+        
+        
         if self.fragmentsOnly is True and p.frag is not True:
             return
         print("Running piece %d (%s)" % (pNum, p.filename))

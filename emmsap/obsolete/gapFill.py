@@ -1,4 +1,4 @@
-from music21 import corpus
+#rom music21 import corpus
 from emmsap import files
 
 def calculateAverageNote(s):

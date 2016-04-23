@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #-------------------------------------------------------------------------------
 from __future__ import print_function
-import os, sys
+import os
 import music21
 environLocal = music21.environment.Environment()
 
@@ -21,7 +21,7 @@ def fixFilesInADir(dirName = emmsapDir):
     '''
     #: :type fn: str
     for fn in os.listdir(dirName): 
-        newName = music21.common.normalizeFilename(fn)
+        newName = music21.common.normalizeFilename(fn) # @UndefinedVariable
         if newName.startswith('PMFC0'):
             newName = 'PMFC_0' + newName[5:]
             
