@@ -5,7 +5,6 @@ from __future__ import print_function, division
 from emmsap import mysqlEM
 #from music21.search import segment
 
-
 skipPieces = [             
                # new discoveries!
                (2322, 2094), # PMFC Sanctus 16.55 + Autun 152 Modulus, Tenor Deo Gratias
@@ -34,6 +33,8 @@ skipPieces = [
                
                (2064, 1912), # Nicolaus de Radom Gloria 1 + Credo 1 paired; see esp. Adoramus te
                             # + Genitum non Factum. (just below threshold is Gloria 2 + Credo 3)
+               (2437, 179), # PMFC 15.24 tenor = second half of PMFC 1, Vos qui/Gratissima
+               (2534, 2428), # Same tenor (unknown) PMFC 14.84, PMFC 15.15 
                # end new discoveries.
                
                # two transcriptions of the same
@@ -210,7 +211,13 @@ skipPieces = [
               (1599, 1596), # IntRhySmall got that the Nightingale song of Or sus and 
                 # Onques ne fu were the same. :-)
               (2351, 2352, 2353), # PMFC 16 83, 84, 85 -- three variant Iudea et Ierusalems
-              (2373, 2284), # Beatius cum humanum + Adesto sancta trinitas (AZ discovery)
+              (2373, 2542), # Beatius cum humanum + Adesto sancta trinitas (AZ discovery)
+              (2426, 2403), # PMFC 15.13 (Quare Frem...) + PMFC16.91 Magnificat (wow! cool)
+              (2527, 2528), # PMFC 14.77-78 on same pes.
+              (2524, 2517), # PMFC 14.67, 14.74 on same tenor.
+              (1264, 2512), # Musicalis Sciencia on same tenor as PMFC 14.62 (Dies Sanctificantis)
+                # Mentioned as known by Taruskin OHWM
+              
               
               # unknown similarities worth mentioning...
               (362, 1297), # Ciconia Io crido amor + Zaninus Se la lagrime -- m 16-17, 13-14
@@ -667,16 +674,45 @@ skipPieces = [
             (2343, 2351, 2355, 2350), # #75
             (2346, 2333), # #78
             (2348, 2350), # 80
-            (2350, 2318, 2332, 2283, 165, 2277, 2336, 2009), # 82
+            (2350, 2318, 2332, 2541, 165, 2277, 2336, 2009), # 82
             (2351, 2318, 2332, 389, 1476, 1487), # 83 -- + see above for 84, 85
             (2352, 1487), # 84 -- + see above for 83, 85
             (2353, 1487), # 85 -- + see above for 83, 84
-            (2355, 2326)
+            (2355, 2326),
+            # PMFC15 CF
+            (2425, 2315, 2322), # PMFC 15.12 v/ Sanctus 16.48 + 55 -- not close enough            
+            (2427, 2336, 165, 2350, 271, 2346, 2332, 2351, 2335, 2352, 2318), # PMFC15.14 w/ lots
+            (2423, 435), # 10
+            (2428, 2329, 2313), # 15
+            (2435, 2322), # 22 w/ PMFC 16.55 Sanctus -- not enough
+            (2439, 2405), # 26, 16.93 te deum. eh.
+            (2442, 7878), # 28 not close enough to Flos Filius
+            (2445, 2427, 2350, 2351, 2352, 2426, 2353), # 15.31 w/ lots of others.
+            (2469, 2458), # PMFC 14 19 + 14.8, not close enough for me.
+            (2478, 2514, 2526), # 28 w/ 64 and 76 -- interestingly close but not enough.
+            (2482, 1643), # 32 w/ Faus semblaunt
+            (2484, 2492, 2313), # 34 w/ 42 w/ 46
+            (2487, 2445), # 37 w/ PMFC 15.31 nope...
+            (2496, 2501, 2319), # 46 and 51 -- all pes's sound alike apparently... 
+            (2497, 2542, 1227, 1229), # 47 w/ Adesto sancta trinitas, and PMFC 5-17, 19
+            (2501, 2509, 2542), # 51, 59 -- super simple Pes
+            (2501, 2508), # 51 and 58 -- interesting, but not enough.
+            (2537, 2442), # 87 + PMFC15.28 close but very generic tenors 
+            (2530, 1422), # PMFC 14.80 + Le greygnour bien
+            (2529, 2014), # PMFC 14.79 + Kyrie Cuthberte
+            
+            # PMFC 14 Appendix.  nope...
+            (2546, 2433),
+            (2547, 2445, 2343),
+            (2551, 2347, 2442),
+            (2555, 2494), # PMFC 14 app. 12 m. 9 with # 44 m. "28" -- perfect for a few mm..
+            (2559, 2530), # nope.
+            (2570, 2524), # PMFC app. 27, # 74 -- some tenor same but mostly not.
             
               ] 
 
 class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=2384, endPiece=2550, minThreshold=7000, maxToShow=1):
+    def __init__(self, startPiece=2544, endPiece=3000, minThreshold=7273, maxToShow=1):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
