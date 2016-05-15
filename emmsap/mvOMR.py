@@ -1,14 +1,14 @@
 '''
 Separating out a large pdf for OCR is hard -- this will help move
-files into the right place
+files into the right place for Sharp score
 '''
 import os
 import shutil
 
-inDir = '/Users/Cuthbert/desktop/PMFC_17_tif/'
-inPreface = 'PMFC_17_Page_'
-outDir = '/Users/Cuthbert/documents/_PMFC_17_OMR/'
-outPreface = 'OMR_PMFC17_'
+inDir = '/Users/Cuthbert/desktop/e15cm_2/'
+inPreface = 'OMR_E15cM_2_Page_'
+outDir = '/Users/Cuthbert/documents/_OMR_E15cM_2/'
+outPreface = 'OMR_E15cM_2_'
 
 def mkDirs(maximum=100):
     for i in range(maximum):
@@ -46,7 +46,7 @@ class Mover:
         self.lastFileNum = thisFileNum
     
 if __name__ == "__main__":
-    mkDirs()
+    #mkDirs()
     m = Mover()
     #m.moveToN(18)
 
@@ -70,16 +70,38 @@ if __name__ == "__main__":
 #                  104, 111, 117, 122, 125, 129,
 #                  131, 133, 137, 140, 144, 147,
 #                  153, 158, 164, 167], startNum=1)
-    # PMFC 17
-    m.moveNList([8, 12, 14, 15, 16, 17, 18, 19, 20, 21,
-                 25, 26, 28, 31, 35, 41, 42, 44, 48, 50,
-                 53, 54, 55, 58, 59, 61, 63, 64, 66, 68,
-                 71, 72, 74, 77, 80, 82, 84, 89, 94, 95,
-                 97, 98, 99, 102, 105, 107, 110, 115, 119, 124,
-                 129, 135, 138, 140, 142, 145, 149, 156, 157, 160,
-                 163, 165, 167, 170, 171, 175, 176, 178, 179
-                 ], startNum=1)
+#     # PMFC 17
+#     m.moveNList([8, 12, 14, 15, 16, 17, 18, 19, 20, 21,
+#                  25, 26, 28, 31, 35, 41, 42, 44, 48, 50,
+#                  53, 54, 55, 58, 59, 61, 63, 64, 66, 68,
+#                  71, 72, 74, 77, 80, 82, 84, 89, 94, 95,
+#                  97, 98, 99, 102, 105, 107, 110, 115, 119, 124,
+#                  129, 135, 138, 140, 142, 145, 149, 156, 157, 160,
+#                  163, 165, 167, 170, 171, 175, 176, 178, 179
+#                  ], startNum=1)
 
 #     # PMFC 15 SUP (in PMFC 17) # #4 rename to #5
 #     m.moveNList([231, 235, 238, 241, 244], startNum=1)
 
+#     # PMFC 02 lays
+#     m.moveNList([5, 6, 9, 14, 19, 23, 26,
+#                  30, 34, 38, 43, 56, 79,
+#                  85, 89, 94, 98, 103, 106,
+#                  110, 111, 112
+#                  ])
+#     # E15cM 3
+#     m.moveNList([39, 39, 40, 41, 42, 
+#                  43, 46, 49, 52, 56,
+#                  59, 62, 63, 64, 66,
+#                  69, 72, 78, 80, 82,
+#                  84, 87, 91, 93, 95,
+#                  96, 97, 100, 101, 102,
+#                  104, 107, 110, 113, 116,
+#                  118, 119, 124, 126, 130,
+#                  131, 133, 135, 136, 140,
+#                  141, 142, 144, 146
+#                  ])
+
+    # E 15cM 2
+    m.moveNList([
+                 ])

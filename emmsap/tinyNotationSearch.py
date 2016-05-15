@@ -15,7 +15,8 @@ searches = {
     'q15_2': ("rare. but no match", 'fn like "%kyrie%" AND intervals like "%4-22-4%"'),
     'q15_3': ("23 - no matches", 'intervals like "%-2222-24-2%"'),
     'q15_4': ("MB Found Piece: Zachara", 'intervals like "%-224-2-2-2%"'),
-    'q15_5': ("MB Found Piece: Salinis", '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-34%"'),
+    'q15_5': ("MB Found Piece: Salinis", 
+              '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-34%"'),
     'q15_9': ("MSC: Also Zachara! 35 total / latin / natum ante", 'intervals like "%2-422-3-2%"'),
     'q15_14': ("0 for glorias 65 for total", 'intervals like "%22-5322%"'),
     'q15_16': ("0 -- only match Ay si is not it", 'intervals like "%-2-4233-2-2%"'),
@@ -60,7 +61,7 @@ searches = {
     
     # not Q15
     'avr': ('avranches 13 f. 1r', 'intervals like "%-41-251%"'),
-    25406: ('paris 25406', 'intervals like "%-24-32-2-2-2%"'),
+    'paris25406': ('paris 25406', 'intervals like "%-24-32-2-2-2%"'),
     'vat1969ct': ('', 'fn like "PMFC_21%" AND intervals like "%2-3-2222%"'),
     'vat1969more': ('search end', 'intervals like "%2-2-22-2"'),
     
@@ -151,11 +152,11 @@ import os
 import re
 
 def runSearch():
-    runOne('sl177r', True)
-    #runAll()
+    #runOne('sl177r', True)
+    runAll()
 
 def runAll():
-    for k in searches:
+    for k in sorted(searches.keys()):
         print("******************")
         print(searches[k][0])
         runOne(k)
@@ -164,7 +165,7 @@ def runOne(searchIndex, show=False):
     ##############
     print("Running: " + str(searchIndex))
     
-    pieceMinimum = 0 # for searching only newly added pieces...
+    pieceMinimum = 1500 # for searching only newly added pieces...
     
     intervalsLike = re.compile(r'intervals like\s"\%?([0-9\-]+)\%?"')
     intervalsNoUnisonLike = re.compile(r'intervalsNoUnisons like\s"\%?([0-9\-]+)\%?"')
@@ -215,7 +216,8 @@ def runOne(searchIndex, show=False):
     if comment != "":
         print(comment)
     print(em.cursor.rowcount, "Rows total")
-    for rowCount, (fn, partId) in enumerate(em.cursor):
+    
+    for rowCount, (fn, partId) in enumerate(list(em.cursor)):
         found = False
         skipIt = False
         for s in skip:

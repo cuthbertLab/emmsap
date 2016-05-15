@@ -35,10 +35,23 @@ skipPieces = [
                             # + Genitum non Factum. (just below threshold is Gloria 2 + Credo 3)
                (2437, 179), # PMFC 15.24 tenor = second half of PMFC 1, Vos qui/Gratissima
                (2534, 2428), # Same tenor (unknown) PMFC 14.84, PMFC 15.15 
+               
+               
+               #(2676, 2670), # Machaut Lay plour Malgre Fortune + Lay mortel 
+                # m. 39-44 w/ Mortel, 118-121 (very close)
+                # m. 151-158 w/ 54–59 (very close)
+                # perhaps known in (Schrade 1958-61,?? 848) But Ben's diss doesn't mention it.
+                # only saying "unforunately, he does not provide examples of any of these
+                # specific mutual similarities here or in subsequent publications." p. 26
+               (2676, 2672), #Machaut Lay plour Malgre Fortune, p. 39-45 w/
+                # Machaut L 10 (Lay Nastre Dame), m. 154-162 -- sort of
+              
                # end new discoveries.
                
                # two transcriptions of the same
                # same piece..different versions.
+               (2636, 1254), # OMR PMFC17.66 = Bodley 842 59v transcription
+               (2632, 2122), # OMR PMFC17.62 = Fallows 024 Felix namque (known... good OMR!)
                (2229, 1648), # Merci pour dieu A da Cividale E15c + PMFC22
                (2232, 717), # Je suy las venus E15c + Marchi notation
                (2194, 2195), # FallowsMB_89 + 89a
@@ -51,6 +64,13 @@ skipPieces = [
               (1774, 1775), # two versions Sedendo al onbra
               (1771, 1772), # two versions Piu non mi curo
               (1767, 1768), # two versions O tu chara scientia
+              (2782, 831), # OMR E15cM2 Bosquet 1 PMFC 23.44 (del 2782)
+              (2783, 832), # OMR E15cM2 Bosquet 2 PMFC 23.45 (del 2783)
+              (2785, 332), # OMR E15cM2 Cameraco PMFC 23.62 (del 2785)
+              (2791, 451), # OMR E15cM2 Haspre 1 Chantilly 47 Puisque (del 2791)
+              (2792, 450), # OMR E15cM2 Haspre 1 Chantilly 46 Ma douce amour (del 2792)
+              (2795, 414), # OMR E15cM2 Haucourt (Altacuria) 1 Ch 8 Se doit (del 2795)
+              
               (1904, 1378), # E15cM + Stoessel version Salinis En la saison
               (1296, 1408), # PMFC and Stoessel version Zachara Sol mi traffig
               (650, 651), # merce o morte two versions PMFC 20
@@ -168,9 +188,10 @@ skipPieces = [
               
               (2383, 1097), # Cambrai 1328 Floret, Vitry Bona Condit -- NEUMA tenor.
               
-              
               ######
-              # known similarities
+              # known similarities ; known concordances
+              (2828, 2097), # Paulet's only known piece w/ Cambrai 1328 Hasselmann 25; Fallows Cat.
+              (2758, 2303), # E 15c M 3 # 28 / E 15cM 4 R 32 (see E15/4p.xvi)-- Mon cuer / Mon cuer 
               (281, 2240), # FOL, Grottaferrata Gloria in London Titus.
               (737, 1287), # Marchi and Di Mascia were right: 
                 # Nuda non era is the best match for Le temps ver.
@@ -186,7 +207,8 @@ skipPieces = [
               (290, 1288), # rosetta + gloria
               (1601, 889, 2123), # pmfc 21.5 contrafacted as 23.92, included also in Fallows
               (320, 1216), # Gloria Loys, Flos Ortus Inter Lilia (Known)
-              
+              (2571, 2348, # PMFC 17.1 + PMFC 16.80: both on Victime Paschali Laudes
+                        454, 1088, 2350),   # + bogus matches
               (32, 266, 270, 271, 272, 389, 390, 398, 480),  # flos filius benes
               (299, 300), # Gloria PMFC 13 14-15 -- same tenor
               (220, 229), # bartolino amor che nel pensier, l invido per lo ben
@@ -708,11 +730,45 @@ skipPieces = [
             (2555, 2494), # PMFC 14 app. 12 m. 9 with # 44 m. "28" -- perfect for a few mm..
             (2559, 2530), # nope.
             (2570, 2524), # PMFC app. 27, # 74 -- some tenor same but mostly not.
+
+            # PMFC 17...
+            (2574, 2339), # PMFC 17.4 + PMFC 16.71
+            (2575, 2558, 2426, 2445, 2403), 
+                # PMFC 17.5 + PMFC 14 Appendix 15. + PMFC 15.13 & 15.31; 16.91
+            (2580, 2314, 118), # 10 + PMFC 16.47 Sanctus  + PMFC 7 GdF 12
+            (2596, 2328), # 26 + 16.61 nope
+            (2612, 2618, 2406, 397), # 42 + 48 w/ 16.94, Seville 25/Barcelona Kyrie (low)
+            (2617, 2619), # 47 and 49
+            (2637, 2347), # 67 + 16.79 (low)
             
+            # PMFC 15 Sup # 5 in PMFC 17 w/ Nicolo 28 + Gloria PMFC 13 A2 (so possibly Italian?)
+            (2642, 1483, 815),
+            
+            (2657, 2358), # Perz Kras Gloria + Early 15 century Music Ballade.
+            
+            # PMFC2 OMR Lai
+            (2683, 168),
+            (2676, 1362, 2650, 2607),
+            (2677, 2405),
+            (2675, 2673), 
+            (2672, 1452),
+            (2671, 2397),
+            (2670, 1544),
+            (2669, 2523), 
+            (2668, 2435),
+            (2667, 2349),
+            (2665, 2355),
+            (2663, 810),
+            
+            # E15cM 5
+            (2718, 929), # Entrepris_suis, Un_Cane Un Oca
+            # E15cM 3
+            (2752, 2547),
+            (2762, 2207), # only a computer would see it...
               ] 
 
 class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=2544, endPiece=3000, minThreshold=7273, maxToShow=1):
+    def __init__(self, startPiece=2837, endPiece=3000, minThreshold=6373, maxToShow=2):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
