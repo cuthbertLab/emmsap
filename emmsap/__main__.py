@@ -1,5 +1,8 @@
 import os
 import sys
+from sys import version_info as _pyver
+if _pyver[0] <= 2 or (_pyver[0] == 3 and _pyver[1] <= 3):
+    raise ImportError("Emmsap requires Python 3.4 or higher. Exiting.")
 
 if __name__ == '__main__' and __package__ in (None, ''):
     packageDir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

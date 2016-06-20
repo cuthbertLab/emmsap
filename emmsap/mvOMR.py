@@ -5,13 +5,13 @@ files into the right place for Sharp score
 import os
 import shutil
 
-inDir = '/Users/Cuthbert/desktop/e15cm_2/'
-inPreface = 'OMR_E15cM_2_Page_'
-outDir = '/Users/Cuthbert/documents/_OMR_E15cM_2/'
-outPreface = 'OMR_E15cM_2_'
+inDir = '/Users/Cuthbert/desktop/turin/'
+inPreface = 'OMR_Turin_4_Page_'
+outDir = '/Users/Cuthbert/documents/_OMR_Turin_4/'
+outPreface = 'OMR_Turin_4_'
 
 def mkDirs(maximum=100):
-    for i in range(maximum):
+    for i in range(1, maximum):
         iStr = "%02d" % i # change as needed
         os.mkdir(outDir + iStr)
 
@@ -34,10 +34,11 @@ class Mover:
         move some tif files from lastPageNum + 1 to n
         to lastFileNum + 1; and increment
         '''
-        startPageNum = self.lastPageNum + 1
+        startPageNum = int(self.lastPageNum + 1)
         thisFileNum = self.lastFileNum + 1
-        for pn in range(startPageNum, n+1):
-            pnIn = inDir + inPreface + "%03d.tiff" % pn
+        moveRangeAdjust = 1 if isinstance(n, int) else 2 # float means to keep two copies...
+        for pn in range(startPageNum, int(n) + moveRangeAdjust):
+            pnIn = inDir + inPreface + "%02d.tiff" % pn
             pnOut = outDir + "%02d/%s%02d_%03d.tif" % (thisFileNum, outPreface, thisFileNum, pn)
             print(pnIn, pnOut)
             shutil.copy2(pnIn, pnOut)
@@ -46,7 +47,7 @@ class Mover:
         self.lastFileNum = thisFileNum
     
 if __name__ == "__main__":
-    #mkDirs()
+    mkDirs()
     m = Mover()
     #m.moveToN(18)
 
@@ -102,6 +103,12 @@ if __name__ == "__main__":
 #                  141, 142, 144, 146
 #                  ])
 
-    # E 15cM 2
-    m.moveNList([
+    # Turin vol. 4
+    m.moveNList([1, 2., 3., 5, 6, 8, 9., 11., 12., 14,
+                15, 16., 18, 19., 20., 21., 22., 23., 25., 27, 
+                27., 29, 30., 31., 33, 34, 34., 36, 37, 38.,
+                39, 39., 40., 41., 42., 43, 44, 45., 46., 47.,
+                48, 49., 50., 52, 53, 54., 55., 56., 58, 60.,
+                61, 62., 63., 64., 65., 67., 68., 69., 70., 71.,
+                73, 74., 75., 76., 78
                  ])

@@ -30,8 +30,9 @@ def exists(fn, table='tinyNotation'):
         return False
 
 
-def onePiece(fn):
-    if exists(fn, 'intervals'):
+def onePiece(fn, table='tinyNotation'):
+    if exists(fn, table):
+        #pass
         return
     fullFn = files.emmsapDir + os.sep + fn
     
@@ -85,10 +86,10 @@ def toInterval(partNum, p, fn):
     allIntStrNoUnisons = ''.join(allIntsNoUnisons)
     em.cursor.execute(queryInv, [fn, str(partNum), allIntStr, allIntStrNoUnisons])
 
-def runAll():
+def runAll(table='tinyNotation'):
     for fn in files.allFiles():
         try:
-            onePiece(fn)
+            onePiece(fn, table)
         except Exception as e:
             print(fn + " could not be converted: " + str(e))
 

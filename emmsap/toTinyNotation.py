@@ -23,8 +23,8 @@ def convertOne(n, lastTNType):
         if (nOctave <= 3):
             nName = (nStep * (4-nOctave)) + nAccidentalModifier
         elif (nOctave >= 5):
-            nName = nStep + ("'" * (nOctave - 4)) + nAccidentalModifier
-        else:
+            nName = nStep.lower() + ("'" * (nOctave - 4)) + nAccidentalModifier
+        else: # octave 4
             nName = nName.lower()
     elif (n.isRest):
         nName = 'r'

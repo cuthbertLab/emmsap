@@ -97,6 +97,9 @@ class EMMSAPMysql(object):
             return row
 
     def getTableRowByColumnAndValue(self, table, column, value):
+        '''
+        get a single row from a table where the column equals a value.
+        '''
         preQuery = "SELECT * FROM %s " % table
         preQuery = preQuery + "WHERE %s = " % column
         self.query = preQuery + "%s"

@@ -43,7 +43,7 @@ def problemFileNames(filenameList):
 
     :type filenameList: list(str)
     '''
-    import unicodedata
+    import unicodedata  # @UnresolvedImport
     #from unidecode import unidecode as un # @UnresolvedImport
     returnList = []
     for fn in filenameList:

@@ -112,11 +112,28 @@ searches = {
     'utrecht4': ('','intervals like "%-2-23141-2-2-2-2%"'),
     'utrecht5': ('no % at end is not a mistake', 'intervals like "%-2-3-2-2-2-2"'),
     
-    'nur9aDv': ('palimpsest', 'intervals like "%-222-321%"'),
-    'nur9a2': ('palimpsest', 'intervalsNoUnisons like "%-225-2-2-2-2-222-2%"'),
-    'nur9a3': ('palimpsest', 'intervalsNoUnisons like "%-2-225-2-2-22-2%"'),
-    'nur9a4': ('palimpsest', 'intervals like "%51-2-21-22%"'),
-    'nur9a5': ('palimpsest', {'skip': ['PMFC_04_07-D_amor']}, 'intervalsNoUnisons like "%-2-222-252-2-2-22%"'),
+    'nur9aDv': ('palimpsest', {'skip': ['PMFC_04_07-D_amor',
+                                       'Nuremberg_9a_Dv_palimpsest']},
+                'intervals like "%-222-321%"'),
+    'nur9a2': ('palimpsest', {'skip': ['PMFC_04_07-D_amor',
+                                       'Nuremberg_9a_Dv_palimpsest']},
+               'intervalsNoUnisons like "%-225-2-2-2-2-222-2%"'),
+    'nur9a3': ('palimpsest line 4 no unisons', {'skip': ['PMFC_04_07-D_amor',
+                                       'Nuremberg_9a_Dv_palimpsest',
+                                       'OMR_PMFC17_16_041',
+                                       'OMR_PMFC14_75_167',
+                                       'OMR_PMFC14_13_030',
+                                       'PMFC16_64-Agnus_Dei',
+                                       ]},
+               'intervalsNoUnisons like "%-225-2-2-22-2%"'),
+    'nur9a4': ('palimpsest line 4', {'skip': ['PMFC_04_07-D_amor',
+                                       'Nuremberg_9a_Dv_palimpsest',
+                                       'E15cM_VII_Grenon_10-Nova_vobis_gaudia',
+                                       ]},
+               'intervals like "%251-2-21-22%"'),
+    'nur9a5': ('palimpsest line 5', {'skip': ['PMFC_04_07-D_amor',
+                                       'Nuremberg_9a_Dv_palimpsest']}, 
+               'intervalsNoUnisons like "%-2-222-252-2-2-22%"'),
     
     'ox56_81r': ('Oxford 56', 'intervals like "%-2-2-2-22222-422%"'),
     'ox56_80r': ('Ox56', 'intervals like "%2-2-222221%" AND (fn regexp "gloria" or fn regexp "terra")'),
@@ -152,20 +169,22 @@ import os
 import re
 
 def runSearch():
-    #runOne('sl177r', True)
-    runAll()
+    runOne('nur9a3', True)
+    #runAll()
 
 def runAll():
-    for k in sorted(searches.keys()):
+    for i, k in enumerate(sorted(searches.keys())):
+        if i < -1 or i > 10:
+            continue # for working slowly...
         print("******************")
         print(searches[k][0])
-        runOne(k)
+        runOne(k, show=True)
     
 def runOne(searchIndex, show=False):
     ##############
     print("Running: " + str(searchIndex))
     
-    pieceMinimum = 1500 # for searching only newly added pieces...
+    pieceMinimum = 0 #1500 # for searching only newly added pieces...
     
     intervalsLike = re.compile(r'intervals like\s"\%?([0-9\-]+)\%?"')
     intervalsNoUnisonLike = re.compile(r'intervalsNoUnisons like\s"\%?([0-9\-]+)\%?"')
