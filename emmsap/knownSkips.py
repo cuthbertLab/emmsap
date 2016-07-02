@@ -72,6 +72,10 @@ skipPieces = [
               (2947, 824), # two versions Gloria Baude Cordier
               (2961, 2244), # two versions: La dieus d'amours
               
+              # two versions of E15cM 1:
+              (3018, 325), # Tapissier Credo
+              (3020, 854), # Tapissier Sanctus
+              
               (1904, 1378), # E15cM + Stoessel version Salinis En la saison
               (1296, 1408), # PMFC and Stoessel version Zachara Sol mi traffig
               (650, 651), # merce o morte two versions PMFC 20
