@@ -1,6 +1,9 @@
 from django.contrib import admin
+from .models import Piece, Composer, Country
 
-from .models import Piece, Composer
+class CountryAdmin(admin.ModelAdmin):
+    model = Country
 
 admin.site.register(Piece)
+admin.site.register(Country, CountryAdmin)
 admin.site.register(Composer)

@@ -56,7 +56,7 @@ ROOT_URLCONF = 'emmsapDJ.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,15 +76,15 @@ WSGI_APPLICATION = 'emmsapDJ.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'sqll': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
+#     'sqll': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cuthbert',
         'USER': 'cuthbert',
-        'PASSWORD': os.environ.get('KASSIAPASSWORD','setKASSIAPASSWORDinEnv'),
+        'PASSWORD': os.environ.get('KASSIAPASSWORD','set_KASSIAPASSWORD_in_Env'),
     }
 
 }

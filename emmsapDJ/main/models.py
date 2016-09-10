@@ -41,6 +41,7 @@ class Country(models.Model):
 
     class Meta:
         db_table = 'country'
+        verbose_name_plural = 'countries'
 
 
 class Composer(models.Model):

@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
-from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
+import os
 from . import models
+
+from .forms import UploadFileForm
 
 # Create your views here.
 
@@ -61,4 +64,21 @@ def assignComposerFollowup(r, pieceId):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('emmsap:index'))    
-    
+
+
+def uploadFile(r):
+    if r.method == 'POST':
+        form = UploadFileForm(r.POST, r.FILES)
+        print(r.FILES)
+        uploadedFile = r.FILES['file']
+        pp = os.path.dirname(__file__)
+        with open(pp + '/uploadFiles/t123.png', 'wb+') as destination:
+            for chunk in uploadedFile.chunks():
+                destination.write(chunk)
+        return HttpResponseRedirect(reverse('emmsap:index'))
+#         else:
+#             return HttpResponse("Whoa! not valid, man!")
+        
+    else:
+        form = UploadFileForm()
+        return render(r, 'main/upload.html', {'form': form})

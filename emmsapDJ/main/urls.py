@@ -12,6 +12,8 @@ urlpatterns = [
     url(r'^composer/list/', views.listComposers, name='listComposers'),
 
     # ex: /emmsap/piece/193/assignComposer/  
-    url(r'^piece/(?P<pieceId>[0-9]+)/assignComposer/$', views.assignComposer, name='assignComposer'),
-    url(r'^piece/(?P<pieceId>[0-9]+)/assignComposerFollowup/$', views.assignComposerFollowup, name='assignComposerFollowup'),
+    url(r'^piece/(?P<pieceId>[0-9]+)/assignComposer/', views.assignComposer, name='assignComposer'),
+    url(r'^piece/(?P<pieceId>[0-9]+)/assignComposerFollowup/', views.assignComposerFollowup, name='assignComposerFollowup'),
+
+    url(r'^upload/', views.uploadFile, name='upload'),
 ]
