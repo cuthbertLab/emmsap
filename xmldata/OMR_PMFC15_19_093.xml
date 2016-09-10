@@ -1,0 +1,8030 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 1.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+
+<score-partwise version="2.0">
+	<movement-title></movement-title>
+	<identification>
+		<creator type="composer"></creator>
+		<encoding>
+			<software>SmartScore X2 Pro</software>
+			<encoding-date>2016-05-02</encoding-date>
+			<supports attribute="new-system" element="print" type="yes" value="yes"/>
+			<supports attribute="new-page" element="print" type="yes" value="yes"/>
+		</encoding>
+	</identification>
+	<defaults>
+		<scaling>
+			<millimeters>6.00</millimeters>
+			<tenths>40</tenths>
+		</scaling>
+	</defaults>
+	<part-list>
+		<score-part id="P1">
+			<part-name>Flute</part-name>
+			<part-abbreviation>Flu</part-abbreviation>
+			<score-instrument id="P1-S0V0">
+				<instrument-name>Flute</instrument-name>
+			</score-instrument>
+			<score-instrument id="P1-S0V1">
+				<instrument-name>Flute</instrument-name>
+			</score-instrument>
+			<midi-instrument id="P1-S0V1">
+				<midi-channel>2</midi-channel>
+				<midi-program>74</midi-program>
+				<volume>78</volume>
+				<pan>0</pan>
+			</midi-instrument>
+			<midi-instrument id="P1-S0V0">
+				<midi-channel>1</midi-channel>
+				<midi-program>74</midi-program>
+				<volume>78</volume>
+				<pan>0</pan>
+			</midi-instrument>
+		</score-part>
+		<score-part id="P2">
+			<part-name>Nylon Guitar</part-name>
+			<part-abbreviation>GuitNyl</part-abbreviation>
+			<score-instrument id="P2-S0V0">
+				<instrument-name>Nylon String Guit.</instrument-name>
+			</score-instrument>
+			<midi-instrument id="P2-S0V0">
+				<midi-channel>3</midi-channel>
+				<midi-program>25</midi-program>
+				<volume>78</volume>
+				<pan>0</pan>
+			</midi-instrument>
+		</score-part>
+		<score-part id="P3">
+			<part-name>Trombone</part-name>
+			<part-abbreviation>Trbn</part-abbreviation>
+			<score-instrument id="P3-S0V0">
+				<instrument-name>Trombone</instrument-name>
+			</score-instrument>
+			<midi-instrument id="P3-S0V0">
+				<midi-channel>4</midi-channel>
+				<midi-program>58</midi-program>
+				<volume>78</volume>
+				<pan>0</pan>
+			</midi-instrument>
+		</score-part>
+	</part-list><!--
+===========================================================
+-->
+
+	<part id="P1">
+		<measure number="1" width="550">
+			<print>
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>187.00</left-margin>
+						<right-margin>218.37</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>295</left-margin>
+						<right-margin>3</right-margin>
+					</system-margins>
+					<top-system-distance>332</top-system-distance>
+				</system-layout>
+			</print>
+			<attributes>
+				<divisions>60</divisions>
+				<key>
+					<fifths>0</fifths>
+				</key>
+				<time>
+					<beats>3</beats>
+					<beat-type>4</beat-type>
+				</time>
+				<clef>
+					<sign>G</sign>
+					<line>2</line>
+				</clef>
+				<staff-details number="1" print-object="yes">
+					<staff-size>79</staff-size>
+				</staff-details>
+			</attributes>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-368.0244" default-y="256.2336" font-family="Times New Roman" font-style="normal" font-size="20" font-weight="normal" color="#000000">I(). REX VISIBILIUM - REX INVICTISSIME - REGNUM TUUM S )LIDUM</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>Rex</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="2" width="472">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>Irexl</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>vi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>-si</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>bi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>li</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="3" width="476">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>238</system-distance>
+				</system-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>74</staff-size>
+				</staff-details>
+			</attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>-um</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>in</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>vi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>si</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>bi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>li</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-66.9533" default-y="206.3079" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">Rcg -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="4" width="419">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-um,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>cre</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>tor</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>lu</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-54.7332" default-y="203.5590" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- num</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="5" width="424">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-num,</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words>D.C.</words>
+				</direction-type>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="6" width="375">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>2</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>240</system-distance>
+				</system-layout>
+			</print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="42.3828" default-y="205.7581" font-family="Times New Roman" font-style="normal" font-size="8" font-weight="normal" color="#000000">tu -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>plas</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ma</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>tor</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-18.8940" default-y="205.7581" font-family="Times New Roman" font-style="normal" font-size="8" font-weight="normal" color="#000000">- um</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>ho</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-43.6307" default-y="205.7581" font-family="Times New Roman" font-style="normal" font-size="8" font-weight="normal" color="#000000">so -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="7" width="311">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>num,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>vo</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ta</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>pec</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>can</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="8" width="314">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>um</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>ad</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>te</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>cla</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>man</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="9" width="319">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>um</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="10" width="472">
+			<print new-system="yes" new-page="yes">
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>235.46</left-margin>
+						<right-margin>168.76</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>6</right-margin>
+					</system-margins>
+					<top-system-distance>81</top-system-distance>
+				</system-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>79</staff-size>
+				</staff-details>
+			</attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="10.9190" default-y="37.0547" font-family="Times New Roman" font-style="normal" font-size="11" font-weight="normal" color="#000000">l O</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>de</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>-vo</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ta</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>su</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>sci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="11" width="417">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>pe</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>de</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>cor</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>dis</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>di</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="12" width="425">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-pe</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>psal</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>len</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>tes</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>spi</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="13" width="478">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>1</left-margin>
+						<right-margin>4</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+			</print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="40.1157" default-y="146.5038" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">rC</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-ce</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="14" width="422">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="9.1279" default-y="152.7861" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">glo</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>de</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>cC</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-21.3629" default-y="153.3473" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- ri</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>li</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-3.9881" default-y="148.2186" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">e,</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>cul</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="15" width="416">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="3.4341" default-y="154.4853" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">qui</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="5.1385" default-y="32.4871" font-family="Times New Roman" font-style="normal" font-size="13" font-weight="normal" color="#000000">l 5</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<rest/>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ne.</text>
+				</lyric>
+			</note>
+			<backup>
+				<duration>30</duration>
+			</backup>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V1"/>
+				<voice>2</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V1"/>
+				<voice>2</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>Re</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V1"/>
+				<voice>2</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>in</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V1"/>
+				<voice>2</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>vi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V1"/>
+				<voice>2</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>ctis</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V1"/>
+				<voice>2</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>si</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="16" width="473">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>2</left-margin>
+						<right-margin>2</right-margin>
+					</system-margins>
+					<system-distance>176</system-distance>
+				</system-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>74</staff-size>
+				</staff-details>
+			</attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="45.0560" default-y="145.3993" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">es</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-me,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>tu</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-15.8514" default-y="151.4323" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">splen -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>men</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>tes</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>r</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>no</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="17" width="419">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="5.1412" default-y="152.5318" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- dor</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-va</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="18" width="425">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>su</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-115.1759" default-y="149.2332" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">ac</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="0.5632" default-y="149.7830" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">spon</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>per</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>na</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>gra</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>cl</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="19" width="375">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>5</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+			</print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="21.6710" default-y="144.8495" font-family="Times New Roman" font-style="normal" font-size="13" font-weight="normal" color="#000000">- sus</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>san</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>cto-que</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>fla</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="20" width="303">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="4.5727" default-y="28.5301" font-family="Times New Roman" font-style="normal" font-size="11" font-weight="normal" color="#000000">2 O</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ne.</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>ui</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>re</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-36.4981" default-y="145.3993" font-family="Times New Roman" font-style="normal" font-size="13" font-weight="normal" color="#000000">ec -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>gis</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>o</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-26.4148" default-y="150.8825" font-family="Times New Roman" font-style="normal" font-size="13" font-weight="normal" color="#000000">- clC -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mni</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="21" width="282">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-20.7184" default-y="151.4323" font-family="Times New Roman" font-style="normal" font-size="13" font-weight="normal" color="#000000">si -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="22" width="356">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>san</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>cto</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>rum</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>ag</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="23" width="453">
+			<print new-system="yes" new-page="yes">
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>138.54</left-margin>
+						<right-margin>267.39</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>2</right-margin>
+					</system-margins>
+					<top-system-distance>81</top-system-distance>
+				</system-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>79</staff-size>
+				</staff-details>
+			</attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-na,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>iu</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>de</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>iu</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>stl</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>cl</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="24" width="451">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-C,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>co</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>la</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>t-l-a</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>gl</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>I!</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="25" width="413">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>uln</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="26" width="359">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+			</print>
+			<attributes></attributes>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="35.7234" default-y="142.5599" font-family="Times New Roman" font-style="normal" font-size="17" font-weight="normal" color="#000000">qu( -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>tu</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>sur-sum</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>sul</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>le</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="27" width="332">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>va</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>mcn</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-39.9718" default-y="148.0627" font-family="Times New Roman" font-style="normal" font-size="17" font-weight="normal" color="#000000">qucl</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>tcs</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>r</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>al</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>cl</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="28" width="322">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>um</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>in</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>spi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ra</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>gra</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-23.1792" default-y="142.0143" font-family="Times New Roman" font-style="normal" font-size="17" font-weight="normal" color="#000000">c - -  I</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="29" width="305">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="30" width="444">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>1</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>176</system-distance>
+				</system-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>74</staff-size>
+				</staff-details>
+			</attributes>
+			<barline location="left">
+				<ending number="1" type="start"></ending>
+			</barline>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="14.1548" default-y="28.2697" font-family="Times New Roman" font-style="normal" font-size="11" font-weight="normal" color="#000000">3 O</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="28.2961" default-y="138.7153" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- so</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>sta</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-tum</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>c(n</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>si</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-81.1970" default-y="138.7153" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">sa</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-28.9204" default-y="139.2506" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- gul</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<direction placement="above">
+				<direction-type>
+					<words>D.C.</words>
+				</direction-type>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="31" width="433">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>ra</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>tc</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>col</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>lau</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-48.8396" default-y="138.7153" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- nc,</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>dan</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="32" width="441">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>um,</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-154.5148" default-y="144.0972" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">hanc</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-165.9305" default-y="139.2506" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">rc - gc</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="33" width="385">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>3</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>178</system-distance>
+				</system-layout>
+			</print>
+			<attributes></attributes>
+			<barline location="left">
+				<ending number="1" type="start"></ending>
+			</barline>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="17.3979" default-y="142.6505" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- per</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>po</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="24.8463" default-y="149.2332" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">pi -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>tcn</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="14.9086" default-y="143.7500" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- ls</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="34" width="352">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>in</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>pre</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-14.8283" default-y="149.2332" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- si -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>li</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>o</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-20.5345" default-y="148.6834" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- me, qui</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>rc</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="35" width="388">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>re</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>gum</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>o</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="0.0079" default-y="148.1481" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">es ton</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mni</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-1.1375" default-y="149.2332" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">mi</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="36" width="191">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>180</duration>
+				<instrument id="P1-S0V0"/>
+				<voice>1</voice>
+				<type>half</type>
+				<dot/>
+				<stem>down</stem>
+				<notations>
+					<fermata type="upright"/>
+				</notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-um.</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-129.9825" default-y="143.7500" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">sc</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<direction placement="above">
+				<direction-type>
+					<words relative-x="-72.9862" default-y="143.7500" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">rl</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<barline location="right">
+				<bar-style>light-heavy</bar-style>
+			</barline>
+		</measure>
+	</part><!--
+===========================================================
+-->
+
+	<part id="P2">
+		<measure number="1" width="550">
+			<print>
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>187.00</left-margin>
+						<right-margin>218.37</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>295</left-margin>
+						<right-margin>3</right-margin>
+					</system-margins>
+					<top-system-distance>332</top-system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>104</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes>
+				<divisions>60</divisions>
+				<key>
+					<fifths>0</fifths>
+				</key>
+				<time>
+					<beats>3</beats>
+					<beat-type>4</beat-type>
+				</time>
+				<clef>
+					<sign>G</sign>
+					<line>2</line>
+				</clef>
+				<staff-details number="1" print-object="yes">
+					<staff-size>74</staff-size>
+				</staff-details>
+				<transpose>
+					<diatonic>0</diatonic>
+					<chromatic>0</chromatic>
+					<octave-change>-1</octave-change>
+				</transpose>
+			</attributes>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>Rex</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>in</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>-vl</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ctls</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>sl</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="2" width="472">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-me</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>reg</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>no</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>rum</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>o</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mnl</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="3" width="476">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>238</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>102</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-um,</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="4" width="419">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>prin</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-ceps</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>li</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="5" width="424">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>e</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>ce</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>lo</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>rum</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>cl</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>vl</text>
+				</lyric>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words>D.C.</words>
+				</direction-type>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="6" width="375">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>2</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>240</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>104</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>-um,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>ce</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>lo</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>su</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>sci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="7" width="311">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>pe</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="8" width="314">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>vo</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ta</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>mor</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>-ta</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ll</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="9" width="319">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>um.</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>Cre</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>tor</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>ho</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="10" width="472">
+			<print new-system="yes" new-page="yes">
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>235.46</left-margin>
+						<right-margin>168.76</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>6</right-margin>
+					</system-margins>
+					<top-system-distance>81</top-system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>91</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-nis,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>v1</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ta</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>vi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ven</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="11" width="417">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-um,</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="12" width="425">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>cle</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-men</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>ter</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>a</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>spi</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="13" width="478">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>1</left-margin>
+						<right-margin>4</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>90</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>-ce</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>de</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>se</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>de</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>glo</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ri</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="14" width="422">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-e</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>no</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>stram</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>mi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>se</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>rl</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="15" width="416">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>am.</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="16" width="473">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>2</left-margin>
+						<right-margin>2</right-margin>
+					</system-margins>
+					<system-distance>176</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>90</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>O</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>re</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>cle</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>men</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ci</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="17" width="419">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-e,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>tu</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>mo</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>res</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>cor</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ri</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="18" width="425">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-ge,</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>vi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>tam</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>que</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>di</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>ri</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="19" width="375">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>5</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>91</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-ge</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="20" width="303">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>pa</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-cis</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<notations></notations>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="21" width="282">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>per</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>se</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="22" width="356">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-mi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>tam.</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>ui</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>fi</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>nis</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>o</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>middle</syllabic>
+					<text>mm</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="23" width="453">
+			<print new-system="yes" new-page="yes">
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>138.54</left-margin>
+						<right-margin>267.39</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>2</right-margin>
+					</system-margins>
+					<top-system-distance>81</top-system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>91</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>79</staff-size>
+				</staff-details>
+			</attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-um</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="24" width="451">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>es</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>t</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="25" width="413">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="below">
+				<direction-type>
+					<dynamics>
+						<p/>
+					</dynamics>
+				</direction-type>
+				<staff>1</staff>
+				<sound dynamics="68"/>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>in</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>cl</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="26" width="359">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>90</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>-pl</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="27" width="332">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>um,</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="28" width="322">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>D</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-us</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="29" width="305">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>lm</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>ma</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="30" width="444">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>1</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>176</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>90</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>74</staff-size>
+				</staff-details>
+			</attributes>
+			<barline location="left">
+				<ending number="1" type="start"></ending>
+			</barline>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<notations>
+					<slur type="start" number="1"></slur>
+				</notations>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>nu</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<notations>
+					<slur type="stop" number="1"></slur>
+				</notations>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words>D.C.</words>
+				</direction-type>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="31" width="433">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-I,</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="32" width="441">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>la</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>pa</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>c_s</text>
+				</lyric>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<dynamics>
+						<p/>
+					</dynamics>
+				</direction-type>
+				<staff>1</staff>
+				<sound dynamics="68"/>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>c</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>nl</text>
+				</lyric>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="33" width="385">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>3</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>178</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>88</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<barline location="left">
+				<ending number="1" type="start"></ending>
+			</barline>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>un</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="34" width="352">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>in</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>-</text>
+				</lyric>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="35" width="388">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+				<lyric number="1">
+					<syllabic>single</syllabic>
+					<text>C</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+				<lyric number="1">
+					<syllabic>begin</syllabic>
+					<text>-ter</text>
+				</lyric>
+				<lyric number="2">
+					<syllabic>single</syllabic>
+					<text>I-</text>
+				</lyric>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="36" width="191">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>180</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<dot/>
+				<stem>up</stem>
+				<notations>
+					<fermata type="upright"/>
+				</notations>
+				<lyric number="1">
+					<syllabic>end</syllabic>
+					<text>-num</text>
+				</lyric>
+			</note>
+			<barline location="right">
+				<bar-style>light-heavy</bar-style>
+			</barline>
+		</measure>
+	</part><!--
+===========================================================
+-->
+
+	<part id="P3">
+		<measure number="1" width="550">
+			<print>
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>187.00</left-margin>
+						<right-margin>218.37</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>295</left-margin>
+						<right-margin>3</right-margin>
+					</system-margins>
+					<top-system-distance>332</top-system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>102</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes>
+				<divisions>60</divisions>
+				<key>
+					<fifths>0</fifths>
+				</key>
+				<time>
+					<beats>3</beats>
+					<beat-type>4</beat-type>
+				</time>
+				<clef>
+					<sign>F</sign>
+					<line>4</line>
+				</clef>
+				<staff-details number="1" print-object="yes">
+					<staff-size>74</staff-size>
+				</staff-details>
+			</attributes>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>120</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="2" width="472">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="3" width="476">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>238</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>103</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="4" width="419">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="5" width="424">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>120</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<stem>down</stem>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words>D.C.</words>
+				</direction-type>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="6" width="375">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>2</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>240</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>101</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="7" width="311">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="-5.6968" default-y="-51.5770" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- h -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="-72.3901" default-y="-149.7830" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">o L. 236</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="8" width="314">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="6.2699" default-y="-51.5770" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">dum</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="9" width="319">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>2</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>2</octave>
+				</pitch>
+				<duration>120</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<stem>up</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="10" width="472">
+			<print new-system="yes" new-page="yes">
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>235.46</left-margin>
+						<right-margin>168.76</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>6</right-margin>
+					</system-margins>
+					<top-system-distance>81</top-system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>88</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>79</staff-size>
+				</staff-details>
+			</attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="11" width="417">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="12" width="425">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="13" width="478">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>1</left-margin>
+						<right-margin>4</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>96</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes>
+				<staff-details number="1" print-object="yes">
+					<staff-size>74</staff-size>
+				</staff-details>
+			</attributes>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+				<notations></notations>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="14" width="422">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="15" width="416">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="16" width="473">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>2</left-margin>
+						<right-margin>2</right-margin>
+					</system-margins>
+					<system-distance>176</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>90</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="17" width="419">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="18" width="425">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="19" width="375">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>5</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>90</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="35.8431" default-y="-55.2083" font-family="Times New Roman" font-style="normal" font-size="9" font-weight="normal" color="#000000">quam</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>2</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>2</octave>
+				</pitch>
+				<duration>120</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<stem>up</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="20" width="303">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="-66.1372" default-y="-145.7176" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">o.L.236</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="21" width="282">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="13.1094" default-y="-47.1354" font-family="Times New Roman" font-style="normal" font-size="17" font-weight="normal" color="#000000">de - co - ra - sti l.tu - - o</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="22" width="356">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="23" width="453">
+			<print new-system="yes" new-page="yes">
+				<page-layout>
+					<page-height>2104.96</page-height>
+					<page-width>1727.54</page-width>
+					<page-margins>
+						<left-margin>138.54</left-margin>
+						<right-margin>267.39</right-margin>
+						<top-margin>127.00</top-margin>
+						<bottom-margin>63.50</bottom-margin>
+					</page-margins>
+				</page-layout>
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>2</right-margin>
+					</system-margins>
+					<top-system-distance>81</top-system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>87</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>120</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="24" width="451">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="25" width="413">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="below">
+				<direction-type>
+					<dynamics>
+						<p/>
+					</dynamics>
+				</direction-type>
+				<staff>1</staff>
+				<sound dynamics="68"/>
+			</direction>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="26" width="359">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>0</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>177</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>88</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="27" width="332">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>up</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>120</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="28" width="322">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<rest/>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="29" width="305">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="30" width="444">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>1</left-margin>
+						<right-margin>1</right-margin>
+					</system-margins>
+					<system-distance>176</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>88</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<barline location="left">
+				<ending number="1" type="start"></ending>
+			</barline>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<direction placement="above">
+				<direction-type>
+					<words>D.C.</words>
+				</direction-type>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="31" width="433">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations>
+					<articulations>
+						<staccato placement="above"/>
+					</articulations>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="32" width="441">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+				<notations>
+					<tuplet type="start" number="1">
+						<tuplet-actual>
+							<tuplet-number>3</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-actual>
+						<tuplet-normal>
+							<tuplet-number>2</tuplet-number>
+							<tuplet-type>eighth</tuplet-type>
+						</tuplet-normal>
+					</tuplet>
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">continue</beam>
+				<notations></notations>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>20</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<time-modification>
+					<actual-notes>3</actual-notes>
+					<normal-notes>2</normal-notes>
+				</time-modification>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations>
+					<tuplet type="stop" number="1"></tuplet>
+				</notations>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="33" width="385">
+			<print new-system="yes">
+				<system-layout>
+					<system-margins>
+						<left-margin>3</left-margin>
+						<right-margin>0</right-margin>
+					</system-margins>
+					<system-distance>178</system-distance>
+				</system-layout>
+				<staff-layout number="1">
+					<staff-distance>100</staff-distance>
+				</staff-layout>
+			</print>
+			<attributes></attributes>
+			<barline location="left">
+				<ending number="1" type="start"></ending>
+			</barline>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="22.3216" default-y="-57.6100" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- cor</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+				<notations></notations>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="19.0391" default-y="-52.1123" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- d  -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="-96.1891" default-y="-52.1123" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">C)</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="34" width="352">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="11.3981" default-y="-57.0602" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">per ma - ne -</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="-9.1328" default-y="-148.1481" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">o.l. 236</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="-4.5736" default-y="-52.1123" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">blt</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>60</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+				<stem>down</stem>
+			</note>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="35" width="388">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="17.1096" default-y="-57.0602" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">ln</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>up</stem>
+				<beam number="1">end</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="10.8376" default-y="-54.8611" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">tt </words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">begin</beam>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>30</duration>
+				<voice>1</voice>
+				<type>eighth</type>
+				<stem>down</stem>
+				<beam number="1">end</beam>
+			</note>
+			<direction placement="below">
+				<direction-type>
+					<words relative-x="-6.8367" default-y="-55.4109" font-family="Times New Roman" font-style="normal" font-size="12" font-weight="normal" color="#000000">- nun.</words>
+				</direction-type>
+				<staff>1</staff>
+			</direction>
+		</measure><!--
+===========================================================
+-->
+
+		<measure number="36" width="191">
+			<print new-system="no"></print>
+			<attributes></attributes>
+			<note>
+				<pitch>
+					<step>C</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>180</duration>
+				<voice>1</voice>
+				<type>half</type>
+				<dot/>
+				<stem>up</stem>
+				<notations>
+					<fermata type="upright"/>
+				</notations>
+			</note>
+			<barline location="right">
+				<bar-style>light-heavy</bar-style>
+			</barline>
+		</measure>
+	</part>
+</score-partwise>

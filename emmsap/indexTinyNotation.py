@@ -11,7 +11,7 @@ import os
 
 em = mysqlEM.EMMSAPMysql()
 query = '''REPLACE INTO tinyNotation (fn, partId, tsRatio, tn, tnStrip) VALUES (%s, %s, %s, %s, %s)'''
-queryInv = '''REPLACE INTO intervals (fn, partId, intervals) VALUES (%s, %s, %s)'''
+queryInv = '''REPLACE INTO intervals (fn, partId, intervals, intervalsNoUnisons) VALUES (%s, %s, %s, %s)'''
 
 
 def exists(fn, table='tinyNotation'):
@@ -20,13 +20,16 @@ def exists(fn, table='tinyNotation'):
     queryExists = '''SELECT * FROM ''' + table + ''' WHERE fn = %s'''
     if table == 'tinyNotation':
         queryExists += " AND tnStrip IS NOT NULL"
+    elif table == 'intervals':
+        queryExists += " AND intervalsNoUnisons IS NOT NULL"
     em.cursor.execute(queryExists, [fn])
     rows = em.cursor.fetchall()
     return bool(rows)
 
 
-def onePiece(fn):
-    if exists(fn):
+def onePiece(fn, table='tinyNotation'):
+    if exists(fn, table):
+        #pass
         return
     fullFn = files.emmsapDir + os.sep + fn
     
@@ -42,7 +45,7 @@ def onePiece(fn):
         except Exception as e:
             print(str(fn) + " " + str(i) + " could not be converted to TN: " + str(e))
 
-    print (fullFn + " Done!")
+    print (fn + " tiny notation indexed")
 
 def onePart(partNum, p, fn):
     allTS = p.flat.getElementsByClass('TimeSignature')
@@ -50,7 +53,7 @@ def onePart(partNum, p, fn):
         ts = allTS[0]
     else:
         ts = meter.TimeSignature('4/4')
-    pf = p.flat.notesAndRests
+    pf = p.flat.notesAndRests.stream()
     tn = toTinyNotation.convert(pf)
     pfs = pf.stripTies()
     tnst = toTinyNotation.convert(pfs)
@@ -62,6 +65,8 @@ def toInterval(partNum, p, fn):
     pf = p.flat.stripTies().pitches
     last = None
     allInts = []
+    allIntsNoUnisons = []
+    
     for p in pf:
         dnn = p.diatonicNoteNum
         if last is not None:
@@ -71,14 +76,17 @@ def toInterval(partNum, p, fn):
             else:
                 intv += -1
             allInts.append(str(intv))
+            if intv != 1:
+                allIntsNoUnisons.append(str(intv))
         last = dnn
     allIntStr = ''.join(allInts)
-    em.cursor.execute(queryInv, [fn, str(partNum), allIntStr])
+    allIntStrNoUnisons = ''.join(allIntsNoUnisons)
+    em.cursor.execute(queryInv, [fn, str(partNum), allIntStr, allIntStrNoUnisons])
 
-def runAll():
+def runAll(table='tinyNotation'):
     for fn in files.allFiles():
         try:
-            onePiece(fn)
+            onePiece(fn, table)
         except Exception as e:
             print(fn + " could not be converted: " + str(e))
 

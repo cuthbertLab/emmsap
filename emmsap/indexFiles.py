@@ -30,9 +30,10 @@ def populatePiecesSafe():
     print(allfns)
     query = '''INSERT INTO pieces (filename) VALUES (%s)'''
     for thisFn in allfns:
-        print(query, thisFn)
         try:
             em.cursor.execute(query, [thisFn,])
+            pObj = em.pieceByFilename(thisFn)
+            print(pObj.id, query, thisFn)
         except IntegrityError as e:
             print( str(e) )
     em.commit()

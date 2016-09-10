@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 from __future__ import division
 
@@ -5,7 +6,7 @@ from emmsap import files
 #from music21 import common
 from music21 import expressions
 from music21 import converter
-from music21 import interval
+#from music21 import interval
 from music21 import metadata
 from music21 import stream
 from music21.search import lyrics
@@ -29,11 +30,11 @@ searchRE = firstSanctus
 searchTolerance = 3
 
 def main():
-    glor = sanctus()
+    filePathList = sanctus()
     allParts = {}
-    for g in glor:
-        go = converter.parse(g)
-        gShort = g.split('/')[-1][0:-4]
+    for fp in filePathList:
+        go = converter.parse(fp)
+        fileNameShort = fp.split('/')[-1][0:-4]
         for i, p in enumerate(go.parts):
             ls = lyrics.LyricSearcher(p)
             matches = ls.search(searchRE)
@@ -60,13 +61,13 @@ def main():
                     s.numberOfPieces = 0
                     allParts[pieceKey] = s
                 s = allParts[pieceKey]
-                print(gShort, m.mStart, '-', m.mEnd, pieceKey)
+                print(fileNameShort, m.mStart, '-', m.mEnd, pieceKey)
                 for i, pAgain in enumerate(go.parts):
                     pCopy = pAgain.measures(m.mStart, m.mEnd)
                     if i == 0:
                         s.numberOfPieces += 1
-                        pCopy.getElementsByClass('Measure')[0].insert(0, expressions.TextExpression(gShort))
-                    if pCopy.recurse().notes:
+                        pCopy.getElementsByClass('Measure')[0].insert(0, expressions.TextExpression(fileNameShort))
+                    if len(pCopy.flat.notes) > 0:
                         s.insert(0, pCopy)
                 if len(s.parts) > 16:
                     s.show()
@@ -78,6 +79,9 @@ def main():
             s.show()
 
 def sanctus():
+    '''
+    Return a list of all Sanctuses
+    '''
     fi = files.allFilesWithPath()
     sanctus = []
     for f in fi:
@@ -87,6 +91,9 @@ def sanctus():
     return sanctus
 
 def glorias():
+    '''
+    Return a list of all Glorias
+    '''
     fi = files.allFilesWithPath()
     glorias = []
     notGlorias = []
@@ -101,6 +108,9 @@ def glorias():
     return glorias
     
 def credos():
+    '''
+    Return a list of all Credos
+    '''
     fi = files.allFilesWithPath()
     credos = []
     for f in fi:

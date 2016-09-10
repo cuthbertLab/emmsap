@@ -23,7 +23,7 @@ from music21 import stream
 class EMMSAPException(Exception):
     pass
 
-def readEMMSAPPasswordFile(userdir = None):
+def readEMMSAPPasswordFile(userdir=None):
     if userdir is None:
         username = getpass.getuser()
         userdir = os.path.expanduser("~" + username)
@@ -85,7 +85,7 @@ class EMMSAPMysql(object):
         an id.
         
         >>> em = EMMSAPMysql()
-        >>> row = em.getTableRowById('countries', 1)
+        >>> row = em.getTableRowById('country', 1)
         >>> row
         (1, 'Unknown')
         '''
@@ -97,6 +97,9 @@ class EMMSAPMysql(object):
             return row
 
     def getTableRowByColumnAndValue(self, table, column, value):
+        '''
+        get a single row from a table where the column equals a value.
+        '''
         preQuery = "SELECT * FROM %s " % table
         preQuery = preQuery + "WHERE %s = " % column
         self.query = preQuery + "%s"
@@ -145,17 +148,17 @@ class EMMSAPMysql(object):
         >>> c.sortYear
         1390
         '''
-        row = self.getTableRowById('composers', composerId)
+        row = self.getTableRowById('composer', composerId)
         composerObj = Composer(row, dbObj=self)
         return composerObj
         
     def segmentById(self, segmentId=1):
-        row = self.getTableRowById('segments', segmentId)
+        row = self.getTableRowById('segment', segmentId)
         segmentObj = Segment(row, dbObj=self)
         return segmentObj
         
 class EMMSAPMysqlObject(object):
-    table = 'countries'
+    table = 'country'
     rowMapping = ['column1', 'column2']
     def __init__(self, rowInfo=None, dbObj=None):    
         if dbObj is None:
@@ -179,10 +182,16 @@ class EMMSAPMysqlObject(object):
 
 class Piece(EMMSAPMysqlObject):
     table = 'pieces'
-    rowMapping = ['id', 'filename', 'piecename', 'composerId']
+    rowMapping = ['id', 'filename', 'piecename', 'composerId', 'frag']
 
     def __init__(self, rowInfo=None, dbObj=None):
         super(Piece, self).__init__(rowInfo, dbObj)
+        if self.frag == 1:
+            self.frag = True
+        elif self.frag == 0:
+            self.frag = False
+        else:
+            self.frag = None
         self._stream = None
     
     def stream(self):
@@ -244,7 +253,7 @@ class Piece(EMMSAPMysqlObject):
         >>> ratiosZero[0]
         (114665, 7826)
         '''
-        self.dbObj.cursor.execute('''SELECT id FROM segments WHERE pieceId = %s ORDER BY id''', [self.id])
+        self.dbObj.cursor.execute('''SELECT id FROM segment WHERE piece_id = %s ORDER BY id''', [self.id])
         segmentRows = self.dbObj.cursor.fetchall()
         segmentObjs = []
         for s in segmentRows:
@@ -252,7 +261,8 @@ class Piece(EMMSAPMysqlObject):
             segmentObjs.append(Segment(sId, self.dbObj))
         return segmentObjs
 
-    def ratiosAboveThreshold(self, threshold = 5000, ignoreInternal = True, segmentType='DiaRhy2'):
+    def ratiosAboveThreshold(self, threshold=5000, ignoreInternal=True, 
+                             segmentType='DiaRhy2', maxThreshold=None):
         '''
         find all segments with a ratio at or above a certain threshold (where 5000 = 0.5 similarity),
         optionally ignoring segments that are from the same piece (default True) or 
@@ -261,10 +271,13 @@ class Piece(EMMSAPMysqlObject):
         Returns a list of 3-tuples in the form thisPieceSegmentId, otherPieceSegmentId, ratio
         
         >>> p = Piece(2)
-        >>> highMatch = p.ratiosAboveThreshold(6000)
+        >>> highMatch = p.ratiosAboveThreshold(5000)
         >>> highMatch[0]
-        RatioMatch(thisSegmentId=116456, otherSegmentId=108265, thisRatio=6315)
+        RatioMatch(thisSegmentId=116456, otherSegmentId=108265, thisRatio=5755)
         '''
+        if maxThreshold is None:
+            maxThreshold = 100001
+            
         if threshold > 0 and threshold < 1:
             # sanity check: I used to use between 0 and 1:
             threshold = int(threshold * 10000)
@@ -278,11 +291,13 @@ class Piece(EMMSAPMysqlObject):
 #                                    [thisPieceId, threshold])
         #print "HIII"
         self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios'''+segmentType+'''  
-                                    WHERE EXISTS
-                                       (SELECT 1 FROM segments WHERE pieceId = %s
-                                        AND segments.id = segment1id) 
-                                    AND ratio >= %s ORDER BY ratio DESC''',
-                                    [thisPieceId, threshold])
+                                    WHERE 
+                                    ratio >= %s AND ratio < %s 
+                                    AND EXISTS
+                                       (SELECT 1 FROM segment WHERE piece_id = %s
+                                        AND segment.id = segment1id) 
+                                    ORDER BY ratio DESC''',
+                                    [threshold, maxThreshold, thisPieceId])
         #print "BYEEE!"
         for otherSeg in self.dbObj.cursor:
             otherSegNamedTuple = RatioMatch(*otherSeg)
@@ -291,7 +306,7 @@ class Piece(EMMSAPMysqlObject):
             matchingSegments2 = []
             for thisRow in matchingSegments:
                 otherSegObj = Segment(thisRow.otherSegmentId, self.dbObj)
-                if otherSegObj.pieceId != thisPieceId:
+                if otherSegObj.piece_id != thisPieceId:
                     matchingSegments2.append(thisRow)
             matchingSegments = matchingSegments2
         return matchingSegments
@@ -370,6 +385,9 @@ class Piece(EMMSAPMysqlObject):
                                           )
         exp1.size = 12
         exp2.size = 12
+        exp1.positionVertical = 40
+        exp2.positionVertical = 40
+        
         exp2.priority = 5
         pNewMeasures = excerpt1.iter.getElementsByClass('Measure')
         if pNewMeasures:
@@ -510,11 +528,14 @@ class Piece(EMMSAPMysqlObject):
         else:
             print("File %s did not exist" % fn)
 
-    def deletePiece(self):
+    def deletePiece(self, keepPieceEntry=False):
         '''
         Deletes this piece entirely from the database, including its segments and ratios.
         
-        Does not delete any composers, etc. associated with it or the file on disk. use deletePiece for that.
+        Does not delete any composers, etc. associated with it or the file on disk. 
+        use deleteFileOnDisk for that.
+        
+        keepPieceEntry makes it possible to reindex everything under the same pieceId number
         '''
         pieceSegments = self.segments()
         segment1TupleList = []
@@ -545,7 +566,7 @@ class Piece(EMMSAPMysqlObject):
 
         #self.dbObj.cursor.executemany(deleteRatiosQuery2, segment1TupleList)
         print("deleting segments...")
-        deleteSegmentsQuery = '''DELETE FROM segments WHERE id = %s'''
+        deleteSegmentsQuery = '''DELETE FROM segment WHERE id = %s'''
         for thisTuple in segment1TupleList:
             print("...deleting %s" % thisTuple[0])
             delQuerySub = deleteSegmentsQuery % thisTuple[0]
@@ -559,14 +580,16 @@ class Piece(EMMSAPMysqlObject):
         self.dbObj.cursor.execute('''DELETE FROM tinyNotation WHERE fn = %s''', (self.filename, ))        
         print("deleting intervals")
         self.dbObj.cursor.execute('''DELETE FROM intervals WHERE fn = %s''', (self.filename, ))        
-        print("deleting piece...")
-        self.dbObj.cursor.execute('''DELETE FROM pieces WHERE id = %s''', (self.id, ))
+        if keepPieceEntry is not True:
+            print("deleting piece...")
+            self.dbObj.cursor.execute('''DELETE FROM pieces WHERE id = %s''', (self.id, ))
         self.dbObj.cnx.commit()
         
 
 class Composer(EMMSAPMysqlObject):
-    table = 'composers'
-    rowMapping = ['id', 'isCanonical', 'canonicalLink', 'name', 'sortYear', 'earliestYear', 'latestYear', 'countryId']
+    table = 'composer'
+    rowMapping = ['id', 'isCanonical', 'canonicalLink', 'name', 'sortYear', 'earliestYear', 
+                  'latestYear', 'country_id']
     def __init__(self, rowInfo=None,  dbObj=None):
         super(Composer, self).__init__(rowInfo, dbObj)
         if self.isCanonical == 0:
@@ -587,7 +610,8 @@ class Segment(EMMSAPMysqlObject):
     'PMFC_24_32-Chi_nel_servir_antico.xml'
     '''
     table = 'segments'
-    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 'measureStart', 'measureEnd', 'encodingType', 'segmentData']
+    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 
+                  'measureStart', 'measureEnd', 'encodingType', 'segmentData']
     
     def __init__(self, rowInfo=None, dbObj=None):
         super(Segment, self).__init__(rowInfo, dbObj)
@@ -596,7 +620,7 @@ class Segment(EMMSAPMysqlObject):
         '''
         return the pieceObject for the piece with this id
         '''
-        p = Piece(self.pieceId, self.dbObj)
+        p = Piece(self.piece_id, self.dbObj)
         return p
     
     def ratios(self):
@@ -615,7 +639,7 @@ class Segment(EMMSAPMysqlObject):
         (123938, 5294)
         >>> s2 = Segment(ratios[1][0], dbObj=s.dbObj)
         >>> s2.piece().filename, s2.measureStart, s2.measureEnd
-        ('PMFC_23_37-Gloria_Et_verus_homo_deus.mxl', 19, None)
+        ('PMFC_23_37-Gloria_Et_verus_homo_deus.mxl', 19, 53)
         '''
         segmentType = 'DiaRhy2'
         self.dbObj.cursor.execute('''SELECT segment2id, ratio FROM ratios''' + segmentType + '''
