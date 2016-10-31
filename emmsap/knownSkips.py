@@ -46,7 +46,7 @@ skipPieces = [
                (2636, 1254), # OMR PMFC17.66 = Bodley 842 59v transcription
                (2632, 2122), # OMR PMFC17.62 = Fallows 024 Felix namque (known... good OMR!)
                (2229, 1648), # Merci pour dieu A da Cividale E15c + PMFC22
-               (2232, 717), # Je suy las venus E15c + Marchi notation
+               (3108, 717), # Je suy las venus E15c + Marchi notation
                (2194, 2195), # FallowsMB_89 + 89a
                (2167, 2168), # So ye emp. Fallows 64 + 64a
                (2198, 2199), # FallowsMB_092_N_aray_je_jamais.mxl
@@ -66,11 +66,22 @@ skipPieces = [
               (2792, 450), # OMR E15cM2 Haspre 1 Chantilly 46 Ma douce amour (del 2792)
               (2795, 414), # OMR E15cM2 Haucourt (Altacuria) 1 Ch 8 Se doit (del 2795)
               (2918, 1627), # Molendium Stras + Amis ton dous
-              (2967, 2940), # Na pas longtemps: E15cM + Oxford
+              (3054, 2940), # Na pas longtemps: E15cM + Oxford
               (2964, 409), # two versions Tout par compas
               (2962, 408), # two versions Belle Bonne Sage
               (2947, 824), # two versions Gloria Baude Cordier
-              (2961, 2244), # two versions: La dieus d'amours
+              (3036, 2244), # two versions: La dieus d'amours
+              (3043, 3137), # two versions sanctus tapissier
+              
+              # OMR Robertsbridge, etc. from English PMFC with McGee
+              (3128, 2466), # mcgee 39
+              (3129, 2467), # mcgee 40
+              (3130, 2468), # mcgee 41
+              (3131, 2628), # mcgee 42
+              (3132, 2629), # mcgee 43
+              (3133, 2630), # mcgee 44 Petrone
+              
+              
               
               # two versions of E15cM 1:
               (3018, 325), # Tapissier Credo
@@ -195,6 +206,7 @@ skipPieces = [
               
               ######
               # known similarities ; known concordances
+              (3111, 3112), # Antonio da Cividale Gloria and Credo -- partly known...
               (2828, 2097), # Paulet's only known piece w/ Cambrai 1328 Hasselmann 25; Fallows Cat.
               (2758, 2303), # E 15c M 3 # 28 / E 15cM 4 R 32 (see E15/4p.xvi)-- Mon cuer / Mon cuer 
               (281, 2240), # FOL, Grottaferrata Gloria in London Titus.

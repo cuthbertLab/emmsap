@@ -286,7 +286,7 @@ class Piece(EMMSAPMysqlObject):
         matchingSegments = []
 #        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios 
 #                                    WHERE segment1id IN 
-#                                       (SELECT id FROM segments WHERE pieceId = %s) 
+#                                       (SELECT id FROM segment WHERE pieceId = %s) 
 #                                    AND ratio >= %s ORDER BY segment1id''',
 #                                    [thisPieceId, threshold])
         #print "HIII"
@@ -609,7 +609,7 @@ class Segment(EMMSAPMysqlObject):
     >>> s.piece().filename
     'PMFC_24_32-Chi_nel_servir_antico.xml'
     '''
-    table = 'segments'
+    table = 'segment'
     rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 
                   'measureStart', 'measureEnd', 'encodingType', 'segmentData']
     

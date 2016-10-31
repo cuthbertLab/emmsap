@@ -67,7 +67,8 @@ searches = {
     
     # SL
     'sl01v': ('', 'intervals like "%-25-432%"'),
-    'sl22r': ('test to see if it can be found: Yes!', 'intervals like "%2211-2-2-2-25%"'),
+    'sl22r': ('test to see if O Cieco Mondo can be found: Yes!', 'intervals like "%2211-2-2-2-25%"'),
+    'sl24r': ('bottom of 24r after secunda', 'intervals like '),
     'sl29v': ('below nascoso el viso', 'intervals like "%15-2-45-2-4%"'),
     #'sl21v': ('test to see if it can find NOPE', 'intervals like "%-2-22-2-22-2222-2-2%"')
     'sl31v': ('','partId > 0 and intervals like "%2-54-22-2%"'),
