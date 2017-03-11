@@ -10,7 +10,8 @@ try:
     difflib = None
 except ImportError:
     lvRatio = None
-    print("No Levenshtein C program found -- will be much slower")
+    print("No Levenshtein C program found -- will be much slower; \n" 
+          + "run pip3 install python-Levenshtein")
     import difflib # @UnusedImport
 
 minSegmentLength = 15

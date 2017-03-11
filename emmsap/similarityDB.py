@@ -2,6 +2,7 @@
 #-------------------------------------------------------------------------------
 from __future__ import print_function, division
 
+
 from emmsap import mysqlEM
 #from music21.search import segment
 from emmsap.knownSkips import skipPieces # import skipFilenames as skipPieces
@@ -10,8 +11,8 @@ skipFileNames = [
                  ('Poi_che_da_te_3vv_Lucca.xml', 'PMFC_04_10-Poi_che_da_te_mi_convien.xml')
                  ]
 
-class SimilaritySearcher(object): # 1322
-    def __init__(self, startPiece=3139, endPiece=3500, minThreshold=7073, maxToShow=1):
+class SimilaritySearcher(object): # 3149
+    def __init__(self, startPiece=3149, endPiece=3300, minThreshold=6073, maxToShow=2):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece

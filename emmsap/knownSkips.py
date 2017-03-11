@@ -701,11 +701,11 @@ skipPieces = [
              170, 64, 176, 1291, 1563), # and pieces caught by them
               
             (2363, 1229, 1227), # Basel Novum sidus low thresh
+            (2244, 2363), # interesting: Cesaris Chantilly 73 and opening of Basel Novum sidus,
+                # but more interesting for internal repetition in 2244: m. 21 and m. 60
             (2364, 2354), # Basel St Clara Kyrie w/ PMFC16 #86
             (450, 451), # Chantilly 46 + 47 -- only a computer would think this...
             (465, 1377), # Chantilly 61 + 71 -- noodles...
-            (2244, 2363), # interesting: Cesaris Chantilly 73 and opening of Basel Novum sidus,
-                # but more interesting for internal repetition in 2244: m. 21 and m. 60
             (2965, 450), # Cesaris Noodles, Chantilly Ma douce amour
               
             # PMFC16 cantus firmi
