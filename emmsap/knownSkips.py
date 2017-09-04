@@ -39,10 +39,16 @@ skipPieces = [
                (2676, 2672), #Machaut Lay plour Malgre Fortune, p. 39-45 w/
                 # Machaut L 10 (Lay Nastre Dame), m. 154-162 -- sort of
               
+               (318, 256), # Gloria Qui sonitu melodie + Credo London 29987
+               (3104, 276, 30), # Antonio da Civ 13 -- tenor = Gaudeamus Omnes.
+               (3042, 1999), # Tapissier and Feragut Patrem tenors
+               (973, 3166, 477), # Je port -- donatus plus Wolfenbuttel.
                # end new discoveries.
                
                # two transcriptions of the same
                # same piece..different versions.
+               (2717, 2718), # OMR of two Brollo pieces 5ab, 5c
+               (325, 3042), # two copies Credo Tapissier
                (2636, 1254), # OMR PMFC17.66 = Bodley 842 59v transcription
                (2632, 2122), # OMR PMFC17.62 = Fallows 024 Felix namque (known... good OMR!)
                (2229, 1648), # Merci pour dieu A da Cividale E15c + PMFC22
@@ -72,6 +78,7 @@ skipPieces = [
               (2947, 824), # two versions Gloria Baude Cordier
               (3036, 2244), # two versions: La dieus d'amours
               (3043, 3137), # two versions sanctus tapissier
+              (9, 3142), # two versions Basel Agnus Angnus
               
               # OMR Robertsbridge, etc. from English PMFC with McGee
               (3128, 2466), # mcgee 39
@@ -203,9 +210,17 @@ skipPieces = [
               (1931, 1932), # two versions Herz mut leib sel, Wolkenstein
               
               (2383, 1097), # Cambrai 1328 Floret, Vitry Bona Condit -- NEUMA tenor.
+              (78, 3168), # Two copies of Perugia 15755 Strip IX delete second
               
               ######
               # known similarities ; known concordances
+              (2248, 2344), # Machaut hoquetus David w/ PMFC 16.76, both on tenor Nativitas gl. Vir.
+              (2418, 2419), # PMFC 15.5, 15.6 both on Mariounette douche
+              (2343, 2585), # PMFC 16.75, 17.15, both on Virgo Dei Genitrix
+              (178, 2582), # Impudentur / Virtutibus on Almar redemptoris mater, same as 17.12.
+              (2706, 2708), # barolomeo parody #2
+              (2707, 2710), # barolomeo parody #2
+              (3155, 3157), # VeronaCppA with VeronaCppC (Pedro diss, p. 393)
               (3111, 3112), # Antonio da Cividale Gloria and Credo -- partly known...
               (2828, 2097), # Paulet's only known piece w/ Cambrai 1328 Hasselmann 25; Fallows Cat.
               (2758, 2303), # E 15c M 3 # 28 / E 15cM 4 R 32 (see E15/4p.xvi)-- Mon cuer / Mon cuer 
@@ -231,7 +246,7 @@ skipPieces = [
               (220, 229), # bartolino amor che nel pensier, l invido per lo ben
               (172, 174, 175), # Faenza Kyrie, Gloria, Ave Maris Stella
               (971, 170, 386, 152, 172, 32), # Faenza Jacopo da Bologna 
-              (168, 171, 397, 388, 807), # kyries based on Cunctipotens
+              (168, 171, 172, 397, 388, 807, 3159), # kyries based on Cunctipotens
               (167, 31), # verbum caro...
               
               (373, 461, 1427), # ciconia Sus un Fontayne, En remirants
@@ -246,7 +261,8 @@ skipPieces = [
               (1092, 908), # Tournai Ite Missa, Ave Regina Mater Innocencie 
                 # also on same Ite Missa tenor
               (1227, 1229), # PMFC 05 # 17 and 19 -- same tenor.
-              (852, 1190), # Credo village and a PMFC 23 Credo A1 -- monophonic rhythmic Credo 1.
+              (852, 1190, 2280), # Credo village and a PMFC 23 Credo A1 -- monophonic rhythmic Credo 1
+                # also PMFC 16 #45- credo....
               (1599, 1596), # IntRhySmall got that the Nightingale song of Or sus and 
                 # Onques ne fu were the same. :-)
               (2351, 2352, 2353), # PMFC 16 83, 84, 85 -- three variant Iudea et Ierusalems
@@ -259,6 +275,11 @@ skipPieces = [
               
               
               # unknown similarities worth mentioning...
+              (1062, 974), # Francesco no. 99 and 102 -- endings
+              (1023, 34), # Oyme el core and Donna si to fallito endings
+              (1303, 769), # una smaniosa with Polo Un pellegrin
+              (1290, 1249), # zachara Benche lontan, Ser 2 - Ome al cor dolente -- first ending.
+              (1322, 48), # little passage Nicolo 8, Jacopo O Cieco
               (362, 1297), # Ciconia Io crido amor + Zaninus Se la lagrime -- m 16-17, 13-14
                 # exact same sequential pattern that appears nowhere else.
               (1474, 1466), # PMFC 08 34 Pyance la bella iguana + PMFC 06 Giovanni 11a Nel meco
@@ -300,6 +321,12 @@ skipPieces = [
               
               
               # low threshold false matches
+              (2840, 1078), # Velut with Barcelona Kyrie
+              (2509, 3107), # 14.59, with AdC 4 -- both on 2-22-22-2 tenors
+              (2435, 2022), 
+              (826, 2640, 3117), # escaped Noodle control.
+              (851, 2062), # Zachara and Radom -- not a match or even close; just rhythmic.
+              (3157, 2994), # instrumental noodles Verona, Principio di Virtu
               (107, 202), # noodles in Italian music 
               (172, 1452), # noodles
               (148, 1768), # noodles
@@ -310,7 +337,9 @@ skipPieces = [
               (1476, 1116), 
               (1487, 1272), # noodles 
               (1775, 1064), # noodles
-              (1240, 215),
+              (1240, 215, 971),
+              (1120, 1348),
+              (1107, 146),
               
               (1963, 388, 807, 169, 1488), # Machaut M3 and Ravenna Kyrie, + instrumental Faenza  
                 # + Nicolo melisma
@@ -336,7 +365,7 @@ skipPieces = [
               (1509, 602),
               (1567, 761), # two paolo pieces...
               (1655, 187), # 22.47b, 04.04.
-              (2338, 1655), # Jour a jour la vie -- PMFC 22.47a w/ Cristus PMFC.47b
+              (2338, 1655, 1656, 1657), # Jour a jour la vie -- PMFC 22.47a w/ Cristus PMFC.47b
               (1118, 939), # PMFC 06 Jacopo Vestisse, PMFC 07 GdF 2 -- Cacciand -- filigree
               (1141, 37), # PMFC 10 22 Perche veder non posso; Francesco Poy che Partir -- 
                            # very similar cadence
@@ -392,6 +421,9 @@ skipPieces = [
               (2329, 2330, 2334), # PMFC 16 Agnus 62 and 63 (variants on each other) and c.f. for 67
 
             # IGNORE Tenors only...
+            (299, 300, 1214), # Matteo da Perugia Gloria 14, 15 = T Ida Capitolorum
+                # Ante THronem Trinitas
+
             (276, 1338), # Gaudeamus Omnes + PMFC 08 Nicolo 24
             (2094, 166), # Autun 152 Deo Gratias + PMFC 12_44 Ave Verum Corpus -- not close enough
             (1982, 1163), # Turin 2b Patrem, PMFC 23.112 Gloria
@@ -748,6 +780,10 @@ skipPieces = [
             (2555, 2494), # PMFC 14 app. 12 m. 9 with # 44 m. "28" -- perfect for a few mm..
             (2559, 2530), # nope.
             (2570, 2524), # PMFC app. 27, # 74 -- some tenor same but mostly not.
+
+            # PMFC 16 tenor with Gormaz Burgos Motet -- nope.
+            (3158, 2347),
+
 
             # PMFC 17...
             (2574, 2339), # PMFC 17.4 + PMFC 16.71
@@ -1114,7 +1150,9 @@ skipFilenames = [('PMFC_16_55-Sanctus.xml', 'Autun_152_Modulus_Deo_Gratias.xml')
   'PMFC_12_A4-Kyrie_PMFC12_A4.xml',
   'Seville_25_Barcelona_883_Kyrie.xml',
   'Ravenna_453_14r_Kyrie.xml',
-  'PMFC_13_A1-Kyrie_PMFC13_A1.xml'),
+  'PMFC_13_A1-Kyrie_PMFC13_A1.xml',
+  'Gormaz_Burgos_Motet.xml'
+  ),
  (None, 'Florence_999_Verbum_Caro.xml'),
  ('PMFC_24_45-Sus_une_fontayne.xml',
   'Stoessel_Ch_057-En_remirant.xml',

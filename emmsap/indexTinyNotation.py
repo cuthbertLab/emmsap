@@ -5,7 +5,10 @@ Eventually, this should be able to be done with .show('tinyNotation', verbose=Fa
 '''
 
 from music21 import converter, meter
-from emmsap import files, mysqlEM, toTinyNotation
+from emmsap import files
+from emmsap import mysqlEM
+from emmsap import toTinyNotation
+
 import os
 #from emmsap import async_dec
 

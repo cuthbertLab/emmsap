@@ -70,7 +70,7 @@ def fixTS(s):
     # Stoessel_Ch_041-Si_con_ci_gist.xml -- will be separate...
 #     for ts in s.recurse().getElementsByClass('TimeSignature'):
 #         print(ts)
-#         ts.hideObjectOnPrint = False
+#         ts.style.hideObjectOnPrint = False
     knownContent = {'«': '6/8', 'Ç': '6/8', '¶': '6/8',
                     'ø': '3/4', '¯': '3/4', 
                     'Ë': '9/8', 'ÿ': '9/8',
@@ -114,7 +114,7 @@ def delHiddenContent(s):
     '''
     totRemoved = 0
     for n in s.recurse():
-        if n.hideObjectOnPrint is True:
+        if n.style.hideObjectOnPrint is True:
             m = n.getContextByClass('Measure')
             if m:
                 m.remove(n)
@@ -183,7 +183,7 @@ def iterMeasureStacksBackwards(s):
         mStack = s.measure(mNumber, 
                          collect=['TimeSignature'], 
                          gatherSpanners=False, 
-                         ignoreNumbers=True)
+                         indicesNotNumbers=True)
         mStack.id = 'MeasureStack_{}'.format(mStack[-1][-1].number)
         yield mStack
 

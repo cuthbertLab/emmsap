@@ -1,16 +1,16 @@
 from emmsap import files
+from emmsap import mysqlEM
 
 from music21 import common
 from music21 import search as searchBase
 from music21.search import segment
-from emmsap import mysqlEM
 import os
 
 encodingsToAlgorithms = {
                       'diaSlower1': searchBase.translateStreamToString,
                       'DiaRhy2': searchBase.translateDiatonicStreamToString,
-                      'IntRhy': searchBase.translateIntervalsAndSpeed,
-                      'IntRhyJitter': searchBase.translateIntervalsAndSpeed,
+                      #'IntRhy': searchBase.translateIntervalsAndSpeed,
+                      #'IntRhyJitter': searchBase.translateIntervalsAndSpeed,
                       'IntRhySmall': searchBase.translateIntervalsAndSpeed,
                       }
 
@@ -97,13 +97,16 @@ def addMeasureEndToSegments(pieceId=None, encodingType='DiaRhy2'):
     '''
     em = mysqlEM.EMMSAPMysql()
     query = '''
-        SELECT measureStart FROM segment WHERE piece_id = %s AND partId = %s AND segmentId = %s AND encodingType = "%s"
+        SELECT measureStart FROM segment 
+        WHERE piece_id = %s AND partId = %s AND segmentId = %s AND encodingType = "%s"
     '''
     update = '''UPDATE segment SET measureEnd = %s WHERE id = %s'''
     if pieceId is None:
-        em.cursor.execute('SELECT id, piece_id, partId, segmentId, measureStart FROM segment WHERE encodingType = "%s"' % encodingType)
+        em.cursor.execute('SELECT id, piece_id, partId, segmentId, measureStart FROM segment '
+                          + 'WHERE encodingType = "%s"' % encodingType)
     else:
-        em.cursor.execute('SELECT id, piece_id, partId, segmentId, measureStart FROM segment WHERE piece_id = %s AND encodingType = "%s"' % (pieceId, encodingType))
+        em.cursor.execute('SELECT id, piece_id, partId, segmentId, measureStart FROM segment '
+                          + 'WHERE piece_id = %s AND encodingType = "%s"' % (pieceId, encodingType))
     
     segmentData = em.cursor.fetchall()
     for row in segmentData:
@@ -149,8 +152,8 @@ def indexSegments(allFilesPath, encodingType='DiaRhy2'):
     '''
     algorithm = encodingsToAlgorithms[encodingType]
     #preParseFiles(allFilesPath)
-    indexedSegments = segment.indexScoreFilePaths(allFilesPath, segmentLengths=22, 
-                                                  overlap=18, giveUpdates=True, 
+    indexedSegments = segment.indexScoreFilePaths(allFilesPath, segmentLengths=30, 
+                                                  overlap=25, giveUpdates=True, 
                                                   algorithm=algorithm,
                                                   jitter=0,
                                                   failFast=False) # @UndefinedVariable
@@ -161,7 +164,7 @@ def indexSegments(allFilesPath, encodingType='DiaRhy2'):
 
 if __name__ == '__main__':
     pass
-    #indexSegmentsAndStore(allFilesWithPath = None, encodingType='DiaRhy2')
+    #indexSegmentsAndStore(allFilesWithPath=None, encodingType='DiaRhy2')
     #updateSegmentTable('DiaRhy2')
 #     for i in range(2500):
 #         try:

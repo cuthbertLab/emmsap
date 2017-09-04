@@ -7,9 +7,9 @@ Run updateDB instead of this before searching via similarityDB
 '''
 from __future__ import print_function
 
-from emmsap import mysqlEM
+import mysqlEM
 #from emmsap import fileAndSheet
-from emmsap import files
+import files
 #from emmsap import spreadsheet
 try:
     from mysql.connector.errors import IntegrityError as IntegrityError # @UnresolvedImport

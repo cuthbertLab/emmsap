@@ -51,7 +51,7 @@ class Composer(models.Model):
     sortyear = models.IntegerField(db_column='sortYear', blank=True, null=True)  # Field name made lowercase.
     earliestyear = models.IntegerField(db_column='earliestYear', blank=True, null=True)  # Field name made lowercase.
     latestyear = models.IntegerField(db_column='latestYear', blank=True, null=True)  # Field name made lowercase.
-    country = models.ForeignKey(Country) 
+    country = models.ForeignKey(Country, on_delete=models.CASCADE) 
 
     def __str__(self):
         return self.name
@@ -65,6 +65,7 @@ class Intervals(models.Model):
     fn = models.CharField(max_length=255, blank=True, null=True)
     partid = models.IntegerField(db_column='partId', blank=True, null=True)  # Field name made lowercase.
     intervals = models.TextField(blank=True, null=True)
+    intervalsnounisons = models.TextField(db_column='intervalsNoUnisons', blank=True, null=True) # Field name made lowercase.
 
     def __str__(self):
         return self.fn + ':' + str(self.partid)
@@ -89,7 +90,8 @@ class Piecetwopart3Grammapping(models.Model):
 class Piece(models.Model):
     filename = models.CharField(unique=True, max_length=255, blank=True, null=True)
     piecename = models.CharField(max_length=255, blank=True, null=True)
-    composer = models.ForeignKey(Composer, blank=True, null=True)
+    composer = models.PositiveIntegerField(blank=False, null=False, default=12) # models.ForeignKey(Composer, blank=False, null=False, default=12, on_delete=models.CASCADE)
+    frag = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.filename
@@ -138,7 +140,7 @@ class Piece(models.Model):
 class Ratiosdiarhy2(models.Model):
     segment1id = models.IntegerField(db_column='segment1Id')  # Field name made lowercase.
     segment2id = models.IntegerField(db_column='segment2Id')  # Field name made lowercase.
-    ratio = models.SmallIntegerField()
+    ratio = models.SmallIntegerField(db_index=True)
 
     class Meta:
         managed = False
@@ -146,7 +148,7 @@ class Ratiosdiarhy2(models.Model):
 
 
 class Segment(models.Model):
-    piece = models.ForeignKey(Piece) 
+    piece = models.ForeignKey(Piece, on_delete=models.CASCADE) 
     partid = models.IntegerField(db_column='partId', blank=True, null=True)  # Field name made lowercase.
     segmentid = models.IntegerField(db_column='segmentId', blank=True, null=True)  # Field name made lowercase.
     measurestart = models.IntegerField(db_column='measureStart', blank=True, null=True)  # Field name made lowercase.
@@ -182,13 +184,3 @@ class Tinynotation(models.Model):
         managed = False
         db_table = 'tinyNotation'
         unique_together = (('fn', 'partid'),)
-
-
-class Twopart3Grams(models.Model):
-    int1 = models.IntegerField()
-    int2 = models.IntegerField()
-    int3 = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'twoPart3Grams'

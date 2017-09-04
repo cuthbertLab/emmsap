@@ -14,6 +14,10 @@ urlpatterns = [
     # ex: /emmsap/piece/193/assignComposer/  
     url(r'^piece/(?P<pieceId>[0-9]+)/assignComposer/', views.assignComposer, name='assignComposer'),
     url(r'^piece/(?P<pieceId>[0-9]+)/assignComposerFollowup/', views.assignComposerFollowup, name='assignComposerFollowup'),
+    # ex: /emmsap/composer/5/
+    # url(r'^piece/(?P<pieceId>[0-9]+)/', views.piece, name='piece'),
+
+
 
     url(r'^upload/', views.uploadFile, name='upload'),
 ]

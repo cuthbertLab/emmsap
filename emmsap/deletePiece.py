@@ -19,7 +19,7 @@ def deleteOMRDuplicates():
 if __name__ == '__main__':
     #deleteOMRDuplicates()
     #exit()
-    x = 3144
+    x = 3141
 #     for x in range():
     emp = mysqlEM.Piece(x) # 
     print(emp.filename)

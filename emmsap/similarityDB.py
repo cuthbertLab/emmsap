@@ -6,13 +6,14 @@ from __future__ import print_function, division
 from emmsap import mysqlEM
 #from music21.search import segment
 from emmsap.knownSkips import skipPieces # import skipFilenames as skipPieces
+# skipPieces = []
 
 skipFileNames = [
                  ('Poi_che_da_te_3vv_Lucca.xml', 'PMFC_04_10-Poi_che_da_te_mi_convien.xml')
                  ]
 
-class SimilaritySearcher(object): # 3149
-    def __init__(self, startPiece=3149, endPiece=3300, minThreshold=6073, maxToShow=2):
+class SimilaritySearcher(object): 
+    def __init__(self, startPiece=2196, endPiece=4000, minThreshold=6700, maxToShow=2):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
@@ -23,6 +24,8 @@ class SimilaritySearcher(object): # 3149
         self.skipGroups = skipPieces
         self.maxToShow = maxToShow
         self.skippedMatchPenalty = 0 # 300 # after skipping one, the odds of a good match goes down.
+
+        self.antiNoodleProtection = True # look out for seconds that are the same rhythm
         self.tenorThresholdAdd = 500
         self.tenorPartNumber = 2
         self.tenorOtherPartNumber = 2
@@ -83,14 +86,16 @@ class SimilaritySearcher(object): # 3149
         matches, info = self.checkForShow(p, ratioMatch, skippedPieces)
         if matches is False:
             return
-        thisSegment, otherSegment, otherPiece = info
+        thisSegment, otherSegment, otherPiece, adjustedRatio = info
         totalShown += 1
-        showInfo = "part %2d, m. %3d; (%4d) %30s, part %2d, m. %3d (ratio %5d)" % (
+        showInfo = "part %2d, m. %3d; (%4d) %30s, part %2d, m. %3d (ratio %5d adjusted to %5d)" % (
                                     thisSegment.partId, thisSegment.measureStart,
                                     otherPiece.id, otherPiece.filename, 
                                     otherSegment.partId, 
                                     otherSegment.measureStart, 
-                                    ratioMatch.thisRatio)
+                                    ratioMatch.thisRatio,
+                                    adjustedRatio
+                                    )
     
         
         if totalShown > self.maxToShow:
@@ -149,7 +154,12 @@ class SimilaritySearcher(object): # 3149
             # tenor
             if ratioMatch.thisRatio - self.tenorThresholdAdd < self.minThreshold:
                 return(False, "TenorBelowThreshold")
-        totalPenalty = len(skippedPieces) * self.skippedMatchPenalty
+        
+        totalPenalty = 0
+        if self.antiNoodleProtection:
+            totalPenalty = self.runAntiNoodleProtection(ratioMatch.thisRatio, thisSegment)
+
+        totalPenalty += len(skippedPieces) * self.skippedMatchPenalty
         if ratioMatch.thisRatio - totalPenalty < self.minThreshold:
             print("   below threshold for (%d) %s: ratio %d (adjusted to %d)" % 
                           (otherPiece.id, otherPiece.filename, 
@@ -157,8 +167,38 @@ class SimilaritySearcher(object): # 3149
             skippedPieces.append(otherPieceId)
             return(False, "TooCommonPenaltyThreshold")
         
-        return (True, (thisSegment, otherSegment, otherPiece))
+        return (True, (thisSegment, otherSegment, otherPiece, ratioMatch.thisRatio - totalPenalty))
 
+
+    def runAntiNoodleProtection(self, ratio, seg):
+        '''
+        If antiNoodleProtection, adjust the difference between the ratio and
+        10000 by adding in the percentage of noodles -- that is, ascending or
+        descending seconds (or unisons) with the same rhythm.  Quick and dirty.
+        '''
+        ratioOff100 = 10000 - ratio
+        segData = seg.segmentData
+        segLength = len(segData)
+        numNoodles = 0
+        for i in range(segLength - 1):
+            thisN = segData[i]
+            nextN = segData[i + 1]
+            if self.segmentType == 'DiaRhy2':
+                if thisN in 'ABCDEFG':
+                    asciiDiff = abs(ord(thisN) - ord(nextN))
+                    if asciiDiff < 2:
+                        numNoodles += 1                
+            elif self.segmentType == 'IntRhySmall':
+                thisOrd = ord(thisN)
+                if thisOrd <= 75 and thisOrd >= 71:
+                    numNoodles += 1
+            else:
+                print("Unknown segment type " + self.segmentType)
+
+        noodleFraction = numNoodles / segLength
+        totalPenalty = int(ratioOff100 * noodleFraction)
+        # print("           Noodle Penalty: ", totalPenalty, "NumNoodles", numNoodles)
+        return totalPenalty
 
 if __name__ == '__main__':
     ss = SimilaritySearcher()

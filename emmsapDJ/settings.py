@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'main',
 )
 
@@ -82,7 +83,7 @@ DATABASES = {
 #     },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cuthbert',
+        'NAME': 'emmsapDJ',
         'USER': 'cuthbert',
         'PASSWORD': os.environ.get('KASSIAPASSWORD','set_KASSIAPASSWORD_in_Env'),
     }

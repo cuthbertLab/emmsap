@@ -2,7 +2,8 @@
 Extract all texts from EMMSAP and place in database
 '''
 from __future__ import print_function
-from emmsap import files, mysqlEM
+import files
+import mysqlEM
 from music21 import text, environment, converter
 import difflib
 import unicodedata # @UnresolvedImport

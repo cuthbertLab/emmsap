@@ -431,7 +431,7 @@ class Piece(EMMSAPMysqlObject):
         s = stream.Measure()
 
         r = note.Rest(type='whole')
-        r.hideObjectOnPrint = True
+        r.style.hideObjectOnPrint = True
         r.expressions.append(expressions.Fermata())
         sl = layout.SystemLayout(isNew=True)
         sl.priority = -1
@@ -447,8 +447,8 @@ class Piece(EMMSAPMysqlObject):
                 sl = layout.SystemLayout(isNew=True)
                 el.insert(0, sl)
                 noLayoutAdded = False
-            pNew._appendCore(el)
-        pNew.elementsChanged()
+            pNew.coreAppend(el)
+        pNew.coreElementsChanged()
         return pNew
         
         

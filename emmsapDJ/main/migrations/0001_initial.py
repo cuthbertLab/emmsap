@@ -175,6 +175,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='composer',
             name='country',
-            field=models.ForeignKey(to='main.Country'),
+            field=models.ForeignKey(to='main.Country', on_delete=models.CASCADE),
         ),
     ]

@@ -25,15 +25,15 @@ def adjustRatiosByFrequency(encodingType='IntRhy'):
     
     See code for the formula.
     '''
-    query = "SELECT segment1id, count(segment1id) as cs FROM ratios" + encodingType + \
-        " GROUP BY segment1id"
+    query = ("SELECT segment1id, count(segment1id) as cs FROM ratios" + encodingType + 
+             " GROUP BY segment1id")
     em = mysqlEM.EMMSAPMysql()
     em.cursor.execute(query)
     allSegments = [(x[0], x[1]) for x in em.cursor.fetchall()]
     numDone = 0
     for segId, segCount in allSegments:
         commitQuery = '''UPDATE ratios{encodingType} 
-                         SET ratioAdjust = ratio - ((10000 - ratio)/10000 * 30*{segCount})
+                         SET ratioAdjust = ratio - ((10000 - ratio) / 10000 * 30 * {segCount})
                          WHERE segment1id = {segId}'''.format(encodingType=encodingType, 
                                                          segCount=segCount,
                                                          segId=segId)
@@ -53,12 +53,15 @@ def updateRatioTableParallel(encodingType="DiaRhy2"):
     numMissingSegments = len(missingSegments)
     print(str(numMissingSegments) + " waiting to be indexed")
     #dbObj = mysqlEM.EMMSAPMysql()
-    partialCommit = partial(commitRatioForOneSegment, encodingType=encodingType, searchDirection='down')
+    partialCommit = partial(commitRatioForOneSegment, 
+                            encodingType=encodingType, 
+                            searchDirection='down')
     common.runParallel(missingSegments, partialCommit, updateMultiply=3, updateFunction=True)
 
 def updateRatioTable(encodingType="DiaRhy2"):
     '''
-    updates the ratio table, computing ratios for all segments (against all lower numbered segments)
+    updates the ratio table, computing ratios for all segments 
+    (against all lower numbered segments)
     that do not have ratios computed
     '''
     missingSegments = findSegmentsWithNoRatios(encodingType)
@@ -115,10 +118,11 @@ def deleteSparseSegmentRatios(maxSegments=30,
     '''
     em = mysqlEM.EMMSAPMysql()
     print("Finding sparse ratios.\nThis query can take 10-30 seconds...")
-    query = "SELECT segment1id, count(segment1id) as cs FROM ratios" + encodingType + \
-        " GROUP BY segment1id HAVING cs <= " + str(maxSegments) + " and cs >= " + str(minSegments)
+    query = ("SELECT segment1id, count(segment1id) as cs FROM ratios" 
+             + encodingType + " GROUP BY segment1id HAVING cs <= " 
+             + str(maxSegments) + " and cs >= " + str(minSegments))
     em.cursor.execute(query)
-    allSegmentIdsThatShouldHaveMoreRatios = [(x[0],x[1]) for x in em.cursor.fetchall()]
+    allSegmentIdsThatShouldHaveMoreRatios = [(x[0], x[1]) for x in em.cursor.fetchall()]
     deleteRatiosQuery1 = '''DELETE FROM ratios''' + encodingType + ''' WHERE segment1id = %s'''
     deleteRatiosQuery2 = '''DELETE FROM ratios''' + encodingType + ''' WHERE segment2id = %s'''
     for sId, countSid in allSegmentIdsThatShouldHaveMoreRatios:
@@ -153,7 +157,8 @@ def storeAllSegmentData(encodingType):
         return _allSegmentData[encodingType]
 
     dbObj = mysqlEM.EMMSAPMysql()
-    dbObj.cursor.execute('SELECT id, segmentData FROM segment WHERE encodingType = "%s"' % (encodingType))        
+    dbObj.cursor.execute(
+        'SELECT id, segmentData FROM segment WHERE encodingType = "%s"' % (encodingType))        
     sd = []
     print("Indexing segment data once...")
     for otherId, segData in dbObj.cursor:
@@ -232,7 +237,8 @@ def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both',
     longQuery = ', '.join([str(ratioTuple) for ratioTuple in storedRatios])
     if longQuery == "":
         return 0
-    commitQuery = '''INSERT INTO ratios%s (segment1id, segment2id, ratio) VALUES %s''' % (encodingType, longQuery)
+    commitQuery = '''INSERT INTO ratios%s (segment1id, segment2id, ratio) VALUES %s''' % (
+        encodingType, longQuery)
     dbObj.cursor.execute(commitQuery)
     return len(storedRatios)
 
@@ -241,7 +247,8 @@ def commitRatiosForAllSegments(encodingType='DiaRhy2'):
     builds the database of ratios from segments.  Takes about 5-15 hours!
     '''
     dbObj = mysqlEM.EMMSAPMysql()
-    dbObj.cursor.execute('SELECT id FROM segment WHERE encodingType = "%s" ORDER BY id' % encodingType)
+    dbObj.cursor.execute(
+        'SELECT id FROM segment WHERE encodingType = "%s" ORDER BY id' % encodingType)
     i = 0
     allRows = dbObj.cursor.fetchall()
     totalRows = len(allRows)
