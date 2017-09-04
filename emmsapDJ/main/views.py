@@ -26,11 +26,17 @@ def how_to_do_index_the_long_way(request):
 
 def composer(request, composerId):
     c = get_object_or_404(models.Composer, pk=composerId)    
-    allPieces = models.Piece.objects.filter(composer=c)
+    allPieces = models.Piece.objects.filter(composer=composerId)
     
     return render(request, 'main/composerDetail.html', {'composer': c,
                                                         'allPieces': allPieces,
                                                         })
+
+def piece(request, pieceId):
+    c = get_object_or_404(models.Piece, pk=pieceId)
+    return render(request, 'main/pieceDetail.html', {'piece': c,
+                                                        })
+
 
 def listComposers(request):
     allComposers = models.Composer.objects.order_by('name')

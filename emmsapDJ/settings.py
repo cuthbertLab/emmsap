@@ -83,7 +83,7 @@ DATABASES = {
 #     },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'emmsapDJ',
+        'NAME': 'cuthbert',
         'USER': 'cuthbert',
         'PASSWORD': os.environ.get('KASSIAPASSWORD','set_KASSIAPASSWORD_in_Env'),
     }

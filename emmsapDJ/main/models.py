@@ -90,7 +90,7 @@ class Piecetwopart3Grammapping(models.Model):
 class Piece(models.Model):
     filename = models.CharField(unique=True, max_length=255, blank=True, null=True)
     piecename = models.CharField(max_length=255, blank=True, null=True)
-    composer = models.PositiveIntegerField(blank=False, null=False, default=12) # models.ForeignKey(Composer, blank=False, null=False, default=12, on_delete=models.CASCADE)
+    composer = models.ForeignKey(Composer, db_column='composer_id', default=12, on_delete=models.CASCADE) # models.ForeignKey(Composer, blank=False, null=False, default=12, on_delete=models.CASCADE)
     frag = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
