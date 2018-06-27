@@ -2,13 +2,14 @@
 Extract all texts from EMMSAP and place in database
 '''
 from __future__ import print_function
-import files
-import mysqlEM
-from music21 import text, environment, converter
 import difflib
 import unicodedata # @UnresolvedImport
 import re
 import os
+
+from emmsap import files
+from emmsap import mysqlEM
+from music21 import text, environment, converter
 
 em = mysqlEM.EMMSAPMysql()
 em.cnx.set_charset('utf8')
@@ -46,7 +47,7 @@ def runAll():
             #print('Skipping %s' % fn)
             continue
         f = converter.parse(files.emmsapDir + os.sep + fn)
-        fp = f.filePath
+        fp = str(f.filePath)
         fp = fp.replace(base + os.sep, '')
 
         i += 1
@@ -98,7 +99,7 @@ def regularizeText(text, language):
     textReg = re.sub('y','i', textReg)
     if language == 'la':
         textReg = re.sub('ae','e', textReg)
-    textReg = re.sub('[\.\:\,\?\"\!\'\[\]\<\>\(\)\d]', '', textReg)
+    textReg = re.sub('[\.\:\;\-\«\»\,\?\"\!\'\[\]\<\>\(\)\d]', '', textReg)
     textReg = re.sub('(\s)\s+', '\g<1>', textReg)
     textReg = unicodedata.normalize('NFKD', textReg)
     textReg = textReg.encode('ascii', 'ignore').decode('UTF-8')

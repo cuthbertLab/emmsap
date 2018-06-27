@@ -68,7 +68,7 @@ searches = {
     # SL
     'sl01v': ('', 'intervals like "%-25-432%"'),
     'sl22r': ('test to see if O Cieco Mondo can be found: Yes!', 'intervals like "%2211-2-2-2-25%"'),
-    'sl24r': ('bottom of 24r after secunda', 'intervals like '),
+    #'sl24r': ('bottom of 24r after secunda', 'intervals like '),
     'sl29v': ('below nascoso el viso', 'intervals like "%15-2-45-2-4%"'),
     #'sl21v': ('test to see if it can find NOPE', 'intervals like "%-2-22-2-22-2222-2-2%"')
     'sl31v': ('','partId > 0 and intervals like "%2-54-22-2%"'),
@@ -95,7 +95,7 @@ searches = {
     'sl137r': ('below amor de dimmi', {'lastNameWithOctave': 'G3'}, 'intervals like "%-2-2-2-2-2" and fn not like "%gloria%" and fn not like "%credo%"'),
     'sl137br': ('below amor de dimmi', {'hasRest': True, 'lastNameWithOctave': 'A3'}, 'intervals like "%-25-2-2-21%" and partId >= 1 and fn not like "%gloria%" and fn not like "%credo%"'),
     'sl139v': ('MSC: Paolo! Marticius qui fu de Rome', 'partId > 0 and fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-222322-2-2-42-2-2%"'),
-    'sl141v': ('', 'fn not like "%gloria%" and fn not like "%credo%" and fn not like "%sanctus%" and intervals like "%22-21-22-3-21%"'),
+    'sl142v': ('no 164 or 165', 'fn not like "%gloria%" and fn not like "%credo%" and fn not like "%sanctus%" and intervals like "%22-21-22-3-21%"'),
     'sl147r': ('second piece, tenor start', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "-2-2-25222%"'),
     'sl147br': ('second piece, tenor near 2nd pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-2-2-272-42%"'),
     'sl147cr': ('first piece, cttenor 3a pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%311-2-2-232%"'),
@@ -104,7 +104,7 @@ searches = {
     'sl156r': ('end of cantus?','partId = 0 and intervals like "%-2-22-223-2%" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
     'sl159r': ('qui fault boyt tenor start','partId > 0 and intervals like "%-2-2-2-24-3%" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
     'sl159rb': ('qui fault boyt tenor end', {'lastNameWithOctave': 'D3'} ,'intervals like "%-2-44-2-2-2" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
-    'sl160v': ('unknown', {'hasRest': True, 'lastNameWithOctave': 'E4'}, 'intervals like "%2-32122-2%"'),
+    'sl160v': ('piece 184', {'hasRest': True, 'lastNameWithOctave': 'E4'}, 'intervals like "%2-32122-2%"'),
     'sl177r': ('end of line -- white notation!', {'hasRest': True}, 'intervals like "%-2222-21-23"'),
 
     'utrecht1': ('','(fn regexp "credo" or fn regexp "patrem") and intervals like "%72-4%"'),
@@ -180,8 +180,22 @@ def runAll():
         print("******************")
         print(searches[k][0])
         runOne(k, show=True)
+
+def runSL():
+    for i, k in enumerate(sorted(searches.keys())):
+        if 'sl' not in k:
+            continue
+        print("******************")
+        print(searches[k][0])
+        runOne(k, show=False, onlyMatches=True)
+
     
-def runOne(searchIndex, show=False):
+def runOne(searchIndex, show=False, onlyMatches=False):
+    def printif(x):
+        if onlyMatches is False:
+            print(x)
+    
+    
     ##############
     print("Running: " + str(searchIndex))
     
@@ -250,11 +264,14 @@ def runOne(searchIndex, show=False):
         if pieceObj.id < pieceMinimum: # searching new only...
             continue
         
-        print(rowCount, fn, partId)
+        metadataTuple = (rowCount, fn, partId)
+        isPrintedOnlyMatches = False
+        if not onlyMatches:
+            print(*metadataTuple)
         #if pieceNum < 9:
         #    continue
         if partNum is not None and partNum != partId:
-            print("wrong part..." + str(partId))
+            printif("wrong part..." + str(partId))
             continue
         fullFn = files.emmsapDir + os.sep + fn
         s = converter.parse(fullFn)
@@ -304,13 +321,13 @@ def runOne(searchIndex, show=False):
                         pn[0].lyric += "_" + str(mn)
                         if (syllableSearch is not None and 
                                 (lastSyllableMatch is None or lastSyllableMatch < (i - illen - 2))):
-                            print("--not syllable")
+                            printif("--not syllable")
                             continue
                         if pieceFracStart is not None and mn > numMeasures / pieceFracStart:
-                            print("--not pieceFracStart")
+                            printif("--not pieceFracStart")
                             continue # must be in first 1/3 of piece
                         if pieceFracEnd is not None and mn < numMeasures - (numMeasures / pieceFracEnd):
-                            print("--not pieceFracEnd")
+                            printif("--not pieceFracEnd")
                             continue # must be in last 1/10th of piece if pieceFracEnd is 10.0
                         
                         if hasRest is not None:
@@ -322,25 +339,31 @@ def runOne(searchIndex, show=False):
                                         foundRest = True
                             if hasRest is True:
                                 if foundRest is False:
-                                    print("--not foundRest")
+                                    printif("--not foundRest")
                                     continue
                         if lastNameWithOctave is not None:
                             if n.pitch.nameWithOctave != lastNameWithOctave:
-                                print("--not right step")
+                                printif("--not right step")
                                 continue
                         
                         if timeSigSearch is not None:
                             ts = n.getContextByClass('TimeSignature')
                             if ts is not None and ts.ratioString != timeSigSearch:
-                                print("--not timeSig")
+                                printif("--not timeSig")
                                 continue
+                            
+                        if onlyMatches and not isPrintedOnlyMatches:
+                            print(*metadataTuple)
+                            isPrintedOnlyMatches = True
+
                         print("Part", partId, "Measure", mn)
                     found = True
             
         if show is True and found is True: # may be false because "23-4" matches "-23-4"
             s.show()
         elif found is False:
-            print("Probably not found due to beginning with descending instead of ascending intervals")
+            printif("Probably not found due to beginning with descending instead of ascending intervals")
         
 if __name__ == '__main__':
-    runSearch()
+    runSL()
+    #runSearch()
