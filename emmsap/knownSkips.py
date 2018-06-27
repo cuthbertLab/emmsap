@@ -47,6 +47,9 @@ skipPieces = [
                
                # two transcriptions of the same
                # same piece..different versions.
+               (3179, 3174, 3180), # Basel in twice?\
+               (3208, 292), # Zachara Gloria Laus Honor in Old Hall also
+               
                (2717, 2718), # OMR of two Brollo pieces 5ab, 5c
                (325, 3042), # two copies Credo Tapissier
                (2636, 1254), # OMR PMFC17.66 = Bodley 842 59v transcription

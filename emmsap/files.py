@@ -20,7 +20,7 @@ def fixFilesInADir(dirName = emmsapDir):
     :type dirName: str
     '''
     #: :type fn: str
-    for fn in os.listdir(dirName): 
+    for fn in sorted(os.listdir(dirName)): 
         newName = music21.common.normalizeFilename(fn) # @UndefinedVariable
         if newName.startswith('PMFC0'):
             newName = 'PMFC_0' + newName[5:]
@@ -71,7 +71,7 @@ def allFiles():
     >>> len(af)
     1739
     '''
-    allFiles = os.listdir(emmsapDir)
+    allFiles = sorted(os.listdir(emmsapDir))
     allFiles2 = []
     for f in allFiles:
         if f.startswith('.'):

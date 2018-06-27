@@ -13,7 +13,7 @@ skipFileNames = [
                  ]
 
 class SimilaritySearcher(object): 
-    def __init__(self, startPiece=16, endPiece=4000, minThreshold=4000, maxToShow=5):
+    def __init__(self, startPiece=3207, endPiece=4000, minThreshold=6000, maxToShow=1):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
