@@ -60,8 +60,8 @@ def onePart(partNum, p, fn):
     tn = toTinyNotation.convert(pf)
     pfs = pf.stripTies()
     tnst = toTinyNotation.convert(pfs)
-    #print(fn, partNum, ts.ratioString, tn)
-    em.cursor.execute(query, [fn, str(partNum), ts.ratioString, tn, tnst])
+    em.cursor.execute(query, (fn, str(partNum), ts.ratioString, tn, tnst))
+    em.commit()
     #p.show()
 
 def toInterval(partNum, p, fn):
@@ -85,6 +85,7 @@ def toInterval(partNum, p, fn):
     allIntStr = ''.join(allInts)
     allIntStrNoUnisons = ''.join(allIntsNoUnisons)
     em.cursor.execute(queryInv, [fn, str(partNum), allIntStr, allIntStrNoUnisons])
+    em.commit()
 
 def runAll(table='tinyNotation'):
     for fn in files.allFiles():
