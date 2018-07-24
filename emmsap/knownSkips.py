@@ -47,9 +47,13 @@ skipPieces = [
                
                # two transcriptions of the same
                # same piece..different versions.
+               (790, 3381), # PMFC 13.32 Agnus Dei w/ OMR of Bologna, delete 3381
+               (1805, 3383), # PMFC 11.61 O Zentil Madona with OMR of Bologna, delete 3383
+               (3365, 3366, 2415), # "Balam" found in Montpellier and later English
                (3179, 3174, 3180), # Basel in twice?\
                (3208, 292), # Zachara Gloria Laus Honor in Old Hall also
-               
+               (3369, 2794), # Haspre, Jone gente -- Q15 version and E15cM version
+               (3370, 2740), # Loqueville Sanctus Vineux Q15 and E15cM
                (2717, 2718), # OMR of two Brollo pieces 5ab, 5c
                (325, 3042), # two copies Credo Tapissier
                (2636, 1254), # OMR PMFC17.66 = Bodley 842 59v transcription
@@ -220,7 +224,8 @@ skipPieces = [
               (2248, 2344), # Machaut hoquetus David w/ PMFC 16.76, both on tenor Nativitas gl. Vir.
               (2418, 2419), # PMFC 15.5, 15.6 both on Mariounette douche
               (2343, 2585), # PMFC 16.75, 17.15, both on Virgo Dei Genitrix
-              (178, 2582), # Impudentur / Virtutibus on Almar redemptoris mater, same as 17.12.
+              (178, 2582, 3360, 1213), # Impudentur / Virtutibus 
+                # on Alma redemptoris mater, same as 17.12. and Montp. and Apta Caro
               (2706, 2708), # barolomeo parody #2
               (2707, 2710), # barolomeo parody #2
               (3155, 3157), # VeronaCppA with VeronaCppC (Pedro diss, p. 393)
@@ -243,6 +248,7 @@ skipPieces = [
               (1601, 889, 2123), # pmfc 21.5 contrafacted as 23.92, included also in Fallows
               (320, 1216), # Gloria Loys, Flos Ortus Inter Lilia (Known)
               (2571, 2348, # PMFC 17.1 + PMFC 16.80: both on Victime Paschali Laudes
+               3343, 903,  # Plus Fauvel + Italian sources on same tenor
                         454, 1088, 2350),   # + bogus matches
               (32, 266, 270, 271, 272, 389, 390, 398, 480),  # flos filius benes
               (299, 300), # Gloria PMFC 13 14-15 -- same tenor

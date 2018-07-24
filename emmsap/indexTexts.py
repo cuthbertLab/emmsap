@@ -72,6 +72,8 @@ def runAll():
         allTexts += textReg
 
         em.cursor.execute(query, [fp, language, text, textReg, textNoSpace])
+        em.commit()
+
         environLocal.warn(language, fp)
         
     print(allTexts)

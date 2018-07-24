@@ -240,6 +240,7 @@ def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both',
     commitQuery = '''INSERT INTO ratios%s (segment1id, segment2id, ratio) VALUES %s''' % (
         encodingType, longQuery)
     dbObj.cursor.execute(commitQuery)
+    dbObj.commit()
     return len(storedRatios)
 
 def commitRatiosForAllSegments(encodingType='DiaRhy2'):

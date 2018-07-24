@@ -13,14 +13,14 @@ skipFileNames = [
                  ]
 
 class SimilaritySearcher(object): 
-    def __init__(self, startPiece=3332, endPiece=4000, minThreshold=6000, maxToShow=2):
+    def __init__(self, startPiece=3374, endPiece=4000, minThreshold=6000, maxToShow=2):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
         self.minThreshold = minThreshold
         self.maxThreshold = 10001
-        self.segmentType = 'DiaRhy2'
-        #self.segmentType = 'IntRhySmall'
+        #self.segmentType = 'DiaRhy2'
+        self.segmentType = 'IntRhySmall'
         self.skipGroups = skipPieces
         self.maxToShow = maxToShow
         self.skippedMatchPenalty = 0 # 300 # after skipping one, the odds of a good match goes down.
@@ -51,6 +51,7 @@ class SimilaritySearcher(object):
         
         for pNum in range(startPiece, endPiece):
             self.runOnePiece(pNum)
+        print('Done.')
 
     def runOnePiece(self, pNum):
         skippedPieces = []

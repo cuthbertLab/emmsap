@@ -14,7 +14,7 @@ import os
 
 em = mysqlEM.EMMSAPMysql()
 query = '''REPLACE INTO tinyNotation (fn, partId, tsRatio, tn, tnStrip) VALUES (%s, %s, %s, %s, %s)'''
-queryInv = '''REPLACE INTO intervals (fn, partId, intervals, intervalsNoUnisons) VALUES (%s, %s, %s, %s)'''
+queryInv = '''REPLACE INTO intervals (fn, partId, intervals, intervalsNoUnisons, intervalsWithRests, intervalsAbsolutes) VALUES (%s, %s, %s, %s, %s, %s)'''
 
 
 def exists(fn, table='tinyNotation'):
@@ -24,7 +24,7 @@ def exists(fn, table='tinyNotation'):
     if table == 'tinyNotation':
         queryExists += " AND tnStrip IS NOT NULL"
     elif table == 'intervals':
-        queryExists += " AND intervalsNoUnisons IS NOT NULL"
+        queryExists += " AND intervalsWithRests IS NOT NULL"
     em.cursor.execute(queryExists, [fn])
     rows = em.cursor.fetchall()
     return bool(rows)
@@ -41,14 +41,14 @@ def onePiece(fn, table='tinyNotation'):
         try:
             toInterval(i, p, fn)
         except Exception as e:
-            print(str(fn) + " " + str(i) + " could not be converted to interval: " + str(e))
-
+            print(str(fn) + " part " + str(i) + " could not be converted to interval: " + str(e))
+            
         try:
             onePart(i, p, fn)
         except Exception as e:
-            print(str(fn) + " " + str(i) + " could not be converted to TN: " + str(e))
+            print(str(fn) + " part " + str(i) + " could not be converted to TN: " + str(e))
 
-    print (fn + " tiny notation indexed")
+    print (fn + " tiny notation and interval indexed")
 
 def onePart(partNum, p, fn):
     allTS = p.flat.getElementsByClass('TimeSignature')
@@ -65,37 +65,70 @@ def onePart(partNum, p, fn):
     #p.show()
 
 def toInterval(partNum, p, fn):
-    pf = p.flat.stripTies().pitches
+    pf = p.flat.stripTies().getElementsByClass('GeneralNote')
     last = None
     allInts = []
     allIntsNoUnisons = []
+    allIntsRests = []
+    allIntsAbs = []
+    alphabet = '__BCDEFGHIJKLMNOPQRSTUVWabcdefghijklmnopqrs'
     
-    for p in pf:
-        dnn = p.diatonicNoteNum
+    for gn in pf:
+        if hasattr(gn, 'pitches'):
+            dnn = gn.pitches[0].diatonicNoteNum
+        else:
+            allIntsRests.append('r')
+            allIntsAbs.append('r')
+            continue
+            
         if last is not None:
             intv = dnn - last
             if (intv >= 0):
                 intv += 1
             else:
                 intv += -1
-            allInts.append(str(intv))
+                
+            strIntv = str(intv)
+            if intv == 10:
+                strIntv = 'Z'
+            elif intv == 11:
+                strIntv = 'Y'
+            elif intv >= 12:
+                strIntv = 'X'
+            
+            allInts.append(strIntv)
+            allIntsRests.append(strIntv)
+            if intv > 0:
+                allIntsAbs.append(strIntv)
+            else:
+                try:
+                    allIntsAbs.append(alphabet[intv * -1])
+                except IndexError:
+                    allIntsAbs.append('X')
+                    print("Extreme interval: ", intv, " in ", fn)
+            
             if intv != 1:
-                allIntsNoUnisons.append(str(intv))
+                allIntsNoUnisons.append(strIntv)
         last = dnn
     allIntStr = ''.join(allInts)
     allIntStrNoUnisons = ''.join(allIntsNoUnisons)
-    em.cursor.execute(queryInv, [fn, str(partNum), allIntStr, allIntStrNoUnisons])
+    allIntStrRests = ''.join(allIntsRests)
+    allIntStrAbs = ''.join(allIntsAbs)
+
+    params = [fn, str(partNum), allIntStr, allIntStrNoUnisons, allIntStrRests, allIntStrAbs]
+    em.cursor.execute(queryInv, params)
     em.commit()
 
 def runAll(table='tinyNotation'):
     for fn in files.allFiles():
+        onePiece(fn, table)
         try:
             onePiece(fn, table)
         except Exception as e:
             print(fn + " could not be converted: " + str(e))
 
 if __name__ == '__main__':
-    runAll()
+    runAll('intervals')
     #from music21.ext.parmap import starmap
     #starmap(onePiece, files.allFiles())
 #    onePiece('Assisi_187_frag_3.xml')
