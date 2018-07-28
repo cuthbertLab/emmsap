@@ -13,7 +13,7 @@ skipFileNames = [
                  ]
 
 class SimilaritySearcher(object): 
-    def __init__(self, startPiece=3388, endPiece=4000, minThreshold=7000, maxToShow=2):
+    def __init__(self, startPiece=3447, endPiece=4000, minThreshold=6500, maxToShow=2):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
@@ -25,7 +25,7 @@ class SimilaritySearcher(object):
         self.maxToShow = maxToShow
         self.skippedMatchPenalty = 0 # 300 # after skipping one, the odds of a good match goes down.
 
-        self.antiNoodleProtection = True # look out for seconds that are the same rhythm
+        self.antiNoodleProtection = True # look out for M2, m2 that are the same rhythm and adjust down
         self.tenorThresholdAdd = 500
         self.tenorPartNumber = 2
         self.tenorOtherPartNumber = 2

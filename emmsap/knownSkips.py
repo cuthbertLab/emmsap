@@ -47,6 +47,8 @@ skipPieces = [
                
                # two transcriptions of the same
                # same piece..different versions.
+               (3448, 3321), # Ascendit Christe -- OH + Dunstaple Opus Dubium
+               (2159, 3451), # Durer ne puis -- Fallows + Dunstaple edition
                (790, 3381), # PMFC 13.32 Agnus Dei w/ OMR of Bologna, delete 3381
                (1805, 3383), # PMFC 11.61 O Zentil Madona with OMR of Bologna, delete 3383
                (3365, 3366, 2415), # "Balam" found in Montpellier and later English
@@ -63,10 +65,12 @@ skipPieces = [
                (2194, 2195), # FallowsMB_89 + 89a
                (2167, 2168), # So ye emp. Fallows 64 + 64a
                (2198, 2199), # FallowsMB_092_N_aray_je_jamais.mxl
-               (2169, 2170, 2171), # 15th c. O Rosa Bella Complex
+               (2169, 2170, 2171, 3441, # 15th c. O Rosa Bella Complex
+                    2220), # + O infame desleaute -- which Fallows already noted in Catalogue is related
                (2164, 2165, 747), # FallowsMB_062_Gentil_madonna.mxl 
                         # FallowsMB_062a_Fortune_alas.mxl, Boverio nachtrag version
                (2161, 2162), # FallowsMB_060_Mon_seul_plaisir.mxl FallowsMB_060a_Mi_verry.mxl
+               (2158, 3442), # dunstaple Puisque M_Amour -- Fallows and OMR Dunstaple
               (1774, 1775), # two versions Sedendo al onbra
               (1771, 1772), # two versions Piu non mi curo
               (1767, 1768), # two versions O tu chara scientia
@@ -221,6 +225,8 @@ skipPieces = [
               
               ######
               # known similarities ; known concordances
+              (3402, 3403), # Paired Dunstaple Gloria Credo on same tenor
+              (3404, 3405), # Paiired Dunstaplee Credo and Sanctus on same tenor
               (2248, 2344), # Machaut hoquetus David w/ PMFC 16.76, both on tenor Nativitas gl. Vir.
               (2418, 2419), # PMFC 15.5, 15.6 both on Mariounette douche
               (2343, 2585), # PMFC 16.75, 17.15, both on Virgo Dei Genitrix
@@ -330,6 +336,7 @@ skipPieces = [
               
               
               # low threshold false matches
+              (3405, 1221), # Dunstaple 18 + Tant a souttile pointure tenors; nope. 
               (2840, 1078), # Velut with Barcelona Kyrie
               (2509, 3107), # 14.59, with AdC 4 -- both on 2-22-22-2 tenors
               (2435, 2022), 
