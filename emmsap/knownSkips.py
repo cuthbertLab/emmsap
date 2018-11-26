@@ -47,6 +47,7 @@ skipPieces = [
                
                # two transcriptions of the same
                # same piece..different versions.
+               (393, 3480), # A Febo Dame 3vv -- 393=MSC 3480=Janke OMR
                (3448, 3321), # Ascendit Christe -- OH + Dunstaple Opus Dubium
                (2159, 3451), # Durer ne puis -- Fallows + Dunstaple edition
                (790, 3381), # PMFC 13.32 Agnus Dei w/ OMR of Bologna, delete 3381
