@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}" />
+
+{% if allComposers %}
+    <ul>
+    {% for c in allComposers %}
+        <li><a href="{% url 'emmsap:composer' c.id %}">{{c.name}}</a>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No composers exist in the universe...</p>
+{% endif %}

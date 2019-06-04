@@ -12,19 +12,19 @@ from music21 import stream
 from music21.search import lyrics
 
 import re
-quiTollis = re.compile('qui t.*?rere nobis', re.IGNORECASE)
-wholeGloria = re.compile('et in terra.*dei patris', re.IGNORECASE)
-etToGra = re.compile('et in t.*gra', re.IGNORECASE)
-laudamus = re.compile('laudamus.*?gratias', re.IGNORECASE)
-quonium = re.compile('quoniam.*?tissimus', re.IGNORECASE)
-quiSedes = re.compile('qui sedes.*?patris', re.IGNORECASE)
+quiTollis = re.compile('qui t.*?rere nobis', re.RegexFlag.IGNORECASE)
+wholeGloria = re.compile('et in terra.*dei patris', re.RegexFlag.IGNORECASE)
+etToGra = re.compile('et in t.*gra', re.RegexFlag.IGNORECASE)
+laudamus = re.compile('laudamus.*?gratias', re.RegexFlag.IGNORECASE)
+quonium = re.compile('quoniam.*?tissimus', re.RegexFlag.IGNORECASE)
+quiSedes = re.compile('qui sedes.*?patris', re.RegexFlag.IGNORECASE)
 
 
 #credos
-etInSpiritu = re.compile('et in spir.*hrist', re.IGNORECASE)
-deumVero = re.compile('deum de.*vero', re.IGNORECASE)
+etInSpiritu = re.compile('et in spir.*hrist', re.RegexFlag.IGNORECASE)
+deumVero = re.compile('deum de.*vero', re.RegexFlag.IGNORECASE)
 
-firstSanctus = re.compile('sanctus\W+san', re.IGNORECASE)
+firstSanctus = re.compile('sanctus\W+san', re.RegexFlag.IGNORECASE)
 
 searchRE = firstSanctus
 searchTolerance = 3
@@ -38,7 +38,7 @@ def main():
         for i, p in enumerate(go.parts):
             ls = lyrics.LyricSearcher(p)
             matches = ls.search(searchRE)
-            if len(matches) > 0:
+            if matches:
                 m = matches[0]
                 ts = m.els[0].getContextByClass('TimeSignature')
 

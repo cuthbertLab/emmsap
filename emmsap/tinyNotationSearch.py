@@ -13,19 +13,60 @@ Began with searching the back of Bologna Q15 capitals for matches:
 searches = {
     # q15 initial numbers
     'q15_2': ("rare. but no match", 'fn like "%kyrie%" AND intervals like "%4-22-4%"'),
-    'q15_3': ("23 - no matches", 'intervals like "%-2222-24-2%"'),
-    'q15_4': ("MB Found Piece: Zachara", 'intervals like "%-224-2-2-2%"'),
-    'q15_5': ("MB Found Piece: Salinis", 
-              '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-34%"'),
-    'q15_9': ("MSC: Also Zachara! 35 total / latin / natum ante", 'intervals like "%2-422-3-2%"'),
-    'q15_14': ("0 for glorias 65 for total", 'intervals like "%22-5322%"'),
-    'q15_16': ("0 -- only match Ay si is not it", 'intervals like "%-2-4233-2-2%"'),
-    'q15_17': ("agimus (none found)", '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%-_24-2-22%"'),
-    'q15_18': ('om[a]mus te (none found)', '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%2-2-33%"'),
+    'q15_3': ("23 - no matches", 'intervals like "%-2222-24-2%" and intervalsWithRests regexp "-22r22-24-2"'),
+    #'q15_4': ("MB Found Piece: Zachara", 'intervals like "%-224-2-2-2%"'),
+    #'q15_5': ("MB Found Piece: Salinis", 
+    #          '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-34%"'),
+    #'q15_9': ("MSC: Also Zachara! 35 total / latin / natum ante", 'intervals like "%2-422-3-2%"'),
+    'q15_14': ("0 for glorias 65 for total", 'intervals like "%22-5322%" and intervalsWithRests regexp "22-5322"'),
+    'q15_16': ("0 -- only match Ay si is not it", {'skip': ['Padua_1115_Ay_si']}, 'intervals like "%-2-4233-2-2%"'),
+    'q15_17': ("agimus (20 matches found)", {'skip': [
+        'Warsaw_378_Gloria_12_f20v.xml',
+        'PMFC_23_45-Gloria_Bosquet_Zacara_Capua.mxl',
+        'PMFC_23_36-Gloria_PMFC_23.36.xml',
+        'PMFC_23_33-Gloria_Baude_Cordier.mxl',
+        'PMFC_23_112_Gloria.mxl',
+        'PMFC_16_27-Gloria_Spiritus_et_Alme.xml',
+        'PMFC_16_102-Sanctorum_Gloria_Laus.xml',
+        'PMFC_12_A6-Gloria_PMFC12_A6.xml',
+        'PMFC_12_9-Gloria_Clementiae_Pax.xml',
+        'PMFC_12_2-Gloria__Gubbio_.xml',
+        'PMFC_09_26b-Quando_la_terra_parturesse.xml',
+        'OMR_Turin_Mass_09_Gloria.xml',
+        'OMR_029-OH1_Gloria.xml',
+        'OMR_025-OH1_Gloria.xml',
+        'OMR_014_OH2_Gloria.xml',
+        'OMR_012_OH2_Gloria.xml',
+        'OMR_010_OH2_Gloria.xml',
+        'OMR_004b-OH1_Gloria.xml',
+        'Grottaferrata_SS_Br_Gloria_Johannem.xml',
+        'Ghent133_Gloria_1r.xml',
+        ]}, '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%4-2-22%" and intervalsWithRests regexp "-.24-2-22"'),
+    'q15_18': ('om[a]mus te (none found)', {'skip': [
+        'PMFC_23_113-Gloria.xml',
+        'OMR_Turin_Mass_5a_Gloria.xml',
+        'OMR_Turin_Mass_03a_Gloria.xml',
+        'OMR_014_OH2_Gloria.xml',
+        'Siena_Ravi_3_Gloria_3vv.xml',
+        'OMR_015_OH2_Gloria.xml',
+        'OMR_040_OH2_Gloria.xml',
+        'OMR_027-OH1_Gloria.xml',
+        'OMR_029-OH1_Gloria.xml',
+        ]}, '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%2-2-33%" and intervalsWithRests REGEXP "2-2-3r3"'),
     'q15_23': ('pater omnipo', '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%-2-2-22-2%"'),
-    'q15_24': ('none', 'intervals like "%3-453-2-2-2%"'),
+    'q15_24': ('slow -- maybe tenor', 
+               {'skip': [
+                   'Stoessel_Ch_080-Calextone_qui_fut.xml',
+                   ]},
+               'intervals like "%3-453-2-2-2%" AND intervalsWithRests REGEXP "[12345678]3-453-2-2-2"'),
     'q15_26': ('none', 'intervals like "%-3-26-22%"'),
-    'q15_27': ('filio', '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-44%"'),
+    'q15_27': ('filio -- need more texts', 
+               {'syllable': 'lo'},               
+               '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-44%" and intervalsWithRests REGEXP "r-?.-44"'),
+    'q15_28': ('amus te',
+               {#'syllable': 'te', 
+                'pieceFracStart': 4, },               
+               '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%-234%" and intervalsWithRests REGEXP "-23rr+4"'),
     'q15_29': ('[common but 6/8 so easier but 537 so need TinyNotation]', 'intervals like "%-2-232-2%"'),
     'q15_30': ('[common but easier because of void...94 total none]', 'intervals like "%3-2-32-2%"'),
     'q15_33': ('resurrexit 36 pieces none match', '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-21-221%"'),
@@ -39,7 +80,7 @@ searches = {
     'q15_44': ('Credo "filium" or "visibilium" or "invisibilium" [42]', '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-23-5%"'),
     'q15_46': ('rculo (Verbum caro...) [12; none likely]', 'intervals like "%-2-21-23-2-2-2-2%"'),
     'q15_48': ('agnus or kyrie? [18 none]', '(fn like "%kyrie%" OR fn like "%agnus%") AND intervals like "%-2-2-225%"'),
-    'q15_49': ('Credo natus est de spiri [9]','(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-321-4%"'),
+    #'q15_49': ('Credo natus est de spiri [9] -- FOUND: Perneth', '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-321-4%" AND intervalsWithRests regexp "-321r-4"'),
     'q15_50': ('Gloria "tris qui toll" (rare, but not in Marchi 30; PMFC13.12)', '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%22-46%"'),
     'q15_51': ('Kyrie (first interval ?? -- rare, but no match)','fn like "%kyrie%" AND intervals like "%-42-32%"'),
     'q15_55': ('3/4 time rare; no match', 'intervals like "%-3-21-3-2%"'),
@@ -67,10 +108,11 @@ searches = {
     
     # SL
     'sl01v': ('', 'intervals like "%-25-432%"'),
-    'sl22r': ('test to see if it can be found: Yes!', 'intervals like "%2211-2-2-2-25%"'),
-    'sl29v': ('below nascoso el viso', 'intervals like "%15-2-45-2-4%"'),
+    'sl22r': ('test to see if O Cieco Mondo can be found: Yes!', 'intervals like "%2211-2-2-2-25%"'),
+    #'sl24r': ('bottom of 24r after secunda', 'intervals like '),
+    'sl29v': ('below nascoso el viso -- Souvenir de vous Found nadas', 'intervals like "%15-2-45-2-4%"'),
     #'sl21v': ('test to see if it can find NOPE', 'intervals like "%-2-22-2-22-2222-2-2%"')
-    'sl31v': ('','partId > 0 and intervals like "%2-54-22-2%"'),
+    'sl31v': ('piece 39 Unidentified Rondeau','partId > 0 and intervals like "%2-54-22-2%"'),
     'sl33v': ('WHOOPS, matched piece above...common intervals, but clef is clear', 'intervals like "%123-21-21%"'),
     'sl34r': ('none yet; but generic', 'intervals like "%22221-2-2-2-2-22%"'), 
     'sl37v': ('','partId > 0 and intervals like "%3-44-2-2-3%"'),
@@ -78,7 +120,7 @@ searches = {
     'sl39r': ('end of line','intervals like "%-2131-22-3-22%"'),
     'sl41vx': ('end of laurate chroma','intervals like "%-22-2-22-2-2-2-22%"'),
     'sl41v': ('secunda pars','intervals like "%-215-2-24-2-3-2%"'),
-    'sl42r': ('','intervals like "%2-2-21-21-21-23%" and fn not like "%gloria%" and fn not like "%credo%"'),
+    'sl42r': ('oit haye n. 58','intervals like "%2-2-21-21-21-23%" and fn not like "%gloria%" and fn not like "%credo%"'),
     
     'sl72r': ('first end with C3', 'intervals like "%22-2-2-2-2-2%" and intervals like "%-222-21-2-2-2-23%"'),
     'sl75r': ('secunda pars; might be wrong intervals; virelai','intervals like "%3-44-33%"'),
@@ -94,16 +136,16 @@ searches = {
     'sl137r': ('below amor de dimmi', {'lastNameWithOctave': 'G3'}, 'intervals like "%-2-2-2-2-2" and fn not like "%gloria%" and fn not like "%credo%"'),
     'sl137br': ('below amor de dimmi', {'hasRest': True, 'lastNameWithOctave': 'A3'}, 'intervals like "%-25-2-2-21%" and partId >= 1 and fn not like "%gloria%" and fn not like "%credo%"'),
     'sl139v': ('MSC: Paolo! Marticius qui fu de Rome', 'partId > 0 and fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-222322-2-2-42-2-2%"'),
-    'sl141v': ('', 'fn not like "%gloria%" and fn not like "%credo%" and fn not like "%sanctus%" and intervals like "%22-21-22-3-21%"'),
-    'sl147r': ('second piece, tenor start', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "-2-2-25222%"'),
-    'sl147br': ('second piece, tenor near 2nd pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-2-2-272-42%"'),
-    'sl147cr': ('first piece, cttenor 3a pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%311-2-2-232%"'),
+    'sl142v': ('numbers 164 or 165', 'fn not like "%gloria%" and fn not like "%credo%" and fn not like "%sanctus%" and intervals like "%22-21-22-3-21%"'),
+    'sl146r': ('was 147 before? second piece, tenor start', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "-2-2-25222%"'),
+    'sl146br': ('second piece, tenor near 2nd pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%-2-2-272-42%"'),
+    'sl146cr': ('first piece, cttenor 3a pars', 'fn not like "%gloria%" and fn not like "%credo%" and intervals like "%311-2-2-232%"'),
     
     'sl155r': ('great tenor', 'intervals like "%-225-2-21-3%"'),
     'sl156r': ('end of cantus?','partId = 0 and intervals like "%-2-22-223-2%" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
     'sl159r': ('qui fault boyt tenor start','partId > 0 and intervals like "%-2-2-2-24-3%" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
     'sl159rb': ('qui fault boyt tenor end', {'lastNameWithOctave': 'D3'} ,'intervals like "%-2-44-2-2-2" and fn not like "%gloria%" and fn not like "%credo%" and fn not like "%kyrie%" and fn not like "%sanctus%" and fn not like "%patrem%"'),
-    'sl160v': ('unknown', {'hasRest': True, 'lastNameWithOctave': 'E4'}, 'intervals like "%2-32122-2%"'),
+    'sl160v': ('piece 184', {'hasRest': True, 'lastNameWithOctave': 'E4'}, 'intervals like "%2-32122-2%"'),
     'sl177r': ('end of line -- white notation!', {'hasRest': True}, 'intervals like "%-2222-21-23"'),
 
     'utrecht1': ('','(fn regexp "credo" or fn regexp "patrem") and intervals like "%72-4%"'),
@@ -169,18 +211,32 @@ import os
 import re
 
 def runSearch():
-    runOne('nur9a3', True)
+    runOne('q15_28', True)
     #runAll()
 
 def runAll():
     for i, k in enumerate(sorted(searches.keys())):
-        if i < -1 or i > 10:
+        if i <= 49 or i > 50:
             continue # for working slowly...
-        print("******************")
+        print("******************", i)
         print(searches[k][0])
         runOne(k, show=True)
+
+def runSL():
+    for i, k in enumerate(sorted(searches.keys())):
+        if 'sl' not in k:
+            continue
+        print("******************")
+        print(searches[k][0])
+        runOne(k, show=False, onlyMatches=True)
+
     
-def runOne(searchIndex, show=False):
+def runOne(searchIndex, show=False, onlyMatches=False):
+    def printif(x):
+        if onlyMatches is False:
+            print(x)
+    
+    
     ##############
     print("Running: " + str(searchIndex))
     
@@ -249,11 +305,14 @@ def runOne(searchIndex, show=False):
         if pieceObj.id < pieceMinimum: # searching new only...
             continue
         
-        print(rowCount, fn, partId)
+        metadataTuple = (rowCount, fn, partId)
+        isPrintedOnlyMatches = False
+        if not onlyMatches:
+            print(*metadataTuple)
         #if pieceNum < 9:
         #    continue
         if partNum is not None and partNum != partId:
-            print("wrong part..." + str(partId))
+            printif("wrong part..." + str(partId))
             continue
         fullFn = files.emmsapDir + os.sep + fn
         s = converter.parse(fullFn)
@@ -303,13 +362,13 @@ def runOne(searchIndex, show=False):
                         pn[0].lyric += "_" + str(mn)
                         if (syllableSearch is not None and 
                                 (lastSyllableMatch is None or lastSyllableMatch < (i - illen - 2))):
-                            print("--not syllable")
+                            printif("--not syllable")
                             continue
                         if pieceFracStart is not None and mn > numMeasures / pieceFracStart:
-                            print("--not pieceFracStart")
+                            printif("--not pieceFracStart")
                             continue # must be in first 1/3 of piece
                         if pieceFracEnd is not None and mn < numMeasures - (numMeasures / pieceFracEnd):
-                            print("--not pieceFracEnd")
+                            printif("--not pieceFracEnd")
                             continue # must be in last 1/10th of piece if pieceFracEnd is 10.0
                         
                         if hasRest is not None:
@@ -321,25 +380,32 @@ def runOne(searchIndex, show=False):
                                         foundRest = True
                             if hasRest is True:
                                 if foundRest is False:
-                                    print("--not foundRest")
+                                    printif("--not foundRest")
                                     continue
                         if lastNameWithOctave is not None:
                             if n.pitch.nameWithOctave != lastNameWithOctave:
-                                print("--not right step")
+                                printif("--not right step")
                                 continue
                         
                         if timeSigSearch is not None:
                             ts = n.getContextByClass('TimeSignature')
                             if ts is not None and ts.ratioString != timeSigSearch:
-                                print("--not timeSig")
+                                printif("--not timeSig")
                                 continue
+                            
+                        if onlyMatches and not isPrintedOnlyMatches:
+                            print(*metadataTuple)
+                            isPrintedOnlyMatches = True
+
                         print("Part", partId, "Measure", mn)
                     found = True
             
         if show is True and found is True: # may be false because "23-4" matches "-23-4"
             s.show()
         elif found is False:
-            print("Probably not found due to beginning with descending instead of ascending intervals")
+            printif("Probably not found due to beginning with descending instead of ascending intervals")
         
 if __name__ == '__main__':
+    #runAll()
+    #runSL()
     runSearch()

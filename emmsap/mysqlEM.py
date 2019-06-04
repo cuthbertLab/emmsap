@@ -286,7 +286,7 @@ class Piece(EMMSAPMysqlObject):
         matchingSegments = []
 #        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios 
 #                                    WHERE segment1id IN 
-#                                       (SELECT id FROM segments WHERE pieceId = %s) 
+#                                       (SELECT id FROM segment WHERE pieceId = %s) 
 #                                    AND ratio >= %s ORDER BY segment1id''',
 #                                    [thisPieceId, threshold])
         #print "HIII"
@@ -313,7 +313,10 @@ class Piece(EMMSAPMysqlObject):
 
     def partsFromSegmentPair(self, segment1id, segment2id, ratio=0):
         '''
-        returns two labeled parts given the segmentIds that 
+        returns two labeled parts given the segmentIds that come
+        from two different pieces, showing only the parts that
+        are in the segments.  The ratio is optional and only to
+        give a better label to the score. 
         '''
         if hasattr(segment1id, 'ratios'):
             segment1 = segment1id
@@ -351,10 +354,10 @@ class Piece(EMMSAPMysqlObject):
         
         renumberMeasureOffset = thisMeasureEnd + 1
         
-        excerpt2Measures = excerpt2.getElementsByClass('Measure')
+        excerpt2Measures = excerpt2.iter.getElementsByClass('Measure')
         for i, thisM in enumerate(excerpt2Measures):
             thisM.number = renumberMeasureOffset + i
-        if len(excerpt2Measures) > 0:
+        if excerpt2Measures:
             firstMeasure2 = excerpt2Measures[0]
         else:
             firstMeasure2 = excerpt2
@@ -386,8 +389,8 @@ class Piece(EMMSAPMysqlObject):
         exp2.positionVertical = 40
         
         exp2.priority = 5
-        pNewMeasures = excerpt1.getElementsByClass('Measure')
-        if len(pNewMeasures) > 0:
+        pNewMeasures = excerpt1.iter.getElementsByClass('Measure')
+        if pNewMeasures:
             firstMeasure = pNewMeasures[0]
         else:
             firstMeasure = excerpt1
@@ -428,7 +431,7 @@ class Piece(EMMSAPMysqlObject):
         s = stream.Measure()
 
         r = note.Rest(type='whole')
-        r.hideObjectOnPrint = True
+        r.style.hideObjectOnPrint = True
         r.expressions.append(expressions.Fermata())
         sl = layout.SystemLayout(isNew=True)
         sl.priority = -1
@@ -444,8 +447,8 @@ class Piece(EMMSAPMysqlObject):
                 sl = layout.SystemLayout(isNew=True)
                 el.insert(0, sl)
                 noLayoutAdded = False
-            pNew._appendCore(el)
-        pNew.elementsChanged()
+            pNew.coreAppend(el)
+        pNew.coreElementsChanged()
         return pNew
         
         
@@ -607,8 +610,8 @@ class Segment(EMMSAPMysqlObject):
     'PMFC_24_32-Chi_nel_servir_antico.xml'
     '''
     table = 'segment'
-    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 'measureStart', 
-                  'measureEnd', 'encodingType', 'segmentData']
+    rowMapping = ['id', 'piece_id', 'partId', 'segmentId', 
+                  'measureStart', 'measureEnd', 'encodingType', 'segmentData']
     
     def __init__(self, rowInfo=None, dbObj=None):
         super(Segment, self).__init__(rowInfo, dbObj)

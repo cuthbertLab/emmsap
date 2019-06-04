@@ -1,0 +1,12 @@
+<h1>{{ piece.filename }}</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'emmsap:assignComposerFollowup' piece.id %}" method="post">
+{% csrf_token %}
+{% for thisComp in allComposers %}
+   <input type="radio" name="composerChoice" id="composerChoice{{ forloop.counter }}"
+            value="{{thisComp.id}}" />
+   <label for="composerChoice{{ forloop.counter }}">{{ thisComp.name }}</label><br>
+{% endfor %}
+<input type="submit" value="Assign" />
+</form>
