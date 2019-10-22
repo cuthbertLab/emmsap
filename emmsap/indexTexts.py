@@ -1,11 +1,11 @@
 '''
 Extract all texts from EMMSAP and place in database
 '''
-from __future__ import print_function
 import difflib
 import unicodedata # @UnresolvedImport
 import re
 import os
+import string
 
 from emmsap import files
 from emmsap import mysqlEM
@@ -101,12 +101,15 @@ def regularizeText(text, language):
     textReg = re.sub('y','i', textReg)
     if language == 'la':
         textReg = re.sub('ae','e', textReg)
-    textReg = re.sub('[\.\:\;\-\«\»\,\?\"\!\'\[\]\<\>\(\)\d]', '', textReg)
-    textReg = re.sub('(\s)\s+', '\g<1>', textReg)
+    textReg = re.sub(r'[\#\}\{\~\/\.\:\=\;\-\«\»\,\*\?\"\!\'\[\]\<\>\(\)\d_\&\$\|]', '', textReg)
+    for punct in string.punctuation:
+        textReg = textReg.replace(punct, '')  # partly redundant with above
+    textReg = textReg.replace('…', '')
+    textReg = re.sub(r'(\s)\s+', r'\g<1>', textReg)
     textReg = unicodedata.normalize('NFKD', textReg)
     textReg = textReg.encode('ascii', 'ignore').decode('UTF-8')
 
-    textNoSpace = re.sub('\W','', textReg)
+    textNoSpace = re.sub('\W', '', textReg)
     return (textReg, textNoSpace)
 
 mistakes = {

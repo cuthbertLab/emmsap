@@ -4,7 +4,7 @@ from emmsap import mysqlEM
 from music21.ext import more_itertools
 from collections import defaultdict
 
-minLength = 7
+minLength = 6
 allTexts = defaultdict(list)
 seenConnections = set()
 
