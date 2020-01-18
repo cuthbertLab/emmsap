@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-#-------------------------------------------------------------------------------
-from __future__ import print_function
+# -------------------------------------------------------------------------------
+import csv
 from music21.search import segment
 from music21 import search as searchBase
 from emmsap import files
-import csv
+
 
 def indexAndCache(filesToCache = 'All'):
     '''
@@ -13,7 +13,7 @@ def indexAndCache(filesToCache = 'All'):
     if filesToCache == 'all':
         allFiles = files.allFilesWithPath()
     allFiles = allFiles
-    indexedSegments = segment.indexScoreFilePaths(allFiles, giveUpdates = True, 
+    indexedSegments = segment.indexScoreFilePaths(allFiles, giveUpdates = True,
                                                   algorithm=searchBase.translateDiatonicStreamToString) # @UndefinedVariable
     print("done indexing")
     fp = segment.saveScoreDict(indexedSegments)
@@ -25,7 +25,7 @@ def cacheSimilarity(fp = None, indexedSegments = None, writeCSV=True):
         indexedSegments = segment.loadScoreDict(fp)
     elif fp is None and indexedSegments is None:
         fp, indexedSegments = indexAndCache()
-        print(fp) 
+        print(fp)
     scoreSim = segment.scoreSimilarity(indexedSegments, giveUpdates=True) # @UndefinedVariable
     print("done similarity searching")
     if writeCSV is True:
@@ -58,15 +58,15 @@ def filterAverage(fp = '/Users/cuthbert/Desktop/test2.csv', threshold = 0.5, sco
         if part1 not in pieces[piece1]:
             pieces[piece1][part1] = {}
         if segmentNumber1 not in pieces[piece1][part1]:
-            pieces[piece1][part1][segmentNumber1] = {'measureStart': measureNumber1, 
+            pieces[piece1][part1][segmentNumber1] = {'measureStart': measureNumber1,
                                                      'totalComparisons': 0,
                                                      'totalRatio': 0.0,
                                                      }
         seg1Dict = pieces[piece1][part1][segmentNumber1]
         seg1Dict['totalComparisons'] += 1
         seg1Dict['totalRatio'] += float(ratio)
-    
-    
+
+
     totalOfAverages = 0.0
     totalSegments = 0
     for piece in pieces:
@@ -78,7 +78,7 @@ def filterAverage(fp = '/Users/cuthbert/Desktop/test2.csv', threshold = 0.5, sco
                 segDict['averageRatio'] = averageRatio
                 totalOfAverages += averageRatio
                 totalSegments += 1
-    
+
     averageSimilarityOfAllSegments = totalOfAverages/totalSegments
     print(totalSegments, averageSimilarityOfAllSegments)
     if csvFile is not None:
@@ -89,7 +89,7 @@ def filterAverage(fp = '/Users/cuthbert/Desktop/test2.csv', threshold = 0.5, sco
 
 
     pieceSimilarities = {}
-    
+
     for i, row in enumerate(allRows):
         if i % 1000000 == 0:
             print("Done %d rows" % i)
@@ -99,7 +99,7 @@ def filterAverage(fp = '/Users/cuthbert/Desktop/test2.csv', threshold = 0.5, sco
         scaledRatio = (float(ratio) - averageRatio)/(1 - averageRatio)
         #print "%3.3f %3.3f %3.3f" % (averageRatio, float(ratio), scaledRatio)
         if scaledRatio > threshold:
-            print(scaledRatio, piece1, part1, measureNumber1, 
+            print(scaledRatio, piece1, part1, measureNumber1,
                   piece2, part2, measureNumber2, float(ratio))
             if piece1 not in pieceSimilarities:
                 pieceSimilarities[piece1] = {'TOTAL': 0}
@@ -108,14 +108,14 @@ def filterAverage(fp = '/Users/cuthbert/Desktop/test2.csv', threshold = 0.5, sco
             else:
                 pieceSimilarities[piece1][piece2] += 1
             pieceSimilarities[piece1]['TOTAL'] += 1
-    
+
     import pprint
     pprint.pprint(pieceSimilarities)
     #print pieceSimilarities
     if csvFile is not None:
         csvFile.close()
-    
-    
+
+
 def readCSV(fp = '/Users/cuthbert/Desktop/test2.csv'):
     '''
     return an array of lists for each row in the CSV file.
@@ -126,10 +126,10 @@ def readCSV(fp = '/Users/cuthbert/Desktop/test2.csv'):
         for row in similarityReader:
             allRows.append(row)
     return allRows
-    
+
 if __name__ == '__main__':
     scoreSim = cacheSimilarity()#fp='/var/folders/x5/rymq2tx16lqbpytwb1n_cc4c0000gn/T/music21/tmpnyRVLd.json')
     filterAverage(threshold = 0.6,scoreSim=scoreSim)
     #filterAverage(fp = '/var/folders/x5/rymq2tx16lqbpytwb1n_cc4c0000gn/T/music21/tmpcEtwn7.json', threshold=0.55)
     quit()
-    cacheSimilarity('/var/folders/x5/rymq2tx16lqbpytwb1n_cc4c0000gn/T/music21/tmpVifOQV.json') 
+    cacheSimilarity('/var/folders/x5/rymq2tx16lqbpytwb1n_cc4c0000gn/T/music21/tmpVifOQV.json')

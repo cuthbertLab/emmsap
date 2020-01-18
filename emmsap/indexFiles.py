@@ -5,12 +5,10 @@ Populates the MYSQL database using info from the directory and sheets
 
 Run updateDB instead of this before searching via similarityDB
 '''
-from __future__ import print_function
-
 import mysqlEM
-#from emmsap import fileAndSheet
+# from emmsap import fileAndSheet
 import files
-#from emmsap import spreadsheet
+# from emmsap import spreadsheet
 try:
     from mysql.connector.errors import IntegrityError as IntegrityError # @UnresolvedImport
 except ImportError:

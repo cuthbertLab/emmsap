@@ -1,4 +1,3 @@
-from __future__ import print_function
 import multiprocessing
 from functools import wraps
 from itertools import repeat
@@ -13,7 +12,7 @@ def _func_star_many(func_items_args):
        func = func_item_args[0]
        items = func_item_args[1]
        args = func_item_args[2:]
-       return func(items[0],items[1],...,args[0],args[1],...)  
+       return func(items[0],items[1],...,args[0],args[1],...)
     """
     return func_items_args[0](*list(func_items_args[1]) + func_items_args[2])
 
@@ -22,10 +21,10 @@ def _func_star_single(func_item_args):
        func = func_item_args[0]
        item = func_item_args[1]
        args = func_item_args[2:]
-       return func(item,args[0],args[1],...)  
+       return func(item,args[0],args[1],...)
     """
     return func_item_args[0](*[func_item_args[1]] + func_item_args[2])
-    
+
 
 def runFuncAsync(func, iterableFull, *args, **kwargs):
     leaveOut = 1
@@ -58,7 +57,7 @@ def runFuncAsync(func, iterableFull, *args, **kwargs):
         #    print(z)
         res = pool.imap(_func_star_many, izipOutput,
                           chunksize)
-        
+
         while continueIt is True:
             try:
                 newResult = res.next(timeout=1)
@@ -82,7 +81,7 @@ def runFuncAsync(func, iterableFull, *args, **kwargs):
                     exit()
             except StopIteration:
                 continueIt = False
-                pool.close()    
+                pool.close()
                 pool.join()
             except Exception as excp:
                 eventsProcessed += 1

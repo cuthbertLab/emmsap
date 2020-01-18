@@ -6,6 +6,7 @@ from emmsap import files
 import random
 import shutil
 
+
 def main():
     outDirectory = '/Users/Cuthbert/Desktop/dtOut'
     allFiles = files.allFiles()
@@ -20,7 +21,7 @@ def main():
         outFile = outDirectory + '/' + f
         print(inFile, '->', outFile)
         shutil.copy2(inFile, outFile)
-    
-    
+
+
 if __name__ == '__main__':
     main()

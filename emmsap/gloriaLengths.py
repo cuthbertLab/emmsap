@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import division
-
 from emmsap import files
-#from music21 import common
+# from music21 import common
 from music21 import expressions
 from music21 import converter
-#from music21 import interval
+# from music21 import interval
 from music21 import metadata
 from music21 import stream
 from music21.search import lyrics
@@ -49,7 +47,7 @@ def main():
 #                 if intvStart.generic.directed != 3:
 #                     continue
 
-                
+
                 passageApproxLength = searchTolerance * int((m.mEnd - m.mStart + 1)/searchTolerance)
 #                if passageApproxLength < 14 or passageApproxLength > 17:
 #                    continue
@@ -106,7 +104,7 @@ def glorias():
             continue
         glorias.append(f)
     return glorias
-    
+
 def credos():
     '''
     Return a list of all Credos
@@ -122,6 +120,6 @@ def credos():
     return credos
 
 
-    
+
 if __name__ == '__main__':
     main()

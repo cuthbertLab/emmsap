@@ -1,54 +1,56 @@
 # -*- coding: utf-8 -*-
-#-------------------------------------------------------------------------------
-from __future__ import print_function, division
-
+# ------------------------------------------------------------------------------
 
 from emmsap import mysqlEM
-#from music21.search import segment
-from emmsap.knownSkips import skipPieces # import skipFilenames as skipPieces
+# from music21.search import segment
+from emmsap.knownSkips import skipPieces  # import skipFilenames as skipPieces
 # skipPieces = []
 
 skipFileNames = [
-                 ('Poi_che_da_te_3vv_Lucca.xml', 'PMFC_04_10-Poi_che_da_te_mi_convien.xml')
-                 ]
+     ('Poi_che_da_te_3vv_Lucca.xml', 'PMFC_04_10-Poi_che_da_te_mi_convien.xml')
+]
 
-class SimilaritySearcher(object): 
-    def __init__(self, startPiece=3488, endPiece=4000, minThreshold=6000, maxToShow=2):
+
+class SimilaritySearcher(object):
+    def __init__(self, startPiece=3498, endPiece=4000, minThreshold=8200, maxToShow=2):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
         self.minThreshold = minThreshold
         self.maxThreshold = 10001
-        #self.segmentType = 'DiaRhy2'
-        self.segmentType = 'IntRhySmall'
+        self.segmentType = 'DiaRhy2'
+        # self.segmentType = 'IntRhySmall'
         self.skipGroups = skipPieces
         self.maxToShow = maxToShow
-        self.skippedMatchPenalty = 0 # 300 # after skipping one, the odds of a good match goes down.
+        # 0 or 300 after skipping one, the odds of a good match goes down.
+        self.skippedMatchPenalty = 0
 
-        self.antiNoodleProtection = True # look out for M2, m2 that are the same rhythm and adjust down
+        # look out for M2, m2 that are the same rhythm and adjust down
+        self.antiNoodleProtection = True
+
         self.tenorThresholdAdd = 500
         self.tenorPartNumber = 2
         self.tenorOtherPartNumber = 2
         self.printOutput = True
         self.fragmentsOnly = False
-        
+
     def runPieces(self, startPiece=None, endPiece=None):
         '''
         The main algorithm to search for pieces to match
-        
-        minThreshold, maxThreshold, and tenorThresholdAdd are numbers from 0 to 10,000+ which scale
-        to 0 - 1 (by dividing by 10000) to find similarity.
-        
-        Because of their rhythmic similarity, tenors match far too often, so a crude metric is used
-        to identify tenors and raise the minThreshold for those matches: basically, 
-        parts 2+ (=3rd part
-        and beyond) are considered tenors. Not very good, but the best so far. 
-        '''    
+
+        minThreshold, maxThreshold, and tenorThresholdAdd are numbers from
+        0 to 10,000+ which scale to 0 - 1 (by dividing by 10000) to find similarity.
+
+        Because of their rhythmic similarity, tenors match far too often,
+        so a crude metric is used to identify tenors and raise the minThreshold
+        for those matches: basically, parts 2+ (=3rd part
+        and beyond) are considered tenors. Not very good, but the best so far.
+        '''
         if startPiece is None:
             startPiece = self.startPiece
         if endPiece is None:
             endPiece = self.endPiece
-        
+
         for pNum in range(startPiece, endPiece):
             self.runOnePiece(pNum)
         print('Done.')
@@ -58,18 +60,17 @@ class SimilaritySearcher(object):
         p = mysqlEM.Piece(pNum, dbObj=self.dbObj)
         if p.id is None:
             return
-        
-        
+
         if self.fragmentsOnly is True and p.frag is not True:
             return
         print("Running piece %d (%s)" % (pNum, p.filename))
-        ratioMatches = p.ratiosAboveThreshold(self.minThreshold, 
-                                              ignoreInternal=True, 
+        ratioMatches = p.ratiosAboveThreshold(self.minThreshold,
+                                              ignoreInternal=True,
                                               segmentType=self.segmentType)
         totalShown = 0
         for ratioMatch in ratioMatches:
             returnCode = self.checkOneMatch(p, ratioMatch, totalShown, skippedPieces)
-                
+
             if returnCode is not None:
                 totalShown = returnCode
 
@@ -77,8 +78,8 @@ class SimilaritySearcher(object):
         p = mysqlEM.Piece(pNum, dbObj=self.dbObj)
         if p.id is None:
             return
-        ratioMatches = p.ratiosAboveThreshold(self.minThreshold, 
-                                              ignoreInternal=True, 
+        ratioMatches = p.ratiosAboveThreshold(self.minThreshold,
+                                              ignoreInternal=True,
                                               segmentType=self.segmentType,
                                               maxThreshold=self.maxThreshold)
         return ratioMatches
@@ -91,16 +92,15 @@ class SimilaritySearcher(object):
         totalShown += 1
         showInfo = "part %2d, m. %3d; (%4d) %30s, part %2d, m. %3d (ratio %5d adjusted to %5d)" % (
                                     thisSegment.partId, thisSegment.measureStart,
-                                    otherPiece.id, otherPiece.filename, 
-                                    otherSegment.partId, 
-                                    otherSegment.measureStart, 
+                                    otherPiece.id, otherPiece.filename,
+                                    otherSegment.partId,
+                                    otherSegment.measureStart,
                                     ratioMatch.thisRatio,
                                     adjustedRatio
                                     )
-    
-        
+
         if totalShown > self.maxToShow:
-            if otherPiece.id is not None: 
+            if otherPiece.id is not None:
                 # if segment matches but piece deleted... need to clean up orphen segments...
                 print("   Not showing (too many matches): " + showInfo)
                 return totalShown
@@ -110,12 +110,11 @@ class SimilaritySearcher(object):
             part = None
         if part is not None:
             print("   Showing -- " + showInfo)
-            part.show()            
+            part.show()
         else:
             if otherPiece.id is not None:
                 print("  ERROR: not showing for lack of part: " + showInfo)
         return totalShown
-
 
     def checkForShow(self, p, ratioMatch, skippedPieces=None):
         if skippedPieces is None:
@@ -125,11 +124,13 @@ class SimilaritySearcher(object):
             return (False, "MaxThreshold")
         otherSegment = mysqlEM.Segment(ratioMatch.otherSegmentId, dbObj=self.dbObj)
         otherPiece = otherSegment.piece()
-        #if otherPiece.id < myId:
-        #    continue
+
+        # if otherPiece.id < myId:
+        #     continue
+
         otherPieceId = otherPiece.id
-        if (otherPieceId is None):
-            #print("   Skipping match for segment (%d): piece not found." % otherSegmentId)
+        if otherPieceId is None:
+            # print("   Skipping match for segment (%d): piece not found." % otherSegmentId)
             return (False, "PieceNotFound")
         foundSkip = False
         for pieceGroup in self.skipGroups:
@@ -141,35 +142,34 @@ class SimilaritySearcher(object):
                 if p.filename in pieceGroup and otherPiece.filename in pieceGroup:
                     foundSkip = True
                     break
-                
+
         if foundSkip is True:
             if otherPieceId not in skippedPieces:
                 if self.printOutput:
-                    print("   skipping all matches for (%d) %s: ratio %d" % 
+                    print("   skipping all matches for (%d) %s: ratio %d" %
                           (otherPiece.id, otherPiece.filename, ratioMatch.thisRatio))
                 skippedPieces.append(otherPieceId)
             return (False, "SkipPiece")
         thisSegment = mysqlEM.Segment(ratioMatch.thisSegmentId, dbObj=self.dbObj)
-        if (thisSegment.partId >= self.tenorPartNumber or 
+        if (thisSegment.partId >= self.tenorPartNumber or
                 otherSegment.partId >= self.tenorOtherPartNumber):
             # tenor
             if ratioMatch.thisRatio - self.tenorThresholdAdd < self.minThreshold:
                 return(False, "TenorBelowThreshold")
-        
+
         totalPenalty = 0
         if self.antiNoodleProtection:
             totalPenalty = self.runAntiNoodleProtection(ratioMatch.thisRatio, thisSegment)
 
         totalPenalty += len(skippedPieces) * self.skippedMatchPenalty
         if ratioMatch.thisRatio - totalPenalty < self.minThreshold:
-            print("   below threshold for (%d) %s: ratio %d (adjusted to %d)" % 
-                          (otherPiece.id, otherPiece.filename, 
+            print("   below threshold for (%d) %s: ratio %d (adjusted to %d)" %
+                          (otherPiece.id, otherPiece.filename,
                            ratioMatch.thisRatio, ratioMatch.thisRatio - totalPenalty))
             skippedPieces.append(otherPieceId)
             return(False, "TooCommonPenaltyThreshold")
-        
-        return (True, (thisSegment, otherSegment, otherPiece, ratioMatch.thisRatio - totalPenalty))
 
+        return (True, (thisSegment, otherSegment, otherPiece, ratioMatch.thisRatio - totalPenalty))
 
     def runAntiNoodleProtection(self, ratio, seg):
         '''
@@ -188,10 +188,10 @@ class SimilaritySearcher(object):
                 if thisN in 'ABCDEFG':
                     asciiDiff = abs(ord(thisN) - ord(nextN))
                     if asciiDiff < 2:
-                        numNoodles += 1                
+                        numNoodles += 1
             elif self.segmentType == 'IntRhySmall':
                 thisOrd = ord(thisN)
-                if thisOrd <= 75 and thisOrd >= 71:
+                if 75 >= thisOrd >= 71:
                     numNoodles += 1
             else:
                 print("Unknown segment type " + self.segmentType)
@@ -200,6 +200,7 @@ class SimilaritySearcher(object):
         totalPenalty = int(ratioOff100 * noodleFraction)
         # print("           Noodle Penalty: ", totalPenalty, "NumNoodles", numNoodles)
         return totalPenalty
+
 
 if __name__ == '__main__':
     ss = SimilaritySearcher()

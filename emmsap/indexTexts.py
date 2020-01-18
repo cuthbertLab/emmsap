@@ -2,7 +2,7 @@
 Extract all texts from EMMSAP and place in database
 '''
 import difflib
-import unicodedata # @UnresolvedImport
+import unicodedata  # @UnresolvedImport
 import re
 import os
 import string
@@ -13,7 +13,7 @@ from music21 import text, environment, converter
 
 em = mysqlEM.EMMSAPMysql()
 em.cnx.set_charset('utf8')
-#print(em.cnx.charset)
+# print(em.cnx.charset)
 
 query = '''REPLACE INTO texts (fn, language, text, textReg, textNoSpace) VALUES (%s, %s, %s, %s, %s)'''
 
@@ -25,6 +25,7 @@ base = files.emmsapDir
 ld = text.LanguageDetector()
 
 allFN = set()
+
 
 def exists(fn, table='texts'):
     if len(allFN) == 0:
@@ -44,22 +45,22 @@ def runAll():
     i = 0
     for fn in files.allFiles():
         if exists(fn):
-            #print('Skipping %s' % fn)
+            # print('Skipping %s' % fn)
             continue
         f = converter.parse(files.emmsapDir + os.sep + fn)
         fp = str(f.filePath)
         fp = fp.replace(base + os.sep, '')
 
         i += 1
-        #if i > 10:
+        # if i > 10:
         #    break
         text = getFromFile(f)
         if len(text) < 5:
-            print("No text in %s" % fn)        
-            language = 'na' # not applicable
+            print("No text in %s" % fn)
+            language = 'na'  # not applicable
             textReg = ""
             textNoSpace = ""
-        else:        
+        else:
             language = ld.mostLikelyLanguage(text)
             language = findLanguageMistakes(fp, language)
             textReg, textNoSpace = regularizeText(text, language)
@@ -75,9 +76,10 @@ def runAll():
         em.commit()
 
         environLocal.warn(language, fp)
-        
+
     print(allTexts)
-            
+
+
 def getFromFile(f):
     allTexts = ""
     for i in range(len(f.parts)):
@@ -94,6 +96,7 @@ def getFromFile(f):
                     allTexts += "\n" + thisText
     allTexts = re.sub('^\s+', '', allTexts)
     return allTexts
+
 
 def regularizeText(text, language):
     textReg = re.sub('v','u', text.lower())
@@ -112,6 +115,7 @@ def regularizeText(text, language):
     textNoSpace = re.sub('\W', '', textReg)
     return (textReg, textNoSpace)
 
+
 mistakes = {
             'PMFC_01_Tournai_6-Ite_Missa_Est.xml': 'la',
             'Ascoli_Piceno_Mater_Digna_Dei_Lux.xml': 'la',
@@ -121,12 +125,13 @@ mistakes = {
             'Machaut_R01-Doulz_viaire_gracieus.xml': 'fr',
 }
 
+
 def findLanguageMistakes(fp, language):
     if fp not in mistakes:
         return language
     else:
         return mistakes[fp]
-    
+
 
 if __name__ == '__main__':
     runAll()

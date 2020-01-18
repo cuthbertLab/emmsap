@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 #-------------------------------------------------------------------------------
-from __future__ import print_function
 import os
 import music21
 environLocal = music21.environment.Environment()
@@ -12,30 +11,30 @@ try:
     unicode # @UndefinedVariable
 except:
     unicode = str
-    
+
 def fixFilesInADir(dirName = emmsapDir):
     '''
     Rename all files in a directory that do not fit the naming scheme.
-        
+
     :type dirName: str
     '''
     #: :type fn: str
-    for fn in sorted(os.listdir(dirName)): 
+    for fn in sorted(os.listdir(dirName)):
         newName = music21.common.normalizeFilename(fn) # @UndefinedVariable
         if newName.startswith('PMFC0'):
             newName = 'PMFC_0' + newName[5:]
-            
+
         if fn != newName:
             print(fn, newName)
             os.rename(dirName + os.sep + fn, dirName + os.sep + newName)
             #return
             #exit()
-            
+
 
 def problemFileNames(filenameList):
     '''
     returns a list of tuples of problem filenames and suggested replacements
-    
+
     >>> import emmsap.files
     >>> import pprint
     >>> allF = emmsap.files.allFiles()
@@ -63,11 +62,11 @@ def problemFileNames(filenameList):
 def allFiles():
     '''
     returns a list of all the files in the emmsapDirectory
-    
+
     >>> import emmsap.files
     >>> af = emmsap.files.allFiles()
     >>> af[0:2]
-    ['Amsterdam_64_Blijfs_mi_doch.xml', 'Arras_941_39v_si_vous_plait_tenor.xml']    
+    ['Amsterdam_64_Blijfs_mi_doch.xml', 'Arras_941_39v_si_vous_plait_tenor.xml']
     >>> len(af)
     1739
     '''
@@ -83,8 +82,8 @@ def allFilesWithPath():
     '''
     returns a list of all the files in the emmsapDirectory
     with the full filepath
-    
-    >>> import emmsap.files    
+
+    >>> import emmsap.files
     >>> afp = emmsap.files.allFilesWithPath()
     >>> afp[0]
     '/Users/Cuthbert/Dropbox/EMMSAP/MusicXML In/Amsterdam_64_Blijfs_mi_doch.xml'
@@ -98,7 +97,7 @@ def allFilesWithPath():
 class FileIterator(object):
     '''
     iterate over the parsed version of all files
-    
+
     >>> import emmsap.files
     >>> for n in emmsap.files.FileIterator():
     ...    p = n.parts[0]

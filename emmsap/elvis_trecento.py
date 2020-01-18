@@ -19,32 +19,38 @@ class NGramJobHandler(object):
     based on the number of CPUs available.
     '''
 
-    ### PUBLIC METHODS ###
+    # PUBLIC METHODS #
 
     @staticmethod
     def execute(jobs):
         finishedJobs = []
-        jobQueue = multiprocessing.JoinableQueue() # @UndefinedVariable
-        resultQueue = multiprocessing.Queue() # @UndefinedVariable
-        workers = [NGramJobHandlerWorker(jobQueue, resultQueue)
-            for i in range(multiprocessing.cpu_count() / 2)] # @UndefinedVariable
+        jobQueue = multiprocessing.JoinableQueue()
+        resultQueue = multiprocessing.Queue()
+        workers = [
+            NGramJobHandlerWorker(jobQueue, resultQueue)
+            for _ in range(multiprocessing.cpu_count() // 2)
+        ]
         for worker in workers:
             worker.start()
         for job in jobs:
             jobQueue.put(pickle.dumps(job, protocol=0))
-        for i in range(len(jobs)):
+        for _ in range(len(jobs)):
             finishedJobs.append(pickle.loads(resultQueue.get()))
-        for worker in workers:
+
+        for _ in workers:
             jobQueue.put(None)
+
         jobQueue.join()
         resultQueue.close()
         jobQueue.close()
+
         for worker in workers:
             worker.join()
+
         return finishedJobs
 
 
-class NGramJobHandlerWorker(multiprocessing.Process): # @UndefinedVariable
+class NGramJobHandlerWorker(multiprocessing.Process):
     r'''Worker process which runs ``QuantizationJobs``.
 
     Not composer-safe.
@@ -52,7 +58,7 @@ class NGramJobHandlerWorker(multiprocessing.Process): # @UndefinedVariable
     Used internally by ``ParallelJobHandler``.
     '''
 
-    ### INITIALIZER ###
+    # ## INITIALIZER ###
 
     def __init__(self, jobQueue=None, resultQueue=None):
         multiprocessing.Process.__init__(self) # @UndefinedVariable
@@ -61,7 +67,7 @@ class NGramJobHandlerWorker(multiprocessing.Process): # @UndefinedVariable
         self.jobQueue = jobQueue
         self.resultQueue = resultQueue
 
-    ### PUBLIC METHODS ###
+    # ## PUBLIC METHODS ###
 
     def run(self):
         r'''Runs parallel job handler worker.
@@ -72,10 +78,10 @@ class NGramJobHandlerWorker(multiprocessing.Process): # @UndefinedVariable
             job = self.jobQueue.get()
             if job is None:
                 # poison pill causes worker shutdown
-                #print '{}: Exiting'.format(process_name)
+                # print('{}: Exiting'.format(process_name))
                 self.jobQueue.task_done()
                 break
-            #print '{}: {!r}'.format(process_name, job)
+            # print('{}: {!r}'.format(process_name, job))
             job = pickle.loads(job)
             job.run()
             self.jobQueue.task_done()
@@ -85,7 +91,7 @@ class NGramJobHandlerWorker(multiprocessing.Process): # @UndefinedVariable
 
 class NGramJob(common.SlottedObject):
 
-    ### CLASS VARIABLES ###
+    # ## CLASS VARIABLES ###
 
     __slots__ = (
         'filename',
@@ -94,7 +100,7 @@ class NGramJob(common.SlottedObject):
         'results',
         )
 
-    ### INITIALIZER ###
+    # ## INITIALIZER ###
 
     def __init__(self, filename, jobNumber=0, jobTotal=0):
         self.filename = filename
@@ -131,7 +137,7 @@ class NGramJob(common.SlottedObject):
             self.debug('NGRAMS: {}'.format(i))
         self.debug('DONE!')
 
-    ### PUBLIC METHODS ###
+    # ## PUBLIC METHODS ###
 
     def debug(self, message):
         print('[{}/{}] {}: {}'.format(
@@ -196,7 +202,7 @@ if __name__ == '__main__':
     import json
     coreCorpus = corpus.CoreCorpus()
     paths = [x for x in coreCorpus.getPaths() if 'trecento' in x]
-    #paths = paths[:2]
+    # paths = paths[:2]
     paths = [os.path.join('trecento', os.path.split(x)[-1]) for x in paths]
     jobs = []
     jobTotal = len(paths)
