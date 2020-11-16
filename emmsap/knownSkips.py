@@ -49,14 +49,16 @@ skipPieces = [
 
     # two transcriptions of the same
     # same piece..different versions.
-
+    (3600, 3535),  # Mo. 20 and Mo. 345 -- same piece.
+    (3584, 3569),  # Dieus ou pourrai from Bamberg, MO.
+    (3616, 3461),  # O Nacio Condicio / Conditio nature defuit from MO and Fauv.
     (393, 3480),  # A Febo Dame 3vv -- 393=MSC 3480=Janke OMR
     (3448, 3321),  # Ascendit Christe -- OH + Dunstaple Opus Dubium
     (2159, 3451),  # Durer ne puis -- Fallows + Dunstaple edition
     (790, 3381),  # PMFC 13.32 Agnus Dei w/ OMR of Bologna, delete 3381
     (1805, 3383),  # PMFC 11.61 O Zentil Madona with OMR of Bologna, delete 3383
     (3530, 3531, 2415),  # "Balam" found in Montpellier and later English
-    (3179, 3174, 3180),  # Basel in twice?\
+    (3179, 3174, 3180),  # Basel in twice?
     (3208, 292),  # Zachara Gloria Laus Honor in Old Hall also
     (3369, 2794),  # Haspre, Jone gente -- Q15 version and E15cM version
     (3370, 2740),  # Loqueville Sanctus Vineux Q15 and E15cM
@@ -229,7 +231,10 @@ skipPieces = [
 
     ######
     # known similarities ; known concordances
-    (3500, 3512),  # MO VIII 309 + MO VIII 321 -- both motets on tenor refrain De fors compiegne
+    (3602, 3610),  # Refrain Mo. 22 and 30: Puis que/Quant si bele dame m'aime je ne demant plus
+    (3660, 3677),  # Refrain Mo. 219 and 236: Tischler has in commentary:
+                   # "emended according to Mo No. 236"
+    (3500, 3512),  # MO VIII 309 + MO VIII 321 -- both motets on tenor refrain De fors compiegn
     (3561, 3555),  # MO VII 272 and MO VII 280 both on Cis a cui je sui amie
                    # http://medmus.soton.ac.uk/view/voice_in_polyphony/teneur/Cis_a_cui_je_sui_amie_est_cointe_et_gai.html
                    # also in Bamberg 115 fol. 32,  Turin Vari 42,  "F-B I 716 no. 29"
@@ -249,6 +254,30 @@ skipPieces = [
     (2248, 2344),  # Machaut hoquetus David w/ PMFC 16.76, both on tenor Nativitas gl. Vir.
     (2418, 2419),  # PMFC 15.5, 15.6 both on Mariounette douche
     (2343, 2585),  # PMFC 16.75, 17.15, both on Virgo Dei Genitrix
+
+    # PORTA[RE]/PORTARE tenors mo_I_5, mo_III_41
+    # ALSO SUSTINARE MO: 188+335
+    (3496, 3526, 3542, 3548, 3577, 3590, 3622, 3633, 3674,
+     3525,  # this tenor is Alleluya, different, but similar enough to PORTARE to trigger...
+     ),
+
+    (3636, 3637),  # FIAT Mo 191, 192
+    (3638, 3647),  # DOMINUM [QUONIAM] motets
+    (3585, 3591),  # ET GAUDEBIT motets
+    (3520, 3541, 3551, 3559, 3564),  # APTATUR motets (mostly not encoded yet)
+    (3515, 3527, 3586, 3619, 3620, 3623, 3626, 3642, 3643,
+     3649, 3659, 3661, 3664, 3671, 3673, 3690,),  # IN SECULUM Motets
+    (3613, 3679),  # MANERE Motets
+    (3596, 3624),  # HODIE (PERLUSTRAVIT)
+    (3630, 3557, 3462, 3630),  # IOHAN(NE) / JOHANNE
+                               # [MO I 20 not encoded]; VI:185, VII:274, VII 345;
+                               # Veritas Arpie Fauv 13v
+    (3625, 3631, 3646, 3648, 3681),  # (IMMO)LATUS / Immolatus -- MO 180, 186, 203, 206, 240
+    (3615, 2570),  # MORS Montpellier 35, PMFC 14 Appendix 27.
+
+    # VERITATEM -- O Maria virgo Davitica MO
+    # / Virginis Marie PMFC 14.77, .78
+    (3617, 2527, 2528),
 
     # on Alma redemptoris mater, same as 17.12. and Montp. and Apta Caro
     (178, 2582, 3521, 1213, 3568, 3563),  # Impudentur / Virtutibus
@@ -277,7 +306,11 @@ skipPieces = [
     (2571, 2348,  # PMFC 17.1 + PMFC 16.80: both on Victime Paschali Laudes
      3343, 903,  # Plus Fauvel + Italian sources on same tenor
      454, 1088, 2350),   # + bogus matches
-    (32, 266, 270, 271, 272, 389, 390, 398, 480),  # flos filius benes
+    # Flos Filius
+    # 1. Benedicamus Dominos
+    (32, 266, 270, 271, 272, 389, 390, 398, 480,
+        # 2. Flos Filius Ars Antiqua motets:
+     3601, 3672, 3680, 3670, 3677),
     (299, 300),  # Gloria PMFC 13 14-15 -- same tenor
     (220, 229),  # bartolino amor che nel pensier, l invido per lo ben
     (172, 174, 175),  # Faenza Kyrie, Gloria, Ave Maris Stella
@@ -306,9 +339,12 @@ skipPieces = [
     (2426, 2403),  # PMFC 15.13 (Quare Frem...) + PMFC16.91 Magnificat (wow! cool)
     (2527, 2528),  # PMFC 14.77-78 on same pes.
     (2524, 2517),  # PMFC 14.67, 14.74 on same tenor.
-    (1264, 2512),  # Musicalis Sciencia on same tenor as PMFC 14.62 (Dies Sanctificantis)
-    # Mentioned as known by Taruskin OHWM
-
+    (1264, 2512,   # Musicalis Sciencia on same tenor as PMFC 14.62 (Dies Sanctificantis)
+                   # Mentioned as known by Taruskin OHWM
+     3656, 3692,   # LUX MA<GNA>  LUX MAGNA  Mo 215, 251 --
+                   # is a melisma on the same tenor.
+                   # from Christmas Alleluia Dies sanctificatus
+     ),
 
     # unknown similarities worth mentioning...
     (1062, 974),  # Francesco no. 99 and 102 -- endings
@@ -354,8 +390,13 @@ skipPieces = [
     # m24-29 to Paolo 19-25; different tactics to the same result.
     (1129, 1143),  # PMFC10 no 24 + 10: m. 29-34 and 33-37 -- real similarities suggesting
                    # same composer # HA! IN fact they are both by Andrea da Firenze. No wonder!
+    (3668, 2428, 2534),  # Mo. 227/PMFC14.84 "Pro Patribus" tenor
+                         # and PMFC 15.15 Benedicite tenor, very similar.
+
 
     # low threshold false matches
+    (3686, 2482),  # MO 245 with PMFC 14.32 -- not much similar.
+    (3666, 328),   # MO 225 with Credo 23.57 end -- not much similar at all.
     (3405, 1221),  # Dunstaple 18 + Tant a souttile pointure tenors; nope.
     (2840, 1078),  # Velut with Barcelona Kyrie
     (2509, 3107),  # 14.59, with AdC 4 -- both on 2-22-22-2 tenors

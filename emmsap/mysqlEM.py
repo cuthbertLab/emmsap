@@ -30,8 +30,9 @@ class EMMSAPException(Exception):
 def readEMMSAPPasswordFile(userdir=None):
     if userdir is None:
         username = getpass.getuser()
+        # likely to be /Library/Webserver on Mac
         userdir = os.path.expanduser("~" + username)
-            # likely to be /Library/Webserver on Mac
+
     # logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
     # logging.debug(username)
 

@@ -13,7 +13,8 @@ except ImportError:
     import difflib # @UnusedImport
 
 minSegmentLength = 15
-segmentType = 'DiaRhy2' #'diaSlower1'
+segmentType = 'DiaRhy2' # 'diaSlower1'
+
 
 def adjustRatiosByFrequency(encodingType='IntRhy'):
     '''
@@ -35,11 +36,12 @@ def adjustRatiosByFrequency(encodingType='IntRhy'):
                          WHERE segment1id = {segId}'''.format(encodingType=encodingType,
                                                          segCount=segCount,
                                                          segId=segId)
-        #print(commitQuery)
+        # print(commitQuery)
         em.cursor.execute(commitQuery)
         if numDone % 1000 == 0:
             print('Done {numDone} of {total}'.format(numDone=numDone, total=len(allSegments)))
         numDone += 1
+
 
 def updateRatioTableParallel(encodingType="DiaRhy2"):
     '''
@@ -50,11 +52,12 @@ def updateRatioTableParallel(encodingType="DiaRhy2"):
     missingSegments = findSegmentsWithNoRatios(encodingType)
     numMissingSegments = len(missingSegments)
     print(str(numMissingSegments) + " waiting to be indexed")
-    #dbObj = mysqlEM.EMMSAPMysql()
+    # dbObj = mysqlEM.EMMSAPMysql()
     partialCommit = partial(commitRatioForOneSegment,
                             encodingType=encodingType,
                             searchDirection='down')
     common.runParallel(missingSegments, partialCommit, updateMultiply=3, updateFunction=True)
+
 
 def updateRatioTable(encodingType="DiaRhy2"):
     '''
@@ -71,7 +74,6 @@ def updateRatioTable(encodingType="DiaRhy2"):
         if i % 1 == 0:
             print("Done %d segments (of %d)" % (i, numMissingSegments))
         commitRatioForOneSegment(segmentId, dbObj, encodingType=encodingType)
-
 
 
 def findSegmentsWithNoRatios(encodingType='DiaRhy2'):
@@ -96,8 +98,9 @@ def findSegmentsWithNoRatios(encodingType='DiaRhy2'):
                         " segment ids that should have ratios")
     missingSegmentIds = list(set(allSegmentIdsThatShouldHaveRatios) - set(allSegmentIdsWithRatios))
     return missingSegmentIds
-    #print(missingSegmentIds)
-    #print(getRatiosForSegment(missingSegmentIds[0]))
+    # print(missingSegmentIds)
+    # print(getRatiosForSegment(missingSegmentIds[0]))
+
 
 def deleteSparseSegmentRatios(maxSegments=30,
                               minSegments=1,
@@ -141,6 +144,7 @@ def deleteSparseSegmentRatios(maxSegments=30,
 def ratiosFromSegments(segment1, segment2):
     return ratiosFromSegmentData(segment1.segmentData, segment2.segmentData)
 
+
 def ratiosFromSegmentData(segment1Data, segment2Data):
     if lvRatio is not None:
         return int(10000 * lvRatio(segment1Data, segment2Data))
@@ -148,7 +152,9 @@ def ratiosFromSegmentData(segment1Data, segment2Data):
         sm = difflib.SequenceMatcher(None, segment1Data, segment2Data)
         return int(10000 * sm.ratio())
 
+
 _allSegmentData = {}
+
 
 def storeAllSegmentData(encodingType):
     if encodingType in _allSegmentData:
@@ -198,7 +204,7 @@ def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='down', encod
         return
     thisId = segmentObj.id
     thisSegmentData = segmentObj.segmentData
-    #dl = segment.getDifflibOrPyLev(segmentObj.segmentData)
+    # dl = segment.getDifflibOrPyLev(segmentObj.segmentData)
 
     storedRatios = []
     for otherId, otherSegmentData in storeAllSegmentData(encodingType):
@@ -209,8 +215,8 @@ def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='down', encod
         if searchDirection == 'down' and otherId >= thisId:
             continue
 
-        #dl.set_seq1(otherSegmentData)
-        #ratioInt = int(10000 * dl.ratio())
+        # dl.set_seq1(otherSegmentData)
+        # ratioInt = int(10000 * dl.ratio())
         ratioInt = ratiosFromSegmentData(thisSegmentData, otherSegmentData)
         if ratioInt > minimumToStore:
             commitTuple1 = (thisId, otherId, ratioInt)
@@ -218,9 +224,10 @@ def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='down', encod
             storedRatios.append(commitTuple1)
             storedRatios.append(commitTuple2)
 
-    #import pprint
-    #pprint.pprint(storedRatios)
+    # import pprint
+    # pprint.pprint(storedRatios)
     return storedRatios
+
 
 def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both',
                              encodingType='DiaRhy2'):
@@ -241,6 +248,7 @@ def commitRatioForOneSegment(idOrSegment=1, dbObj=None, searchDirection='both',
     dbObj.commit()
     return len(storedRatios)
 
+
 def commitRatiosForAllSegments(encodingType='DiaRhy2'):
     '''
     builds the database of ratios from segments.  Takes about 5-15 hours!
@@ -259,16 +267,17 @@ def commitRatiosForAllSegments(encodingType='DiaRhy2'):
         commitRatioForOneSegment(segmentId, dbObj, encodingType=encodingType)
     print("All done! :-)")
 
+
 if __name__ == '__main__':
     pass
-    #deleteSparseSegmentRatios(5, runDelete=True)
+    # deleteSparseSegmentRatios(5, runDelete=True)
     updateRatioTableParallel('DiaRhy2')
     adjustRatiosByFrequency('DiaRhy2')
-    #updateRatioTableParallel('IntRhy')
-    #findSegmentsWithNoRatios()
-    #commitRatioForOneSegment(100, searchDirection='down')
-    #commitRatiosForAllSegments()
-    #commitRatioForOneSegment(1)
-    #rs = getRatiosForSegment(114664, searchDirection='down', encodingType="DiaRhy2")
-    #for x in rs:
-    #    if x[2] > 5000: print(x)
+    # updateRatioTableParallel('IntRhy')
+    # findSegmentsWithNoRatios()
+    # commitRatioForOneSegment(100, searchDirection='down')
+    # commitRatiosForAllSegments()
+    # commitRatioForOneSegment(1)
+    # rs = getRatiosForSegment(114664, searchDirection='down', encodingType="DiaRhy2")
+    # for x in rs:
+    #     if x[2] > 5000: print(x)
