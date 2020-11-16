@@ -12,14 +12,15 @@ skipFileNames = [
 
 
 class SimilaritySearcher(object):
-    def __init__(self, startPiece=3498, endPiece=4000, minThreshold=8200, maxToShow=2):
+    def __init__(self, startPiece=3824, endPiece=5000, minThreshold=6000, maxToShow=3):
         self.dbObj = mysqlEM.EMMSAPMysql()
         self.startPiece = startPiece
         self.endPiece = endPiece
         self.minThreshold = minThreshold
         self.maxThreshold = 10001
-        self.segmentType = 'DiaRhy2'
-        # self.segmentType = 'IntRhySmall'
+        # self.segmentType = 'DiaRhy2'
+        self.segmentType = 'IntRhySmall'
+        # start at 3584 when going to IntRhySmall again...
         self.skipGroups = skipPieces
         self.maxToShow = maxToShow
         # 0 or 300 after skipping one, the odds of a good match goes down.
@@ -28,7 +29,7 @@ class SimilaritySearcher(object):
         # look out for M2, m2 that are the same rhythm and adjust down
         self.antiNoodleProtection = True
 
-        self.tenorThresholdAdd = 500
+        self.tenorThresholdAdd = 5000
         self.tenorPartNumber = 2
         self.tenorOtherPartNumber = 2
         self.printOutput = True
@@ -63,7 +64,7 @@ class SimilaritySearcher(object):
 
         if self.fragmentsOnly is True and p.frag is not True:
             return
-        print("Running piece %d (%s)" % (pNum, p.filename))
+        print('Running piece %d (%s)' % (pNum, p.filename))
         ratioMatches = p.ratiosAboveThreshold(self.minThreshold,
                                               ignoreInternal=True,
                                               segmentType=self.segmentType)
@@ -90,7 +91,7 @@ class SimilaritySearcher(object):
             return
         thisSegment, otherSegment, otherPiece, adjustedRatio = info
         totalShown += 1
-        showInfo = "part %2d, m. %3d; (%4d) %30s, part %2d, m. %3d (ratio %5d adjusted to %5d)" % (
+        showInfo = 'part %2d, m. %3d; (%4d) %30s, part %2d, m. %3d (ratio %5d adjusted to %5d)' % (
                                     thisSegment.partId, thisSegment.measureStart,
                                     otherPiece.id, otherPiece.filename,
                                     otherSegment.partId,
@@ -101,19 +102,19 @@ class SimilaritySearcher(object):
 
         if totalShown > self.maxToShow:
             if otherPiece.id is not None:
-                # if segment matches but piece deleted... need to clean up orphen segments...
-                print("   Not showing (too many matches): " + showInfo)
+                # if segment matches but piece deleted... need to clean up orphan segments...
+                print('   Not showing (too many matches): ' + showInfo)
                 return totalShown
         try:
             part = p.partFromSegmentPair(*ratioMatch)
         except TypeError:
             part = None
         if part is not None:
-            print("   Showing -- " + showInfo)
+            print('   Showing -- ' + showInfo)
             part.show()
         else:
             if otherPiece.id is not None:
-                print("  ERROR: not showing for lack of part: " + showInfo)
+                print('  ERROR: not showing for lack of part: ' + showInfo)
         return totalShown
 
     def checkForShow(self, p, ratioMatch, skippedPieces=None):
@@ -121,7 +122,7 @@ class SimilaritySearcher(object):
             skippedPieces = []
         myId = p.id
         if ratioMatch.thisRatio >= self.maxThreshold:
-            return (False, "MaxThreshold")
+            return (False, 'MaxThreshold')
         otherSegment = mysqlEM.Segment(ratioMatch.otherSegmentId, dbObj=self.dbObj)
         otherPiece = otherSegment.piece()
 
@@ -130,8 +131,8 @@ class SimilaritySearcher(object):
 
         otherPieceId = otherPiece.id
         if otherPieceId is None:
-            # print("   Skipping match for segment (%d): piece not found." % otherSegmentId)
-            return (False, "PieceNotFound")
+            # print('   Skipping match for segment (%d): piece not found.' % otherSegmentId)
+            return (False, 'PieceNotFound')
         foundSkip = False
         for pieceGroup in self.skipGroups:
             if isinstance(pieceGroup[0], int):
@@ -146,16 +147,16 @@ class SimilaritySearcher(object):
         if foundSkip is True:
             if otherPieceId not in skippedPieces:
                 if self.printOutput:
-                    print("   skipping all matches for (%d) %s: ratio %d" %
+                    print('   skipping all matches for (%d) %s: ratio %d' %
                           (otherPiece.id, otherPiece.filename, ratioMatch.thisRatio))
                 skippedPieces.append(otherPieceId)
-            return (False, "SkipPiece")
+            return (False, 'SkipPiece')
         thisSegment = mysqlEM.Segment(ratioMatch.thisSegmentId, dbObj=self.dbObj)
         if (thisSegment.partId >= self.tenorPartNumber or
                 otherSegment.partId >= self.tenorOtherPartNumber):
             # tenor
             if ratioMatch.thisRatio - self.tenorThresholdAdd < self.minThreshold:
-                return(False, "TenorBelowThreshold")
+                return(False, 'TenorBelowThreshold')
 
         totalPenalty = 0
         if self.antiNoodleProtection:
@@ -163,11 +164,11 @@ class SimilaritySearcher(object):
 
         totalPenalty += len(skippedPieces) * self.skippedMatchPenalty
         if ratioMatch.thisRatio - totalPenalty < self.minThreshold:
-            print("   below threshold for (%d) %s: ratio %d (adjusted to %d)" %
-                          (otherPiece.id, otherPiece.filename,
-                           ratioMatch.thisRatio, ratioMatch.thisRatio - totalPenalty))
+            print('   below threshold for (%d) %s: ratio %d (adjusted to %d)' %
+                  (otherPiece.id, otherPiece.filename,
+                   ratioMatch.thisRatio, ratioMatch.thisRatio - totalPenalty))
             skippedPieces.append(otherPieceId)
-            return(False, "TooCommonPenaltyThreshold")
+            return(False, 'TooCommonPenaltyThreshold')
 
         return (True, (thisSegment, otherSegment, otherPiece, ratioMatch.thisRatio - totalPenalty))
 
@@ -185,6 +186,7 @@ class SimilaritySearcher(object):
             thisN = segData[i]
             nextN = segData[i + 1]
             if self.segmentType == 'DiaRhy2':
+                # noinspection SpellCheckingInspection
                 if thisN in 'ABCDEFG':
                     asciiDiff = abs(ord(thisN) - ord(nextN))
                     if asciiDiff < 2:
@@ -194,11 +196,11 @@ class SimilaritySearcher(object):
                 if 75 >= thisOrd >= 71:
                     numNoodles += 1
             else:
-                print("Unknown segment type " + self.segmentType)
+                print('Unknown segment type ' + self.segmentType)
 
         noodleFraction = numNoodles / segLength
         totalPenalty = int(ratioOff100 * noodleFraction)
-        # print("           Noodle Penalty: ", totalPenalty, "NumNoodles", numNoodles)
+        # print('           Noodle Penalty: ', totalPenalty, 'NumNoodles', numNoodles)
         return totalPenalty
 
 

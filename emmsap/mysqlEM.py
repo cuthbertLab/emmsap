@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 import os
 import getpass
 
@@ -30,15 +30,18 @@ class EMMSAPException(Exception):
 def readEMMSAPPasswordFile(userdir=None):
     if userdir is None:
         username = getpass.getuser()
-        userdir = os.path.expanduser("~" + username)
-            # likely to be /Library/Webserver on Mac
+        # likely to be /Library/Webserver on Mac
+        userdir = os.path.expanduser('~' + username)
+
     # logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
     # logging.debug(username)
 
     mysqlPasswordFile = userdir + os.path.sep + '.emmsap_password'
     if not os.path.exists(mysqlPasswordFile):
         raise EMMSAPException(
-            "Cannot read password file! put it in a file in the home directory called .emmsap_password. Home directory is: " + userdir
+            'Cannot read password file! put it in a file in the home directory '
+            + 'called .emmsap_password. Home directory is: '
+            + userdir
         )
 
     with open(mysqlPasswordFile) as f:
@@ -53,7 +56,7 @@ def readEMMSAPPasswordFile(userdir=None):
               # 'sslcert': None,
               # 'sslkey': None
               }
-    for i,p in enumerate(pwContents):
+    for i, p in enumerate(pwContents):
         p = p.strip()
         if '=' in p:
             key, value = p.split('=', 1)
@@ -68,14 +71,14 @@ class EMMSAPMysql(object):
     def __init__(self):
         self.cnx = self.connect()
         self.cursor = self.getNewCursor()
-        self.query = ""
+        self.query = ''
 
     def connect(self):
-        pwdict = readEMMSAPPasswordFile()
-        cnx = mysqlConnector.connect(user=pwdict['user'],
-                                     password=pwdict['password'],
-                                     host=pwdict['host'],
-                                     database=pwdict['database'])
+        pw_dict = readEMMSAPPasswordFile()
+        cnx = mysqlConnector.connect(user=pw_dict['user'],
+                                     password=pw_dict['password'],
+                                     host=pw_dict['host'],
+                                     database=pw_dict['database'])
         return cnx
 
     def commit(self):
@@ -96,8 +99,8 @@ class EMMSAPMysql(object):
         >>> row
         (1, 'Unknown')
         '''
-        preQuery = "SELECT * FROM %s " % table
-        self.query = preQuery + "WHERE id = %s"
+        preQuery = 'SELECT * FROM %s ' % table
+        self.query = preQuery + 'WHERE id = %s'
         self.cursor.execute(self.query, [idKey])
         for row in self.cursor:
             # get first
@@ -107,9 +110,9 @@ class EMMSAPMysql(object):
         '''
         get a single row from a table where the column equals a value.
         '''
-        preQuery = "SELECT * FROM %s " % table
-        preQuery = preQuery + "WHERE %s = " % column
-        self.query = preQuery + "%s"
+        preQuery = 'SELECT * FROM %s ' % table
+        preQuery = preQuery + 'WHERE %s = ' % column
+        self.query = preQuery + '%s'
         self.cursor.execute(self.query, [value])
         for row in self.cursor:
             # get first
@@ -175,12 +178,12 @@ class EMMSAPMysqlObject(object):
             self.dbObj = dbObj
         self.cnx = self.dbObj.cnx
         if rowInfo is None:
-            rowInfo = [None for dummy in self.rowMapping]
+            rowInfo = [None for _ in self.rowMapping]
         elif not common.isIterable(rowInfo):
             # print(self.table, rowInfo)
             rowInfo = self.dbObj.getTableRowById(self.table, rowInfo)
             if rowInfo is None:
-                rowInfo = [None for unused in range(len(self.rowMapping))]
+                rowInfo = [None for _unused in range(len(self.rowMapping))]
         for i in range(len(self.rowMapping)):
             # attributeName = self.rowMapping[i]
             # attributeValue = rowInfo[i]
@@ -209,12 +212,13 @@ class Piece(EMMSAPMysqlObject):
         if self._stream is not None:
             return self._stream
         if self.filename is not None:
+            # noinspection PyBroadException
             try:
                 s = converter.parse(os.path.join(files.emmsapDir, self.filename))
                 self._stream = s
                 return s
-            except:
-                print("%s Failed in conversion" % self.filename)
+            except Exception:
+                print('%s Failed in conversion' % self.filename)
                 return None
         else:
             return None
@@ -255,13 +259,15 @@ class Piece(EMMSAPMysqlObject):
         >>> p = Piece(664)
         >>> segmentObjList = p.segments()
         >>> segmentZero = segmentObjList[3]
-        >>> segmentZero.partId, segmentZero.measureStart, segmentZero.measureEnd, segmentZero.id, segmentZero.segmentData
+        >>> (segmentZero.partId, segmentZero.measureStart,
+        ...  segmentZero.measureEnd, segmentZero.id, segmentZero.segmentData)
         (0, 1, None, 114664, 'FEDCMSDIOBNRCDEMPIQKEDCIFBCB')
         >>> ratiosZero = segmentObjList[3].ratios()
         >>> ratiosZero[0]
         (114665, 7826)
         '''
-        self.dbObj.cursor.execute('''SELECT id FROM segment WHERE piece_id = %s ORDER BY id''', [self.id])
+        self.dbObj.cursor.execute('''SELECT id FROM segment WHERE piece_id = %s ORDER BY id''',
+                                  [self.id])
         segmentRows = self.dbObj.cursor.fetchall()
         segmentObjs = []
         for s in segmentRows:
@@ -272,9 +278,11 @@ class Piece(EMMSAPMysqlObject):
     def ratiosAboveThreshold(self, threshold=5000, ignoreInternal=True,
                              segmentType='DiaRhy2', maxThreshold=None):
         '''
-        find all segments with a ratio at or above a certain threshold (where 5000 = 0.5 similarity),
+        find all segments with a ratio at or above a certain threshold
+        (where 5000 = 0.5 similarity),
         optionally ignoring segments that are from the same piece (default True) or
-        from the same piece and same part (set ignoreInternal to "`Part`" to use this; not yet implemented).
+        from the same piece and same part (set ignoreInternal to "`Part`" to use this;
+        not yet implemented).
 
         Returns a list of 3-tuples in the form thisPieceSegmentId, otherPieceSegmentId, ratio
 
@@ -286,27 +294,30 @@ class Piece(EMMSAPMysqlObject):
         if maxThreshold is None:
             maxThreshold = 100001
 
-        if threshold > 0 and threshold < 1:
+        if 0 < threshold < 1:
             # sanity check: I used to use between 0 and 1:
             threshold = int(threshold * 10000)
-        #print threshold
+        # print(threshold)
         thisPieceId = self.id
         matchingSegments = []
-#        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios
-#                                    WHERE segment1id IN
-#                                       (SELECT id FROM segment WHERE pieceId = %s)
-#                                    AND ratio >= %s ORDER BY segment1id''',
-#                                    [thisPieceId, threshold])
-        #print "HIII"
-        self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios'''+segmentType+'''  
-                                    WHERE 
-                                    ratio >= %s AND ratio < %s 
-                                    AND EXISTS
-                                       (SELECT 1 FROM segment WHERE piece_id = %s
-                                        AND segment.id = segment1id) 
-                                    ORDER BY ratio DESC''',
-                                    [threshold, maxThreshold, thisPieceId])
-        #print "BYEEE!"
+        # self.dbObj.cursor.execute('''SELECT segment1id, segment2id, ratio FROM ratios
+        #                             WHERE segment1id IN
+        #                                (SELECT id FROM segment WHERE pieceId = %s)
+        #                             AND ratio >= %s ORDER BY segment1id''',
+        #                             [thisPieceId, threshold])
+        # print('HI!')
+        self.dbObj.cursor.execute(
+            '''SELECT segment1id, segment2id, ratio FROM ratios''' + segmentType
+            + '''  
+                WHERE 
+                ratio >= %s AND ratio < %s 
+                AND EXISTS
+                   (SELECT 1 FROM segment WHERE piece_id = %s
+                    AND segment.id = segment1id) 
+                ORDER BY ratio DESC''',
+            [threshold, maxThreshold, thisPieceId]
+        )
+        # print('BYE!')
         for otherSeg in self.dbObj.cursor:
             otherSegNamedTuple = RatioMatch(*otherSeg)
             matchingSegments.append(otherSegNamedTuple)
@@ -336,18 +347,24 @@ class Piece(EMMSAPMysqlObject):
         s1 = converter.parse(os.path.join(files.emmsapDir, self.filename))
         if infoDict['otherFilename'] is None:
             return
+        # noinspection PyBroadException
         try:
             s2 = converter.parse(os.path.join(files.emmsapDir, infoDict['otherFilename']))
-        except:
+        except Exception:
             return
-        p1 = s1.parts[infoDict['thisPartId']]
-        p2 = s2.parts[infoDict['otherPartId']]
+        p1_id = infoDict['thisPartId']
+        p2_id = infoDict['otherPartId']
+
+        p1 = s1.parts[p1_id]
+        p2 = s2.parts[p2_id]
         if infoDict['thisMeasureEnd'] is None:
-            thisMeasureEnd = infoDict['thisMeasureStart'] + 6 #len(p1.getElementsByClass('Measure'))
+            thisMeasureEnd = infoDict['thisMeasureStart'] + 6
+            # len(p1.getElementsByClass('Measure'))
         else:
             thisMeasureEnd = infoDict['thisMeasureEnd']
         if infoDict['otherMeasureEnd'] is None:
-            otherMeasureEnd = infoDict['otherMeasureStart'] + 6 #len(p2.getElementsByClass('Measure'))
+            otherMeasureEnd = infoDict['otherMeasureStart'] + 6
+            # len(p2.getElementsByClass('Measure'))
         else:
             otherMeasureEnd = infoDict['otherMeasureEnd']
         excerpt1 = p1.measures(infoDict['thisMeasureStart'], thisMeasureEnd)
@@ -358,7 +375,6 @@ class Piece(EMMSAPMysqlObject):
         for el in excerpt2.recurse():
             if 'LayoutBase' in el.classes:
                 el.activeSite.remove(el)
-
 
         renumberMeasureOffset = thisMeasureEnd + 1
 
@@ -381,16 +397,14 @@ class Piece(EMMSAPMysqlObject):
             excerpt2.remove(el)
             firstMeasure2.insert(0, el)
 
-        exp1 = expressions.TextExpression(' '.join(['(' + str(self.id) + ')',
-                                                    self.filename,
-                                                    str(infoDict['thisMeasureStart']),
-                                                    str(thisMeasureEnd)]),
-                                          )
-        exp2 = expressions.TextExpression(' '.join(['(' + str(infoDict['otherPieceId']) + ')',
-                                                    infoDict['otherFilename'],
-                                                    str(infoDict['otherMeasureStart']),
-                                                    str(otherMeasureEnd)]),
-                                          )
+        exp1 = expressions.TextExpression(
+            f'({self.id}) {self.filename} part {p1_id}, '
+            + f'mm. {infoDict["thisMeasureStart"]}-{thisMeasureEnd}'
+        )
+        exp2 = expressions.TextExpression(
+            f'({infoDict["otherPieceId"]}) {infoDict["otherFilename"]} part {p2_id}, '
+            + f'mm. {infoDict["otherMeasureStart"]}-{otherMeasureEnd}'
+        )
         exp1.size = 12
         exp2.size = 12
         exp1.positionVertical = 40
@@ -496,7 +510,7 @@ class Piece(EMMSAPMysqlObject):
                    'otherMeasureStart': otherSeg.measureStart,
                    'otherMeasureEnd': otherSeg.measureEnd,
                    'ratio': ratio,
-                }
+                   }
 
         return retDict
 
@@ -528,14 +542,14 @@ class Piece(EMMSAPMysqlObject):
         deletes the file on disk associated with the piece.
         '''
         if not self.filename:
-            print("Piece did not exist")
+            print('Piece did not exist')
             return
 
         fn = files.emmsapDir + os.sep + self.filename
         if os.path.exists(fn):
             os.remove(fn)
         else:
-            print("File %s did not exist" % fn)
+            print('File %s did not exist' % fn)
 
     def deletePiece(self, keepPieceEntry=False):
         '''
@@ -554,42 +568,46 @@ class Piece(EMMSAPMysqlObject):
         print(segment1TupleList)
 
         for ratioTable in ('DiaRhy2', 'IntRhySmall'):  # ('diaSlower1','DiaRhy2'):
-            print("deleting first ratios... from %s" % ratioTable)
-            deleteRatiosQuery1 = '''DELETE FROM ratios''' + ratioTable + ''' WHERE segment1id = %s'''
+            print('deleting first ratios... from %s' % ratioTable)
+            deleteRatiosQuery1 = ('''DELETE FROM ratios'''
+                                  + ratioTable
+                                  + ''' WHERE segment1id = %s''')
             for thisTuple in segment1TupleList:
-                print("...deleting %s" % thisTuple[0])
+                print('...deleting %s' % thisTuple[0])
                 delQuerySub = deleteRatiosQuery1 % thisTuple[0]
                 # print(delQuerySub)
                 self.dbObj.cursor.execute(delQuerySub)
                 self.dbObj.cnx.commit()
             # self.dbObj.cursor.executemany(deleteRatiosQuery1, segment1TupleList)
-            print("deleting second ratios... from %s" % ratioTable)
-            deleteRatiosQuery2 = '''DELETE FROM ratios''' + ratioTable + ''' WHERE segment2id = %s'''
+            print('deleting second ratios... from %s' % ratioTable)
+            deleteRatiosQuery2 = ('''DELETE FROM ratios'''
+                                  + ratioTable
+                                  + ''' WHERE segment2id = %s''')
             for thisTuple in segment1TupleList:
-                print("...deleting %s" % thisTuple[0])
+                print('...deleting %s' % thisTuple[0])
                 delQuerySub = deleteRatiosQuery2 % thisTuple[0]
                 # print(delQuerySub)
                 self.dbObj.cursor.execute(delQuerySub)
                 self.dbObj.cnx.commit()
 
         # self.dbObj.cursor.executemany(deleteRatiosQuery2, segment1TupleList)
-        print("deleting segments...")
+        print('deleting segments...')
         deleteSegmentsQuery = '''DELETE FROM segment WHERE id = %s'''
         for thisTuple in segment1TupleList:
-            print("...deleting %s" % thisTuple[0])
+            print('...deleting %s' % thisTuple[0])
             delQuerySub = deleteSegmentsQuery % thisTuple[0]
-            #print delQuerySub
+            # print(delQuerySub)
             self.dbObj.cursor.execute(delQuerySub)
         self.dbObj.cnx.commit()
         # self.dbObj.cursor.executemany(deleteSegmentsQuery, segment1TupleList)
-        print("deleting texts...")
+        print('deleting texts...')
         self.dbObj.cursor.execute('''DELETE FROM texts WHERE fn = %s''', (self.filename, ))
-        print("deleting tinyNotation")
+        print('deleting tinyNotation')
         self.dbObj.cursor.execute('''DELETE FROM tinyNotation WHERE fn = %s''', (self.filename, ))
-        print("deleting intervals")
+        print('deleting intervals')
         self.dbObj.cursor.execute('''DELETE FROM intervals WHERE fn = %s''', (self.filename, ))
         if keepPieceEntry is not True:
-            print("deleting piece...")
+            print('deleting piece...')
             self.dbObj.cursor.execute('''DELETE FROM pieces WHERE id = %s''', (self.id, ))
         self.dbObj.cnx.commit()
 
