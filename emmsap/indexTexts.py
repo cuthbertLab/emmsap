@@ -12,7 +12,11 @@ from emmsap import mysqlEM
 from music21 import text, environment, converter
 
 em = mysqlEM.EMMSAPMysql()
-em.cnx.set_charset('utf8')
+try:
+    em.cnx.set_charset('utf8')
+except AttributeError:
+    # older version or mysql-connector
+    pass
 # print(em.cnx.charset)
 
 query = '''REPLACE INTO texts (fn, language, text, textReg, textNoSpace) VALUES (%s, %s, %s, %s, %s)'''
