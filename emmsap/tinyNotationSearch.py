@@ -25,10 +25,18 @@ from emmsap import files, mysqlEM
 searches = {
     # q15 initial numbers
     'q15_2': ("rare. but no match",
-              'fn like "%kyrie%" AND intervals like "%4-22-4%"'),
-    'q15_3': ("23 - no matches",
+              {
+                  # 'syllable': 'lei',
+                  'skip': [
+                      'PMFC_16_22',
+                      'Kyrie_Humano_Generi',
+                  ],
+              },
+              '(fn regexp "kyrie" OR fn in (SELECT fn from texts where textReg like "%eleis%"))'
+              + 'AND intervals like "%4-22-4%"'),
+    'q15_3': ("23 - no matches when rest added",
               'intervals like "%-2222-24-2%" '
-              'and intervalsWithRests regexp "-22r22-24-2"'),
+              'and intervalsWithRests regexp "-22r+22-24-2"'),
     # 'q15_4': ("MB Found Piece: Zachara", 'intervals like "%-224-2-2-2%"'),
     # 'q15_5': ("MB Found Piece: Salinis",
     #           '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-34%"'),
@@ -90,9 +98,16 @@ searches = {
                + 'AND intervals like "%2-2-33%" '
                  'and intervalsWithRests REGEXP "[1-9]2-2-3r3"'
                ),
-    'q15_23': ('pater omnipo',
+    'q15_23': ('pater omnipo -- no matches w/ syllable',
+               {
+                   'syllable': 'ter',
+                   'skip': [
+                       'Kras_52_Gloria_24',
+                       'PMFC_16_31-Gloria_Spiritus_Almifice',
+                   ],
+               },
                '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%-2-2-22-2%"'),
-    'q15_24': ('slow -- maybe tenor',
+    'q15_24': ('slow -- maybe tenor -- no matches',
                {'skip': [
                    'Stoessel_Ch_080-Calextone_qui_fut.xml',
                    ]},
@@ -117,64 +132,179 @@ searches = {
                'intervals like "%-2-232-2%"'),
     'q15_30': ('[common but easier because of void...94 total none]',
                'intervals like "%3-2-32-2%"'),
+    #  32 -- 2[1r]rr-2-2 -- 46 matches
     'q15_33': ('resurrexit 36 pieces none match',
-               '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-21-221%"'),
+               {
+                   'syllable': 'sur',
+               },
+               '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-21-221%" '
+               + 'AND intervalsWithRests like "%-21-221%" '),
     'q15_34': ('patre [too common]',
+               {
+                   'syllable': 'pa',  # or pat or tre or re
+               },
                '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%2-2%"'),
-    'q15_35': ('et ex patre  -- Zachara, Credo, du Vilage',
-               '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%2122-33%"'),
-    'q15_36': ('Gloria "et in" [too common 270]',
+    # 'q15_35': ('et ex patre  -- FOUND!  Zachara, Credo, du Vilage',
+    #            {
+    #                'syllable': 'ex',
+    #            },
+    #            '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%2122-33%"'),
+    'q15_36': ('Gloria "et in" [too common 270] -- but none on "et in" with this rhythm',
+               {
+                   'syllable': 'et',
+                   'skip': [
+                        'PMFC_16_102-Sanctorum_Gloria_Laus',
+                        'PMFC_23_34-Gloria_Clemens_Deus_Artifex',
+                   ],
+               },
                '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%222%"'),
     'q15_37': ('credo -- visibilium [rare; Ciconia?]',
+               {
+                   'syllable': 'bi',
+                   'skip': [
+                       'Credo_Ciconia_10',
+                       'Credo_Cursor',
+                       'PMFC_03_Mass3',
+
+                   ]
+               },
                '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-21-224%"'),
     'q15_39': (' Gloria "amus te" [17; no match]',
+               {
+                    'syllable': 'mus',
+               },
                '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%22-2-232%"'),
     'q15_40': ('Credo et in sp [9; none]',
+               {
+                    'syllable': 'in',
+               },
                '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%2222-52%"'),
-    'q15_43': ('Gloria nedicamus [18 none]',
-               '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%121-22%"'),
+    'q15_43': ('Gloria nedicamus [18 none] -- Maybe Ghent 133, but lines and spaces are reversed',
+               {
+                   'syllable': 'mus',
+                   'skip': [
+                   ]
+               },
+               '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%1-21-22%"'),
     'q15_44': ('Credo "filium" or "visibilium" or "invisibilium" [42]',
+               {
+                    'syllable': 'bi',
+               },
                '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-23-5%"'),
     'q15_46': ('rculo (Verbum caro...) [12; none likely]',
+               {
+                   'syllable': 'lo',
+               },
                'intervals like "%-2-21-23-2-2-2-2%"'),
+    # 47 -- just not enough to go with.
     'q15_48': ('agnus or kyrie? [18 none]',
                '(fn like "%kyrie%" OR fn like "%agnus%") AND intervals like "%-2-2-225%"'),
     # 'q15_49': ('Credo natus est de spiri [9] -- FOUND: Perneth',
     # '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-321-4%" '
     # + 'AND intervalsWithRests regexp "-321r-4"'),
     'q15_50': ('Gloria "tris qui toll" (rare, but not in Marchi 30; PMFC13.12)',
+               {
+                   'syllable': 'qui',
+               },
                '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%22-46%"'),
     'q15_51': ('Kyrie (first interval ?? -- rare, but no match)',
+               {
+                   'skip': [
+                       'PMFC_16_22',
+                       'PMFC_23_1-',
+                       'PMFC_23_20-',
+                       'Poznan_2',
+                   ]
+               },
                'fn like "%kyrie%" AND intervals like "%-42-32%"'),
     'q15_55': ('3/4 time rare; no match', 'intervals like "%-3-21-3-2%"'),
     'q15_62': ('rare no match',
-               'intervals like "%-22-333-2-2-2%"'),
-    'q15_67': ('common [60] -- use hasRest -- not found',
-               'intervals like "%-2-2-34-2%"'),
+               'intervals like "%-22-333-2-2-2%"'
+               + 'AND intervalsWithRests like "%-22-333-2-2-2%"'),
+    # 'q15_67': ('common [60] -- use hasRest -- needs leap up given old intervals -- '
+    #            + ' FOUND Bologna 2216 Magnificat f. 10 without r[34] but with r-?.-2-2-34-2',
+    #            'intervals like "%-2-2-34-2%" AND intervalsWithRests regexp "r[34]-2-2-34-2"'),
     'q15_68': ('Credo et in unum [88 none]',
+               {
+                   'syllable': 'et',
+               },
                '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%32-4%"'),
-    # 70 no in fine temporum -- no text match...
+    # q15_70 [homo] in fine temporum -- text match PMFC 12.36 and 23.84 Jesu nostra redemptio
+    # but not a match
+    'q15_71': ('only 4 matches for text',
+               {
+                   'syllable': 'cuer',
+               },
+               'intervals like "%2-2%" and '
+               'fn in (select fn from texts where textReg regexp "o cuer")'),
     'q15_75': ('only 10 matches',
-               'intervals like "%3-242-32%"'),
+               {
+                    'skip': [
+                        'OMR_Dunstaple_52_151_Gaude_Virgo_K',
+                    ],
+               },
+               'intervals like "%3-242-32%"'
+               'AND fn in (select fn from texts where textReg regexp "[sf]it")'
+               ),
     'q15_77': ('19 rows combining both -3 5 always has a rest between it!',
-               'intervals like "%-3522%" AND intervals like "%-22-2-22%"'),
+               {
+                   'skip': [
+                        'OMR_PMFC17_37_084.xml',
+                   ],
+               },
+               'intervalsWithRests regexp "r-[23]522" AND intervals like "%-22-2-22%"'),
     'q15_78': ('sti [too common...3102; must filter text first]',
-               'intervals like "%-2-222%"'),
+               {
+                   'syllable': 'sti',
+                   'skip': [
+                       'moI',
+                       'moV',
+                       'mo_I',
+                       'PMFC14',
+                   ]
+               },
+               'intervals like "%-2-222%"'
+               'AND fn in (select fn from texts where textReg regexp "sti")'
+               ),
     'q15_81': ('very common (271)',
                'intervals like "%-2-2-2222-3%"'),
     'q15_82': ('very common 327',
                'intervals like "%-2-2-2-2-24%"'),
     'q15_83': ('[594] so combinin with Credo [71] and text search + rest[0]... '
                + 'minum or at least num...',
-               '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-2-22-4%"'),
+               {
+                    'syllable': 'mum',
+               },
+               'intervals like "%-2-22-4%" and intervalsWithRests regexp "-2-22rr-4"'),
     'q15_85': ('"sericordie" -- misericordie -- Salve Regina or Magnificat '
                + '(not Kyrie Rex Angelorum either)',
-               'intervals like "%-2-2-2-23-2%" AND (fn like "%alve%" or fn like "%agnific%")'
+               {
+                   'skip': [
+                       'E15cM-VII_BF-7_Ave_Maria_gratia_plena.xml',
+                       'PMFC_13_A12-Salve_Regina.xml',
+                       'PMFC_23_14-Kyrie Rex Angelorum.xml',
+                       'OMR_Dunstaple_47_141_Sancta_Dei.xml',
+                   ]
+               },
+               'intervals like "%-2-2-2-23-2%" '
+               + 'AND fn in (SELECT fn FROM texts WHERE textReg REGEXP "misericordie")'
                ),
-    'q15_88': ('only source (Cividale 98 Philippcoctus Credo Tenor) not a match',
-               'intervals like "%-24-5232%"'),
-    # 89 -- text matches eliminate
+    # 'q15_88a': ('Two plausible readings -- Feragut tenor AMEN',
+    #            {
+    #                'skip': [
+    #                     'Cividale_98_Philippcoctus_Credo.xml',
+    #                     'OMR_105_OH1b_Sanctus.xml',
+    #                     'PMFC_13_A8-Credo_PMFC13_A8.xml',
+    #                ],
+    #            },
+    #            'intervalsWithRests like "%-224-5232%"'),
+    # 89 -- text matches eliminate  textReg regexp '[un]t a..?si ' --
+    #   -- skip: PMFC_05_22-Clap_Clap_Par_Un_Matin.xml
+    #            PMFC_CMM_Substitutes_117-Pour_ce_que.xml
     'q15_90': ('Credo et in unum',
+               {
+                    'syllable': 'et',
+               },
                '(fn like "%credo%" OR fn like "%patrem%") AND intervals like "%-352-2%"'),
     'q15_front': ('Q15 front cover gloria',
                   '(fn like "%gloria%" OR fn like "%terra%") AND intervals like "%223-2-2-22-3%"'),
@@ -286,12 +416,17 @@ searches = {
                   'intervals like "%2-414-2-22%"'),
     'sl111r': ("end", 'intervals like "%4-2-2-22-2"'),
     'sl136r': ('below amor de dimmi',
-               {'lastNameWithOctave': 'G3'},
+               {
+                   'lastNameWithOctave': 'G3',
+               },
                'intervals like "%-2-2-2-2-2" and fn not like "%gloria%" '
                'and fn not like "%credo%"'),
     'sl136r_t': (
         'below amor de dimmi no156',
-        {'hasRest': True, 'lastNameWithOctave': 'A3'},
+        {
+            'hasRest': True,
+            'lastNameWithOctave': 'A3',
+        },
         'intervals like "%-25-2-2-21%" and partId >= 1 '
         + 'AND fn not like "%gloria%" and fn not like "%credo%"'),
     'sl139v': ('MSC: Paolo! Marticius qui fu de Rome',
@@ -404,32 +539,43 @@ searches = {
               'intervals like "%2-321-4%" and intervals like "%-2-3-222%"'),
     # and (fn regexp "PMFC_01" or fn regexp "PMFC_02"
     # or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
-    'kobl5': ('Kobl other side', {'hasRest': True},
+    'kobl5': ('Kobl other side',
+              {'hasRest': True},
               'intervals like "%2-321-4%" '
-              'and (fn regexp "PMFC_01" or fn regexp "PMFC_02" '
-              'or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
-    'kobl6': ('Kobl other side', {'hasRest': True},
+              + 'and (fn regexp "PMFC_01" or fn regexp "PMFC_02" '
+              + 'or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
+    'kobl6': ('Kobl other side',
+              {'hasRest': True},
               'intervals like "%-2221%" and intervals regexp "-22211+-34-3"'),
     # and (fn regexp "PMFC_01" or fn regexp "PMFC_02"
     # or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
     'koblB1': ('Kobl other side right',
                'intervals like "%2-211-4%" '
-               'and (fn regexp "PMFC_01" or fn regexp "PMFC_02" '
-               'or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
+               + 'and (fn regexp "PMFC_01" or fn regexp "PMFC_02" '
+               + 'or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
     # and (fn regexp "PMFC_01" or fn regexp "PMFC_02"
     # or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
     'koblB2': ('Kobl other side right',
                'intervals like "%1-4-21%" '
-               'and (fn regexp "PMFC_01" or fn regexp "PMFC_02" '
-               'or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
+               + 'and (fn regexp "PMFC_01" or fn regexp "PMFC_02" '
+               + 'or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
     # and (fn regexp "PMFC_01" or fn regexp "PMFC_02"
     # or fn regexp "PMFC_03" or fn regexp "PMFC_05")'),
 
     'cambraiI7v': ('Cambrai I--07v motet',
-                   {'skip': ['PMFC_23_a1-Credo']},
+                   {
+                       'skip': [
+                           'PMFC_23_a1-Credo',
+                       ],
+                   },
                    'intervals like "%-222212-2-2-23%"'),
     'cambraiI7vb': ('Cambrai I--07v motet try 2',
-                    {'hasRest': True, 'skip': ['PMFC_23_a1-Credo']},
+                    {
+                        'hasRest': True,
+                        'skip': [
+                            'PMFC_23_a1-Credo'
+                        ]
+                    },
                     'intervals like "%-22221-3-22%"'),
     'cambraiI7vtenor': (
         'Cambrai I--07v motet tenor',
@@ -445,10 +591,10 @@ searches = {
         'intervals like "%2-22-21-2-35-222-2-2%"'
     ),
     'cambII1vtenor': (
-        'Cambrai Vo douls regards, tenor',
+        'Cambrai Vo douls regards, tenor -- no matches',
         'intervals like "%-2-224-2-48-32-32%"'),
     'cambII1vtenb': (
-        'Cambrai Tristour et merancolie',
+        'Cambrai Tristour et merancolie -- no matches',
         'intervals like "%2-2-2-2-29-2%"'
     ),
 }
@@ -602,15 +748,10 @@ def runOne(searchIndex, show=False, onlyMatches=False):
 
             firstNote = noteList[-1 * interval_list_len - 1]
 
-            oldLyric = n.lyric or ''
-            n.lyric = oldLyric + '*!*!*'
-            firstNoteLyric = firstNote.lyric or ''
-            firstNote.lyric = firstNoteLyric + '::>'
             mn = firstNote.measureNumber
             while mn is None:  # after a strip tie
                 firstNote = firstNote.next()
                 mn = firstNote.measureNumber
-            pn[0].lyric += "_" + str(mn)
             if (syllableSearch is not None and
                     (lastSyllableMatch is None
                      or lastSyllableMatch < (i - interval_list_len - 2))):
@@ -668,6 +809,12 @@ def runOne(searchIndex, show=False, onlyMatches=False):
                 print(*metadataTuple)
                 isPrintedOnlyMatches = True
 
+            oldLyric = n.lyric or ''
+            n.lyric = oldLyric + '*!*!*'
+            firstNoteLyric = firstNote.lyric or ''
+            firstNote.lyric = firstNoteLyric + '::>'
+            pn[0].lyric += "_" + str(mn)
+
             print("Part", partId, "Measure", mn)
             found = True
 
@@ -698,7 +845,7 @@ def runSL():
 
 
 def runSearch():
-    runOne('sl136r_t', True)
+    runOne('q15_front', True)
 
 
 if __name__ == '__main__':
