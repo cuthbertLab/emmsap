@@ -1,7 +1,7 @@
 import os
 import sys
-from sys import version_info as _pyver
-if _pyver[0] <= 2 or (_pyver[0] == 3 and _pyver[1] <= 3):
+from sys import version_info as _py_ver
+if _py_ver[0] <= 2 or (_py_ver[0] == 3 and _py_ver[1] <= 3):
     raise ImportError("Emmsap requires Python 3.4 or higher. Exiting.")
 
 if __name__ == '__main__' and __package__ in (None, ''):

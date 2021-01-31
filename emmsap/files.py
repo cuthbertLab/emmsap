@@ -1,18 +1,14 @@
 # -*- coding: utf-8 -*-
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 import os
 import music21
 environLocal = music21.environment.Environment()
 
-emmsapBase =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+emmsapBase = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 emmsapDir = os.path.join(emmsapBase, 'xmldata')
 
-try:
-    unicode # @UndefinedVariable
-except:
-    unicode = str
 
-def fixFilesInADir(dirName = emmsapDir):
+def fixFilesInADir(dirName=emmsapDir):
     '''
     Rename all files in a directory that do not fit the naming scheme.
 
@@ -20,15 +16,15 @@ def fixFilesInADir(dirName = emmsapDir):
     '''
     #: :type fn: str
     for fn in sorted(os.listdir(dirName)):
-        newName = music21.common.normalizeFilename(fn) # @UndefinedVariable
+        newName = music21.common.normalizeFilename(fn)
         if newName.startswith('PMFC0'):
             newName = 'PMFC_0' + newName[5:]
 
         if fn != newName:
             print(fn, newName)
             os.rename(dirName + os.sep + fn, dirName + os.sep + newName)
-            #return
-            #exit()
+            # return
+            # exit()
 
 
 def problemFileNames(filenameList):
@@ -43,11 +39,11 @@ def problemFileNames(filenameList):
     :type filenameList: list(str)
     '''
     import unicodedata  # @UnresolvedImport
-    #from unidecode import unidecode as un # @UnresolvedImport
+    # from unidecode import unidecode as un # @UnresolvedImport
     returnList = []
     for fn in filenameList:
-        fnNewer = unicodedata.normalize('NFC', unicode(fn))
-        #fnNewer = un(fnNewer)
+        fnNewer = unicodedata.normalize('NFC', fn)
+        # fnNewer = un(fnNewer)
         fnNewList = []
         for n in fnNewer:
             if n.isalnum() or n == '_' or n == '.' or n == '-':
@@ -56,7 +52,7 @@ def problemFileNames(filenameList):
                 fnNewList.append('_')
         fnNewer = ''.join(fnNewList)
         if fnNewer != fn:
-            returnList.append( (fn, fnNewer),)
+            returnList.append((fn, fnNewer),)
     return returnList
 
 def allFiles():
@@ -70,9 +66,9 @@ def allFiles():
     >>> len(af)
     1739
     '''
-    allFiles = sorted(os.listdir(emmsapDir))
+    all_files = sorted(os.listdir(emmsapDir))
     allFiles2 = []
-    for f in allFiles:
+    for f in all_files:
         if f.startswith('.'):
             continue
         allFiles2.append(f)
@@ -124,7 +120,7 @@ class FileIterator(object):
         post = self.data[self.index]
         self.index += 1
         try:
-            x = music21.converter.parse(post) # @UndefinedVariable
+            x = music21.converter.parse(post)
             return x
         except Exception as e:
             environLocal.warn("ERROR on " + post + ": " + str(e))
@@ -133,8 +129,9 @@ class FileIterator(object):
     def next(self):
         return self.__next__()
 
-#------------------------------
+
+# ------------------------------
 if __name__ == '__main__':
-    #problemFileNames()
-    #fixFilesInADir('/Users/cuthbert/Dropbox/Jennings_Notation/Complete Notation Files')
+    # problemFileNames()
+    # fixFilesInADir('/Users/cuthbert/Dropbox/Jennings_Notation/Complete Notation Files')
     music21.mainTest()
