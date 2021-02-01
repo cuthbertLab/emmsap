@@ -50,6 +50,9 @@ skipPieces = [
 
     # two transcriptions of the same
     # same piece..different versions.
+    (3825, 26),  # Douai motet -- delete 26
+    (3836, 2028),  # H. Lantins -- Plaindre
+    (3851, 2662),  # Die mey so lieflic Fabri -- delete Second (OMR)
     (3710, 2531),  # Mo. IV 69 + PMFC 14.81 -- Ave parens prolis
     (3709, 2533),  # Mo. IV 68 + PMFC 14.83 -- Super te Ieruselem.  Noted in PMFC14.
     (3694, 2566),  # Mo. IV 53 + PMFC 14 app. 23 -- bottom two voices the same; hinted in crit. app.
