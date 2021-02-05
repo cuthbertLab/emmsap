@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # deleteOMRDuplicates()
     # exit()
     # x = 3341
-    for x in range(3345, 3368):
+    for x in range(3855, 3855 + 1):
         emp = mysqlEM.Piece(x)
         print(emp.filename)
         emp.deletePiece(keepPieceEntry=False)
