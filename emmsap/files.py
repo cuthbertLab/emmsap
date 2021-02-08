@@ -2,6 +2,7 @@
 # -------------------------------------------------------------------------------
 import os
 import music21
+import pathlib
 environLocal = music21.environment.Environment()
 
 emmsapBase = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -129,6 +130,42 @@ class FileIterator(object):
     def next(self):
         return self.__next__()
 
+class FourteenthCenturyIterator(FileIterator):
+    '''
+    An iterator that only includes well-edited 14th and early 15th c. pieces.
+    '''
+    skips = '''
+    Basel_Gaudet_Novum.xml
+    Bodley 842 59v.xml
+    Bodley_842_Ut_patet.xml
+    Bologna_2216_Verbum_Caro_Incomplete.xml
+    CMM79_1_02_039.xml
+    CMM79_1_03_040.xml
+    CMM79_1_04_043.xml
+    CMM79_1_05_045.xml
+    CMM79_1_06_047.xml
+    CPDL_Magister_Andreas-Sanctus_Trent92_212v.xml
+    Ciconia_Potential_Parody_Gloria.xml
+    German_Basses_Auction_pt2.musicxml
+    XXbDieMinneFugetWolkenstein65c.xml
+    '''.splitlines()
+    skips = [s.strip() for s in skips]
+
+    def __init__(self):
+        super().__init__()
+        new_data = []
+        for fn in self.data:
+            reject = False
+            fp = pathlib.Path(fn)
+            for skip_start in ('mo_', 'ba_', 'OMF', 'OMR', 'FallowsMB'):
+                if fp.name.startswith(skip_start):
+                    reject = True
+                if fp.name in self.skips:
+                    reject = True
+            if reject:
+                continue
+            new_data.append(fn)
+        self.data = new_data
 
 # ------------------------------
 if __name__ == '__main__':
