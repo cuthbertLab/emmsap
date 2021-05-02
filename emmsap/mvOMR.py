@@ -5,10 +5,10 @@ files into the right place for Sharp score
 import os
 import shutil
 
-inDir = '/Users/Cuthbert/desktop/ArsAntiquaOMR/CMM_79_TIFFs/'
-inPreface = 'cmm79_1__Page_0'
-outDir = '/Users/Cuthbert/desktop/ArsAntiquaOMR/CMM_79_Sorted/'
-outPreface = 'CMM79_1_'
+inDir = '/Users/Cuthbert/desktop/CMM_Dufay_In/'
+inPreface = 'Dufay_6_Page_'
+outDir = '/Users/Cuthbert/desktop/CMM_Dufay_Out/'
+outPreface = 'Dufay_6_'
 
 
 def mkDirs(maximum=100):
@@ -22,6 +22,7 @@ class Mover:
         self.lastPageNum = 11
         self.lastFileNum = 0
 
+        self.skip_on_file_not_found = False
         self.usePreEdited = False
 
     def moveNList(self, nList, *, startNum=1):
@@ -40,13 +41,21 @@ class Mover:
         startPageNum = int(self.lastPageNum + 1)
         thisFileNum = self.lastFileNum + 1
         if not self.usePreEdited:
-            moveRangeAdjust = 1 if isinstance(n, int) else 2 # float means to keep two copies...
+            moveRangeAdjust = 1 if isinstance(n, int) else 2  # float means to keep two copies...
+        else:
+            moveRangeAdjust = 1
 
         for pn in range(startPageNum, int(n) + moveRangeAdjust):
-            pnIn = inDir + inPreface + "%02d.tiff" % pn
+            pnIn = inDir + inPreface + "%03d.tiff" % pn
             pnOut = outDir + "%02d/%s%02d_%03d.tif" % (thisFileNum, outPreface, thisFileNum, pn)
             print(pnIn, pnOut)
-            shutil.copy2(pnIn, pnOut)
+            try:
+                shutil.copy2(pnIn, pnOut)
+            except FileNotFoundError as fnf:
+                if not self.skip_on_file_not_found:
+                    raise fnf
+                else:
+                    pass
 
         self.lastPageNum = n
         self.lastFileNum = thisFileNum
@@ -119,8 +128,22 @@ if __name__ == "__main__":
     #             73, 74., 75., 76., 78
     #              ])
 
-    # CMM 79 part 1
-    # m.usePreEdited = True
-    m.moveNList([38, 39, 40, 43, 45., 47, 49, 55, 57, 59, 60, 61, 63,
-                 65, 66, 67, 69, 70., 72, 73., 75, 77, 79, 80, 81, 84.,
-                 86, 87., 89, 90, 92, 93, 94, 99, 99., '99c'])
+    # # CMM 79 part 1
+    # # m.usePreEdited = True
+    # m.moveNList([38, 39, 40, 43, 45., 47, 49, 55, 57, 59, 60, 61, 63,
+    #              65, 66, 67, 69, 70., 72, 73., 75, 77, 79, 80, 81, 84.,
+    #              86, 87., 89, 90, 92, 93, 94, 99, 99., '99c'])
+
+    # Dufay Volume 6
+    m.skip_on_file_not_found = True
+    m.moveNList([83, 84, 86., 88, 89, 92, 93, 94,
+                 97, 101, 107, 109, 110., 111, 112, 113, 115, 116.,
+                 118, 119, 121, 123, 124., 125., 127, 131, 132, 133, 133., 134.,
+                 135., 136., 136., 137., 138., 139, 139.,
+                 140., 141, 142, 142., 143., 144, 145, 146., 147, 148, 149, 150,
+                 151., 152., 153., 154, 154., 156., 157, 157., 168., 159, 160,
+                 161, 162, 163, 164, 164., 165., 166, 166.,
+                 167., 168, 169, 170, 170., 171., 172., 173, 174, 174., 175.,
+                 176., 177., 178, 178., 179., 183, 184., 187, 188, 189.,
+                 190, 191, 192, 193, 193.
+                 ])
