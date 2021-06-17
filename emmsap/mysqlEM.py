@@ -399,7 +399,7 @@ class Piece(EMMSAPMysqlObject):
 
         exp1 = expressions.TextExpression(
             f'({self.id}) {self.filename} part {p1_id}, '
-            + f'mm. {infoDict["thisMeasureStart"]}-{thisMeasureEnd}'
+            + f'mm. {infoDict["thisMeasureStart"]}-{thisMeasureEnd} -- ratio {ratio}'
         )
         exp2 = expressions.TextExpression(
             f'({infoDict["otherPieceId"]}) {infoDict["otherFilename"]} part {p2_id}, '
