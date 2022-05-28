@@ -4,16 +4,16 @@ from functools import partial
 from music21 import common
 
 try:
-    from Levenshtein import ratio as lvRatio # @UnresolvedImport
+    from Levenshtein import ratio as lvRatio  # @UnresolvedImport
     difflib = None
 except ImportError:
     lvRatio = None
     print("No Levenshtein C program found -- will be much slower; \n"
           + "run pip3 install python-Levenshtein")
-    import difflib # @UnusedImport
+    import difflib  # @UnusedImport
 
 minSegmentLength = 15
-segmentType = 'DiaRhy2' # 'diaSlower1'
+segmentType = 'DiaRhy2'  # 'diaSlower1'
 
 
 def adjustRatiosByFrequency(encodingType='IntRhy'):

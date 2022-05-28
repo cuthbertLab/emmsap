@@ -5,10 +5,7 @@ import getpass
 
 from collections import namedtuple
 
-try:
-    import mysql.connector as mysqlConnector  # @UnresolvedImport
-except ImportError:
-    import pymysql as mysqlConnector
+import mysqlclient
 
 from music21 import common
 from music21 import converter
@@ -73,12 +70,13 @@ class EMMSAPMysql(object):
         self.cursor = self.getNewCursor()
         self.query = ''
 
-    def connect(self):
+    @staticmethod
+    def connect():
         pw_dict = readEMMSAPPasswordFile()
-        cnx = mysqlConnector.connect(user=pw_dict['user'],
-                                     password=pw_dict['password'],
-                                     host=pw_dict['host'],
-                                     database=pw_dict['database'])
+        cnx = mysqlclient.connect(user=pw_dict['user'],
+                                  password=pw_dict['password'],
+                                  host=pw_dict['host'],
+                                  database=pw_dict['database'])
         return cnx
 
     def commit(self):

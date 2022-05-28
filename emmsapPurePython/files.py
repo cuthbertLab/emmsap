@@ -3,17 +3,17 @@
 import os
 import music21
 import pathlib
+import unicodedata
+
 environLocal = music21.environment.Environment()
 
 emmsapBase = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 emmsapDir = os.path.join(emmsapBase, 'xmldata')
 
 
-def fixFilesInADir(dirName=emmsapDir):
+def fixFilesInADir(dirName: str = emmsapDir):
     '''
     Rename all files in a directory that do not fit the naming scheme.
-
-    :type dirName: str
     '''
     #: :type fn: str
     for fn in sorted(os.listdir(dirName)):
@@ -28,7 +28,7 @@ def fixFilesInADir(dirName=emmsapDir):
             # exit()
 
 
-def problemFileNames(filenameList):
+def problemFileNames(filenameList: list[str]):
     '''
     returns a list of tuples of problem filenames and suggested replacements
 
@@ -36,11 +36,7 @@ def problemFileNames(filenameList):
     >>> import pprint
     >>> allF = emmsap.files.allFiles()
     >>> pprint.pprint(emmsap.files.problemFileNames(allF))
-
-    :type filenameList: list(str)
     '''
-    import unicodedata  # @UnresolvedImport
-    # from unidecode import unidecode as un # @UnresolvedImport
     returnList = []
     for fn in filenameList:
         fnNewer = unicodedata.normalize('NFC', fn)
@@ -55,6 +51,7 @@ def problemFileNames(filenameList):
         if fnNewer != fn:
             returnList.append((fn, fnNewer),)
     return returnList
+
 
 def allFiles():
     '''
@@ -75,6 +72,7 @@ def allFiles():
         allFiles2.append(f)
     return allFiles2
 
+
 def allFilesWithPath():
     '''
     returns a list of all the files in the emmsapDirectory
@@ -90,6 +88,7 @@ def allFilesWithPath():
     for fn in allFilesList:
         allFilesPath.append(os.path.join(emmsapDir, fn))
     return allFilesPath
+
 
 class FileIterator(object):
     '''
@@ -130,10 +129,12 @@ class FileIterator(object):
     def next(self):
         return self.__next__()
 
+
 class FourteenthCenturyIterator(FileIterator):
     '''
     An iterator that only includes well-edited 14th and early 15th c. pieces.
     '''
+    # noinspection SpellCheckingInspection
     skips = '''
     Basel_Gaudet_Novum.xml
     Bodley 842 59v.xml
@@ -167,8 +168,7 @@ class FourteenthCenturyIterator(FileIterator):
             new_data.append(fn)
         self.data = new_data
 
+
 # ------------------------------
 if __name__ == '__main__':
-    # problemFileNames()
-    # fixFilesInADir('/Users/cuthbert/Dropbox/Jennings_Notation/Complete Notation Files')
     music21.mainTest()

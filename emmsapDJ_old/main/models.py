@@ -22,7 +22,6 @@ class DjangoMigrations(models.Model):
         db_table = 'django_migrations'
 
 
-
 class Chords(models.Model):
     pieceid = models.IntegerField(db_column='pieceId')  # Field name made lowercase.
     chorddata = models.CharField(db_column='chordData', max_length=32765, blank=True, null=True)  # Field name made lowercase.
@@ -30,7 +29,6 @@ class Chords(models.Model):
     class Meta:
         managed = False
         db_table = 'chords'
-
 
 
 class Country(models.Model):
@@ -60,7 +58,6 @@ class Composer(models.Model):
         db_table = 'composer'
 
 
-
 class Intervals(models.Model):
     fn = models.CharField(max_length=255, blank=True, null=True)
     partid = models.IntegerField(db_column='partId', blank=True, null=True)  # Field name made lowercase.
@@ -69,7 +66,6 @@ class Intervals(models.Model):
 
     def __str__(self):
         return self.fn + ':' + str(self.partid)
-
 
     class Meta:
         managed = False
@@ -132,7 +128,6 @@ class Piece(models.Model):
         else:
             return 0
 
-
     class Meta:
         db_table = 'pieces'
 
@@ -165,15 +160,15 @@ class Texts(models.Model):
     fn = models.CharField(unique=True, max_length=255, blank=True, null=True)
     language = models.CharField(max_length=4, blank=True, null=True)
     text = models.TextField(blank=True, null=True)
-    textreg = models.TextField(db_column='textReg', blank=True, null=True)  # Field name made lowercase.
-    textnospace = models.TextField(db_column='textNoSpace', blank=True, null=True)  # Field name made lowercase.
+    tex_treg = models.TextField(db_column='textReg', blank=True, null=True)  # Field name made lowercase.
+    text_no_space = models.TextField(db_column='textNoSpace', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'texts'
 
 
-class Tinynotation(models.Model):
+class TinyNotation(models.Model):
     fn = models.CharField(max_length=255, blank=True, null=True)
     partid = models.IntegerField(db_column='partId', blank=True, null=True)  # Field name made lowercase.
     tsratio = models.CharField(db_column='tsRatio', max_length=10, blank=True, null=True)  # Field name made lowercase.
