@@ -1,5 +1,5 @@
 # from music21.search import segment
-from emmsap import mysqlEM
+from emmsapPurePython import mysqlEM
 from functools import partial
 from music21 import common
 
@@ -24,8 +24,8 @@ def adjustRatiosByFrequency(encodingType='IntRhy'):
 
     See code for the formula.
     '''
-    query = ("SELECT segment1id, count(segment1id) as cs FROM ratios" + encodingType +
-             " GROUP BY segment1id")
+    query = ('SELECT segment1id, count(segment1id) as cs FROM ratios' + encodingType +
+             ' GROUP BY segment1id')
     em = mysqlEM.EMMSAPMysql()
     em.cursor.execute(query)
     allSegments = [(x[0], x[1]) for x in em.cursor.fetchall()]
@@ -34,8 +34,8 @@ def adjustRatiosByFrequency(encodingType='IntRhy'):
         commitQuery = '''UPDATE ratios{encodingType} 
                          SET ratioAdjust = ratio - ((10000 - ratio) / 10000 * 30 * {segCount})
                          WHERE segment1id = {segId}'''.format(encodingType=encodingType,
-                                                         segCount=segCount,
-                                                         segId=segId)
+                                                              segCount=segCount,
+                                                              segId=segId)
         # print(commitQuery)
         em.cursor.execute(commitQuery)
         if numDone % 1000 == 0:
@@ -175,7 +175,10 @@ def storeAllSegmentData(encodingType):
     return _allSegmentData[encodingType]
 
 
-def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='down', encodingType='DiaRhy2'):
+def getRatiosForSegment(idOrSegment=1,
+                        dbObj=None,
+                        searchDirection='down',
+                        encodingType='DiaRhy2'):
     '''
     returns a list of tuples for a segment object (or segment id)
     which contain the id, otherId, and ratio * 10000 for every other segment
@@ -196,10 +199,15 @@ def getRatiosForSegment(idOrSegment=1, dbObj=None, searchDirection='down', encod
 
     if dbObj is None:
         dbObj = mysqlEM.EMMSAPMysql()
+
+    segmentObj: mysqlEM.Segment
     if isinstance(idOrSegment, int):
         segmentObj = mysqlEM.Segment(idOrSegment, dbObj=dbObj)
-    else:
+    elif isinstance(idOrSegment, mysqlEM.Segment):
         segmentObj = idOrSegment
+    else:
+        raise ValueError('idOrSegment must by int or segment')
+
     if len(segmentObj.segmentData) < minSegmentLength:
         return
     thisId = segmentObj.id

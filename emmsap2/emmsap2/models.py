@@ -46,7 +46,7 @@ class Piece(models.Model):
     filename = models.CharField(unique=True, max_length=255, blank=True, null=True)
     piece_name = models.CharField(max_length=255, blank=True, null=True)
     composer = models.ForeignKey(Composer, blank=False, null=False, default=12, on_delete=models.CASCADE)
-    frag = models.IntegerField(blank=True, null=True)
+    frag = models.BooleanField(blank=True, null=True)
 
     def __init__(self, *args, **kwargs):
         super(*args, **kwargs)

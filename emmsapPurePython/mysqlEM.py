@@ -14,7 +14,7 @@ from music21 import layout
 from music21 import note
 from music21 import stream
 
-from emmsap import files
+from emmsapPurePython import files
 
 
 RatioMatch = namedtuple('RatioMatch', 'thisSegmentId otherSegmentId thisRatio')
