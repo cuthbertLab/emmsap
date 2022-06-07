@@ -45,11 +45,12 @@ class Intervals(models.Model):
 class Piece(models.Model):
     filename = models.CharField(unique=True, max_length=255, blank=True, null=True)
     piece_name = models.CharField(max_length=255, blank=True, null=True)
-    composer = models.ForeignKey(Composer, blank=False, null=False, default=12, on_delete=models.CASCADE)
+    composer = models.ForeignKey(Composer, blank=False, null=False, default=0,
+                                 on_delete=models.CASCADE)
     frag = models.BooleanField(blank=True, null=True)
 
     def __init__(self, *args, **kwargs):
-        super(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self._stream = None
 
     def __str__(self):
@@ -64,13 +65,14 @@ class Piece(models.Model):
         if self.filename is not None:
             from music21 import converter
             import os
-            from emmsap import files
+            from emmsap2.emmsap2 import files
+            # noinspection PyBroadException
             try:
                 s = converter.parse(os.path.join(files.emmsapDir, self.filename))
                 self._stream = s
                 return s
-            except:
-                print("%s Failed in conversion" % self.filename)
+            except Exception:
+                print(f'{self.filename} Failed in conversion')
                 return None
         else:
             return None

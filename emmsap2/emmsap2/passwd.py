@@ -18,7 +18,7 @@ def readEMMSAPPasswordFile(userdir=''):
 
     database=emmsap
     host=localhost
-    user=username
+    username=username
     password=PASSWORD
     '''
     if not userdir:
@@ -48,14 +48,16 @@ def readEMMSAPPasswordFile(userdir=''):
         'database': 'emmsap',
     }
 
-    for i, p in enumerate(pwContents):
+    for p in pwContents:
         p = p.strip()
+        if not p:
+            continue
         if '=' in p:
             key, value = p.split('=', 1)
             if key in ('password', 'host', 'username', 'database'):
                 # noinspection PyTypedDict
                 pw_dict[key] = value
         else:
-            pw_dict['password'] = p
+            print(f'Cannot read a value from {p}')
 
     return pw_dict
