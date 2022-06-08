@@ -65,7 +65,7 @@ def allFiles() -> list[str]:
     '''
     all_files = emmsapDir.iterdir()
     allFiles2: list[str] = []
-    for f in all_files:
+    for f in sorted(all_files):
         if f.name.startswith('.'):
             continue
         allFiles2.append(f.name)

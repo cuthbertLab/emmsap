@@ -8,7 +8,6 @@ from music21 import pitch
 
 # experimentally, these were found to have octave errors in some staff
 incorrectlyEncoded = ['OMR', # do not trust OMR scores.
-                      'OMF_PMFC14', # misspelled OMR
                       'FallowsMB_', # # 89 has a G5 but should not be in the dataset (much later)
                       'Chi_caval_msc', # octave error.
                       'Ciconia_Potential_Parody_Gloria',  # C2 is octave off
