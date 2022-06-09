@@ -13,16 +13,25 @@ from ...models import Piece
 from ...files import allFiles
 from ...index_segments import main as index_segments_main
 from ...index_ratios import update_ratio_table_parallel
+from ...index_texts import main as index_texts_main
+from ...index_tinyNotation import main as index_tinyNotation_main
 
 
 class Command(BaseCommand):
     help = 'Index files from the disk'
 
     def handle(self, *args, **options):
-        # self.updateFiles()
-        # index_segments_main('dia_rhy')
-        # index_segments_main('int_rhy')
+        '''
+        Tasks when the database is updated
+        '''
+        self.updateFiles()
+        index_texts_main()
+        index_tinyNotation_main()
+        index_segments_main('dia_rhy')
+        index_segments_main('int_rhy')
         update_ratio_table_parallel('dia_rhy')
+        update_ratio_table_parallel('int_rhy')
+        print('Done!')
 
     def updateFiles(self):
         all_files = allFiles()

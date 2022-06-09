@@ -5,17 +5,12 @@ import typing as t
 from django.db.models.query import QuerySet
 from django.db import transaction, connection
 
-from music21 import common
-
-
 try:
-    from Levenshtein import ratio as lvRatio  # @UnresolvedImport
-    difflib = None
-except ImportError:
-    lvRatio = None
-    print("No Levenshtein C program found -- will be much slower; \n"
-          + "run pip3 install python-Levenshtein")
-    import difflib  # @UnusedImport
+    from Levenshtein import ratio as lvRatio
+except ImportError as ie:
+    raise ImportError(
+        'No Levenshtein C program found -- will be much slower; \n'
+          + 'run pip3 install python-Levenshtein') from ie
 
 
 from .models import Segment, Ratio
@@ -67,8 +62,6 @@ def commit_ratio_for_one_segment(
     encoding_type: str = 'dia_rhy',
 ) -> int:
     new_ratios = get_ratios_for_segment(seg, search_direction, encoding_type)
-    if not new_ratios:
-        return 0
     for rat in new_ratios:
         rat.save()
     seg.ratio_searched = True
@@ -97,7 +90,7 @@ def get_ratios_for_segment(
 ) -> t.Sequence[Ratio]:
     minimums = {
         'dia_rhy': 5900,
-        'int_rhy': 6200,
+        'int_rhy': 6500,
     }
     minimum_to_store = minimums[encoding_type]
     others = raw_ratios(encoding_type)
@@ -131,11 +124,6 @@ def get_ratios_for_segment(
     return new_objs
 
 
-
 def ratio_from_segment_data(data1: str, data2: str) -> int:
-    if lvRatio is not None:
-        return int(10_000 * lvRatio(data1, data2))
-    else:
-        sm = difflib.SequenceMatcher(None, data1, data2)
-        return int(10_000 * sm.ratio())
+    return int(10_000 * lvRatio(data1, data2))
 

@@ -121,12 +121,12 @@ def regularizeText(text, language):
 
 
 mistakes = {
-            'PMFC_01_Tournai_6-Ite_Missa_Est.xml': 'la',
-            'Ascoli_Piceno_Mater_Digna_Dei_Lux.xml': 'la',
-            'Marchi_Notation_16-Virtute_sacquista_cum_grande_faticha.xml': 'la',
-            'PMFC_01_Barcelona_1-Kyrie.xml': 'la', # should be gr...
-            'PMFC_01_Tournai_1-Kyrie.xml': 'la',
-            'Machaut_R01-Doulz_viaire_gracieus.xml': 'fr',
+    'PMFC_01_Tournai_6-Ite_Missa_Est.xml': 'la',
+    'Ascoli_Piceno_Mater_Digna_Dei_Lux.xml': 'la',
+    'Marchi_Notation_16-Virtute_sacquista_cum_grande_faticha.xml': 'la',
+    'PMFC_01_Barcelona_1-Kyrie.xml': 'la', # should be gr...
+    'PMFC_01_Tournai_1-Kyrie.xml': 'la',
+    'Machaut_R01-Doulz_viaire_gracieus.xml': 'fr',
 }
 
 

@@ -13,7 +13,7 @@ from . import files
 
 
 class Chords(models.Model):
-    piece_id = models.IntegerField()
+    piece = models.OneToOneField('Piece', on_delete=models.CASCADE)
     chord_data = models.TextField(blank=True, null=True)
 
 
@@ -40,17 +40,18 @@ class Composer(models.Model):
 
 
 class Intervals(models.Model):
-    fn = models.CharField(max_length=255, blank=True, null=True)
+    piece = models.ForeignKey('Piece', on_delete=models.CASCADE)
     part_id = models.IntegerField(db_column='partId', blank=True, null=True)
     intervals = models.TextField(blank=True, null=True)
     intervals_no_unisons = models.TextField(blank=True, null=True)
     intervals_with_rests = models.TextField(blank=True, null=True)
+    intervals_one_char = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.fn + ':' + str(self.part_id)
 
     class Meta:
-        unique_together = (('fn', 'part_id'),)
+        unique_together = (('piece', 'part_id'),)
 
 
 class Piece(models.Model):
@@ -152,8 +153,8 @@ class Ratio(models.Model):
         ]
 
 
-class Texts(models.Model):
-    piece = models.ForeignKey(Piece, on_delete=models.CASCADE)
+class Text(models.Model):
+    piece = models.OneToOneField(Piece, on_delete=models.CASCADE)
     language = models.CharField(max_length=4, blank=True, null=True)
     text = models.TextField(blank=True, null=True)
     text_reg = models.TextField(blank=True, null=True)

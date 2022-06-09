@@ -127,14 +127,14 @@ def runAll(table='tinyNotation'):
         except Exception as e:
             print(fn + " could not be converted: " + str(e))
 
+
 if __name__ == '__main__':
     runAll('intervals')
-    #from music21.ext.parmap import starmap
-    #starmap(onePiece, files.allFiles())
-#    onePiece('Assisi_187_frag_3.xml')
-    #async_dec.runFuncAsync(onePiece, [('Assisi_187_fragment3.xml',)])
-    #async_dec.runFuncAsync(onePiece, [(fn, ) for fn in files.allFiles()])
-#    for fn in files.allFiles():
-        # print(fn, exists(fn))
+    # from music21.ext.parmap import starmap
+    # starmap(onePiece, files.allFiles())
+    # onePiece('Assisi_187_frag_3.xml')
+    # async_dec.runFuncAsync(onePiece, [('Assisi_187_fragment3.xml',)])
+    # async_dec.runFuncAsync(onePiece, [(fn, ) for fn in files.allFiles()])
+    # for fn in files.allFiles():
+    #   print(fn, exists(fn))
        
-    
