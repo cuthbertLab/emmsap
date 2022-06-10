@@ -18,7 +18,7 @@ encodings_to_algorithms = {
 
 
 def main(encoding_type: str):
-    print('Beginning to index segments')
+    print(f'Beginning to index segments for {encoding_type=}')
     missing = find_pieces_without_segments(encoding_type)
     print(f'{len(missing)} piece(s) to index')
     segment_indexes = index_pieces_segments(missing, encoding_type)

@@ -41,7 +41,7 @@ class Composer(models.Model):
 
 class Intervals(models.Model):
     piece = models.ForeignKey('Piece', on_delete=models.CASCADE)
-    part_id = models.IntegerField(db_column='partId', blank=True, null=True)
+    part_id = models.IntegerField(blank=True, null=True)
     intervals = models.TextField(blank=True, null=True)
     intervals_no_unisons = models.TextField(blank=True, null=True)
     intervals_with_rests = models.TextField(blank=True, null=True)
@@ -76,17 +76,13 @@ class Piece(models.Model):
         '''
         returns a music21 Score object from this piece
         '''
-        if hasattr(self, '_stream') and self._stream is not None:
+        if self._stream is not None:
             return self._stream
         if self.filename is not None:
             # noinspection PyBroadException
-            try:
-                s = converter.parse(self.filepath)
-                self._stream = s
-                return s
-            except Exception:
-                print(f'{self.filename} Failed in conversion')
-                return None
+            s = converter.parse(self.filepath)
+            self._stream = s
+            return s
         else:
             return None
     
@@ -141,7 +137,7 @@ class Segment(models.Model):
 class Ratio(models.Model):
     segment1 = models.ForeignKey(Segment, on_delete=models.CASCADE, related_name='segment1s')
     segment2 = models.ForeignKey(Segment, on_delete=models.CASCADE, related_name='segment2s')
-    ratio = models.SmallIntegerField(db_index=True)
+    ratio = models.SmallIntegerField()
     encoding_type = models.CharField(max_length=20)
 
     def __repr__(self):
@@ -170,3 +166,18 @@ class TinyNotation(models.Model):
 
     class Meta:
         unique_together = (('piece', 'part_id'),)
+
+
+class SkipGroupCategory(models.Model):
+    category = models.CharField(max_length=255)
+
+
+class SkipGroup(models.Model):
+    reason = models.TextField(blank=True, default='')
+    category = models.ForeignKey(SkipGroupCategory, blank=True, null=True, on_delete=models.SET_NULL)
+
+
+class SkipPiece(models.Model):
+    skip_group = models.ForeignKey(SkipGroup, on_delete=models.CASCADE)
+    piece = models.ForeignKey(Piece, on_delete=models.CASCADE)
+

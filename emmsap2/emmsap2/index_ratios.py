@@ -25,7 +25,7 @@ def update_ratio_table_parallel(encoding_type: str):
     max_workers = 3
     missing_segments = find_segments_with_no_ratios(encoding_type)
     num_missing_segments = len(missing_segments)
-    print(f'{num_missing_segments} waiting to be indexed')
+    print(f'{num_missing_segments} waiting to be indexed for {encoding_type=}')
     partial_commit = partial(commit_ratio_for_one_segment,
                              encoding_type=encoding_type,
                              search_direction='down')

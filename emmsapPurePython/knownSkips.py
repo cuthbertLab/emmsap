@@ -1024,7 +1024,7 @@ skipFilenames = [
     ('OMR_PMFC14_84_183.xml', 'OMR_PMFC15_15_075.xml'),
     ('OMR_PMFC_02_L14_Lay_plour_Malgre_Fortune.xml',
      'OMR_PMFC_02_L10_Lay_Nostre_Dame.xml'),
-    ('OMR_PMFC17_66_175.xml', 'Bodley 842 59v.xml'),
+    ('OMR_PMFC17_66_175.xml', 'Bodley_842_59v.xml'),
     ('OMR_PMFC17_62_165.xml', 'FallowsMB_024_Felix_namque.mxl'),
     ('E15cM_5_AdC-02.xml', 'PMFC_22_4-Merci_pour_dieu.xml'),
     ('E15cM_5_AdC-05.xml',
