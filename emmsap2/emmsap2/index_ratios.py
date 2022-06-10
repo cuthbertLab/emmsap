@@ -22,6 +22,7 @@ def update_ratio_table_parallel(encoding_type: str):
     computing ratios for all segments (against all lower numbered segments)
     that do not have ratios computed
     '''
+    max_workers = 3
     missing_segments = find_segments_with_no_ratios(encoding_type)
     num_missing_segments = len(missing_segments)
     print(f'{num_missing_segments} waiting to be indexed')
@@ -29,7 +30,7 @@ def update_ratio_table_parallel(encoding_type: str):
                              encoding_type=encoding_type,
                              search_direction='down')
     print('Starting multi-threading index task, will take some time before first results.')
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_seg = {executor.submit(partial_commit, seg): seg
                          for seg in missing_segments}
         total_done = 0

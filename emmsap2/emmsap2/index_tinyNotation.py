@@ -31,7 +31,10 @@ def index_tinyNotation_one_part(piece, part, part_id):
     if not ts_obj:
         ts_ratio = 'unk'
     else:
-        ts_ratio = ts_obj.ratioString
+        # we use numerator, denominator because
+        # it automatically converts 2/2+1/16 to 17/16
+        # (or for this project, 9/8+9/8+9/8)
+        ts_ratio = f'{ts_obj.numerator}/{ts_obj.denominator}'
     pf = part.flatten().notesAndRests.stream()
     tn = convert(pf)
     pf_strip = pf.stripTies()
