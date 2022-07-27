@@ -5,7 +5,6 @@ Populates the MYSQL database using info from the directory and sheets
 
 Run updateDB instead of this before searching via similarityDB
 '''
-import os
 from django.core.management.base import BaseCommand  # , CommandError
 
 

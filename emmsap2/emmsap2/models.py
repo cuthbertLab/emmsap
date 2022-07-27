@@ -6,7 +6,10 @@ from django.db import models
 
 from music21 import converter
 from music21 import expressions
+from music21 import instrument
 from music21 import layout
+from music21 import metadata
+from music21 import note
 from music21 import stream
 
 from . import files
@@ -102,6 +105,22 @@ class Piece(models.Model):
         else:
             return 0
 
+    def skip_piece_ids(self) -> set(int):
+        '''
+        Return pieces that are too related to this one to
+        consider interestingly similar; e.g. contrafacts, known quotations
+        commonplace examples.  Uses SkipPiece and SkipGroups
+        '''
+        s = set()
+        for sp in SkipPiece.objects.select_related('skip_group').filter(piece_id=self.id):
+            other_skips = sp.skip_group.skippiece_set.all()
+            for other_skip in other_skips:
+                s.add(other_skip.piece_id)
+        if self.id in s:
+            s.remove(self.id)
+        return s
+
+
 
 class Segment(models.Model):
     piece = models.ForeignKey(Piece, on_delete=models.CASCADE) 
@@ -112,19 +131,25 @@ class Segment(models.Model):
     segment_data = models.CharField(max_length=40, blank=True, null=True)
     ratio_searched = models.BooleanField(default=False)
 
-    def show(self):
+
+    def stream(self):
         p = self.piece.stream()
         part = p.parts[self.part_id]
         excerpt = part.measures(self.measure_start, self.measure_end)
         for el in list(excerpt[layout.LayoutBase]):
             excerpt.remove(el, recurse=True)
+        for el in list(excerpt[instrument.Instrument]):
+            excerpt.remove(el, recurse=True)
 
         express = expressions.TextExpression(
-            f'{self.piece.filename} part {self.part_id}, '
+            f'{self.piece.filename} ({self.piece.id}) part {self.part_id}, '
             + f'mm. {self.measure_start}-{self.measure_end}'
         )
         excerpt[stream.Measure][0].insert(0, express)
-        excerpt.show()
+        return excerpt
+
+    def show(self):
+        self.stream().show()
 
     class Meta:
         indexes = [
@@ -142,6 +167,42 @@ class Ratio(models.Model):
 
     def __repr__(self):
         return f'<Ratio {self.ratio} {self.encoding_type} {self.segment1_id} {self.segment2_id}>'
+
+
+    def stream(self):
+        p1 = self.segment1.stream()
+        p2 = self.segment2.stream()
+        s = stream.Measure()
+
+        md = metadata.Metadata()
+        md.title = '\n'.join([
+            self.segment1.piece.filename,
+            self.segment2.piece.filename,
+            ])
+        p1.insert(0, md)
+
+        r = note.Rest()
+        r.duration = p1[stream.Measure].last().barDuration
+
+        r.style.hideObjectOnPrint = True
+        r.expressions.append(expressions.Fermata())
+        sl = layout.SystemLayout(isNew=True)
+        sl.priority = -1
+        s.insert(0, sl)
+        s.append(r)
+        s.insert(0, expressions.TextExpression(f'Ratio {self.ratio}'))
+
+        p1.append(s)
+
+        no_layout_added = True
+        for el in p2:
+            if no_layout_added and isinstance(el, stream.Measure):
+                sl = layout.SystemLayout(isNew=True)
+                el.insert(0, sl)
+                no_layout_added = False
+            p1.coreAppend(el)
+        p1.coreElementsChanged()
+        return p1
 
     class Meta:
         indexes = [

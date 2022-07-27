@@ -51,7 +51,7 @@ def main():
         t_obj = Text(
             piece=p,
             language=language,
-            text=text,
+            text=piece_text,
             text_reg=text_reg,
             text_no_space=text_no_space,
         )
@@ -93,9 +93,11 @@ def regularize_text(text_in: str, language: str) -> tuple[str, str]:
     for punctuation_mark in string.punctuation:
         text_reg = text_reg.replace(punctuation_mark, '')  # partly redundant with above
     text_reg = text_reg.replace('…', '')
+    text_reg = text_reg.replace('\n', ' ')
     text_reg = re.sub(r'(\s)\s+', r'\g<1>', text_reg)
     text_reg = unicodedata.normalize('NFKD', text_reg)
     text_reg = text_reg.encode('ascii', 'ignore').decode('UTF-8')
+    text_reg = text_reg.strip()
 
     text_no_space = re.sub(r'\W+', '', text_reg)
     return (text_reg, text_no_space)
