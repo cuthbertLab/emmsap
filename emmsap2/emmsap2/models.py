@@ -4,11 +4,14 @@ import pathlib
 
 from django.db import models
 
+from music21 import clef
 from music21 import converter
 from music21 import expressions
 from music21 import instrument
+from music21 import key
 from music21 import layout
 from music21 import metadata
+from music21 import meter
 from music21 import note
 from music21 import stream
 
@@ -132,7 +135,7 @@ class Segment(models.Model):
     ratio_searched = models.BooleanField(default=False)
 
 
-    def stream(self):
+    def stream(self) -> stream.Part:
         p = self.piece.stream()
         part = p.parts[self.part_id]
         excerpt = part.measures(self.measure_start, self.measure_end)
@@ -169,9 +172,9 @@ class Ratio(models.Model):
         return f'<Ratio {self.ratio} {self.encoding_type} {self.segment1_id} {self.segment2_id}>'
 
 
-    def stream(self):
-        p1 = self.segment1.stream()
-        p2 = self.segment2.stream()
+    def stream(self) -> stream.Part:
+        p1: stream.Part = self.segment1.stream()
+        p2: stream.Part = self.segment2.stream()
         s = stream.Measure()
 
         md = metadata.Metadata()
@@ -199,6 +202,11 @@ class Ratio(models.Model):
             if no_layout_added and isinstance(el, stream.Measure):
                 sl = layout.SystemLayout(isNew=True)
                 el.insert(0, sl)
+                el.insert(0, el.getContextByClass(clef.Clef))
+                if (ks := el.getContextByClass(key.KeySignature)) is not None:
+                    el.insert(0, ks)
+                if (ts := el.getContextByClass(meter.TimeSignature)) is not None:
+                    el.insert(0, ts)
                 no_layout_added = False
             p1.coreAppend(el)
         p1.coreElementsChanged()
