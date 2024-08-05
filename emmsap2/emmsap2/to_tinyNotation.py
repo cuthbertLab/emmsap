@@ -34,7 +34,7 @@ def convert_one_el(n, last_tn_type):
         elif note_octave >= 5:
             note_name = note_step.lower() + ("'" * (note_octave - 4)) + accidental_modifier
         else:  # octave 4
-            note_name = note_name.lower()
+            note_name = note_name.lower() + accidental_modifier
     elif isinstance(n, music21.note.Rest):
         note_name = 'r'
     else:
