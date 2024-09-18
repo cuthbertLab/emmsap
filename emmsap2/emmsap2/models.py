@@ -202,7 +202,8 @@ class Ratio(models.Model):
             if no_layout_added and isinstance(el, stream.Measure):
                 sl = layout.SystemLayout(isNew=True)
                 el.insert(0, sl)
-                el.insert(0, el.getContextByClass(clef.Clef))
+                if (cl := el.getContextByClass(clef.Clef)) is not None:
+                    el.insert(0, cl)
                 if (ks := el.getContextByClass(key.KeySignature)) is not None:
                     el.insert(0, ks)
                 if (ts := el.getContextByClass(meter.TimeSignature)) is not None:
