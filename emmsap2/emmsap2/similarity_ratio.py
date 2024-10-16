@@ -152,11 +152,18 @@ class SimilaritySearcher(object):
                     if ascii_diff < 2:
                         num_noodles += 1
             elif self.segment_type == 'int_rhy':
+                # 41+32 = 73 -- basis.
                 this_ord = ord(this_n)
                 if 75 >= this_ord >= 71:
                     num_noodles += 1
+            elif self.segment_type == 'int_dia_diff':
+                # 41+32 = 73 -- basis.
+                this_ord = ord(this_n)
+                # unison or diatonic second up or down.
+                if 74 >= this_ord >= 72:
+                    num_noodles += 1
             else:
-                print('Unknown segment type ' + self.segment_type)
+                print('run_anti_noodle_protection: Unknown segment type ' + self.segment_type)
 
         noodle_fraction = num_noodles / segment_length
         total_penalty = int(ratio_off_100 * noodle_fraction)

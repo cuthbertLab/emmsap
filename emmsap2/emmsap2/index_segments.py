@@ -6,14 +6,17 @@ from music21 import search as searchBase
 from music21.search import segment
 
 
+from .indexing_methods import translate_diatonic_intervals_and_speed
 from .models import Piece, Segment
 
 
+# change management/commands/updateDB.py when this changes.
 encodings_to_algorithms = {
     # 'dia_slower1': searchBase.translateStreamToString,
     'dia_rhy': searchBase.translateDiatonicStreamToString,
     # 'int_rhy_jitter': searchBase.translateIntervalsAndSpeed,
-    'int_rhy': searchBase.translateIntervalsAndSpeed,
+    # 'int_rhy': searchBase.translateIntervalsAndSpeed,
+    'int_dia_diff':  translate_diatonic_intervals_and_speed,
 }
 
 
@@ -30,9 +33,20 @@ def main(encoding_type: str):
     store_segments(piece_to_segments, encoding_type)
 
 
+# too short pieces that do not have segments.
+ignore_these = {
+    'Vienna_922_Gloria_T_end.xml',
+    'Fauvel_Monophonic_59.mxl',
+    'Fauvel_Monophonic_60.mxl',
+    'Fauvel_Monophonic_63.mxl',
+    'Fauvel_Monophonic_65.mxl',
+}
+
 def find_pieces_without_segments(encoding_type: str) -> list[Piece]:
     missing = []
     for p in Piece.objects.prefetch_related('segment_set'):
+        if p.filename in ignore_these:
+            continue
         if not p.segment_set.filter(encoding_type=encoding_type).count():
             missing.append(p)
     return missing

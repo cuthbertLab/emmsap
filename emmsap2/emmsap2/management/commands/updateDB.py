@@ -27,9 +27,9 @@ class Command(BaseCommand):
         index_texts_main()
         index_tinyNotation_main()
         index_segments_main('dia_rhy')
-        index_segments_main('int_rhy')
+        index_segments_main('int_dia_diff')
         update_ratio_table_parallel('dia_rhy')
-        update_ratio_table_parallel('int_rhy')
+        update_ratio_table_parallel('int_dia_diff')
         print('Done!')
 
     def updateFiles(self):

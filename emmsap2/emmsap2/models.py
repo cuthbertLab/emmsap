@@ -24,7 +24,7 @@ class Chords(models.Model):
 
 
 class Country(models.Model):
-    name = models.CharField(max_length=40, blank=True, null=True)
+    name = models.CharField(max_length=40, blank=True, null=True, unique=True)
 
     def __str__(self):
         return self.name
@@ -33,9 +33,15 @@ class Country(models.Model):
         verbose_name_plural = 'countries'
 
 
+class ComposerManager(models.Manager):
+    def get_by_natural_key(self, natural_key: str):
+        return self.get(name=natural_key)
+
 class Composer(models.Model):
+    objects = ComposerManager()
+
     is_canonical = models.BooleanField(blank=True, null=True)
-    name = models.CharField(max_length=64, blank=True, null=True)
+    name = models.CharField(max_length=64, blank=True, null=True, unique=True)
     sort_year = models.IntegerField(blank=True, null=True)
     earliest_year = models.IntegerField(blank=True, null=True)
     latest_year = models.IntegerField(blank=True, null=True)
@@ -43,6 +49,9 @@ class Composer(models.Model):
 
     def __str__(self):
         return self.name
+
+    def natural_key(self) -> tuple[str, ...]:
+        return (self.name,)
 
 
 class Intervals(models.Model):
@@ -54,13 +63,19 @@ class Intervals(models.Model):
     intervals_one_char = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.fn + ':' + str(self.part_id)
+        return self.piece.filename + ':' + str(self.part_id)
 
     class Meta:
         unique_together = (('piece', 'part_id'),)
 
 
+class PieceManager(models.Manager):
+    def get_by_natural_key(self, natural_key: str):
+        return self.get(filename=natural_key)
+
 class Piece(models.Model):
+    objects = PieceManager()
+
     filename = models.CharField(unique=True, max_length=255, blank=True, null=True)
     piece_name = models.CharField(max_length=255, blank=True, null=True)
     composer = models.ForeignKey(Composer, blank=False, null=False, default=1,
@@ -73,6 +88,9 @@ class Piece(models.Model):
 
     def __str__(self):
         return self.filename
+
+    def natural_key(self) -> tuple[str, ...]:
+        return (self.filename,)
 
     @property
     def filepath(self) -> pathlib.Path:
@@ -108,13 +126,13 @@ class Piece(models.Model):
         else:
             return 0
 
-    def skip_piece_ids(self) -> set(int):
+    def skip_piece_ids(self) -> set[int]:
         '''
         Return pieces that are too related to this one to
         consider interestingly similar; e.g. contrafacts, known quotations
         commonplace examples.  Uses SkipPiece and SkipGroups
         '''
-        s = set()
+        s: set[int] = set()
         for sp in SkipPiece.objects.select_related('skip_group').filter(piece_id=self.id):
             other_skips = sp.skip_group.skippiece_set.all()
             for other_skip in other_skips:
@@ -238,14 +256,25 @@ class TinyNotation(models.Model):
         unique_together = (('piece', 'part_id'),)
 
 
+class SkipGroupCategoryManager(models.Manager):
+    def get_by_natural_key(self, natural_key: str):
+        return self.get(category=natural_key)
+
 class SkipGroupCategory(models.Model):
+    objects = SkipGroupCategoryManager
+
     category = models.CharField(max_length=255)
+
+    def natural_key(self):
+        return (self.category,)
 
 
 class SkipGroup(models.Model):
     reason = models.TextField(blank=True, default='')
-    category = models.ForeignKey(SkipGroupCategory, blank=True, null=True, on_delete=models.SET_NULL)
-
+    category = models.ForeignKey(SkipGroupCategory,
+                                 blank=True,
+                                 null=True,
+                                 on_delete=models.SET_NULL)
 
 class SkipPiece(models.Model):
     skip_group = models.ForeignKey(SkipGroup, on_delete=models.CASCADE)

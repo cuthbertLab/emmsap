@@ -39,9 +39,11 @@ def update_ratio_table_parallel(encoding_type: str):
             num_added += future.result()
             total_done += 1
             if not total_done % 30:
-                print(f'Done {total_done} segments of {num_missing_segments} -- found {num_added} interesting.')
+                print(f'Done {total_done} segments of {num_missing_segments} ' 
+                      f'-- found {num_added} interesting.')
 
-    # common.runNonParallel(missing_segments, partial_commit, updateMultiply=30, updateFunction=True)
+    # common.runNonParallel(missing_segments, partial_commit,
+    #                       updateMultiply=30, updateFunction=True)
 
 
 def find_segments_with_no_ratios(encoding_type: str) -> QuerySet[Segment]:
@@ -92,6 +94,7 @@ def get_ratios_for_segment(
     minimums = {
         'dia_rhy': 5900,
         'int_rhy': 6500,
+        'int_dia_diff': 6500,
     }
     minimum_to_store = minimums[encoding_type]
     others = raw_ratios(encoding_type)
