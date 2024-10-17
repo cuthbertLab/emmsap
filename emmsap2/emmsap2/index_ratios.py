@@ -2,8 +2,9 @@ import concurrent.futures
 from functools import partial, cache
 import typing as t
 
-from django.db.models.query import QuerySet
 from django.db import transaction, connection
+from django.db.models.query import QuerySet
+from django.db.utils import IntegrityError
 
 try:
     from Levenshtein import ratio as lvRatio
@@ -66,7 +67,10 @@ def commit_ratio_for_one_segment(
 ) -> int:
     new_ratios = get_ratios_for_segment(seg, search_direction, encoding_type)
     for rat in new_ratios:
-        rat.save()
+        try:
+            rat.save()
+        except IntegrityError:
+            print(f'Ratio {rat.id} references a deleted segment')
     seg.ratio_searched = True
     seg.save()
     return len(new_ratios)
@@ -92,9 +96,9 @@ def get_ratios_for_segment(
     encoding_type: str = 'dia_rhy',
 ) -> t.Sequence[Ratio]:
     minimums = {
-        'dia_rhy': 5900,
-        'int_rhy': 6500,
-        'int_dia_diff': 6500,
+        'dia_rhy': 7000,
+        'int_rhy': 7000,
+        'int_dia_diff': 7000,
     }
     minimum_to_store = minimums[encoding_type]
     others = raw_ratios(encoding_type)

@@ -81,8 +81,14 @@ def store_segments(piece_to_segments: dict[Piece, t.Any], encoding_type: str) ->
                     measure_start = ml[segment_id][0]
                     measure_end = ml[segment_id][1]
                     segment_data = part_info['segmentList'][segment_id]
-                    if len(segment_data) < 10:
-                        continue  # don't index last few notes, etc.
+                    if len(segment_data) < 20 and segment_id > 0:
+                        # don't index last few notes, etc. which will be included
+                        # in the previous segment.
+                        continue
+                    if len(segment_data) < 10 and segment_id == 0:
+                        # don't index pieces with fewer than 10 notes at all.
+                        continue
+
                     seg = Segment(
                         piece=piece_obj,
                         part_id=part_id,

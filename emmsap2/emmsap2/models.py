@@ -87,7 +87,7 @@ class Piece(models.Model):
         self._stream = None
 
     def __str__(self):
-        return self.filename
+        return str(self.filename)
 
     def natural_key(self) -> tuple[str, ...]:
         return (self.filename,)
@@ -110,14 +110,14 @@ class Piece(models.Model):
         else:
             return None
     
-    def numberOfVoices(self):
+    def number_of_voices(self):
         '''
         returns the number of voices in the piece
         
-        >>> p = Piece(4)
+        >>> p = Piece.objects.get(pk=4)
         >>> p.filename
         u'Ascoli_Piceno_Mater_Digna_Dei_Lux.xml'
-        >>> p.numberOfVoices()
+        >>> p.number_of_voices()
         2
         '''
         s = self.stream()
@@ -234,7 +234,9 @@ class Ratio(models.Model):
     class Meta:
         indexes = [
             models.Index(fields=['encoding_type']),
+            models.Index(fields=['segment1']),
         ]
+        unique_together = (('encoding_type', 'segment1', 'segment2'),)
 
 
 class Text(models.Model):

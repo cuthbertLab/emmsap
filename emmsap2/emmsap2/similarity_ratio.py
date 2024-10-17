@@ -4,18 +4,29 @@ from .models import Piece, Segment, Ratio
 
 
 class SimilaritySearcher(object):
-    def __init__(self, start_piece=1, end_piece=4000, min_threshold=8000, max_to_show=2):
+    def __init__(
+        self,
+        start_piece: int = 1,
+        end_piece: int = 4000,
+        min_threshold: int = 8000,
+        max_to_show: int = 2,
+        *,
+        segment_type: str = 'dia_rhy',
+        max_threshold: int = 10001,
+        ignore_known_skips: bool = True,
+    ):
         self.start_piece = start_piece
         self.end_piece = end_piece
         self.min_threshold = min_threshold
-        self.max_threshold = 10001
+        self.max_threshold = max_threshold
         # start at 3898 when going to dia_rhy again...
         self.segment_type = 'dia_rhy'
-        # start at 3896 when going to int_rhy again...
-        # self.segment_type = 'int_rhy'
+        # start at 3896 when going to int_dia_diff again...
+        # self.segment_type = 'int_dia_diff'
         self.max_to_show = max_to_show
         # 0 or 300 after skipping one, the odds of a good match goes down.
         self.skipped_match_penalty = 0
+        self.ignore_known_skips = ignore_known_skips
 
         # look out for M2, m2 that are the same rhythm and adjust down
         self.anti_noodle_protection = True
@@ -61,7 +72,7 @@ class SimilaritySearcher(object):
             return
 
         print('Running piece %d (%s)' % (piece_id, p.filename))
-        skips = set()  # = p.skip_piece_ids()
+        skips = p.skip_piece_ids() if self.ignore_known_skips else set()
         ratios = Ratio.objects.select_related('segment1', 'segment2').filter(
             encoding_type=self.segment_type,
             segment1__piece_id=piece_id,
