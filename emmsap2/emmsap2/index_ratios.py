@@ -70,7 +70,7 @@ def commit_ratio_for_one_segment(
         try:
             rat.save()
         except IntegrityError:
-            print(f'Ratio {rat.id} references a deleted segment')
+            print(f'Ratio {rat.id} references a deleted segment or is a duplicate of another ratio')
     seg.ratio_searched = True
     seg.save()
     return len(new_ratios)
