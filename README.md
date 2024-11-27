@@ -3,8 +3,26 @@
 EMMSAP: Electronic Medieval Music Score Archive Project
 Copyright (c) 2013-24, Michael Scott Asato Cuthbert
 
-Access to this repository is subject to the signing of an access agreement.  
-Please contact Michael Scott Asato Cuthbert (michael.asato.cuthbert@gmail.com) for more information.
+Access to this repository before 5 December 2024 was subject to the signing of an access agreement
+(Please contact Michael Scott Asato Cuthbert (michael.asato.cuthbert@gmail.com) for more information).
+Data is released (under the BSD 3-clause license) subject to the understanding that it will be 
+used for transformative and research purposes and 
+not for performances or for republishing purposes or for any
+other usage which would interfere with those of (a) composers (they're long dead! whew)  
+(b) editors and/or (c) publishers.
+
+To put it colloquially -- if you are using EMMSAP to find out how often minor sevenths
+are used in Italy vs. France, you're probably in the legal and licensing clear.  If you're using
+EMMSAP to create a Braille-music study package of Machaut's motets, you're probably in the
+licensing clear (again, not a lawyer; just what seems to be correct).  If, on the other hand,
+you're using an EMMSAP edition of a song for your next concert because even though you've
+found the same song in a modern edition for $2.99 but you'd prefer not to pay, you might not
+be in the clear if EMMSAP is claiming fair usage rights from that paid edition.
+
+The data and software are released for programming/data-oriented teams to use.  If you have
+never worked with large data models with music and need help from the "EMMSAP Team" (=Myke
+Cuthbert) to get your group set up with the project, please expect to pay consulting rates
+and to have someone on your side who has worked with computer music data before.  :-)
 
 ## Usage
 
