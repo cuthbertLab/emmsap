@@ -14,7 +14,7 @@ EMMSAP to create a Braille-music study package of Machaut's motets, you're proba
 licensing clear (again, not a lawyer; just what seems to be correct).  If, on the other hand,
 you're using an EMMSAP edition of a song for your next concert because even though you've
 found the same song in a modern edition for $2.99 but you'd prefer not to pay, you might not
-be in the clear if EMMSAP is claiming fair usage rights from that paid edition.
+be in the clear.  If you are republishing many scores that were edited by others you should definitely consult a lawyer.  That's not what EMMSAP is for.
 
 The data and software are released for programming/data-oriented teams to use.  If you have
 never worked with large data models with music and need help from the "EMMSAP Team" (=Myke
@@ -41,4 +41,6 @@ And run
 from emmsap2.similarity_ratio import SimilaritySearcher
 SimilaritySearcher(start_piece, end_piece + 1, min_ratio).run_pieces()
 ```
+
+`emmsap2` has the latest version of the data.  `emmsap_purePython` has an older version.  `emmsap_15` has experimental data for later 15th century music.
 
