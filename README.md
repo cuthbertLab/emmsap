@@ -6,10 +6,7 @@ Copyright (c) 2013-24, Michael Scott Asato Cuthbert
 Access to this repository before 5 December 2024 was subject to the signing of an access agreement
 (Please contact Michael Scott Asato Cuthbert (michael.asato.cuthbert@gmail.com) for more information).
 Data is released (under the BSD 3-clause license) subject to the understanding that it will be 
-used for transformative and research purposes and 
-not for performances or for republishing purposes or for any
-other usage which would interfere with those of (a) composers (they're long dead! whew)  
-(b) editors and/or (c) publishers.
+used for transformative and research purposes and not for performances or for republishing purposes or for any other usage which would interfere with the rights of (a) composers (they're long dead! whew) (b) editors and/or (c) publishers.
 
 To put it colloquially -- if you are using EMMSAP to find out how often minor sevenths
 are used in Italy vs. France, you're probably in the legal and licensing clear.  If you're using
