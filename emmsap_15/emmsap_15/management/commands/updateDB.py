@@ -41,6 +41,7 @@ class Command(BaseCommand):
         out = []
         for disk_file in all_files:
             if disk_file not in filenames:
+                print(disk_file)
                 new_piece = Piece(filename=disk_file)
                 new_piece.save()
                 out.append((new_piece.id, new_piece.filename))

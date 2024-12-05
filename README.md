@@ -35,9 +35,19 @@ Cuthbert, Michael Scott Asato, "A.I., Similarity, and Search in Medieval Music:
 New Methodologies and Source Identifications," All Souls Oxford Medieval Symposium, 5 December 2024.
 
 
+## Setup
+
+Setup a Django database as with other Django systems.
+
+Make the initial migration and migrate
+
+Create a "country" entry of id 1 Unspecified
+
+Create a "composer" entry of id 1 Unspecified in Country 1
+
 ## Usage
 
-Still complex.  Set up a Django database etc. then to index files in xmldata run:
+Still complex.  To index files in xmldata run:
 
 ```bash
 python manage.py updateDB
