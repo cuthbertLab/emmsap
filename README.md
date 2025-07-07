@@ -37,9 +37,28 @@ New Methodologies and Source Identifications," All Souls Oxford Medieval Symposi
 
 ## Setup
 
+Install the requirements.txt on the root folder and the emmsap2/requirements.txt file.
+`pip3 install -r requirements.txt`
+
+Create a file in your root directory called .emmsap_password with this format
+
+    database=emmsap
+    host=localhost
+    username=username
+    password=PASSWORD
+
 Setup a Django database as with other Django systems.
 
-Make the initial migration and migrate
+```
+CREATE USER 'username'@'%' IDENTIFIED BY 'PASSWORD';
+
+GRANT ALL PRIVILEGES
+ON emmsap.*
+TO 'username'@'localhost'
+WITH GRANT OPTION;
+```
+
+Run the initial migration:  `python manage.py migrate`
 
 Create a "country" entry of id 1 Unspecified
 
@@ -52,6 +71,8 @@ Still complex.  To index files in xmldata run:
 ```bash
 python manage.py updateDB
 ```
+This should take between 2 and 24 hours depending on the speed
+of your computer.
 
 Then to search, run:
 
