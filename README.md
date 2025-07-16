@@ -77,7 +77,8 @@ python manage.py updateDB
 This should take between 2 and 24 hours depending on the speed
 of your computer.
 
-Then to search, run:
+
+## Searching similarities across pieces:
 
 ```bash
 python manage.py shell
@@ -90,10 +91,23 @@ from emmsap2.similarity_ratio import SimilaritySearcher
 SimilaritySearcher(start_piece, end_piece + 1, min_ratio).run_pieces()
 ```
 
+## Searching for Single Pieces
+
+For the most part I've done searches for single pieces using an SQL editor
+such as (on Mac) Sequel Ace.  Here are the queries I have found most useful:
+
+### Searching intervals omitting unisons:
+
+`SELECT p.id,p.filename, intv.part_id, intv.intervals, intv.intervals_no_unisons, tn.ts_ratio, tn.tn FROM emmsap2_intervals AS intv LEFT JOIN emmsap2_piece AS p ON intv.piece_id = p.id LEFT JOIN emmsap2_tinynotation AS tn ON p.id = tn.piece_id AND intv.part_id = tn.part_id WHERE intv.intervals_no_unisons REGEXP ''`
+
+### Searching for a piece with intervals and text:
+
+`SELECT * FROM emmsap2_piece LEFT JOIN emmsap2_text ON emmsap2_text.piece_id = emmsap2_piece.id LEFT JOIN emmsap2_intervals ON emmsap2_intervals.piece_id = emmsap2_piece.id WHERE text_reg REGEXP "^.{10,150}choisi" AND intervals_with_rests REGEXP "r12"`
+
+
 ## Directories
 
 Use emmsap2 -- emmsapPurePython is old; emmsap_15 is a not yet working 15th c. database implementation.
 
 `emmsap2` has the latest version of the data.  `emmsap_purePython` has an older version.  `emmsap_15` has experimental data 
 for later 15th century music (not yet licensed to work with this data).
-
