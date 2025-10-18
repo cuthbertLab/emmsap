@@ -1,7 +1,7 @@
 '''
 Try to compare segments with higher accuracy.
 '''
-# from heapclass import Heap
+# from heap_class import Heap
 from heapq import heappush, heappop
 from collections import defaultdict, deque
 
