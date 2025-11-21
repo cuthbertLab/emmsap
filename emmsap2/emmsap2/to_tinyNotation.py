@@ -39,8 +39,6 @@ def convert_one_el(n, last_tn_type):
         note_name = 'r'
     else:
         note_name = 'c'  # chords, etc.
-    if n.tie is not None and (n.tie.type == 'start' or n.tie.type == 'continue'):
-        note_name += '~'
 
     dur_type = n.duration.type
     if dur_type == 'inexpressible':
@@ -54,6 +52,10 @@ def convert_one_el(n, last_tn_type):
             tn_dur_type = ''
     else:
         last_tn_type = tn_dur_type
+
+    if n.tie is not None and (n.tie.type == 'start' or n.tie.type == 'continue'):
+        note_name += '~'
+
     return (note_name + tn_dur_type, last_tn_type)
 
 
