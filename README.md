@@ -38,8 +38,12 @@ New Methodologies and Source Identifications," All Souls Oxford Medieval Symposi
 
 ## Setup
 
-Install the requirements.txt on the root folder and the emmsap2/requirements.txt file.
-`pip3 install -r requirements.txt`
+Install the root dependencies from `pyproject.toml` and the `emmsap2/requirements.txt` file.
+
+```bash
+uv sync
+uv pip install -r emmsap2/requirements.txt
+```
 
 Create a file in your root directory called .emmsap_password with this format
 

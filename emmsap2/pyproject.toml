@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emmsap2"
+version = "0.1.0"
+description = "EMMSAP Django project"
+requires-python = ">=3.14"
+authors = [
+    { name = "Michael Scott Asato Cuthbert" },
+]
+dependencies = [
+    "Django>=4.2.16",
+    "django-extensions",
+    "django-stubs",
+    "heap_class",
+    "jupyter",
+    "more_itertools",
+    "music21>=9.1.0",
+    "mysqlclient",
+    "python-Levenshtein",
+    "requests",
+    "Send2Trash",
+]
+
+[tool.setuptools.packages.find]
+include = ["emmsap2*"]
+
+[tool.emmsap]
+copyright = "Copyright (c) 2013-25, Michael Scott Asato Cuthbert"

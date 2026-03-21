@@ -1,0 +1,15 @@
+[project]
+name = "emmsap"
+version = "0.1.0"
+description = "EMMSAP - old wrapper"
+requires-python = ">=3.14"
+dependencies = [
+    "Django>=4.2.16",
+    "django-extensions",
+    "django-stubs",
+    "Levenshtein",
+    "music21>=9.1.0",
+    "mysqlclient",
+    "jupyter",
+    "Send2Trash",
+]
