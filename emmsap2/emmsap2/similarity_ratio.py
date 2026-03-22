@@ -4,6 +4,23 @@ from .models import Piece, Segment, Ratio
 
 
 class SimilaritySearcher(object):
+    __slots__ = (
+        'start_piece',
+        'end_piece',
+        'min_threshold',
+        'max_threshold',
+        'segment_type',
+        'max_to_show',
+        'skipped_match_penalty',
+        'ignore_known_skips',
+        'anti_noodle_protection',
+        'tenor_threshold_add',
+        'tenor_part_number',
+        'tenor_other_part_number',
+        'print_output',
+        'fragments_only',
+    )
+
     def __init__(
         self,
         start_piece: int = 1,
@@ -20,7 +37,7 @@ class SimilaritySearcher(object):
         self.min_threshold = min_threshold
         self.max_threshold = max_threshold
         # start at 3898 when going to dia_rhy again...
-        self.segment_type = 'dia_rhy'
+        self.segment_type = segment_type
         # start at 3896 when going to int_dia_diff again...
         # self.segment_type = 'int_dia_diff'
         self.max_to_show = max_to_show
@@ -180,4 +197,3 @@ class SimilaritySearcher(object):
         total_penalty = int(ratio_off_100 * noodle_fraction)
         # print('           Noodle Penalty: ', total_penalty, 'num_noodles', num_noodles)
         return total_penalty
-
