@@ -4,14 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "emmsap2"
-version = "0.1.0"
+version = "0.2.0"
 description = "EMMSAP Django project"
 requires-python = ">=3.14"
 authors = [
     { name = "Michael Scott Asato Cuthbert" },
 ]
 dependencies = [
-    "Django>=4.2.16",
+    "chardet<6",
+    "Django>=5.2",
     "django-extensions",
     "django-stubs",
     "heap_class",
