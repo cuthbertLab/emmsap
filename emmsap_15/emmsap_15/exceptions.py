@@ -1,2 +1,0 @@
-class EMMSAPException(Exception):
-    pass
