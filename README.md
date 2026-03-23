@@ -1,13 +1,16 @@
 # emmsap
 
 EMMSAP: Electronic Medieval Music Score Archive Project
-Copyright © 2013-25, Michael Scott Asato Cuthbert
+Copyright © 2013-26, Michael Scott Asato Cuthbert
+
 
 (Access to this repository before 5 December 2024 was subject to the signing of an access agreement)
 
-Data on 5 December 2024 is released (under the BSD 3-clause license) but subject to and with the 
-understanding that some encoding relies on the concept of scholarly Fair Use of in-copyright transcriptions, 
-and therefore is limited to use for transformative and research purposes and not for performances or for republishing 
+Data from 5 December 2024 onward released (under the BSD 3-clause license) but 
+subject to and with the understanding that some encoding relies on the concept 
+of scholarly Fair Use of in-copyright transcriptions, 
+and therefore is limited to use for transformative and research purposes and not 
+for performances or for republishing 
 purposes or for any other usage which would interfere with the rights of 
 (a) composers (they're long dead! whew) (b) editors and/or (c) publishers.
 
@@ -21,12 +24,14 @@ be in the clear.  If you are republishing many scores that were edited by others
 you should definitely consult a lawyer.  That's not what EMMSAP is for.
 
 The Code for EMMSAP (everything not in the xmldata) folder is released under the BSD 3-clause license
-without (to the best of my knowledge) any Fair Use encumberances.
+without (to the best of my knowledge) any Fair Use encumbrances.
 
 The data and software are designed for teams that consist both of programmers and musicologists to use.
-If your team has never worked with both large data models **and** music and need help from the "EMMSAP Team" (=Myke
-Cuthbert) to get your group set up with the project, please contact us, but expect to pay consulting rates
-and (to cut down on your costs) already have someone on your side who has worked with computer music data before.  :-)
+If your team has never worked with both large data models **and** music and need help from the 
+"EMMSAP Team" (=Myke Cuthbert) to get your group set up with the project, please contact us, but 
+expect to pay consulting rates
+and (to cut down on your costs) already have someone on your side who has 
+worked with computer music data before.  :-)
 
 ## Citation
 
@@ -84,11 +89,21 @@ of your computer.
 
 ## Searching similarities across pieces:
 
+For basic similarity searches, run something like:
+
+```bash
+python manage.py updateDB --start 1 --end 100 min_threshold 8000
+```
+The threshold of 8000 is pretty good for separating out things that are very likely
+quotations while missing very few.
+
+
+For more sophisticated queries, start a Django shell
+
 ```bash
 python manage.py shell
 ```
-
-And run 
+And then configure your SimilaritySearcher 
 
 ```python
 from emmsap2.similarity_ratio import SimilaritySearcher
@@ -111,7 +126,6 @@ such as (on Mac) Sequel Ace.  Here are the queries I have found most useful:
 
 ## Directories
 
-Use emmsap2 -- emmsapPurePython is old; emmsap_15 is a not yet working 15th c. database implementation.
-
-`emmsap2` has the latest version of the data.  `emmsap_purePython` has an older version.  `emmsap_15` has experimental data 
-for later 15th century music (not yet licensed to work with this data).
+- `emmsap2` has the latest version of the data.  
+- `emmsap_purePython` has an older version which you shouldn't use, but I haven't transferred all
+  the files over yet.
