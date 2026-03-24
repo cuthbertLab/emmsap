@@ -258,15 +258,15 @@ def fixScrewyAccidentals(pp2):
         elif pObj.alter < -1:
             pObj.accidental.alter = -1
         
-#-----------------
+# -----------------
   
 def fixAll():
-#     continueIt = True
+    # continueIt = True
     for p in jasonPieces():
-#         if 'Mod_62' in p:
-#             continueIt = False
-#         if continueIt:
-#             continue
+        # if 'Mod_62' in p:
+        #     continueIt = False
+        # if continueIt:
+        #     continue
         fixOne(p, show=True)
         
 def fixOne(p, *, show=False):    
@@ -275,7 +275,7 @@ def fixOne(p, *, show=False):
     outdir = '/Users/cuthbert/desktop/StoesselOut/'
     pOut = outdir + pShort
     pp = converter.parse(p)
-    #pp.show()
+    # pp.show()
     fixDotGroups(pp)
     fixClefs(pp)
     fixTS(pp)
@@ -286,7 +286,7 @@ def fixOne(p, *, show=False):
     
     # this fixes a multitude of sins...
     pp2 = pp.makeNotation()
-    #pp2.parts[2].measures(1, 8).show('t')
+    # pp2.parts[2].measures(1, 8).show('t')
     fillEmptyMeasures(pp2)
     fixScrewyAccidentals(pp2)
     if show:
@@ -305,17 +305,18 @@ def reindex():
     updateDB.updateDatabase()
 
 if __name__ == '__main__':
-    #de_ce = chantillyPieces()[77] #  Stoessel_Ch_087-De_ce_que_foul_pense.xml # DONE!
-    #fixOne(de_ce, show=True)
-    #se_doit = chantillyPieces()[8] #  Stoessel_Ch_008-Se doit -- 9/8 vs 4/4 err.
-    #fixOne(se_doit, show=True)
+    # de_ce = chantillyPieces()[77] #  Stoessel_Ch_087-De_ce_que_foul_pense.xml # DONE!
+    # fixOne(de_ce, show=True)
+    # se_doit = chantillyPieces()[8] #  Stoessel_Ch_008-Se doit -- 9/8 vs 4/4 err.
+    # fixOne(se_doit, show=True)
 
-    #a_mon = chantillyPieces()[5] #  Stoessel_Ch_007-A mon
-    #fixOne(a_mon, show=True)
+    # a_mon = chantillyPieces()[5] #  Stoessel_Ch_007-A mon
+    # fixOne(a_mon, show=True)
 
-    #je_ne = chantillyPieces()[22] #  Stoessel_Ch_029-Je ne puis avoir
-    #fixOne(je_ne, show=True)
+    # je_ne = chantillyPieces()[22] #  Stoessel_Ch_029-Je ne puis avoir
+    # fixOne(je_ne, show=True)
 
 
-    #fixAll()
+    # fixAll()
     reindex()
+
