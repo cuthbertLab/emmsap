@@ -43,11 +43,10 @@ New Methodologies and Source Identifications," All Souls Oxford Medieval Symposi
 
 ## Setup
 
-Install the root dependencies from `pyproject.toml` and the `emmsap2/requirements.txt` file.
+Install the root dependencies from `pyproject.toml`.
 
 ```bash
 uv sync
-uv pip install -r emmsap2/requirements.txt
 ```
 
 Create a file in your root directory called .emmsap_password with this format
@@ -57,7 +56,7 @@ Create a file in your root directory called .emmsap_password with this format
     username=username
     password=PASSWORD
 
-Setup a Django database as with other Django systems.
+Set up a Django database as with other Django systems.
 
 ```
 CREATE USER 'username'@'%' IDENTIFIED BY 'PASSWORD';
@@ -76,7 +75,8 @@ Create a "composer" entry of id 1 Unspecified in Country 1
 
 ## Usage
 
-Still complex.  Make a virtual environment for "emmsap2"
+Still complex.  Make a virtual environment for "emmsap2" and run commands with
+the python there enabled.
 
 To index files in xmldata run:
 

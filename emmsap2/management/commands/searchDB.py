@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 
+from ...index_segments import encodings_to_algorithms
 from ...models import Piece
 from ...similarity_ratio import SimilaritySearcher
 
@@ -37,6 +38,13 @@ class Command(BaseCommand):
         end_piece = options['end_piece']
         segment_type = options['segment_type']
         min_threshold = options['min_threshold']
+
+        if segment_type not in encodings_to_algorithms:
+            valid_segment_types = ', '.join(sorted(encodings_to_algorithms))
+            raise CommandError(
+                f'Unknown --segment-type {segment_type!r}. '
+                f'Valid values: {valid_segment_types}.'
+            )
 
         if start_piece is None and end_piece is not None:
             raise CommandError('--end requires --start.')

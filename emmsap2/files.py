@@ -5,7 +5,7 @@ import unicodedata
 
 environLocal = music21.environment.Environment()
 
-emmsapBase = pathlib.Path(__file__).parent.parent.parent
+emmsapBase = pathlib.Path(__file__).parent.parent
 emmsapDir = emmsapBase / 'xmldata'
 
 
