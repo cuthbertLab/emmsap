@@ -110,6 +110,24 @@ from emmsap2.similarity_ratio import SimilaritySearcher
 SimilaritySearcher(start_piece, end_piece + 1, min_ratio).run_pieces()
 ```
 
+## Skip groups: suppressing known similarities
+
+A **skip group** is a set of pieces (contrafacts, duplicate transcriptions,
+shared refrains, etc.) that should never be reported as similar to one another.
+`SimilaritySearcher` excludes them from each other's results when
+`ignore_known_skips=True` (the default).
+
+To put two pieces in a new skip group, from a Django shell:
+
+```python
+from emmsap2.manage_skips import new_pair
+new_pair(383, 2649, 'Apt/Ivrea gloria same piece two transcriptions')
+```
+
+For larger groups or to add to an existing group, use the Django admin
+(`SkipGroup` / `SkipPiece`).
+
+
 ## Searching for Single Pieces
 
 For the most part I've done searches for single pieces using an SQL editor
