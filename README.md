@@ -92,7 +92,7 @@ of your computer.
 For basic similarity searches, run something like:
 
 ```bash
-python manage.py updateDB --start 1 --end 100 min_threshold 8000
+python manage.py searchDB --start 1 --end 100 min_threshold 8000
 ```
 The threshold of 8000 is pretty good for separating out things that are very likely
 quotations while missing very few.
