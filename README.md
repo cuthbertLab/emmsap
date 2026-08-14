@@ -110,6 +110,21 @@ from emmsap2.similarity_ratio import SimilaritySearcher
 SimilaritySearcher(start_piece, end_piece + 1, min_ratio).run_pieces()
 ```
 
+## Renaming a piece
+
+`rename_piece.run()` renames the file on disk **and** updates the `Piece` row, so
+the two never drift apart.  From a Django shell:
+
+```python
+from emmsap2 import rename_piece
+rename_piece.run(3776, 'Ferrara_173_Stelle_Chiara_Luce')
+```
+
+The first argument is a piece id or a filename prefix (`'Ferrar_173'`).  A bare
+name is taken relative to `xmldata` and keeps the old suffix; pass an absolute
+path to move the file elsewhere.
+
+
 ## Skip groups: suppressing known similarities
 
 A **skip group** is a set of pieces (contrafacts, duplicate transcriptions,
